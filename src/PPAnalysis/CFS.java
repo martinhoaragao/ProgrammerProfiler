@@ -1,0 +1,3 @@
+public enum CFS {
+    IF, WHILE, DOWHILE, FOR, SWITCH, RETURN, BREAK, CONTINUE, IIF
+}
