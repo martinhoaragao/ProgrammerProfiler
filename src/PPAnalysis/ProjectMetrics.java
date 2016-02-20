@@ -28,6 +28,14 @@ public class ProjectMetrics {
         numberOfTypes = variables.size();
     }
 
+    private int countValues() {
+        int aux = 0;
+        for (int i: variables.values()) {
+            aux = aux + i;
+        }
+        return aux;
+    }
+
     public int getNumberOfFiles () {
         return numberOfFiles;
     }
@@ -74,14 +82,6 @@ public class ProjectMetrics {
 
     public int getTotalLines() {
         return totalLines;
-    }
-
-    private int countValues() {
-        int aux = 0;
-        for (int i: variables.values()) {
-            aux = aux + i;
-        }
-        return aux;
     }
 
     public void addCFSMetrics(Map<CFS, Integer> newCFS) {

@@ -8,7 +8,8 @@ public class PP  {
         ppa.preProcess();
         ppa.generateParseTrees();
         ppa.extractMetrics();
-        ppa.getOverallStats();
+        ppa.generateCSVFile();
+        System.out.print(ppa.getOverallStats());
 
     }
 

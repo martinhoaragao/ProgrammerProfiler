@@ -2,9 +2,8 @@ import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.apache.commons.io.FileUtils;
 import org.antlr.v4.runtime.tree.ParseTree;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
+
+import java.io.*;
 import java.util.LinkedList;
 
 public class PPAnalysis {
@@ -18,19 +17,21 @@ public class PPAnalysis {
         this.dirPath = dirPath;
     }
 
+    //Reads all .java files from path to a LinkedList
     public void preProcess () {
         File dir = new File(dirPath);
-        String[] ftypes = {"java"};
-        files = new LinkedList<>(FileUtils.listFiles(dir, ftypes, true));
-        pTrees = new LinkedList<>();
+        String[] fileType = {"java"};
+        files = new LinkedList<>(FileUtils.listFiles(dir, fileType, true));
         pMetrics = new ProjectMetrics(files.size());
     }
 
+    //Generates ParseTrees for all files and stores them in a LinkedList
     public void generateParseTrees () throws IOException {
         ANTLRInputStream input;
         JavaLexer lexer;
         CommonTokenStream tokens;
         JavaParser parser;
+        pTrees = new LinkedList<>();
         for (File file : files) {
             input = new ANTLRInputStream(new FileInputStream(file.getAbsolutePath()));
             lexer = new JavaLexer(input);
@@ -41,6 +42,7 @@ public class PPAnalysis {
         }
     }
 
+    //Extracts desired metrics from each file
     public void extractMetrics () throws IOException {
 
         //Metrics Regarding Lines (Code, Comment and Empty)
@@ -70,8 +72,9 @@ public class PPAnalysis {
         }
     }
 
-    public void getOverallStats() {
-        System.out.println(
+    //Returns metrics compilation
+    public String getOverallStats() {
+        return
             "Total Number Of Files: " + pMetrics.getNumberOfFiles() + "\n\n" +
             "Number Of Classes: " + pMetrics.getNumberOfClasses() + "\n" +
             "Number Of Methods: " + pMetrics.getNumberOfMethods() + "\n" +
@@ -84,7 +87,8 @@ public class PPAnalysis {
             "Variable Declaration: " + pMetrics.getVariableDeclarations().toString() + "\n" +
             "Total Number Of Declarations: " + pMetrics.getTotalNumberOfDeclarations() + "\n" +
             "Total Number Of Types: " + pMetrics.getTotalNumberOfTypes()
-        );
+        ;
     }
 
+    public void generateCSVFile() throws IOException {}
 }
