@@ -39,9 +39,15 @@ public class CFSExtractor extends JavaBaseVisitor {
     }
 
     @Override
-    public Object visitForStatement(JavaParser.ForStatementContext ctx) {
+    public Object visitRegularForControl(JavaParser.RegularForControlContext ctx) {
         incr(CFS.FOR);
-        return super.visitForStatement(ctx);
+        return super.visitRegularForControl(ctx);
+    }
+
+    @Override
+    public Object visitEnhancedForControl(JavaParser.EnhancedForControlContext ctx) {
+        incr(CFS.EFOR);
+        return super.visitEnhancedForControl(ctx);
     }
 
     @Override

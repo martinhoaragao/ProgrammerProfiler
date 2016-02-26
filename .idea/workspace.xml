@@ -2,9 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="611a91e3-5913-483c-a016-88b1183d9edc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/PPAnalysis/NSCO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/PPAnalysis/NSCOExtractor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JavaGrammar/Java.g4" afterPath="$PROJECT_DIR$/JavaGrammar/Java.g4" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/JavaBaseVisitor.java" afterPath="$PROJECT_DIR$/gen/JavaBaseVisitor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/JavaParser.java" afterPath="$PROJECT_DIR$/gen/JavaParser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/JavaVisitor.java" afterPath="$PROJECT_DIR$/gen/JavaVisitor.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PP.java" afterPath="$PROJECT_DIR$/src/PP.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PPAnalysis/CFS.java" afterPath="$PROJECT_DIR$/src/PPAnalysis/CFS.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PPAnalysis/CFSExtractor.java" afterPath="$PROJECT_DIR$/src/PPAnalysis/CFSExtractor.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PPAnalysis/PPAnalysis.java" afterPath="$PROJECT_DIR$/src/PPAnalysis/PPAnalysis.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PPAnalysis/ProjectMetrics.java" afterPath="$PROJECT_DIR$/src/PPAnalysis/ProjectMetrics.java" />
     </list>
@@ -32,31 +40,91 @@
         <entry file="file://$PROJECT_DIR$/src/PP.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+              <caret line="5" column="114" selection-start-line="5" selection-start-column="114" selection-end-line="5" selection-end-column="114" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PPAnalysis.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/PPAnalysis/PPAnalysis.java">
+      <file leaf-file-name="Java.g4" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/JavaGrammar/Java.g4">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7089041">
-              <caret line="95" column="8" selection-start-line="95" selection-start-column="8" selection-end-line="95" selection-end-column="8" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="574" column="31" selection-start-line="574" selection-start-column="31" selection-end-line="574" selection-end-column="31" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#435#436#0" expanded="true" />
-                <element signature="e#473#474#0" expanded="true" />
+                <element signature="e#0#22043#0" expanded="true" />
+                <marker date="1456508421126" expanded="true" signature="11068:11130" placeholder=":...;" />
+                <marker date="1456508421126" expanded="true" signature="12949:12987" placeholder=":...;" />
+                <marker date="1456508421126" expanded="true" signature="13004:13027" placeholder=":...;" />
+                <marker date="1456508421126" expanded="true" signature="13085:13108" placeholder=":...;" />
+                <marker date="1456508421126" expanded="true" signature="13125:13148" placeholder=":...;" />
+                <marker date="1456508421126" expanded="true" signature="13169:13186" placeholder=":...;" />
+                <marker date="1456508421126" expanded="true" signature="13206:13223" placeholder=":...;" />
+                <marker date="1456508421126" expanded="true" signature="13244:13261" placeholder=":...;" />
+                <marker date="1456508421126" expanded="true" signature="13285:13303" placeholder=":...;" />
+                <marker date="1456508421126" expanded="true" signature="13328:13347" placeholder=":...;" />
+                <marker date="1456508421126" expanded="true" signature="13371:13389" placeholder=":...;" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProjectMetrics.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ProjectMetrics.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/PPAnalysis/ProjectMetrics.java">
           <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="1.1142857">
+              <caret line="38" column="9" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#addCFSMetrics#0;class#ProjectMetrics#0" expanded="false" />
+                <element signature="method#addVariableMetrics#0;class#ProjectMetrics#0" expanded="false" />
+                <element signature="method#addLineMetrics#0;class#ProjectMetrics#0" expanded="false" />
+                <element signature="method#addCounterMetrics#0;class#ProjectMetrics#0" expanded="false" />
+                <element signature="method#addOperatorMetrics#0;class#ProjectMetrics#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NSCOExtractor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/PPAnalysis/NSCOExtractor.java">
+          <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="48" column="5" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
+              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CFSExtractor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/PPAnalysis/CFSExtractor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="60" column="25" selection-start-line="60" selection-start-column="8" selection-end-line="60" selection-end-column="25" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NSCO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/PPAnalysis/NSCO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="24" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PPAnalysis.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/PPAnalysis/PPAnalysis.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="92" column="68" selection-start-line="92" selection-start-column="48" selection-end-line="92" selection-end-column="68" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -69,6 +137,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -84,19 +153,24 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/JavaGrammar/Java.g4" />
         <option value="$PROJECT_DIR$/src/CFS.java" />
         <option value="$PROJECT_DIR$/src/PPAnalysis/CFSMetrics.java" />
         <option value="$PROJECT_DIR$/src/ProjectMetrics.java" />
         <option value="$PROJECT_DIR$/src/PPAnalysis/MetricsExtractor.java" />
         <option value="$PROJECT_DIR$/src/PPAnalysis/Variable.java" />
-        <option value="$PROJECT_DIR$/src/PPAnalysis/CFSExtractor.java" />
         <option value="$PROJECT_DIR$/src/PPAnalysis/VariableExtractor.java" />
         <option value="$PROJECT_DIR$/src/PPAnalysis/CounterExtractor.java" />
         <option value="$PROJECT_DIR$/src/PPAnalysis/LinesExtractor.java" />
-        <option value="$PROJECT_DIR$/src/PPAnalysis/ProjectMetrics.java" />
+        <option value="$PROJECT_DIR$/src/PPAnalysis/CFS.java" />
         <option value="$PROJECT_DIR$/src/PP.java" />
+        <option value="$PROJECT_DIR$/src/PPAnalysis/CFSExtractor.java" />
+        <option value="$PROJECT_DIR$/JavaGrammar/Java.g4" />
+        <option value="$PROJECT_DIR$/src/PPAnalysis/OperatorExtractor.java" />
+        <option value="$PROJECT_DIR$/src/PPAnalysis/Operator.java" />
+        <option value="$PROJECT_DIR$/src/PPAnalysis/NSCO.java" />
+        <option value="$PROJECT_DIR$/src/PPAnalysis/NSCOExtractor.java" />
         <option value="$PROJECT_DIR$/src/PPAnalysis/PPAnalysis.java" />
+        <option value="$PROJECT_DIR$/src/PPAnalysis/ProjectMetrics.java" />
       </list>
     </option>
   </component>
@@ -131,7 +205,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -212,8 +286,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -529,19 +603,19 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Tool Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Tool Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44281045" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32789558" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.6111111" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32626426" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="ANTLR Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -588,6 +662,72 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/PPAnalysis/PPAnalysis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="92" column="55" selection-start-line="92" selection-start-column="55" selection-end-line="92" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PPAnalysis/ProjectMetrics.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="48" column="5" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#addCFSMetrics#0;class#ProjectMetrics#0" expanded="false" />
+            <element signature="method#addVariableMetrics#0;class#ProjectMetrics#0" expanded="false" />
+            <element signature="method#addLineMetrics#0;class#ProjectMetrics#0" expanded="false" />
+            <element signature="method#addCounterMetrics#0;class#ProjectMetrics#0" expanded="false" />
+            <element signature="method#addOperatorMetrics#0;class#ProjectMetrics#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PP.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PPAnalysis/PPAnalysis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="92" column="55" selection-start-line="92" selection-start-column="55" selection-end-line="92" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PPAnalysis/ProjectMetrics.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="48" column="5" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#addCFSMetrics#0;class#ProjectMetrics#0" expanded="false" />
+            <element signature="method#addVariableMetrics#0;class#ProjectMetrics#0" expanded="false" />
+            <element signature="method#addLineMetrics#0;class#ProjectMetrics#0" expanded="false" />
+            <element signature="method#addCounterMetrics#0;class#ProjectMetrics#0" expanded="false" />
+            <element signature="method#addOperatorMetrics#0;class#ProjectMetrics#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PP.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/PP.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -617,13 +757,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.32020548">
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PPAnalysis/CFS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="12" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -659,7 +792,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="20" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -671,27 +804,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JavaGrammar/Java.g4">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="12.962441">
-          <caret line="1034" column="74" selection-start-line="1034" selection-start-column="74" selection-end-line="1034" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PPAnalysis/CFSExtractor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23943663">
-          <caret line="9" column="41" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#340#341#0" expanded="true" />
-            <element signature="e#372#373#0" expanded="true" />
-            <element signature="e#417#418#0" expanded="true" />
-            <element signature="e#449#450#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33754513">
@@ -699,32 +811,92 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/PPAnalysis/ProjectMetrics.java">
+    <entry file="file://$PROJECT_DIR$/src/PPAnalysis/CFS.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="48" column="5" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
+          <caret line="0" column="12" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaGrammar/Java.g4">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="574" column="31" selection-start-line="574" selection-start-column="31" selection-end-line="574" selection-end-column="31" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#0#22043#0" expanded="true" />
+            <marker date="1456508421126" expanded="true" signature="11068:11130" placeholder=":...;" />
+            <marker date="1456508421126" expanded="true" signature="12949:12987" placeholder=":...;" />
+            <marker date="1456508421126" expanded="true" signature="13004:13027" placeholder=":...;" />
+            <marker date="1456508421126" expanded="true" signature="13085:13108" placeholder=":...;" />
+            <marker date="1456508421126" expanded="true" signature="13125:13148" placeholder=":...;" />
+            <marker date="1456508421126" expanded="true" signature="13169:13186" placeholder=":...;" />
+            <marker date="1456508421126" expanded="true" signature="13206:13223" placeholder=":...;" />
+            <marker date="1456508421126" expanded="true" signature="13244:13261" placeholder=":...;" />
+            <marker date="1456508421126" expanded="true" signature="13285:13303" placeholder=":...;" />
+            <marker date="1456508421126" expanded="true" signature="13328:13347" placeholder=":...;" />
+            <marker date="1456508421126" expanded="true" signature="13371:13389" placeholder=":...;" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PPAnalysis/NSCO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="24" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/PP.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+          <caret line="5" column="114" selection-start-line="5" selection-start-column="114" selection-end-line="5" selection-end-column="114" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PPAnalysis/NSCOExtractor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/PPAnalysis/PPAnalysis.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7089041">
-          <caret line="95" column="8" selection-start-line="95" selection-start-column="8" selection-end-line="95" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="92" column="68" selection-start-line="92" selection-start-column="48" selection-end-line="92" selection-end-column="68" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#435#436#0" expanded="true" />
-            <element signature="e#473#474#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PPAnalysis/CFSExtractor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="60" column="25" selection-start-line="60" selection-start-column="8" selection-end-line="60" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PPAnalysis/ProjectMetrics.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.1142857">
+          <caret line="38" column="9" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#addCFSMetrics#0;class#ProjectMetrics#0" expanded="false" />
+            <element signature="method#addVariableMetrics#0;class#ProjectMetrics#0" expanded="false" />
+            <element signature="method#addLineMetrics#0;class#ProjectMetrics#0" expanded="false" />
+            <element signature="method#addCounterMetrics#0;class#ProjectMetrics#0" expanded="false" />
+            <element signature="method#addOperatorMetrics#0;class#ProjectMetrics#0" expanded="false" />
           </folding>
         </state>
       </provider>

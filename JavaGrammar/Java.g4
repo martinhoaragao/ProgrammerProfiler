@@ -496,12 +496,16 @@ switchLabel
 
 forControl
     :   enhancedForControl
-    |   forInit? ';' expression? ';' forUpdate?
+    |   regularForControl
     ;
 
 forInit
     :   localVariableDeclaration
     |   expressionList
+    ;
+
+regularForControl
+    : forInit? ';' expression? ';' forUpdate?
     ;
 
 enhancedForControl
@@ -546,13 +550,13 @@ expression
     |   ('~'|'!') expression
     |   expression ('*'|'/'|'%') expression
     |   expression ('+'|'-') expression
-    |   expression ('<' '<' | '>' '>' '>' | '>' '>') expression
+    |   expression ('<' '<' | '>' '>' '>' | '>' '>') shiftExpression
     |   expression ('<=' | '>=' | '>' | '<') expression
     |   expression 'instanceof' type
     |   expression ('==' | '!=') expression
-    |   expression '&' expression
-    |   expression '^' expression
-    |   expression '|' expression
+    |   expression '&' bitAndExpression
+    |   expression '^' caretExpression
+    |   expression '|' bitOrExpression
     |   expression '&&' expression
     |   expression '||' expression
     |   expression '?' iifStatement
@@ -562,19 +566,63 @@ expression
         |   '-='
         |   '*='
         |   '/='
-        |   '&='
-        |   '|='
-        |   '^='
-        |   '>>='
-        |   '>>>='
-        |   '<<='
-        |   '%='
+        |   andAssignExpression
+        |   orAssignExpression
+        |   xorAssignExpression
+        |   rshiftAssignExpression
+        |   urshiftAssignExpression
+        |   lshiftAssignExpression
+        |   modAssignExpression
         )
         expression
     ;
 
 iifStatement
     : expression ':' expression
+    ;
+
+shiftExpression
+    : expression
+    ;
+
+bitAndExpression
+    : expression
+    ;
+
+bitOrExpression
+    : expression
+    ;
+
+caretExpression
+    : expression
+    ;
+
+andAssignExpression
+    : '&='
+    ;
+
+orAssignExpression
+    : '|='
+    ;
+
+xorAssignExpression
+    : '^='
+    ;
+
+rshiftAssignExpression
+    : '>>='
+    ;
+
+urshiftAssignExpression
+    : '>>>='
+    ;
+
+lshiftAssignExpression
+    : '<<='
+    ;
+
+modAssignExpression
+    : '%='
     ;
 
 primary

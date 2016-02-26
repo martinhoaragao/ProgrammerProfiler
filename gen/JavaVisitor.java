@@ -550,6 +550,12 @@ public interface JavaVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitForInit(JavaParser.ForInitContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link JavaParser#regularForControl}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitRegularForControl(JavaParser.RegularForControlContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link JavaParser#enhancedForControl}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -597,6 +603,72 @@ public interface JavaVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitIifStatement(JavaParser.IifStatementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link JavaParser#shiftExpression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitShiftExpression(JavaParser.ShiftExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link JavaParser#bitAndExpression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBitAndExpression(JavaParser.BitAndExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link JavaParser#bitOrExpression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBitOrExpression(JavaParser.BitOrExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link JavaParser#caretExpression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCaretExpression(JavaParser.CaretExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link JavaParser#andAssignExpression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAndAssignExpression(JavaParser.AndAssignExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link JavaParser#orAssignExpression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitOrAssignExpression(JavaParser.OrAssignExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link JavaParser#xorAssignExpression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitXorAssignExpression(JavaParser.XorAssignExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link JavaParser#rshiftAssignExpression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitRshiftAssignExpression(JavaParser.RshiftAssignExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link JavaParser#urshiftAssignExpression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitUrshiftAssignExpression(JavaParser.UrshiftAssignExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link JavaParser#lshiftAssignExpression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitLshiftAssignExpression(JavaParser.LshiftAssignExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link JavaParser#modAssignExpression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitModAssignExpression(JavaParser.ModAssignExpressionContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link JavaParser#primary}.
 	 * @param ctx the parse tree

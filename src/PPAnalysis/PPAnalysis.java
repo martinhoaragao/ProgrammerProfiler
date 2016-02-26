@@ -67,6 +67,11 @@ public class PPAnalysis {
             counterExtractor.run();
             pMetrics.addCounterMetrics(counterExtractor.getMetrics());
 
+            //Metrics Regarding Use of Not Common Operators
+            NSCOExtractor nscoExtractor = new NSCOExtractor(tree);
+            nscoExtractor.run();
+            pMetrics.addOperatorMetrics(nscoExtractor.getMetrics());
+
             pMetrics.generateMetrics();
 
         }
@@ -84,6 +89,8 @@ public class PPAnalysis {
             "Number Of Empty Lines: " + pMetrics.getEmptyLines() + "\n" +
             "Total Number Of Lines: " + pMetrics.getTotalLines() + "\n\n" +
             "Control Flow Statements: " + pMetrics.getCFS().toString() + "\n\n" +
+            "Not So Common Operators: " + pMetrics.getNSCO().toString() + "\n" +
+            "Total Number Of NSCO: " + pMetrics.getTotalNumberOfNSCO() + "\n\n" +
             "Variable Declaration: " + pMetrics.getVariableDeclarations().toString() + "\n" +
             "Total Number Of Declarations: " + pMetrics.getTotalNumberOfDeclarations() + "\n" +
             "Total Number Of Types: " + pMetrics.getTotalNumberOfTypes()

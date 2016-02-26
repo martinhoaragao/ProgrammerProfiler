@@ -4,11 +4,13 @@ import java.util.Map;
 public class ProjectMetrics {
 
     private Map<CFS,Integer> cfss;
+    private Map<NSCO,Integer> nscos;
     private Map<String,Integer> variables; //local variables
 
     private int numberOfFiles;
     private int numberOfDeclarations;
     private int numberOfTypes;
+    private int numberOfNSCO;
     private int linesOfCode;
     private int linesOfComments;
     private int emptyLines;
@@ -20,17 +22,27 @@ public class ProjectMetrics {
     public ProjectMetrics (int numberOfFiles) {
         this.numberOfFiles = numberOfFiles;
         cfss = new HashMap<>();
+        nscos = new HashMap<>();
         variables = new HashMap<>();
     }
 
     public void generateMetrics () {
-        numberOfDeclarations = countValues();
+        numberOfDeclarations = countVariables();
+        numberOfNSCO = countOperators();
         numberOfTypes = variables.size();
     }
 
-    private int countValues() {
+    private int countVariables() {
         int aux = 0;
         for (int i: variables.values()) {
+            aux = aux + i;
+        }
+        return aux;
+    }
+
+    private int countOperators() {
+        int aux = 0;
+        for (int i: nscos.values()) {
             aux = aux + i;
         }
         return aux;
@@ -54,6 +66,10 @@ public class ProjectMetrics {
 
     public Map<CFS,Integer> getCFS() {
         return cfss;
+    }
+
+    public Map<NSCO,Integer> getNSCO() {
+        return nscos;
     }
 
     public Map<String,Integer> getVariableDeclarations() {
@@ -82,6 +98,10 @@ public class ProjectMetrics {
 
     public int getTotalLines() {
         return totalLines;
+    }
+
+    public int getTotalNumberOfNSCO() {
+        return this.numberOfNSCO;
     }
 
     public void addCFSMetrics(Map<CFS, Integer> newCFS) {
@@ -119,5 +139,17 @@ public class ProjectMetrics {
         numberOfClasses += counterMetrics[0];
         numberOfMethods += counterMetrics[1];
         numberOfStatements += counterMetrics[2];
+    }
+
+    public void addOperatorMetrics(Map<NSCO, Integer> newOP) {
+        for (Object o : newOP.entrySet()) {
+            Map.Entry pair = (Map.Entry) o;
+            NSCO op = (NSCO) pair.getKey();
+            if (nscos.containsKey(op)) {
+                nscos.put(op, nscos.get(op) + newOP.get(op));
+            } else {
+                nscos.put(op, newOP.get(op));
+            }
+        }
     }
 }
