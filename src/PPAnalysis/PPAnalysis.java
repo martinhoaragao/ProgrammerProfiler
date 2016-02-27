@@ -77,6 +77,10 @@ public class PPAnalysis {
         }
     }
 
+    public ProjectMetrics getProjectMetrics() {
+        return pMetrics;
+    }
+
     //Returns metrics compilation
     public String getOverallStats() {
         return
@@ -96,6 +100,4 @@ public class PPAnalysis {
             "Total Number Of Types: " + pMetrics.getTotalNumberOfTypes()
         ;
     }
-
-    public void generateCSVFile() throws IOException {}
 }
