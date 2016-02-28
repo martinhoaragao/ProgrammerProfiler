@@ -1,3 +1,6 @@
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 
 public class ProjectsComparator {
@@ -10,96 +13,182 @@ public class ProjectsComparator {
         this.exampleSolutions = exampleSolutions;
     }
 
-    public void generateHTML() {
+    public void generateHTML() throws IOException {
         StringBuilder sb = new StringBuilder();
-        int i;
-        sb.append("<html><head><link rel='stylesheet' " +
+
+        /*HEADER------------------------------------------------------------------------------------------------------*/
+
+        sb.append("<html>");
+        sb.append("<head>");
+        sb.append("<link rel='stylesheet' " +
                 "href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css' " +
                 "integrity='sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7' " +
-                "crossorigin='anonymous'>" +
-                "<title>Programmer Profiler</title></head><body><h1>PP Analysis Comparator!</h1>");
+                "crossorigin='anonymous'>");
+        sb.append("<title>Programmer Profiler</title>");
+        sb.append("</head>");
+        sb.append("<body>");
+        sb.append("<h1 style='text-align:center'>PP Analysis Comparator</h1>");
 
-        sb.append("<table class='table table-hover'><caption>Counter Metrics</caption>" +
-                "<tr><th>Project</th><th>Files</th><th>Classes</th><th>Methods</th><th>Statements</th></tr>");
-        sb.append("<tr><td>Base Solution</td>");
-        sb.append("<td>" + Integer.toString(baseSolution.getNumberOfFiles()) + "</td>");
-        sb.append("<td>" + Integer.toString(baseSolution.getNumberOfClasses()) + "</td>");
-        sb.append("<td>" + Integer.toString(baseSolution.getNumberOfMethods()) + "</td>");
-        sb.append("<td>" + Integer.toString(baseSolution.getNumberOfStatements()) + "</td></tr>");
-        i = 1;
+        /*COUNTER TABLE-----------------------------------------------------------------------------------------------*/
+
+        sb.append("<table class='table table-hover table-bordered'>");
+        sb.append("<caption>Counter Metrics</caption>");
+        sb.append("<tr>");
+        appendTH(sb, "Project");
+        appendTH(sb, "Files");
+        appendTH(sb, "Classes");
+        appendTH(sb, "Methods");
+        appendTH(sb, "Statements");
+        sb.append("</tr>");
+
+        sb.append("<tr class='active'>");
+        appendTD(sb, baseSolution.getProjectName());
+        appendTD(sb, Integer.toString(baseSolution.getNumberOfFiles()));
+        appendTD(sb, Integer.toString(baseSolution.getNumberOfClasses()));
+        appendTD(sb, Integer.toString(baseSolution.getNumberOfMethods()));
+        appendTD(sb, Integer.toString(baseSolution.getNumberOfStatements()));
+        sb.append("</tr>");
         for (ProjectMetrics es : exampleSolutions) {
-            sb.append("<tr><td>Ex" + i + "</td>");
-            sb.append("<td>" + Integer.toString(es.getNumberOfFiles()) + "</td>");
-            sb.append("<td>" + Integer.toString(es.getNumberOfClasses()) + "</td>");
-            sb.append("<td>" + Integer.toString(es.getNumberOfMethods()) + "</td>");
-            sb.append("<td>" + Integer.toString(es.getNumberOfStatements()) + "</td></tr>");
-            i++;
+            sb.append("<tr>");
+            appendTD(sb, es.getProjectName());
+            appendTD(sb, Integer.toString(es.getNumberOfFiles()));
+            appendTD(sb, Integer.toString(es.getNumberOfClasses()));
+            appendTD(sb, Integer.toString(es.getNumberOfMethods()));
+            appendTD(sb, Integer.toString(es.getNumberOfStatements()));
+            sb.append("</tr>");
         }
         sb.append("</table>");
 
-        sb.append("<table class='table table-hover'><caption>Lines Metrics</caption><tr><th>Project</th>" +
-                "<th>Lines Of Code</th><th>Lines of Comment</th><th>Empty Lines</th><th>Total Lines</th></tr>");
-        sb.append("<tr><td>Base Solution</td>");
-        sb.append("<td>" + Integer.toString(baseSolution.getLinesOfCode()) + "</td>");
-        sb.append("<td>" + Integer.toString(baseSolution.getLinesOfComments()) + "</td>");
-        sb.append("<td>" + Integer.toString(baseSolution.getEmptyLines()) + "</td>");
-        sb.append("<td>" + Integer.toString(baseSolution.getTotalLines()) + "</td></tr>");
-        i = 1;
+        /*LINES TABLE-------------------------------------------------------------------------------------------------*/
+
+        sb.append("<table class='table table-hover table-bordered'>");
+        sb.append("<caption>Lines Metrics</caption>");
+        sb.append("<tr>");
+        appendTH(sb, "Project");
+        appendTH(sb, "Lines Of Code");
+        appendTH(sb, "% Code");
+        appendTH(sb, "Lines of Comment");
+        appendTH(sb, "% Comment");
+        appendTH(sb, "Empty Lines");
+        appendTH(sb, "% Empty");
+        appendTH(sb, "Total Lines");
+        sb.append("</tr>");
+
+        sb.append("<tr class='active'>");
+        appendTD(sb, baseSolution.getProjectName());
+        appendTD(sb, Integer.toString(baseSolution.getLinesOfCode()));
+        appendTD(sb, String.format("%.2f", baseSolution.getPerCode()));
+        appendTD(sb, Integer.toString(baseSolution.getLinesOfComments()));
+        appendTD(sb, String.format("%.2f", baseSolution.getPerComment()));
+        appendTD(sb, Integer.toString(baseSolution.getEmptyLines()));
+        appendTD(sb, String.format("%.2f", baseSolution.getPerEmpty()));
+        appendTD(sb, Integer.toString(baseSolution.getTotalLines()));
+        sb.append("</tr>");
         for (ProjectMetrics es : exampleSolutions) {
-            sb.append("<tr><td>Ex" + i + "</td>");
-            sb.append("<td>" + Integer.toString(es.getLinesOfCode()) + "</td>");
-            sb.append("<td>" + Integer.toString(es.getLinesOfComments()) + "</td>");
-            sb.append("<td>" + Integer.toString(es.getEmptyLines()) + "</td>");
-            sb.append("<td>" + Integer.toString(es.getTotalLines()) + "</td></tr>");
-            i++;
+            sb.append("<tr>");
+            appendTD(sb, es.getProjectName());
+            appendTD(sb, Integer.toString(es.getLinesOfCode()));
+            appendTD(sb, String.format("%.2f", es.getPerCode()));
+            appendTD(sb, Integer.toString(es.getLinesOfComments()));
+            appendTD(sb, String.format("%.2f", es.getPerComment()));
+            appendTD(sb, Integer.toString(es.getEmptyLines()));
+            appendTD(sb, String.format("%.2f", es.getPerEmpty()));
+            appendTD(sb, Integer.toString(es.getTotalLines()));
+            sb.append("</tr>");
         }
         sb.append("</table>");
 
-        sb.append("<table class='table table-hover'><caption>Control Flow Statements Metrics</caption><tr><th>Project</th>" +
-                "<th>CFSs</th></tr>");
-        sb.append("<tr><td>Base Solution</td>");
-        sb.append("<td>" + baseSolution.getCFS().toString() + "</td></tr>");
-        i = 1;
+        /*CFS TABLE---------------------------------------------------------------------------------------------------*/
+
+        sb.append("<table class='table table-hover table-bordered'>");
+        sb.append("<caption>Control Flow Statements Metrics</caption>");
+        sb.append("<tr>");
+        appendTH(sb, "Project");
+        appendTH(sb, "CFSs");
+        sb.append("</tr>");
+
+        sb.append("<tr class='active'>");
+        appendTD(sb, baseSolution.getProjectName());
+        appendTD(sb, baseSolution.getCFS().toString());
+        sb.append("</tr>");
         for (ProjectMetrics es : exampleSolutions) {
-            sb.append("<tr><td>Ex" + i + "</td>");
-            sb.append("<td>" + es.getCFS().toString() + "</td></tr>");
-            i++;
+            sb.append("<tr>");
+            appendTD(sb, es.getProjectName());
+            appendTD(sb, es.getCFS().toString());
+            sb.append("</tr>");
         }
         sb.append("</table>");
 
-        sb.append("<table class='table table-hover'><caption>Not So Common Operators Metrics</caption><tr><th>Project</th>" +
-                "<th>NSCOs</th><th># of NSCOs</th></tr>");
-        sb.append("<tr><td>Base Solution</td>");
-        sb.append("<td>" + baseSolution.getNSCO().toString() + "</td>");
-        sb.append("<td>" + Integer.toString(baseSolution.getTotalNumberOfNSCO()) + "</td></tr>");
-        i = 1;
+        /*NSCO TABLE--------------------------------------------------------------------------------------------------*/
+
+        sb.append("<table class='table table-hover table-bordered'>");
+        sb.append("<caption>Not So Common Operators Metrics</caption>");
+        sb.append("<tr>");
+        appendTH(sb, "Project");
+        appendTH(sb, "NSCOs");
+        appendTH(sb, "# of NSCOs");
+        sb.append("</tr>");
+
+        sb.append("<tr class='active'>");
+        appendTD(sb, baseSolution.getProjectName());
+        appendTD(sb, baseSolution.getNSCO().toString());
+        appendTD(sb, Integer.toString(baseSolution.getTotalNumberOfNSCO()));
+        sb.append("</tr>");
         for (ProjectMetrics es : exampleSolutions) {
-            sb.append("<tr><td>Ex" + i + "</td>");
-            sb.append("<td>" + es.getNSCO().toString() + "</td>");
-            sb.append("<td>" + Integer.toString(es.getTotalNumberOfNSCO()) + "</td></tr>");
-            i++;
+            sb.append("<tr>");
+            appendTD(sb, es.getProjectName());
+            appendTD(sb, es.getNSCO().toString());
+            appendTD(sb, Integer.toString(es.getTotalNumberOfNSCO()));
+            sb.append("</tr>");
         }
         sb.append("</table>");
 
-        sb.append("<table class='table table-hover'><caption>Variable Declaration Metrics</caption>" +
-                "<tr><th>Project</th><th>Variable Declarations</th><th>Total Number Of Declarations</th>" +
-                "<th>Total Number Of Types</th></tr>");
-        sb.append("<tr><td>Base Solution</td>");
-        sb.append("<td>" + baseSolution.getVariableDeclarations().toString() + "</td>");
-        sb.append("<td>" + Integer.toString(baseSolution.getTotalNumberOfDeclarations()) + "</td>");
-        sb.append("<td>" + Integer.toString(baseSolution.getTotalNumberOfTypes()) + "</td></tr>");
-        i = 1;
+        /*VARIABLES TABLE---------------------------------------------------------------------------------------------*/
+
+        sb.append("<table class='table table-hover table-bordered'>");
+        sb.append("<caption>Variable Declaration Metrics</caption>");
+        sb.append("<tr>");
+        appendTH(sb, "Project");
+        appendTH(sb, "Variable Declarations");
+        appendTH(sb, "Total Number Of Declarations");
+        appendTH(sb, "Total Number Of Types");
+        sb.append("</tr>");
+
+        sb.append("<tr class='active'>");
+        appendTD(sb, baseSolution.getProjectName());
+        appendTD(sb, baseSolution.getVariableDeclarations().toString());
+        appendTD(sb, Integer.toString(baseSolution.getTotalNumberOfDeclarations()));
+        appendTD(sb, Integer.toString(baseSolution.getTotalNumberOfTypes()));
+        sb.append("</tr>");
         for (ProjectMetrics es : exampleSolutions) {
-            sb.append("<tr><td>Ex" + i + "</td>");
-            sb.append("<td>" + es.getVariableDeclarations().toString() + "</td>");
-            sb.append("<td>" + Integer.toString(es.getTotalNumberOfDeclarations()) + "</td>");
-            sb.append("<td>" + Integer.toString(es.getTotalNumberOfTypes()) + "</td></tr>");
-            i++;
+            sb.append("<tr>");
+            appendTD(sb, es.getProjectName());
+            appendTD(sb, es.getVariableDeclarations().toString());
+            appendTD(sb, Integer.toString(es.getTotalNumberOfDeclarations()));
+            appendTD(sb, Integer.toString(es.getTotalNumberOfTypes()));
+            sb.append("</tr>");
         }
         sb.append("</table>");
+
+        /*FOOTER------------------------------------------------------------------------------------------------------*/
 
         sb.append("</table></body></html>");
 
-        System.out.println(sb.toString());
+        Files.write(Paths.get("C:\\Users\\Daniel\\Desktop\\test.html"), sb.toString().getBytes());
     }
+
+    void appendTD(StringBuilder sb, String contents) {
+        appendTag(sb, "td", contents);
+    }
+
+    void appendTH(StringBuilder sb, String contents) {
+        appendTag(sb, "th", contents);
+    }
+
+    void appendTag(StringBuilder sb, String tag, String contents) {
+        sb.append('<').append(tag).append('>');
+        sb.append(contents);
+        sb.append("</").append(tag).append('>');
+    }
+
 }

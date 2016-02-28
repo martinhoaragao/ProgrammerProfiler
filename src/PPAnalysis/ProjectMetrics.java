@@ -3,23 +3,32 @@ import java.util.Map;
 
 public class ProjectMetrics {
 
-    private Map<CFS,Integer> cfss;
-    private Map<NSCO,Integer> nscos;
-    private Map<String,Integer> variables; //local variables
+    private String projectName;
 
     private int numberOfFiles;
-    private int numberOfDeclarations;
-    private int numberOfTypes;
-    private int numberOfNSCO;
-    private int linesOfCode;
-    private int linesOfComments;
-    private int emptyLines;
-    private int totalLines;
     private int numberOfClasses;
     private int numberOfMethods;
     private int numberOfStatements;
 
-    public ProjectMetrics (int numberOfFiles) {
+    private int linesOfCode;
+    private float perCode;
+    private int linesOfComments;
+    private float perComment;
+    private int emptyLines;
+    private float perEmpty;
+    private int totalLines;
+
+    private Map<CFS,Integer> cfss;
+
+    private Map<NSCO,Integer> nscos;
+    private int numberOfNSCO;
+
+    private Map<String,Integer> variables; //local variables
+    private int numberOfDeclarations;
+    private int numberOfTypes;
+
+    public ProjectMetrics (String projectName, int numberOfFiles) {
+        this.projectName = projectName;
         this.numberOfFiles = numberOfFiles;
         cfss = new HashMap<>();
         nscos = new HashMap<>();
@@ -27,9 +36,12 @@ public class ProjectMetrics {
     }
 
     public void generateMetrics () {
-        numberOfDeclarations = countVariables();
+        perCode = ((float)linesOfCode / totalLines) * 100;
+        perComment = ((float)linesOfComments / totalLines) * 100;
+        perEmpty = ((float)emptyLines / totalLines) * 100;
         numberOfNSCO = countOperators();
         numberOfTypes = variables.size();
+        numberOfDeclarations = countVariables();
     }
 
     private int countVariables() {
@@ -46,6 +58,10 @@ public class ProjectMetrics {
             aux = aux + i;
         }
         return aux;
+    }
+
+    public String getProjectName() {
+        return projectName;
     }
 
     public int getNumberOfFiles () {
@@ -88,12 +104,24 @@ public class ProjectMetrics {
         return linesOfCode;
     }
 
+    public float getPerCode() {
+        return perCode;
+    }
+
     public int getLinesOfComments() {
         return linesOfComments;
     }
 
+    public float getPerComment() {
+        return perComment;
+    }
+
     public int getEmptyLines() {
         return emptyLines;
+    }
+
+    public float getPerEmpty() {
+        return perEmpty;
     }
 
     public int getTotalLines() {
