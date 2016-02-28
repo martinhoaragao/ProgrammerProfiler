@@ -1,9 +1,11 @@
+import java.util.ArrayList;
+
 public class ProjectsComparator {
 
     private ProjectMetrics baseSolution;
-    private ProjectMetrics[] exampleSolutions;
+    private ArrayList<ProjectMetrics> exampleSolutions;
 
-    public ProjectsComparator(ProjectMetrics baseSolution, ProjectMetrics[] exampleSolutions) {
+    public ProjectsComparator(ProjectMetrics baseSolution, ArrayList<ProjectMetrics> exampleSolutions) {
         this.baseSolution = baseSolution;
         this.exampleSolutions = exampleSolutions;
     }
