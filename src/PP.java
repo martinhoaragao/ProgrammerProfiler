@@ -7,10 +7,10 @@ public class PP  {
         ArrayList<ProjectMetrics> pm = new ArrayList<>();
         String main = "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\course_exercises\\Ex1_Arrays";
         String[] projects = {
-                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\course_exercises\\Ex1_Ze",
-                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\course_exercises\\Ex1_Sergio",
                 "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\course_exercises\\Ex1_Enes",
-                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\course_exercises\\Ex1_Gabriel"};
+                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\course_exercises\\Ex1_Gabriel",
+                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\course_exercises\\Ex1_Sergio",
+                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\course_exercises\\Ex1_Ze"};
 
         PPAnalysis baseSolution = new PPAnalysis(main);
         baseSolution.preProcess();
