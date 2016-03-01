@@ -2,6 +2,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import static org.apache.commons.lang3.StringEscapeUtils.escapeHtml4;
 
 public class ProjectsComparator {
 
@@ -21,6 +22,7 @@ public class ProjectsComparator {
         genCFSsT(sb);
         genNSCOsT(sb);
         genVariablesT(sb);
+        genREsT(sb);
         genFooter(sb);
         Files.write(Paths.get("C:\\Users\\Daniel\\Desktop\\test.html"), sb.toString().getBytes());
     }
@@ -96,11 +98,11 @@ public class ProjectsComparator {
             sb.append("<tr>");
             appendTD(sb, es.getProjectName());
 
-            appendTD(sb, Integer.toString(es.getLinesOfCode()));
+            compareIntegerLesser(sb, es.getLinesOfCode(), baseSolution.getLinesOfCode());
             appendTD(sb, String.format("%.2f", es.getPerCode()));
 
             appendTD(sb, Integer.toString(es.getLinesOfComments()));
-            compareFloatGreater(sb, es.getPerComment(), baseSolution.getPerComment());
+            appendTD(sb, String.format("%.2f", es.getPerComment()));
 
             appendTD(sb, Integer.toString(es.getEmptyLines()));
             appendTD(sb, String.format("%.2f", es.getPerEmpty()));
@@ -168,16 +170,37 @@ public class ProjectsComparator {
 
         sb.append("<tr class='active'>");
         appendTD(sb, baseSolution.getProjectName());
-        appendTD(sb, baseSolution.getVariableDeclarations().toString());
+        appendTD(sb, escapeHtml4(baseSolution.getVariableDeclarations().toString()));
         appendTD(sb, Integer.toString(baseSolution.getTotalNumberOfDeclarations()));
         appendTD(sb, Integer.toString(baseSolution.getTotalNumberOfTypes()));
         sb.append("</tr>");
         for (ProjectMetrics es : exampleSolutions) {
             sb.append("<tr>");
             appendTD(sb, es.getProjectName());
-            appendTD(sb, es.getVariableDeclarations().toString());
+            appendTD(sb, escapeHtml4(es.getVariableDeclarations().toString()));
             compareIntegerLesser(sb, es.getTotalNumberOfDeclarations(), baseSolution.getTotalNumberOfDeclarations());
             compareIntegerGreater(sb, es.getTotalNumberOfTypes(), baseSolution.getTotalNumberOfTypes());
+            sb.append("</tr>");
+        }
+        sb.append("</table>");
+    }
+
+    private void genREsT(StringBuilder sb) {
+        sb.append("<table class='table table-hover table-bordered'>");
+        sb.append("<caption>Relevant Expressions Metrics</caption>");
+        sb.append("<tr>");
+        appendTH(sb, "Project");
+        appendTH(sb, "REs");
+        sb.append("</tr>");
+
+        sb.append("<tr class='active'>");
+        appendTD(sb, baseSolution.getProjectName());
+        appendTD(sb, baseSolution.getRE().toString());
+        sb.append("</tr>");
+        for (ProjectMetrics es : exampleSolutions) {
+            sb.append("<tr>");
+            appendTD(sb, es.getProjectName());
+            appendTD(sb, es.getRE().toString());
             sb.append("</tr>");
         }
         sb.append("</table>");

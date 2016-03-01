@@ -73,6 +73,11 @@ public class PPAnalysis {
             nscoExtractor.run();
             pMetrics.addOperatorMetrics(nscoExtractor.getMetrics());
 
+            //Metrics Regarding Use of Relevant Expressions
+            REExtractor reExtractor = new REExtractor(tree);
+            reExtractor.run();
+            pMetrics.addRelevantMetrics(reExtractor.getMetrics());
+
             pMetrics.generateMetrics();
 
         }

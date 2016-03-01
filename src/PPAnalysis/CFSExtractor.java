@@ -57,24 +57,6 @@ public class CFSExtractor extends JavaBaseVisitor {
     }
 
     @Override
-    public Object visitReturnStatement(JavaParser.ReturnStatementContext ctx) {
-        incr(CFS.RETURN);
-        return super.visitReturnStatement(ctx);
-    }
-
-    @Override
-    public Object visitBreakStatement(JavaParser.BreakStatementContext ctx) {
-        incr(CFS.BREAK);
-        return super.visitBreakStatement(ctx);
-    }
-
-    @Override
-    public Object visitContinueStatement(JavaParser.ContinueStatementContext ctx) {
-        incr(CFS.CONTINUE);
-        return super.visitContinueStatement(ctx);
-    }
-
-    @Override
     public Object visitIifStatement(JavaParser.IifStatementContext ctx) {
         incr(CFS.IIF);
         return super.visitIifStatement(ctx);

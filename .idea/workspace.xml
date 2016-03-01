@@ -2,8 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="611a91e3-5913-483c-a016-88b1183d9edc" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/PPAnalysis/RE.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/PPAnalysis/REExtractor.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PP.java" afterPath="$PROJECT_DIR$/src/PP.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PPAnalysis/CFS.java" afterPath="$PROJECT_DIR$/src/PPAnalysis/CFS.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PPAnalysis/CFSExtractor.java" afterPath="$PROJECT_DIR$/src/PPAnalysis/CFSExtractor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PPAnalysis/PPAnalysis.java" afterPath="$PROJECT_DIR$/src/PPAnalysis/PPAnalysis.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PPAnalysis/ProjectMetrics.java" afterPath="$PROJECT_DIR$/src/PPAnalysis/ProjectMetrics.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PPAnalysis/VariableExtractor.java" afterPath="$PROJECT_DIR$/src/PPAnalysis/VariableExtractor.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProjectsComparator.java" afterPath="$PROJECT_DIR$/src/ProjectsComparator.java" />
     </list>
     <ignored path="ProgrammerProfiler.iws" />
@@ -33,7 +40,7 @@
         <entry file="file://$PROJECT_DIR$/src/PP.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="12" column="91" selection-start-line="12" selection-start-column="91" selection-end-line="12" selection-end-column="91" />
+              <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -44,8 +51,8 @@
       <file leaf-file-name="ProjectsComparator.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ProjectsComparator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.58465606">
-              <caret line="176" column="46" selection-start-line="176" selection-start-column="46" selection-end-line="176" selection-end-column="46" />
+            <state vertical-scroll-proportion="0.42216358">
+              <caret line="103" column="68" selection-start-line="103" selection-start-column="68" selection-end-line="103" selection-end-column="68" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#genHeader#0;class#ProjectsComparator#0" expanded="false" />
@@ -61,9 +68,21 @@
         <entry file="file://$PROJECT_DIR$/src/PPAnalysis/PPAnalysis.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="21" column="65" selection-start-line="21" selection-start-column="65" selection-end-line="21" selection-end-column="65" />
+              <caret line="78" column="26" selection-start-line="78" selection-start-column="26" selection-end-line="78" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="REExtractor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/PPAnalysis/REExtractor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+              <folding>
+                <element signature="method#REExtractor#0;class#REExtractor#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -73,16 +92,20 @@
         <entry file="file://$PROJECT_DIR$/src/PPAnalysis/ProjectMetrics.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="60" column="5" selection-start-line="60" selection-start-column="5" selection-end-line="60" selection-end-column="5" />
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#countVariables#0;class#ProjectMetrics#0" expanded="false" />
                 <element signature="method#countOperators#0;class#ProjectMetrics#0" expanded="false" />
+                <element signature="e#2272#2273#0" expanded="true" />
+                <element signature="e#2304#2305#0" expanded="true" />
                 <element signature="method#addCFSMetrics#0;class#ProjectMetrics#0" expanded="false" />
-                <element signature="method#addVariableMetrics#0;class#ProjectMetrics#0" expanded="false" />
                 <element signature="method#addLineMetrics#0;class#ProjectMetrics#0" expanded="false" />
                 <element signature="method#addCounterMetrics#0;class#ProjectMetrics#0" expanded="false" />
                 <element signature="method#addOperatorMetrics#0;class#ProjectMetrics#0" expanded="false" />
+                <element signature="method#addRelevantMetrics#0;class#ProjectMetrics#0" expanded="false" />
+                <element signature="e#5091#5092#0" expanded="true" />
+                <element signature="e#5117#5118#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -114,19 +137,22 @@
         <option value="$PROJECT_DIR$/src/ProjectMetrics.java" />
         <option value="$PROJECT_DIR$/src/PPAnalysis/MetricsExtractor.java" />
         <option value="$PROJECT_DIR$/src/PPAnalysis/Variable.java" />
-        <option value="$PROJECT_DIR$/src/PPAnalysis/VariableExtractor.java" />
-        <option value="$PROJECT_DIR$/src/PPAnalysis/CounterExtractor.java" />
         <option value="$PROJECT_DIR$/src/PPAnalysis/LinesExtractor.java" />
-        <option value="$PROJECT_DIR$/src/PPAnalysis/CFS.java" />
-        <option value="$PROJECT_DIR$/src/PPAnalysis/CFSExtractor.java" />
         <option value="$PROJECT_DIR$/JavaGrammar/Java.g4" />
         <option value="$PROJECT_DIR$/src/PPAnalysis/OperatorExtractor.java" />
         <option value="$PROJECT_DIR$/src/PPAnalysis/Operator.java" />
         <option value="$PROJECT_DIR$/src/PPAnalysis/NSCO.java" />
         <option value="$PROJECT_DIR$/src/PPAnalysis/NSCOExtractor.java" />
-        <option value="$PROJECT_DIR$/src/PPAnalysis/ProjectMetrics.java" />
-        <option value="$PROJECT_DIR$/src/PPAnalysis/PPAnalysis.java" />
         <option value="$PROJECT_DIR$/src/PP.java" />
+        <option value="$PROJECT_DIR$/src/PPAnalysis/CFS.java" />
+        <option value="$PROJECT_DIR$/src/ex.java" />
+        <option value="$PROJECT_DIR$/src/PPAnalysis/VariableExtractor.java" />
+        <option value="$PROJECT_DIR$/src/PPAnalysis/CounterExtractor.java" />
+        <option value="$PROJECT_DIR$/src/PPAnalysis/CFSExtractor.java" />
+        <option value="$PROJECT_DIR$/src/PPAnalysis/RE.java" />
+        <option value="$PROJECT_DIR$/src/PPAnalysis/REExtractor.java" />
+        <option value="$PROJECT_DIR$/src/PPAnalysis/PPAnalysis.java" />
+        <option value="$PROJECT_DIR$/src/PPAnalysis/ProjectMetrics.java" />
         <option value="$PROJECT_DIR$/src/ProjectsComparator.java" />
       </list>
     </option>
@@ -264,6 +290,21 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.PP">
+    <configuration default="false" name="ex" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="ex" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="ProgrammerProfiler" />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
@@ -535,9 +576,15 @@
       <envs />
       <method />
     </configuration>
-    <list size="1">
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Application.PP" />
+      <item index="1" class="java.lang.String" itemvalue="Application.ex" />
     </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="Application.ex" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="SvnConfiguration">
@@ -553,7 +600,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -564,12 +611,12 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33660132" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3213703" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33496732" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31862745" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="ANTLR Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="ANTLR Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24183007" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -596,7 +643,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -605,30 +652,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/ProjectsComparator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="51" selection-start-line="18" selection-start-column="51" selection-end-line="18" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#genHeader#0;class#ProjectsComparator#0" expanded="false" />
-            <element signature="method#genCFSsT#0;class#ProjectsComparator#0" expanded="false" />
-            <element signature="method#genNSCOsT#0;class#ProjectsComparator#0" expanded="false" />
-            <element signature="method#appendTag#0;class#ProjectsComparator#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PPAnalysis/PPAnalysis.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="65" selection-start-line="21" selection-start-column="65" selection-end-line="21" selection-end-column="65" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/PPAnalysis/ProjectMetrics.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -637,11 +660,15 @@
             <element signature="imports" expanded="true" />
             <element signature="method#countVariables#0;class#ProjectMetrics#0" expanded="false" />
             <element signature="method#countOperators#0;class#ProjectMetrics#0" expanded="false" />
+            <element signature="e#2272#2273#0" expanded="true" />
+            <element signature="e#2304#2305#0" expanded="true" />
             <element signature="method#addCFSMetrics#0;class#ProjectMetrics#0" expanded="false" />
-            <element signature="method#addVariableMetrics#0;class#ProjectMetrics#0" expanded="false" />
             <element signature="method#addLineMetrics#0;class#ProjectMetrics#0" expanded="false" />
             <element signature="method#addCounterMetrics#0;class#ProjectMetrics#0" expanded="false" />
             <element signature="method#addOperatorMetrics#0;class#ProjectMetrics#0" expanded="false" />
+            <element signature="method#addRelevantMetrics#0;class#ProjectMetrics#0" expanded="false" />
+            <element signature="e#5091#5092#0" expanded="true" />
+            <element signature="e#5117#5118#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -688,11 +715,15 @@
             <element signature="imports" expanded="true" />
             <element signature="method#countVariables#0;class#ProjectMetrics#0" expanded="false" />
             <element signature="method#countOperators#0;class#ProjectMetrics#0" expanded="false" />
+            <element signature="e#2272#2273#0" expanded="true" />
+            <element signature="e#2304#2305#0" expanded="true" />
             <element signature="method#addCFSMetrics#0;class#ProjectMetrics#0" expanded="false" />
-            <element signature="method#addVariableMetrics#0;class#ProjectMetrics#0" expanded="false" />
             <element signature="method#addLineMetrics#0;class#ProjectMetrics#0" expanded="false" />
             <element signature="method#addCounterMetrics#0;class#ProjectMetrics#0" expanded="false" />
             <element signature="method#addOperatorMetrics#0;class#ProjectMetrics#0" expanded="false" />
+            <element signature="method#addRelevantMetrics#0;class#ProjectMetrics#0" expanded="false" />
+            <element signature="e#5091#5092#0" expanded="true" />
+            <element signature="e#5117#5118#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -739,11 +770,15 @@
             <element signature="imports" expanded="true" />
             <element signature="method#countVariables#0;class#ProjectMetrics#0" expanded="false" />
             <element signature="method#countOperators#0;class#ProjectMetrics#0" expanded="false" />
+            <element signature="e#2272#2273#0" expanded="true" />
+            <element signature="e#2304#2305#0" expanded="true" />
             <element signature="method#addCFSMetrics#0;class#ProjectMetrics#0" expanded="false" />
-            <element signature="method#addVariableMetrics#0;class#ProjectMetrics#0" expanded="false" />
             <element signature="method#addLineMetrics#0;class#ProjectMetrics#0" expanded="false" />
             <element signature="method#addCounterMetrics#0;class#ProjectMetrics#0" expanded="false" />
             <element signature="method#addOperatorMetrics#0;class#ProjectMetrics#0" expanded="false" />
+            <element signature="method#addRelevantMetrics#0;class#ProjectMetrics#0" expanded="false" />
+            <element signature="e#5091#5092#0" expanded="true" />
+            <element signature="e#5117#5118#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -790,11 +825,15 @@
             <element signature="imports" expanded="true" />
             <element signature="method#countVariables#0;class#ProjectMetrics#0" expanded="false" />
             <element signature="method#countOperators#0;class#ProjectMetrics#0" expanded="false" />
+            <element signature="e#2272#2273#0" expanded="true" />
+            <element signature="e#2304#2305#0" expanded="true" />
             <element signature="method#addCFSMetrics#0;class#ProjectMetrics#0" expanded="false" />
-            <element signature="method#addVariableMetrics#0;class#ProjectMetrics#0" expanded="false" />
             <element signature="method#addLineMetrics#0;class#ProjectMetrics#0" expanded="false" />
             <element signature="method#addCounterMetrics#0;class#ProjectMetrics#0" expanded="false" />
             <element signature="method#addOperatorMetrics#0;class#ProjectMetrics#0" expanded="false" />
+            <element signature="method#addRelevantMetrics#0;class#ProjectMetrics#0" expanded="false" />
+            <element signature="e#5091#5092#0" expanded="true" />
+            <element signature="e#5117#5118#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -824,11 +863,15 @@
             <element signature="imports" expanded="true" />
             <element signature="method#countVariables#0;class#ProjectMetrics#0" expanded="false" />
             <element signature="method#countOperators#0;class#ProjectMetrics#0" expanded="false" />
+            <element signature="e#2272#2273#0" expanded="true" />
+            <element signature="e#2304#2305#0" expanded="true" />
             <element signature="method#addCFSMetrics#0;class#ProjectMetrics#0" expanded="false" />
-            <element signature="method#addVariableMetrics#0;class#ProjectMetrics#0" expanded="false" />
             <element signature="method#addLineMetrics#0;class#ProjectMetrics#0" expanded="false" />
             <element signature="method#addCounterMetrics#0;class#ProjectMetrics#0" expanded="false" />
             <element signature="method#addOperatorMetrics#0;class#ProjectMetrics#0" expanded="false" />
+            <element signature="method#addRelevantMetrics#0;class#ProjectMetrics#0" expanded="false" />
+            <element signature="e#5091#5092#0" expanded="true" />
+            <element signature="e#5117#5118#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -885,11 +928,15 @@
             <element signature="imports" expanded="true" />
             <element signature="method#countVariables#0;class#ProjectMetrics#0" expanded="false" />
             <element signature="method#countOperators#0;class#ProjectMetrics#0" expanded="false" />
+            <element signature="e#2272#2273#0" expanded="true" />
+            <element signature="e#2304#2305#0" expanded="true" />
             <element signature="method#addCFSMetrics#0;class#ProjectMetrics#0" expanded="false" />
-            <element signature="method#addVariableMetrics#0;class#ProjectMetrics#0" expanded="false" />
             <element signature="method#addLineMetrics#0;class#ProjectMetrics#0" expanded="false" />
             <element signature="method#addCounterMetrics#0;class#ProjectMetrics#0" expanded="false" />
             <element signature="method#addOperatorMetrics#0;class#ProjectMetrics#0" expanded="false" />
+            <element signature="method#addRelevantMetrics#0;class#ProjectMetrics#0" expanded="false" />
+            <element signature="e#5091#5092#0" expanded="true" />
+            <element signature="e#5117#5118#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -922,11 +969,15 @@
             <element signature="imports" expanded="true" />
             <element signature="method#countVariables#0;class#ProjectMetrics#0" expanded="false" />
             <element signature="method#countOperators#0;class#ProjectMetrics#0" expanded="false" />
+            <element signature="e#2272#2273#0" expanded="true" />
+            <element signature="e#2304#2305#0" expanded="true" />
             <element signature="method#addCFSMetrics#0;class#ProjectMetrics#0" expanded="false" />
-            <element signature="method#addVariableMetrics#0;class#ProjectMetrics#0" expanded="false" />
             <element signature="method#addLineMetrics#0;class#ProjectMetrics#0" expanded="false" />
             <element signature="method#addCounterMetrics#0;class#ProjectMetrics#0" expanded="false" />
             <element signature="method#addOperatorMetrics#0;class#ProjectMetrics#0" expanded="false" />
+            <element signature="method#addRelevantMetrics#0;class#ProjectMetrics#0" expanded="false" />
+            <element signature="e#5091#5092#0" expanded="true" />
+            <element signature="e#5117#5118#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -972,13 +1023,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/PPAnalysis/VariableExtractor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="20" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/uiDesigner.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -993,39 +1037,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/PPAnalysis/CounterExtractor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PPAnalysis/NSCO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="24" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JavaGrammar/Java.g4">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.05610561">
-          <caret line="574" column="31" selection-start-line="574" selection-start-column="31" selection-end-line="574" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PPAnalysis/NSCOExtractor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.05610561">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1033,7 +1048,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1065,27 +1079,82 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/PPAnalysis/CFSExtractor.java">
+    <entry file="file://$PROJECT_DIR$/JavaGrammar/Java.g4">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26397514">
-          <caret line="7" column="34" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="574" column="31" selection-start-line="574" selection-start-column="31" selection-end-line="574" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/PPAnalysis/ProjectMetrics.java">
+    <entry file="file://$PROJECT_DIR$/src/PPAnalysis/CounterExtractor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="60" column="5" selection-start-line="60" selection-start-column="5" selection-end-line="60" selection-end-column="5" />
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PPAnalysis/CFS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PPAnalysis/CFSExtractor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="64" column="4" selection-start-line="64" selection-start-column="4" selection-end-line="70" selection-end-column="5" />
+          <folding>
+            <element signature="e#417#418#0" expanded="true" />
+            <element signature="e#449#450#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PPAnalysis/RE.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="21" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PPAnalysis/NSCOExtractor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35958904">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PPAnalysis/NSCO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PPAnalysis/VariableExtractor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.09760274">
+          <caret line="34" column="81" selection-start-line="34" selection-start-column="81" selection-end-line="34" selection-end-column="81" />
+          <folding>
+            <element signature="e#529#530#0" expanded="true" />
+            <element signature="e#561#562#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PP.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#countVariables#0;class#ProjectMetrics#0" expanded="false" />
-            <element signature="method#countOperators#0;class#ProjectMetrics#0" expanded="false" />
-            <element signature="method#addCFSMetrics#0;class#ProjectMetrics#0" expanded="false" />
-            <element signature="method#addVariableMetrics#0;class#ProjectMetrics#0" expanded="false" />
-            <element signature="method#addLineMetrics#0;class#ProjectMetrics#0" expanded="false" />
-            <element signature="method#addCounterMetrics#0;class#ProjectMetrics#0" expanded="false" />
-            <element signature="method#addOperatorMetrics#0;class#ProjectMetrics#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1093,35 +1162,48 @@
     <entry file="file://$PROJECT_DIR$/src/PPAnalysis/PPAnalysis.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="65" selection-start-line="21" selection-start-column="65" selection-end-line="21" selection-end-column="65" />
+          <caret line="78" column="26" selection-start-line="78" selection-start-column="26" selection-end-line="78" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/PPAnalysis/CFS.java">
+    <entry file="file://$PROJECT_DIR$/src/PPAnalysis/REExtractor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="12" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
-          <folding />
+          <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+          <folding>
+            <element signature="method#REExtractor#0;class#REExtractor#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/PP.java">
+    <entry file="file://$PROJECT_DIR$/src/PPAnalysis/ProjectMetrics.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="91" selection-start-line="12" selection-start-column="91" selection-end-line="12" selection-end-column="91" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#countVariables#0;class#ProjectMetrics#0" expanded="false" />
+            <element signature="method#countOperators#0;class#ProjectMetrics#0" expanded="false" />
+            <element signature="e#2272#2273#0" expanded="true" />
+            <element signature="e#2304#2305#0" expanded="true" />
+            <element signature="method#addCFSMetrics#0;class#ProjectMetrics#0" expanded="false" />
+            <element signature="method#addLineMetrics#0;class#ProjectMetrics#0" expanded="false" />
+            <element signature="method#addCounterMetrics#0;class#ProjectMetrics#0" expanded="false" />
+            <element signature="method#addOperatorMetrics#0;class#ProjectMetrics#0" expanded="false" />
+            <element signature="method#addRelevantMetrics#0;class#ProjectMetrics#0" expanded="false" />
+            <element signature="e#5091#5092#0" expanded="true" />
+            <element signature="e#5117#5118#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ProjectsComparator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.58465606">
-          <caret line="176" column="46" selection-start-line="176" selection-start-column="46" selection-end-line="176" selection-end-column="46" />
+        <state vertical-scroll-proportion="0.42216358">
+          <caret line="103" column="68" selection-start-line="103" selection-start-column="68" selection-end-line="103" selection-end-column="68" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#genHeader#0;class#ProjectsComparator#0" expanded="false" />

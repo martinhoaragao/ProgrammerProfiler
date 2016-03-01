@@ -27,12 +27,15 @@ public class ProjectMetrics {
     private int numberOfDeclarations;
     private int numberOfTypes;
 
+    private Map<RE,Integer> res;
+
     public ProjectMetrics (String projectName, int numberOfFiles) {
         this.projectName = projectName;
         this.numberOfFiles = numberOfFiles;
         cfss = new HashMap<>();
         nscos = new HashMap<>();
         variables = new HashMap<>();
+        res = new HashMap<>();
     }
 
     public void generateMetrics () {
@@ -179,5 +182,21 @@ public class ProjectMetrics {
                 nscos.put(op, newOP.get(op));
             }
         }
+    }
+
+    public void addRelevantMetrics(Map<RE, Integer> newRE) {
+        for (Object o : newRE.entrySet()) {
+            Map.Entry pair = (Map.Entry) o;
+            RE op = (RE) pair.getKey();
+            if (res.containsKey(op)) {
+                res.put(op, res.get(op) + newRE.get(op));
+            } else {
+                res.put(op, newRE.get(op));
+            }
+        }
+    }
+
+    public Map<RE,Integer> getRE() {
+        return res;
     }
 }

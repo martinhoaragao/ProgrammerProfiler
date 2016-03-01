@@ -20,19 +20,6 @@ public class VariableExtractor extends JavaBaseVisitor {
         this.visit(tree);
     }
 
-    public Map<String, Integer> getMetrics () { //Currently there's no distinction between local and field variables
-        for (Object o : fVariables.entrySet()) {
-            Map.Entry pair = (Map.Entry) o;
-            String cons = (String) pair.getKey();
-            if (lVariables.containsKey(cons)) {
-                lVariables.put(cons, lVariables.get(cons) + fVariables.get(cons));
-            } else {
-                lVariables.put(cons, fVariables.get(cons));
-            }
-        }
-        return lVariables;
-    }
-
     @Override
     public Object visitLocalVariableDeclaration(JavaParser.LocalVariableDeclarationContext ctx) {
         int count = ctx.getChild(1).getChildCount();
@@ -79,5 +66,18 @@ public class VariableExtractor extends JavaBaseVisitor {
                 }
             }
         }
+    }
+
+    public Map<String, Integer> getMetrics () { //Currently there's no distinction between local and field variables
+        for (Object o : fVariables.entrySet()) {
+            Map.Entry pair = (Map.Entry) o;
+            String cons = (String) pair.getKey();
+            if (lVariables.containsKey(cons)) {
+                lVariables.put(cons, lVariables.get(cons) + fVariables.get(cons));
+            } else {
+                lVariables.put(cons, fVariables.get(cons));
+            }
+        }
+        return lVariables;
     }
 }
