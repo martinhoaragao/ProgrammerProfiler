@@ -1,17 +1,27 @@
+import com.opencsv.CSVReader;
+
+import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+
 import static org.apache.commons.lang3.StringEscapeUtils.escapeHtml4;
 
 public class ProjectsComparator {
 
     private ProjectMetrics baseSolution;
     private ArrayList<ProjectMetrics> exampleSolutions;
+    private HashSet<String> violationsDetected;
+    private HashMap<String, PMDRule> pmdrules;
 
-    public ProjectsComparator(ProjectMetrics baseSolution, ArrayList<ProjectMetrics> exampleSolutions) {
+    public ProjectsComparator(ProjectMetrics baseSolution, ArrayList<ProjectMetrics> exampleSolutions,
+                              HashSet<String> violationsDetected) {
         this.baseSolution = baseSolution;
         this.exampleSolutions = exampleSolutions;
+        this.violationsDetected = violationsDetected;
     }
 
     public void generateHTML() throws IOException {
@@ -23,8 +33,10 @@ public class ProjectsComparator {
         genNSCOsT(sb);
         genVariablesT(sb);
         genREsT(sb);
+        genPMDVsT(sb);
+        genPMDRsT(sb);
         genFooter(sb);
-        Files.write(Paths.get("C:\\Users\\Daniel\\Desktop\\test.html"), sb.toString().getBytes());
+        Files.write(Paths.get("C:\\Users\\Daniel\\Desktop\\result.html"), sb.toString().getBytes());
     }
 
     private void genHeader(StringBuilder sb) {
@@ -206,6 +218,64 @@ public class ProjectsComparator {
         sb.append("</table>");
     }
 
+    private void genPMDVsT(StringBuilder sb) {
+        sb.append("<table class='table table-hover table-bordered'>");
+        sb.append("<caption>PMD Violations</caption>");
+        sb.append("<tr>");
+        appendTH(sb, "Project");
+        for (String v : violationsDetected) {
+            appendTH(sb, v);
+        }
+        sb.append("</tr>");
+
+        sb.append("<tr class='active'>");
+        appendTD(sb, baseSolution.getProjectName());
+        for (String v : violationsDetected) {
+            if (baseSolution.getPMDViolations().containsKey(v))
+                appendTD(sb, baseSolution.getPMDViolations().get(v).toString());
+            else
+                appendTD(sb, "0");
+        }
+        sb.append("</tr>");
+        for (ProjectMetrics es : exampleSolutions) {
+            sb.append("<tr>");
+            appendTD(sb, es.getProjectName());
+            for (String v : violationsDetected) {
+                if (es.getPMDViolations().containsKey(v))
+                    appendTD(sb, es.getPMDViolations().get(v).toString());
+                else
+                    appendTD(sb, "0");
+            }
+            sb.append("</tr>");
+        }
+
+        sb.append("</table>");
+    }
+
+    private void genPMDRsT(StringBuilder sb) {
+        sb.append("<table class='table table-hover table-bordered'>");
+        sb.append("<caption>PMD Rules</caption>");
+        sb.append("<tr>");
+        appendTH(sb, "Rule");
+        appendTH(sb, "Ruleset");
+        appendTH(sb, "Description");
+        appendTH(sb, "Priority");
+        sb.append("</tr>");
+
+        sb.append("<tr class='active'>");
+        for (String v : violationsDetected) {
+            PMDRule pmdr = pmdrules.get(v);
+            sb.append("<tr>");
+            appendTD(sb, pmdr.getRule());
+            appendTD(sb, pmdr.getRuleset());
+            appendTD(sb, pmdr.getDescription());
+            appendTD(sb, String.valueOf(pmdr.getPriority()));
+            sb.append("</tr>");
+        }
+
+        sb.append("</table>");
+    }
+
     private void genFooter(StringBuilder sb) {
         sb.append("</table></body></html>");
     }
@@ -270,6 +340,16 @@ public class ProjectsComparator {
         sb.append('<').append(tag).append('>');
         sb.append(contents);
         sb.append("</").append(tag).append('>');
+    }
+
+    public void loadRules() throws IOException {
+        pmdrules = new HashMap<>();
+        CSVReader reader = new CSVReader(new FileReader("C:\\Users\\Daniel\\IdeaProjects\\ProgrammerProfiler\\AuxFiles\\pmd_rules.csv"));
+        String[] nextLine;
+        reader.readNext();
+        while ((nextLine = reader.readNext()) != null) {
+            pmdrules.put(nextLine[1], new PMDRule(nextLine[0], nextLine[1], nextLine[2], Integer.parseInt(nextLine[3])));
+        }
     }
 
 }

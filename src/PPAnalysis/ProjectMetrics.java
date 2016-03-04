@@ -29,6 +29,8 @@ public class ProjectMetrics {
 
     private Map<RE,Integer> res;
 
+    private Map<String, Integer> PMDViolations;
+
     public ProjectMetrics (String projectName, int numberOfFiles) {
         this.projectName = projectName;
         this.numberOfFiles = numberOfFiles;
@@ -198,5 +200,13 @@ public class ProjectMetrics {
 
     public Map<RE,Integer> getRE() {
         return res;
+    }
+
+    public void setPMDViolations(Map<String, Integer> PMDViolations) {
+        this.PMDViolations = PMDViolations;
+    }
+
+    public Map<String, Integer> getPMDViolations() {
+        return PMDViolations;
     }
 }

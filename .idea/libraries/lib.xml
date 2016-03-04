@@ -4,8 +4,11 @@
       <root url="jar://$PROJECT_DIR$/lib/antlr-4.5.2-complete.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/commons-io-2.4.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/commons-lang3-3.4.jar!/" />
+      <root url="file://$PROJECT_DIR$/lib/pmd-5.4.1" />
+      <root url="jar://$PROJECT_DIR$/lib/opencsv-3.7.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/lib/pmd-5.4.1" recursive="false" />
   </library>
 </component>

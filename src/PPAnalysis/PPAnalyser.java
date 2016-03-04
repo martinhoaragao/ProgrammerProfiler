@@ -6,14 +6,14 @@ import org.antlr.v4.runtime.tree.ParseTree;
 import java.io.*;
 import java.util.LinkedList;
 
-public class PPAnalysis {
+public class PPAnalyser {
 
     private String dirPath;
     private LinkedList<File> files;
     private LinkedList<ParseTree> pTrees;
     private ProjectMetrics pMetrics;
 
-    public PPAnalysis(String dirPath) {
+    public PPAnalyser(String dirPath) {
         this.dirPath = dirPath;
     }
 
