@@ -92,6 +92,8 @@ public class LinesExtractor {
                     number_lines++;
                 }
             }
+
+            in.close();
         }
 
         linesOfCode = number_lines;
