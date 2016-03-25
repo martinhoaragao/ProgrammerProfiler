@@ -85,6 +85,10 @@ public class ProjectMetrics {
         return numberOfStatements;
     }
 
+    public int getNumberOfStatementsWithoutRES () {
+        return numberOfStatements - res.get(RE.SYSOUT);
+    }
+
     public Map<CFS,Integer> getCFS() {
         return cfss;
     }
