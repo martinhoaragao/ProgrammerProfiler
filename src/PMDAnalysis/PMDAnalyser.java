@@ -20,7 +20,8 @@ public class PMDAnalyser {
 
     public void analyse () {
         String output_format = "csv";
-        String rulesets = "java-unusedcode,java-optimizations,java-basic,java-design,java-codesize,java-controversial,java-braces";
+        String rulesets = "java-unusedcode,java-optimizations,java-basic,java-design,java-codesize,java-controversial," +
+                "java-braces,java-comments,java-empty,java-unnecessary";
         output_file = dirPath + "\\out." + output_format;
         String[] arguments = { "-d", dirPath, "-f", output_format, "-R", rulesets, "-r", output_file };
 

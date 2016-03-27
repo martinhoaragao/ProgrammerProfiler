@@ -7,6 +7,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 
 import static org.apache.commons.lang3.StringEscapeUtils.escapeHtml4;
 
@@ -34,6 +35,7 @@ public class ProjectsComparator {
         genVariablesT(sb);
         genREsT(sb);
         genPMDVsT(sb);
+        genPMDST(sb);
         genPMDRsT(sb);
         genFooter(sb);
         Files.write(Paths.get("AuxFiles/output.html"), sb.toString().getBytes());
@@ -127,7 +129,7 @@ public class ProjectsComparator {
 
     private void genCFSsT(StringBuilder sb) {
         sb.append("<table class='table table-hover table-bordered'>");
-        sb.append("<caption>Control Flow Statements Metrics (Skill)</caption>");
+        sb.append("<caption>Control Flow Statements Metrics (Both)</caption>");
         sb.append("<tr>");
         appendTH(sb, "Project");
         appendTH(sb, "CFSs");
@@ -224,7 +226,7 @@ public class ProjectsComparator {
         sb.append("<tr>");
         appendTH(sb, "Project");
         for (String v : violationsDetected) {
-            appendTH(sb, v);
+            appendTH(sb, v + " (" + pmdrules.get(v).getGroup() + ")");
         }
         sb.append("</tr>");
 
@@ -252,6 +254,46 @@ public class ProjectsComparator {
         sb.append("</table>");
     }
 
+    private void genPMDST(StringBuilder sb) {
+        sb.append("<table class='table table-hover table-bordered'>");
+        sb.append("<caption>PMD Violations Score</caption>");
+        sb.append("<tr>");
+        appendTH(sb, "Project");
+        appendTH(sb, "Skill");
+        appendTH(sb, "Readability");
+        sb.append("</tr>");
+
+        sb.append("<tr class='active'>");
+        appendTD(sb, baseSolution.getProjectName());
+        Integer baseSkill = calculateScore(baseSolution, 'R'); //Skill (Not R)
+        appendTD(sb, baseSkill.toString());
+        Integer baseReadability = calculateScore(baseSolution, 'S'); //Readability (Not S)
+        appendTD(sb, baseReadability.toString());
+        sb.append("</tr>");
+        for (ProjectMetrics es : exampleSolutions) {
+            sb.append("<tr>");
+            appendTD(sb, es.getProjectName());
+            compareIntegerLesser(sb, calculateScore(es, 'R'), baseSkill); //Skill (Not R)
+            compareIntegerLesser(sb, calculateScore(es, 'S'), baseReadability); //Readability (Not S)
+            sb.append("</tr>");
+        }
+
+        sb.append("</table>");
+    }
+
+    private Integer calculateScore(ProjectMetrics baseSolution, char not) {
+        Integer skill = 0;
+        for (Map.Entry<String, Integer> vio : baseSolution.getPMDViolations().entrySet()) {
+            PMDRule rule = pmdrules.get(vio.getKey());
+            if (rule.getGroup() != not) {
+                int priority = rule.getPriority();
+                int occurrences = vio.getValue();
+                skill += priority * occurrences;
+            }
+        }
+        return skill;
+    }
+
     private void genPMDRsT(StringBuilder sb) {
         sb.append("<table class='table table-hover table-bordered'>");
         sb.append("<caption>PMD Rules</caption>");
@@ -266,7 +308,7 @@ public class ProjectsComparator {
         for (String v : violationsDetected) {
             PMDRule pmdr = pmdrules.get(v);
             sb.append("<tr>");
-            appendTD(sb, pmdr.getRule());
+            appendTD(sb, pmdr.getRule() + " (" + pmdr.getGroup() + ")");
             appendTD(sb, pmdr.getRuleset());
             appendTD(sb, pmdr.getDescription());
             appendTD(sb, String.valueOf(pmdr.getPriority()));
@@ -304,7 +346,7 @@ public class ProjectsComparator {
         if (es < base) {
             appendTDGreen(sb, Integer.toString(es) + " (" + Integer.toString(es - base) + ")");
         } else if (es > base) {
-            appendTDRed(sb, Integer.toString(es) + " (" + Integer.toString(base - es) + ")");
+            appendTDRed(sb, Integer.toString(es) + " (+" + Integer.toString(es - base) + ")");
         } else {
             appendTD(sb, Integer.toString(es));
         }
@@ -348,7 +390,7 @@ public class ProjectsComparator {
         String[] nextLine;
         reader.readNext();
         while ((nextLine = reader.readNext()) != null) {
-            pmdrules.put(nextLine[1], new PMDRule(nextLine[0], nextLine[1], nextLine[2], Integer.parseInt(nextLine[3])));
+            pmdrules.put(nextLine[1], new PMDRule(nextLine[0], nextLine[1], nextLine[2], Integer.parseInt(nextLine[3]), nextLine[4].charAt(0)));
         }
     }
 

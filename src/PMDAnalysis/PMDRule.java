@@ -2,13 +2,15 @@
 public class PMDRule {
 
     private String rule, ruleset, description;
+    private char group;
     private int priority;
 
-    public PMDRule(String ruleset, String rule, String description, int priority) {
+    public PMDRule(String ruleset, String rule, String description, int priority, char group) {
         this.ruleset = ruleset;
         this.description = description;
         this.priority = priority;
         this.rule = rule;
+        this.group = group;
     }
 
     public String getDescription() {
@@ -26,4 +28,6 @@ public class PMDRule {
     public String getRuleset() {
         return ruleset;
     }
+
+    public char getGroup() {return group;}
 }
