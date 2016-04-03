@@ -133,16 +133,25 @@ public class ProjectsComparator {
         sb.append("<tr>");
         appendTH(sb, "Project");
         appendTH(sb, "CFSs");
+        appendTH(sb, "NSC CFSs");
+        appendTH(sb, "Variety");
+        appendTH(sb, "Total");
         sb.append("</tr>");
 
         sb.append("<tr class='active'>");
         appendTD(sb, baseSolution.getProjectName());
         appendTD(sb, baseSolution.getCFS().toString());
+        appendTD(sb, Integer.toString(baseSolution.getNumberOfNSCCFS()));
+        appendTD(sb, Integer.toString(baseSolution.getCFS().size()));
+        appendTD(sb, Integer.toString(baseSolution.getTotalNumberOfCFS()));
         sb.append("</tr>");
         for (ProjectMetrics es : exampleSolutions) {
             sb.append("<tr>");
             appendTD(sb, es.getProjectName());
             appendTD(sb, es.getCFS().toString());
+            appendTD(sb, Integer.toString(es.getNumberOfNSCCFS()));
+            appendTD(sb, Integer.toString(es.getCFS().size()));
+            appendTD(sb, Integer.toString(es.getTotalNumberOfCFS()));
             sb.append("</tr>");
         }
         sb.append("</table>");

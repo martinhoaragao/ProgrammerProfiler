@@ -19,6 +19,7 @@ public class ProjectMetrics {
     private int totalLines;
 
     private Map<CFS,Integer> cfss;
+    private int numberOfCFS;
 
     private Map<NSCO,Integer> nscos;
     private int numberOfNSCO;
@@ -45,6 +46,7 @@ public class ProjectMetrics {
         perComment = ((float)linesOfComments / totalLines) * 100;
         perEmpty = ((float)emptyLines / totalLines) * 100;
         numberOfNSCO = countOperators();
+        numberOfCFS = countCFS();
         numberOfTypes = variables.size();
         numberOfDeclarations = countVariables();
     }
@@ -60,6 +62,14 @@ public class ProjectMetrics {
     private int countOperators() {
         int aux = 0;
         for (int i: nscos.values()) {
+            aux = aux + i;
+        }
+        return aux;
+    }
+
+    private int countCFS() {
+        int aux = 0;
+        for (int i: cfss.values()) {
             aux = aux + i;
         }
         return aux;
@@ -91,6 +101,17 @@ public class ProjectMetrics {
 
     public Map<CFS,Integer> getCFS() {
         return cfss;
+    }
+
+    public int getNumberOfNSCCFS () {
+        int aux = 0;
+        if (cfss.containsKey(CFS.DOWHILE))
+            aux += cfss.get(CFS.DOWHILE);
+        if (cfss.containsKey(CFS.EFOR))
+            aux += cfss.get(CFS.EFOR);
+        if (cfss.containsKey(CFS.IIF))
+            aux += cfss.get(CFS.IIF);
+        return aux;
     }
 
     public Map<NSCO,Integer> getNSCO() {
@@ -139,6 +160,10 @@ public class ProjectMetrics {
 
     public int getTotalNumberOfNSCO() {
         return this.numberOfNSCO;
+    }
+
+    public int getTotalNumberOfCFS() {
+        return this.numberOfCFS;
     }
 
     public void addCFSMetrics(Map<CFS, Integer> newCFS) {

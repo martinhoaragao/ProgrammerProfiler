@@ -35,8 +35,10 @@ public class PMDAnalyser {
         String[] nextLine;
         reader.readNext();
         while ((nextLine = reader.readNext()) != null) {
-            incr(nextLine[7]);
-            violationsDetected.add(nextLine[7]);
+            if (!nextLine[7].equals("DataflowAnomalyAnalysis")) {
+                incr(nextLine[7]);
+                violationsDetected.add(nextLine[7]);
+            }
         }
     }
 

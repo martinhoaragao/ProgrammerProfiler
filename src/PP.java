@@ -7,10 +7,12 @@ public class PP  {
 
         ArrayList<ProjectMetrics> pm = new ArrayList<>();
         HashSet<String> violationsDetected = new HashSet<>();
-        String main = "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\S1_Cadeia\\Prof";
+        String main = "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\P1_Numeros\\Prof";
         String[] projects = {
-                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\S1_Cadeia\\Daniel",
-                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\S1_Cadeia\\Vitor"
+                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\P1_Numeros\\Daniel",
+                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\P1_Numeros\\Gabriel",
+                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\P1_Numeros\\Vitor",
+                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\P1_Numeros\\Ze"
         };
 
         PPAnalyser ppaBS = new PPAnalyser(main);
