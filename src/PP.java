@@ -1,4 +1,6 @@
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.HashSet;
 
@@ -7,13 +9,28 @@ public class PP  {
 
         ArrayList<ProjectMetrics> pm = new ArrayList<>();
         HashSet<String> violationsDetected = new HashSet<>();
-        String main = "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\P1_Numeros\\Prof";
+        String main = "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\ex_idades\\Professor";
         String[] projects = {
-                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\P1_Numeros\\Daniel",
-                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\P1_Numeros\\Gabriel",
-                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\P1_Numeros\\Vitor",
-                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\P1_Numeros\\Ze"
+                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\ex_idades\\DanielNovais",
+                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\ex_idades\\ZePereira",
+                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\ex_idades\\JoaoCruz",
+                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\ex_idades\\BrunoRebelo",
+                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\ex_idades\\EduardoPessoa"
         };
+        String problemDescpt = "P2) Escreva um programa Java que dado um numero M e um numero N, inteiros positivos, ler N idades mostrando todas as idades maiores que M. No final deve mostrar a média (numero real) das idades.\n" +
+                "Exemplo:\n" +
+                "Dados:\n" +
+                "20 \n" +
+                "5 \n" +
+                "15 \n" +
+                "20 \n" +
+                "21 \n" +
+                "40 \n" +
+                "5\n" +
+                "Resultado:  \n" +
+                "21\n" +
+                "40\n" +
+                "20.2";
 
         PPAnalyser ppaBS = new PPAnalyser(main);
         ppaBS.preProcess();
@@ -46,9 +63,10 @@ public class PP  {
             violationsDetected.addAll(pmdaES.getViolationsDetected());
         }
 
-        ProjectsComparator pc = new ProjectsComparator(bS, pm, violationsDetected);
+        ProjectsComparison pc = new ProjectsComparison(bS, pm, violationsDetected, problemDescpt);
         pc.loadRules();
         pc.generateHTML();
+        pc.saveComparison("save-name");
 
     }
 

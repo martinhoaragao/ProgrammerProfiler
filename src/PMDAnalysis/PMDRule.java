@@ -1,5 +1,6 @@
+import java.io.Serializable;
 
-public class PMDRule {
+public class PMDRule implements Serializable {
 
     private String rule, ruleset, description;
     private char group;

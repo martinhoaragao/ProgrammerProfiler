@@ -1,7 +1,6 @@
 import com.opencsv.CSVReader;
 
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -11,18 +10,28 @@ import java.util.Map;
 
 import static org.apache.commons.lang3.StringEscapeUtils.escapeHtml4;
 
-public class ProjectsComparator {
+public class ProjectsComparison implements Serializable {
 
     private ProjectMetrics baseSolution;
     private ArrayList<ProjectMetrics> exampleSolutions;
     private HashSet<String> violationsDetected;
+    private String problemDescpt;
     private HashMap<String, PMDRule> pmdrules;
 
-    public ProjectsComparator(ProjectMetrics baseSolution, ArrayList<ProjectMetrics> exampleSolutions,
+    public ProjectsComparison(ProjectMetrics baseSolution, ArrayList<ProjectMetrics> exampleSolutions,
+                              HashSet<String> violationsDetected, String problemDescpt) {
+        this.baseSolution = baseSolution;
+        this.exampleSolutions = exampleSolutions;
+        this.violationsDetected = violationsDetected;
+        this.problemDescpt = problemDescpt;
+    }
+
+    public ProjectsComparison(ProjectMetrics baseSolution, ArrayList<ProjectMetrics> exampleSolutions,
                               HashSet<String> violationsDetected) {
         this.baseSolution = baseSolution;
         this.exampleSolutions = exampleSolutions;
         this.violationsDetected = violationsDetected;
+        problemDescpt = "";
     }
 
     public void generateHTML() throws IOException {
@@ -44,6 +53,7 @@ public class ProjectsComparator {
     private void genHeader(StringBuilder sb) {
         sb.append("<html>");
         sb.append("<head>");
+        sb.append("<meta charset='UTF-8'>");
         sb.append("<link rel='stylesheet' " +
                 "href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css' " +
                 "integrity='sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7' " +
@@ -52,6 +62,7 @@ public class ProjectsComparator {
         sb.append("</head>");
         sb.append("<body>");
         sb.append("<h1 style='text-align:center'>PP Analysis Comparator</h1>");
+        sb.append("<p>" + problemDescpt + "</p>");
     }
 
     private void genCounterT(StringBuilder sb) {
@@ -400,6 +411,20 @@ public class ProjectsComparator {
         reader.readNext();
         while ((nextLine = reader.readNext()) != null) {
             pmdrules.put(nextLine[1], new PMDRule(nextLine[0], nextLine[1], nextLine[2], Integer.parseInt(nextLine[3]), nextLine[4].charAt(0)));
+        }
+    }
+
+    void saveComparison(String savename) {
+        try {
+            FileOutputStream fileOut =
+                    new FileOutputStream("AuxFiles/" + savename + ".ser");
+            ObjectOutputStream out = new ObjectOutputStream(fileOut);
+            out.writeObject(this);
+            out.close();
+            fileOut.close();
+            System.out.printf("Serialized data is saved in AuxFiles/" + savename + ".ser");
+        }catch(IOException i) {
+            i.printStackTrace();
         }
     }
 

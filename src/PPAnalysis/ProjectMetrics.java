@@ -1,7 +1,8 @@
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ProjectMetrics {
+public class ProjectMetrics implements Serializable{
 
     private String projectName;
 
