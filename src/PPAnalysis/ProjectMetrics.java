@@ -97,7 +97,15 @@ public class ProjectMetrics implements Serializable{
     }
 
     public int getNumberOfStatementsWithoutRES () {
-        return numberOfStatements - res.get(RE.SYSOUT);
+        int sysout, syserr = sysout = 0;
+        if (res.containsKey(RE.SYSOUT)) {
+            sysout = res.get(RE.SYSOUT);
+        }
+        if (res.containsKey(RE.SYSERR)) {
+            syserr = res.get(RE.SYSERR);
+        }
+        int aux = sysout + syserr;
+        return numberOfStatements - aux;
     }
 
     public Map<CFS,Integer> getCFS() {

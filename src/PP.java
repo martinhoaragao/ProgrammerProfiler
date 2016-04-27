@@ -9,28 +9,16 @@ public class PP  {
 
         ArrayList<ProjectMetrics> pm = new ArrayList<>();
         HashSet<String> violationsDetected = new HashSet<>();
-        String main = "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\ex_idades\\Professor";
+        String main = "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\S1_Cadeia\\Prof";
         String[] projects = {
-                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\ex_idades\\DanielNovais",
-                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\ex_idades\\ZePereira",
-                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\ex_idades\\JoaoCruz",
-                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\ex_idades\\BrunoRebelo",
-                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\ex_idades\\EduardoPessoa"
+                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\S1_Cadeia\\Ana",
+                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\S1_Cadeia\\Daniel",
+                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\S1_Cadeia\\Vitor"
         };
-        String problemDescpt = "P2) Escreva um programa Java que dado um numero M e um numero N, inteiros positivos, ler N idades mostrando todas as idades maiores que M. No final deve mostrar a média (numero real) das idades.\n" +
-                "Exemplo:\n" +
-                "Dados:\n" +
-                "20 \n" +
-                "5 \n" +
-                "15 \n" +
-                "20 \n" +
-                "21 \n" +
-                "40 \n" +
-                "5\n" +
-                "Resultado:  \n" +
-                "21\n" +
-                "40\n" +
-                "20.2";
+        String directory = "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\S1_Cadeia";
+        String problemDescpt = "S1) Escreva um programa Java que determine quantas vezes uma sub-cadeia de caracteres (" +
+                "fornecida pelo utilizador) aparece no interior de uma outra cadeia (também fornecida inicialmente pelo utilizador). \n" +
+                "Considere que a cadeia ‘BABABABA’ contém tres subcadeias ‘BAB’ (‘BABABABA’).";
 
         PPAnalyser ppaBS = new PPAnalyser(main);
         ppaBS.preProcess();
@@ -65,8 +53,8 @@ public class PP  {
 
         ProjectsComparison pc = new ProjectsComparison(bS, pm, violationsDetected, problemDescpt);
         pc.loadRules();
-        pc.generateHTML();
-        pc.saveComparison("save-name");
+        pc.generateHTML(directory);
+        //pc.saveComparison("save-name");
 
     }
 

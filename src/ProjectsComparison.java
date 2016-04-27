@@ -34,7 +34,7 @@ public class ProjectsComparison implements Serializable {
         problemDescpt = "";
     }
 
-    public void generateHTML() throws IOException {
+    void generateHTML(String dir) throws IOException {
         StringBuilder sb = new StringBuilder();
         genHeader(sb);
         genCounterT(sb);
@@ -47,7 +47,9 @@ public class ProjectsComparison implements Serializable {
         genPMDST(sb);
         genPMDRsT(sb);
         genFooter(sb);
-        Files.write(Paths.get("AuxFiles/output.html"), sb.toString().getBytes());
+        String[] nodes = dir.split("\\\\");
+        String folderName = nodes[nodes.length - 1];
+        Files.write(Paths.get(dir + "/" + folderName + ".html"), sb.toString().getBytes());
     }
 
     private void genHeader(StringBuilder sb) {
@@ -62,7 +64,7 @@ public class ProjectsComparison implements Serializable {
         sb.append("</head>");
         sb.append("<body>");
         sb.append("<h1 style='text-align:center'>PP Analysis Comparator</h1>");
-        sb.append("<p>" + problemDescpt + "</p>");
+        sb.append("<p>").append(problemDescpt).append("</p>");
     }
 
     private void genCounterT(StringBuilder sb) {
@@ -81,7 +83,7 @@ public class ProjectsComparison implements Serializable {
         appendTD(sb, Integer.toString(baseSolution.getNumberOfFiles()));
         appendTD(sb, Integer.toString(baseSolution.getNumberOfClasses()));
         appendTD(sb, Integer.toString(baseSolution.getNumberOfMethods()));
-        appendTD(sb, Integer.toString(baseSolution.getNumberOfStatements()));
+        appendTD(sb, Integer.toString(baseSolution.getNumberOfStatementsWithoutRES()));
         sb.append("</tr>");
         for (ProjectMetrics es : exampleSolutions) {
             sb.append("<tr>");
@@ -89,7 +91,7 @@ public class ProjectsComparison implements Serializable {
             compareIntegerGreater(sb, es.getNumberOfFiles(), baseSolution.getNumberOfFiles());
             compareIntegerGreater(sb, es.getNumberOfClasses(), baseSolution.getNumberOfClasses());
             compareIntegerGreater(sb, es.getNumberOfMethods(), baseSolution.getNumberOfMethods());
-            compareIntegerLesser(sb, es.getNumberOfStatements(), baseSolution.getNumberOfStatements());
+            compareIntegerLesser(sb, es.getNumberOfStatementsWithoutRES(), baseSolution.getNumberOfStatementsWithoutRES());
             sb.append("</tr>");
         }
         sb.append("</table>");
@@ -302,16 +304,18 @@ public class ProjectsComparison implements Serializable {
     }
 
     private Integer calculateScore(ProjectMetrics baseSolution, char not) {
-        Integer skill = 0;
+        Integer group = 0; //Skill or Readability
         for (Map.Entry<String, Integer> vio : baseSolution.getPMDViolations().entrySet()) {
             PMDRule rule = pmdrules.get(vio.getKey());
             if (rule.getGroup() != not) {
                 int priority = rule.getPriority();
                 int occurrences = vio.getValue();
-                skill += priority * occurrences;
+                //skill += priority * occurrences;
+                //skill += occurrences;
+                group++;
             }
         }
-        return skill;
+        return group;
     }
 
     private void genPMDRsT(StringBuilder sb) {
@@ -404,7 +408,7 @@ public class ProjectsComparison implements Serializable {
         sb.append("</").append(tag).append('>');
     }
 
-    public void loadRules() throws IOException {
+    void loadRules() throws IOException {
         pmdrules = new HashMap<>();
         CSVReader reader = new CSVReader(new FileReader("AuxFiles/pmd_rules.csv"));
         String[] nextLine;
