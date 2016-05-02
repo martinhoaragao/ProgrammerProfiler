@@ -545,7 +545,7 @@ expression
     |   expression '(' expressionList? ')'
     |   'new' creator
     |   '(' type ')' expression
-    |   expression ('++' | '--')
+    |   expression plusOrMinusOneExpression
     |   ('+'|'-'|'++'|'--') expression
     |   ('~'|'!') expression
     |   expression ('*'|'/'|'%') expression
@@ -562,10 +562,10 @@ expression
     |   expression '?' iifStatement
     |   <assoc=right> expression
         (   '='
-        |   '+='
-        |   '-='
-        |   '*='
-        |   '/='
+        |   plusEqualExpression
+        |   minusEqualExpression
+        |   timesEqualExpression
+        |   divideEqualExpression
         |   andAssignExpression
         |   orAssignExpression
         |   xorAssignExpression
@@ -575,6 +575,10 @@ expression
         |   modAssignExpression
         )
         expression
+    ;
+
+plusOrMinusOneExpression
+    : ('++' | '--')
     ;
 
 iifStatement
@@ -595,6 +599,22 @@ bitOrExpression
 
 caretExpression
     : expression
+    ;
+
+plusEqualExpression
+    : '+='
+    ;
+
+minusEqualExpression
+    : '-='
+    ;
+
+timesEqualExpression
+    : '*='
+    ;
+
+divideEqualExpression
+    : '/='
     ;
 
 andAssignExpression

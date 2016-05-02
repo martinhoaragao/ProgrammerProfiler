@@ -44,6 +44,36 @@ public class NSCOExtractor extends JavaBaseVisitor {
     }
 
     @Override
+    public Object visitPlusOrMinusOneExpression(JavaParser.PlusOrMinusOneExpressionContext ctx) {
+        incr(NSCO.ONE_ADD_SUB);
+        return super.visitPlusOrMinusOneExpression(ctx);
+    }
+
+    @Override
+    public Object visitPlusEqualExpression(JavaParser.PlusEqualExpressionContext ctx) {
+        incr(NSCO.ADD_ASSIGN);
+        return super.visitPlusEqualExpression(ctx);
+    }
+
+    @Override
+    public Object visitMinusEqualExpression(JavaParser.MinusEqualExpressionContext ctx) {
+        incr(NSCO.SUB_ASSIGN);
+        return super.visitMinusEqualExpression(ctx);
+    }
+
+    @Override
+    public Object visitTimesEqualExpression(JavaParser.TimesEqualExpressionContext ctx) {
+        incr(NSCO.MULT_ASSIGN);
+        return super.visitTimesEqualExpression(ctx);
+    }
+
+    @Override
+    public Object visitDivideEqualExpression(JavaParser.DivideEqualExpressionContext ctx) {
+        incr(NSCO.DIV_ASSIGN);
+        return super.visitDivideEqualExpression(ctx);
+    }
+
+    @Override
     public Object visitAndAssignExpression(JavaParser.AndAssignExpressionContext ctx) {
         incr(NSCO.AND_ASSIGN);
         return super.visitAndAssignExpression(ctx);

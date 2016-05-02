@@ -171,6 +171,10 @@ public class ProjectMetrics implements Serializable{
         return this.numberOfNSCO;
     }
 
+    public int getDifferentTypesOfNSCO() {
+        return nscos.size();
+    }
+
     public int getTotalNumberOfCFS() {
         return this.numberOfCFS;
     }

@@ -176,19 +176,19 @@ public class ProjectsComparison implements Serializable {
         sb.append("<tr>");
         appendTH(sb, "Project");
         appendTH(sb, "NSCOs");
-        appendTH(sb, "# of NSCOs");
+        appendTH(sb, "Different NSCOs");
         sb.append("</tr>");
 
         sb.append("<tr class='active'>");
         appendTD(sb, baseSolution.getProjectName());
         appendTD(sb, baseSolution.getNSCO().toString());
-        appendTD(sb, Integer.toString(baseSolution.getTotalNumberOfNSCO()));
+        appendTD(sb, Integer.toString(baseSolution.getDifferentTypesOfNSCO()));
         sb.append("</tr>");
         for (ProjectMetrics es : exampleSolutions) {
             sb.append("<tr>");
             appendTD(sb, es.getProjectName());
             appendTD(sb, es.getNSCO().toString());
-            compareIntegerGreater(sb, es.getTotalNumberOfNSCO(), baseSolution.getTotalNumberOfNSCO());
+            compareIntegerGreater(sb, es.getDifferentTypesOfNSCO(), baseSolution.getDifferentTypesOfNSCO());
             sb.append("</tr>");
         }
         sb.append("</table>");

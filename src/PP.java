@@ -9,16 +9,17 @@ public class PP  {
 
         ArrayList<ProjectMetrics> pm = new ArrayList<>();
         HashSet<String> violationsDetected = new HashSet<>();
-        String main = "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\S1_Cadeia\\Prof";
+        String main = "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\A1_Arrays\\A1_Prof";
         String[] projects = {
-                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\S1_Cadeia\\Ana",
-                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\S1_Cadeia\\Daniel",
-                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\S1_Cadeia\\Vitor"
+                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\A1_Arrays\\A1_Ana",
+                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\A1_Arrays\\A1_Enes",
+                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\A1_Arrays\\A1_Gabriel",
+                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\A1_Arrays\\A1_Sergio",
+                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\A1_Arrays\\A1_Ze"
         };
-        String directory = "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\S1_Cadeia";
-        String problemDescpt = "S1) Escreva um programa Java que determine quantas vezes uma sub-cadeia de caracteres (" +
-                "fornecida pelo utilizador) aparece no interior de uma outra cadeia (também fornecida inicialmente pelo utilizador). \n" +
-                "Considere que a cadeia ‘BABABABA’ contém tres subcadeias ‘BAB’ (‘BABABABA’).";
+        String directory = "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\A1_Arrays";
+        String problemDescpt = "A1) Escreva um programa Java que, dado um número inteiro N maior que 0, leia um vector " +
+                "(array unidimensionnal) de N elementos inteiros e imprima quantos valores pares existem no vector.";
 
         PPAnalyser ppaBS = new PPAnalyser(main);
         ppaBS.preProcess();

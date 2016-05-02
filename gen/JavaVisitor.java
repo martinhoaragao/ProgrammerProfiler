@@ -1,4 +1,4 @@
-// Generated from C:/Users/Daniel/IdeaProjects/ProgrammerProfiler/JavaGrammar\Java.g4 by ANTLR 4.5.1
+// Generated from C:/Users/Daniel/IdeaProjects/ProgrammerProfiler/AuxFiles\Java.g4 by ANTLR 4.5.1
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
 /**
@@ -598,6 +598,12 @@ public interface JavaVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitExpression(JavaParser.ExpressionContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link JavaParser#plusOrMinusOneExpression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitPlusOrMinusOneExpression(JavaParser.PlusOrMinusOneExpressionContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link JavaParser#iifStatement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -627,6 +633,30 @@ public interface JavaVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitCaretExpression(JavaParser.CaretExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link JavaParser#plusEqualExpression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitPlusEqualExpression(JavaParser.PlusEqualExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link JavaParser#minusEqualExpression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMinusEqualExpression(JavaParser.MinusEqualExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link JavaParser#timesEqualExpression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitTimesEqualExpression(JavaParser.TimesEqualExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link JavaParser#divideEqualExpression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitDivideEqualExpression(JavaParser.DivideEqualExpressionContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link JavaParser#andAssignExpression}.
 	 * @param ctx the parse tree

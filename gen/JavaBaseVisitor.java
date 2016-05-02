@@ -1,4 +1,4 @@
-// Generated from C:/Users/Daniel/IdeaProjects/ProgrammerProfiler/JavaGrammar\Java.g4 by ANTLR 4.5.1
+// Generated from C:/Users/Daniel/IdeaProjects/ProgrammerProfiler/AuxFiles\Java.g4 by ANTLR 4.5.1
 import org.antlr.v4.runtime.tree.AbstractParseTreeVisitor;
 
 /**
@@ -702,6 +702,13 @@ public class JavaBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements J
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
+	@Override public T visitPlusOrMinusOneExpression(JavaParser.PlusOrMinusOneExpressionContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
 	@Override public T visitIifStatement(JavaParser.IifStatementContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
@@ -731,6 +738,34 @@ public class JavaBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements J
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
 	@Override public T visitCaretExpression(JavaParser.CaretExpressionContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitPlusEqualExpression(JavaParser.PlusEqualExpressionContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitMinusEqualExpression(JavaParser.MinusEqualExpressionContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitTimesEqualExpression(JavaParser.TimesEqualExpressionContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitDivideEqualExpression(JavaParser.DivideEqualExpressionContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
