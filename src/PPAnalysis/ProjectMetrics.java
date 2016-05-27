@@ -123,6 +123,10 @@ public class ProjectMetrics implements Serializable{
         return aux;
     }
 
+    public int getCFSVariety () {
+        return cfss.size();
+    }
+
     public Map<NSCO,Integer> getNSCO() {
         return nscos;
     }
