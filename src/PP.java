@@ -19,8 +19,19 @@ public class PP  {
                 "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\P1_Numeros\\Ze"
         };
         String directory = "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\P1_Numeros";
-        String problemDescpt = "A1) Escreva um programa Java que, dado um número inteiro N maior que 0, leia um vector " +
-                "(array unidimensionnal) de N elementos inteiros e imprima quantos valores pares existem no vector.";
+        String problemDescpt = "P1) Escreva um programa Java que leia uma quantidade não determinada de números inteiros positivos (O número que encerrará a leitura será o zero). Calcule e imprima a quantidade de números pares e ímpares assim como a média (numero real) dos valores pares.\n" +
+                "Exemplo:\n" +
+                "Dados:\n" +
+                "1 \n" +
+                "2 \n" +
+                "12 \n" +
+                "7 \n" +
+                "15 \n" +
+                "0   \n" +
+                "Resultado:  \n" +
+                "2\n" +
+                "3\n" +
+                "7.0";
 
         PPAnalyser ppaBS = new PPAnalyser(main);
         ppaBS.preProcess();

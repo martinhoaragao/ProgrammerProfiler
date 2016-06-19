@@ -31,7 +31,7 @@ public class ProjectsComparison implements Serializable {
         this.baseSolution = baseSolution;
         this.exampleSolutions = exampleSolutions;
         this.violationsDetected = violationsDetected;
-        //this.exampleSolutions.add(baseSolution);
+        this.exampleSolutions.add(baseSolution);
         this.problemDescpt = problemDescpt;
     }
 
@@ -429,42 +429,60 @@ public class ProjectsComparison implements Serializable {
             System.out.println("\n" + m.getMethodName() + ": " + m.getThis() + " -> " + m.getImplies() + "\nPriority: " + m.getPriority());
             calcForMetric(c, m);
         }
-        //System.out.println("Skill: " + skill.toString() + "Pre-PMD");
-        //System.out.println("Reada: " + readability.toString() + "Pre-PMD");
+        System.out.println("\nPre-PMD Results:\nSkill  : " + skill.toString());
+        System.out.println("Readability: " + readability.toString());
+        System.out.println("\nPMD Results (higher is worst): ");
         for (ProjectMetrics pm : exampleSolutions) {
             String pName = pm.getProjectName();
             int s = calculateScore(pm, 'R'); //Skill (Not R)
             int r = calculateScore(pm, 'S'); //Readability (Not S)
+            System.out.println(pm.getProjectName() + ": Skill=" + s + "   Readability: " + r);
             skill.put(pName, skill.get(pName) - s);
             readability.put(pName, readability.get(pName) - r);
-        }
+        }int avgs, avgr = avgs = 0;
         for (String key : skill.keySet()) {
             skill.put(key, round(skill.get(key)));
+            avgs += skill.get(key);
         }
         for (String key : readability.keySet()) {
             readability.put(key, round(readability.get(key)));
+            avgr += readability.get(key);
         }
-        System.out.println("\n\nSkill: " + skill.toString());
-        System.out.println("Reada: " + readability.toString());
+        Map<String, Float> difference = new HashMap<>();
+        for (String key : skill.keySet()) {
+            difference.put(key, skill.get(key) - readability.get(key));
+        }
+        System.out.println("\nFinal Results:\nSkill  : " + skill.toString());
+        System.out.println("Readability: " + readability.toString());
+        System.out.println("Difference : " + difference.toString());
+        System.out.println("Avg Skill : " + (float)avgs / skill.size());
+        System.out.println("Avg Readability : " + (float)avgr / readability.size());
+
+        ProfileInferrer pi = new ProfileInferrer(readability, skill);
+        pi.calcBoundaries();
+        pi.inferProfile();
+
     }
 
     private void calcForMetric(Class<?> c, Metric m) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         Method method = c.getDeclaredMethod(m.getMethodName());
         Object bS = method.invoke(baseSolution);
-        float base, baseAux = base = toFloat(bS);
+        float base = toFloat(bS);
+        String signal = m.getThis();
+        float highest = 1;
         for (ProjectMetrics pm : exampleSolutions) {
             Object oS = method.invoke(pm);
-            float os = toFloat(oS);
-            if (m.getThis().equals("-"))
-                os = baseAux + (baseAux - os);
-            if (os > base) base = os;
+            float example = toFloat(oS);
+            if (signal.equals("-"))
+                example = base + (base - example);
+            if (example > highest) highest = example;
         }
         for (ProjectMetrics pm : exampleSolutions) {
             Object oS = method.invoke(pm);
-            float os, value = os = toFloat(oS);
-            if (m.getThis().equals("-"))
-                os = baseAux + (baseAux - os);
-            float ratio = os / base;
+            float example, value = example = toFloat(oS);
+            if (signal.equals("-"))
+                example = base + (base - example);
+            float ratio = example / highest;
             calcForProject(pm.getProjectName(), m.getImplies(), m.getPriority(), ratio, value);
         }
     }
@@ -502,19 +520,19 @@ public class ProjectsComparison implements Serializable {
                 group = "skill";
                 break;
             case "-R":
-                readability.put(pName, s - priXrat);
+                readability.put(pName, r - priXrat);
                 sig = '-';
                 group = "readability";
                 break;
         }
-        System.out.println(pName + " (" + round(value) + ") : " + priority + " * " + round(ratio) + " ≃ " + sig + round(priXrat) + " in " + group);
+        System.out.println(pName + " (" + round(value) + ") : " + round(ratio) + " * " + priority + " = " + sig + round(priXrat) + " in " + group);
 
     }
 
     private float round (float value) { //Round float to 1 decimal place
         BigDecimal bd = new BigDecimal(value);
         bd = bd.setScale(1, RoundingMode.HALF_UP); //decimal places = 1
-        return (float)bd.doubleValue();
+        return (float) bd.doubleValue();
     }
 
     void loadMetrics() throws FileNotFoundException {

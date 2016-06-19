@@ -3,13 +3,13 @@
     "methodname": "getNumberOfClasses",
     "_this"    : "+" ,
     "implies" : "+R",
-    "priority": 1
+    "priority": 2
   },
   {
     "methodname": "getNumberOfClasses",
     "_this"    : "+" ,
     "implies" : "+S",
-    "priority": 1
+    "priority": 2
   },
   {
     "methodname": "getNumberOfMethods",
@@ -27,97 +27,73 @@
     "methodname": "getNumberOfStatementsWithoutRES",
     "_this"    : "-",
     "implies" : "+S",
-    "priority": 6
-  },
-  {
-    "methodname": "getLinesOfCode",
-    "_this"    : "-",
-    "implies" : "-R",
-    "priority": 2
+    "priority": 8
   },
   {
     "methodname": "getLinesOfCode",
     "_this"    : "+" ,
     "implies" : "+R",
-    "priority": 2
-  },
-  {
-    "methodname": "getLinesOfComments",
-    "_this"    : "-" ,
-    "implies" : "-R",
-    "priority": 2
+    "priority": 5
   },
   {
     "methodname": "getLinesOfComments",
     "_this"    : "+" ,
     "implies" : "+R",
-    "priority": 2
-  },
-  {
-    "methodname": "getEmptyLines",
-    "_this"    : "-" ,
-    "implies" : "-R",
-    "priority": 2
+    "priority": 3
   },
   {
     "methodname": "getEmptyLines",
     "_this"    : "+" ,
     "implies" : "+R",
-    "priority": 2
+    "priority": 3
   },
   {
     "methodname": "getPerCode",
     "_this"    : "-" ,
     "implies" : "+R",
-    "priority": 2
-  },
-  {
-    "methodname": "getPerCode",
-    "_this"    : "+" ,
-    "implies" : "-R",
-    "priority": 2
+    "priority": 5
   },
   {
     "methodname": "getPerComment",
     "_this"    : "+" ,
     "implies" : "+R",
-    "priority": 2
+    "priority": 3
   },
   {
     "methodname": "getPerEmpty",
     "_this"    : "+" ,
     "implies" : "+R",
-    "priority": 2
+    "priority": 3
   },
   {
     "methodname": "getTotalNumberOfCFS",
     "_this"    : "-" ,
     "implies" : "+S",
-    "priority": 6
+    "priority": 5
   },
   {
     "methodname": "getTotalNumberOfCFS",
     "_this"    : "+" ,
     "implies" : "+R",
-    "priority": 4
+    "priority": 5
   },
   {
     "methodname": "getCFSVariety",
     "_this"    : "+" ,
     "implies" : "+S",
-    "priority": 3
+    "priority": 4
   },
   {
     "methodname": "getDifferentTypesOfNSCO",
     "_this"    : "+" ,
     "implies" : "+S",
-    "priority": 6
+    "priority": 5
   },
   {
     "methodname": "getTotalNumberOfDeclarations",
     "_this"    : "-" ,
     "implies" : "+S",
-    "priority": 3
+    "priority": 5
   },
   {
     "methodname": "getTotalNumberOfDeclarations",
@@ -129,6 +105,6 @@
     "methodname": "getTotalNumberOfTypes",
     "_this"    : "+" ,
     "implies" : "+S",
-    "priority": 3
+    "priority": 4
   }
 ]
