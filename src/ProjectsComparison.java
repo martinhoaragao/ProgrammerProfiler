@@ -454,9 +454,8 @@ public class ProjectsComparison implements Serializable {
         }
         System.out.println("\nFinal Results:\nSkill  : " + skill.toString());
         System.out.println("Readability: " + readability.toString());
-        System.out.println("Difference : " + difference.toString());
         System.out.println("Avg Skill : " + (float)avgs / skill.size());
-        System.out.println("Avg Readability : " + (float)avgr / readability.size());
+        System.out.println("Avg Readability : " + (float)avgr / readability.size() + "\n");
 
         ProfileInferrer pi = new ProfileInferrer(readability, skill);
         pi.calcBoundaries();

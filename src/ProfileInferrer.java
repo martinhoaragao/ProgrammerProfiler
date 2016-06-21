@@ -1,9 +1,9 @@
 import java.util.*;
 
 public class ProfileInferrer {
-    Map<String, Float> skill, readability;
-    Map<String, Boundaries> bound;
-    TreeMap<Float, TreeMap<Float, String>> values;
+    private Map<String, Float> skill, readability;
+    private List<Boundaries> bound;
+    private TreeMap<Float, TreeMap<Float, String>> values;
 
     public ProfileInferrer(Map<String, Float> readability, Map<String, Float> skill) {
         this.readability = readability;
@@ -29,32 +29,34 @@ public class ProfileInferrer {
         minR -= 0.01;
         maxR += 0.01;
 
-        bound = new HashMap<>();
+        bound = new LinkedList<>();
 
-        bound.put("Novice", new Boundaries(minS, avgS - halfThirdS, minR, avgR - halfThirdR));
-        bound.put("Advanced Beginner S", new Boundaries(avgS - halfThirdS, avgS + halfThirdS, minR, avgR - halfThirdR));
-        bound.put("Advanced Beginner R", new Boundaries(minS, avgS - halfThirdS, avgR - halfThirdR, avgR + halfThirdR));
-        bound.put("Advanced Beginner +", new Boundaries(avgS - halfThirdS, avgS + halfThirdS, avgR - halfThirdR, avgR + halfThirdR));
-        bound.put("Expert", new Boundaries(avgS + halfThirdS, maxS, minR, avgR + halfThirdR));
-        bound.put("Proficient", new Boundaries(minS, avgS + halfThirdS, avgR + halfThirdR, maxR));
-        bound.put("Master", new Boundaries(avgS + halfThirdS, maxS, avgR + halfThirdR, maxR));
+        bound.add(new Boundaries("Novice", minS, avgS - halfThirdS, minR, avgR - halfThirdR));
+        bound.add(new Boundaries("Advanced Beginner S", avgS - halfThirdS, avgS + halfThirdS, minR, avgR - halfThirdR));
+        bound.add(new Boundaries("Advanced Beginner R", minS, avgS - halfThirdS, avgR - halfThirdR, avgR + halfThirdR));
+        bound.add(new Boundaries("Advanced Beginner +", avgS - halfThirdS, avgS + halfThirdS, avgR - halfThirdR, avgR + halfThirdR));
+        bound.add(new Boundaries("Expert", avgS + halfThirdS, maxS, minR, avgR + halfThirdR));
+        bound.add(new Boundaries("Proficient", minS, avgS + halfThirdS, avgR + halfThirdR, maxR));
+        bound.add(new Boundaries("Master", avgS + halfThirdS, maxS, avgR + halfThirdR, maxR));
     }
 
     public void inferProfile() {
         values = new TreeMap<>();
+
+        //put S and R scores in treemap for easy inferring
         for (String n : skill.keySet()) {
             TreeMap<Float, String> tm = new TreeMap<>();
             tm.put(readability.get(n), n);
             values.put(skill.get(n), tm);
         }
 
-        for (String p : bound.keySet()) {
-            System.out.println("\n" + p + ":");
-            Boundaries b = new Boundaries(bound.get(p));
+        for (Boundaries b : bound) {
+            System.out.println(b.getProfileName() + ":");
             System.out.println(getProfile(b.getMinS(), b.getMaxS(), b.getMinR(), b.getMaxR()).toString());
         }
     }
 
+    //Get all solutions for a given range. The range is the profile.
     private ArrayList<String> getProfile (float minS, float maxS, float minR, float maxR) {
         ArrayList<String> vals = new ArrayList<>();
         for (float x : values.subMap(minS, maxS).keySet()) {
@@ -66,16 +68,19 @@ public class ProfileInferrer {
         return vals;
     }
 
+    //Lowest map value
     private float getMin(Map<String, Float> m) {
         ArrayList<Float> list = new ArrayList<>(m.values());
         return Collections.min(list);
     }
 
+    //Highest map value
     private float getMax(Map<String, Float> m) {
         ArrayList<Float> list = new ArrayList<>(m.values());
         return Collections.max(list);
     }
 
+    //Average of the map values
     private float getAvg(Map<String, Float> m) {
         float avg = 0;
         ArrayList<Float> list = new ArrayList<>(m.values());
@@ -84,4 +89,42 @@ public class ProfileInferrer {
         }
         return avg / list.size();
     }
+
+    private class Boundaries {
+
+        String profile;
+        //(S)kill and (R)eadability
+        private float minS, maxS, minR, maxR;
+
+        Boundaries(String profile, float minS, float maxS, float minR, float maxR) {
+            this.profile = profile;
+            this.minS = minS;
+            this.maxS = maxS;
+            this.minR = minR;
+            this.maxR = maxR;
+        }
+
+        String getProfileName() {
+            return profile;
+        }
+
+        float getMaxR() {
+            return maxR;
+        }
+
+        float getMaxS() {
+            return maxS;
+        }
+
+        float getMinR() {
+            return minR;
+        }
+
+        float getMinS() {
+            return minS;
+        }
+    }
+
 }
+
+
