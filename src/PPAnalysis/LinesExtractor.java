@@ -6,7 +6,7 @@ import java.util.LinkedList;
 
 public class LinesExtractor {
 
-    private LinkedList<File> files;
+    private final LinkedList<File> files;
     private int linesOfCode;
     private int linesOfComments;
     private int emptyLines;

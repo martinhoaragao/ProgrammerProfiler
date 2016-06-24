@@ -1,30 +1,23 @@
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
 import com.opencsv.CSVReader;
 
-import java.io.*;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.lang.reflect.Type;
-import java.math.BigDecimal;
-import java.math.RoundingMode;
+import java.io.FileReader;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.text.DecimalFormat;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
 
 import static org.apache.commons.lang3.StringEscapeUtils.escapeHtml4;
 
-public class ProjectsComparison implements Serializable {
+public class ProjectsComparison {
 
-    private ProjectMetrics baseSolution;
-    private ArrayList<ProjectMetrics> exampleSolutions;
-    private HashSet<String> violationsDetected;
-    private String problemDescpt;
+    private final ProjectMetrics baseSolution;
+    private final ArrayList<ProjectMetrics> exampleSolutions;
+    private final HashSet<String> violationsDetected;
+    private final String problemDescpt;
     private HashMap<String, PMDRule> pmdrules;
-    private ArrayList<Metric> metrics;
-    Map<String, Float> skill, readability;
 
     public ProjectsComparison(ProjectMetrics baseSolution, ArrayList<ProjectMetrics> exampleSolutions,
                               HashSet<String> violationsDetected, String problemDescpt) {
@@ -41,6 +34,16 @@ public class ProjectsComparison implements Serializable {
         this.exampleSolutions = exampleSolutions;
         this.violationsDetected = violationsDetected;
         problemDescpt = "";
+    }
+
+    void loadRules() throws IOException { //Load PMD Rules
+        pmdrules = new HashMap<>();
+        CSVReader reader = new CSVReader(new FileReader("AuxFiles/pmd_rules.csv"));
+        String[] nextLine;
+        reader.readNext();
+        while ((nextLine = reader.readNext()) != null) {
+            pmdrules.put(nextLine[1], new PMDRule(nextLine[0], nextLine[1], nextLine[2], Integer.parseInt(nextLine[3]), nextLine[4].charAt(0)));
+        }
     }
 
     void generateHTML(String dir) throws IOException {
@@ -264,20 +267,24 @@ public class ProjectsComparison implements Serializable {
         sb.append("<tr class='active'>");
         appendTD(sb, baseSolution.getProjectName());
         for (String v : violationsDetected) {
-            if (baseSolution.getPMDViolations().containsKey(v))
+            if (baseSolution.getPMDViolations().containsKey(v)) {
                 appendTD(sb, baseSolution.getPMDViolations().get(v).toString());
-            else
+            }
+            else {
                 appendTD(sb, "0");
+            }
         }
         sb.append("</tr>");
         for (ProjectMetrics es : exampleSolutions) {
             sb.append("<tr>");
             appendTD(sb, es.getProjectName());
             for (String v : violationsDetected) {
-                if (es.getPMDViolations().containsKey(v))
+                if (es.getPMDViolations().containsKey(v)) {
                     appendTD(sb, es.getPMDViolations().get(v).toString());
-                else
+                }
+                else {
                     appendTD(sb, "0");
+                }
             }
             sb.append("</tr>");
         }
@@ -417,152 +424,15 @@ public class ProjectsComparison implements Serializable {
         sb.append("</").append(tag).append('>');
     }
 
-    void calculateScore() throws InvocationTargetException, ClassNotFoundException, NoSuchMethodException, IllegalAccessException {
-        skill = new HashMap<>();
-        readability = new HashMap<>();
-        Class<?> c = Class.forName("ProjectMetrics");
-        for (ProjectMetrics pm : exampleSolutions) {
-            skill.put(pm.getProjectName(), (float) 0);
-            readability.put(pm.getProjectName(), (float) 0);
-        }
-        for (Metric m : metrics) {
-            System.out.println("\n" + m.getMethodName() + ": " + m.getThis() + " -> " + m.getImplies() + "\nPriority: " + m.getPriority());
-            calcForMetric(c, m);
-        }
-        System.out.println("\nPre-PMD Results:\nSkill  : " + skill.toString());
-        System.out.println("Readability: " + readability.toString());
-        System.out.println("\nPMD Results (higher is worst): ");
-        for (ProjectMetrics pm : exampleSolutions) {
-            String pName = pm.getProjectName();
-            int s = calculateScore(pm, 'R'); //Skill (Not R)
-            int r = calculateScore(pm, 'S'); //Readability (Not S)
-            System.out.println(pm.getProjectName() + ": Skill=" + s + "   Readability: " + r);
-            skill.put(pName, skill.get(pName) - s);
-            readability.put(pName, readability.get(pName) - r);
-        }int avgs, avgr = avgs = 0;
-        for (String key : skill.keySet()) {
-            skill.put(key, round(skill.get(key)));
-            avgs += skill.get(key);
-        }
-        for (String key : readability.keySet()) {
-            readability.put(key, round(readability.get(key)));
-            avgr += readability.get(key);
-        }
-        Map<String, Float> difference = new HashMap<>();
-        for (String key : skill.keySet()) {
-            difference.put(key, skill.get(key) - readability.get(key));
-        }
-        System.out.println("\nFinal Results:\nSkill  : " + skill.toString());
-        System.out.println("Readability: " + readability.toString());
-        System.out.println("Avg Skill : " + (float)avgs / skill.size());
-        System.out.println("Avg Readability : " + (float)avgr / readability.size() + "\n");
-
-        ProfileInferrer pi = new ProfileInferrer(readability, skill);
-        pi.calcBoundaries();
-        pi.inferProfile();
-
+    public HashMap<String, PMDRule> getPMDrules() {
+        return pmdrules;
     }
 
-    private void calcForMetric(Class<?> c, Metric m) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
-        Method method = c.getDeclaredMethod(m.getMethodName());
-        Object bS = method.invoke(baseSolution);
-        float base = toFloat(bS);
-        String signal = m.getThis();
-        float highest = 1;
-        for (ProjectMetrics pm : exampleSolutions) {
-            Object oS = method.invoke(pm);
-            float example = toFloat(oS);
-            if (signal.equals("-"))
-                example = base + (base - example);
-            if (example > highest) highest = example;
-        }
-        for (ProjectMetrics pm : exampleSolutions) {
-            Object oS = method.invoke(pm);
-            float example, value = example = toFloat(oS);
-            if (signal.equals("-"))
-                example = base + (base - example);
-            float ratio = example / highest;
-            calcForProject(pm.getProjectName(), m.getImplies(), m.getPriority(), ratio, value);
-        }
+    public ProjectMetrics getBaseSolution() {
+        return baseSolution;
     }
 
-    private float toFloat(Object bS) {
-        float bs;
-        if (bS.getClass() == Integer.class) {
-            bs = new Float((Integer)bS);
-        } else {
-            bs = (Float)bS;
-        }
-        return bs;
+    public ArrayList<ProjectMetrics> getExampleSolutions() {
+        return exampleSolutions;
     }
-
-    private void calcForProject(String pName, String implies, int priority, float ratio, float value) {
-        float s = skill.get(pName);
-        float r = readability.get(pName);
-        float priXrat = priority * ratio;
-        char sig = '+';
-        String group = null;
-        switch (implies) {
-            case "+S":
-                skill.put(pName, s + priXrat);
-                sig = '+';
-                group = "skill";
-                break;
-            case "+R":
-                readability.put(pName, r + priXrat);
-                sig = '+';
-                group = "readability";
-                break;
-            case "-S":
-                skill.put(pName, s - priXrat);
-                sig = '-';
-                group = "skill";
-                break;
-            case "-R":
-                readability.put(pName, r - priXrat);
-                sig = '-';
-                group = "readability";
-                break;
-        }
-        System.out.println(pName + " (" + round(value) + ") : " + round(ratio) + " * " + priority + " = " + sig + round(priXrat) + " in " + group);
-
-    }
-
-    private float round (float value) { //Round float to 1 decimal place
-        BigDecimal bd = new BigDecimal(value);
-        bd = bd.setScale(1, RoundingMode.HALF_UP); //decimal places = 1
-        return (float) bd.doubleValue();
-    }
-
-    void loadMetrics() throws FileNotFoundException {
-        final Type METRIC_TYPE = new TypeToken<List<Metric>>(){}.getType();
-        Gson gson = new Gson();
-        JsonReader reader = new JsonReader(new FileReader("AuxFiles/metrics.json"));
-        metrics = new ArrayList<>(gson.fromJson(reader, METRIC_TYPE));
-    }
-
-    void loadRules() throws IOException {
-        pmdrules = new HashMap<>();
-        CSVReader reader = new CSVReader(new FileReader("AuxFiles/pmd_rules.csv"));
-        String[] nextLine;
-        reader.readNext();
-        while ((nextLine = reader.readNext()) != null) {
-            pmdrules.put(nextLine[1], new PMDRule(nextLine[0], nextLine[1], nextLine[2], Integer.parseInt(nextLine[3]), nextLine[4].charAt(0)));
-        }
-    }
-
-    void saveComparison(String savename) {
-        try {
-            FileOutputStream fileOut =
-                    new FileOutputStream("AuxFiles/" + savename + ".ser");
-            ObjectOutputStream out = new ObjectOutputStream(fileOut);
-            out.writeObject(this);
-            out.close();
-            fileOut.close();
-            System.out.printf("Serialized data is saved in AuxFiles/" + savename + ".ser");
-        }catch(IOException i) {
-            i.printStackTrace();
-        }
-    }
-
 }

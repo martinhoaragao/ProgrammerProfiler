@@ -2,9 +2,9 @@ import java.io.Serializable;
 
 public class PMDRule implements Serializable {
 
-    private String rule, ruleset, description;
-    private char group;
-    private int priority;
+    private final String rule, ruleset, description;
+    private final char group;
+    private final int priority;
 
     public PMDRule(String ruleset, String rule, String description, int priority, char group) {
         this.ruleset = ruleset;

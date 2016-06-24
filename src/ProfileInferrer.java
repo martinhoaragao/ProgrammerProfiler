@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class ProfileInferrer {
-    private Map<String, Float> skill, readability;
+    private final Map<String, Float> skill, readability;
     private List<Boundaries> bound;
     private TreeMap<Float, TreeMap<Float, String>> values;
 
@@ -92,9 +92,9 @@ public class ProfileInferrer {
 
     private class Boundaries {
 
-        String profile;
+        final String profile;
         //(S)kill and (R)eadability
-        private float minS, maxS, minR, maxR;
+        private final float minS, maxS, minR, maxR;
 
         Boundaries(String profile, float minS, float maxS, float minR, float maxR) {
             this.profile = profile;

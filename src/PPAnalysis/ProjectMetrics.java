@@ -4,9 +4,9 @@ import java.util.Map;
 
 public class ProjectMetrics implements Serializable{
 
-    private String projectName;
+    private final String projectName;
 
-    private int numberOfFiles;
+    private final int numberOfFiles;
     private int numberOfClasses;
     private int numberOfMethods;
     private int numberOfStatements;
@@ -19,17 +19,17 @@ public class ProjectMetrics implements Serializable{
     private float perEmpty;
     private int totalLines;
 
-    private Map<CFS,Integer> cfss;
+    private final Map<CFS,Integer> cfss;
     private int numberOfCFS;
 
-    private Map<NSCO,Integer> nscos;
+    private final Map<NSCO,Integer> nscos;
     private int numberOfNSCO;
 
-    private Map<String,Integer> variables; //local variables
+    private final Map<String,Integer> variables; //local variables
     private int numberOfDeclarations;
     private int numberOfTypes;
 
-    private Map<RE,Integer> res;
+    private final Map<RE,Integer> res;
 
     private Map<String, Integer> PMDViolations;
 
@@ -114,12 +114,15 @@ public class ProjectMetrics implements Serializable{
 
     public int getNumberOfNSCCFS () {
         int aux = 0;
-        if (cfss.containsKey(CFS.DOWHILE))
+        if (cfss.containsKey(CFS.DOWHILE)) {
             aux += cfss.get(CFS.DOWHILE);
-        if (cfss.containsKey(CFS.EFOR))
+        }
+        if (cfss.containsKey(CFS.EFOR)) {
             aux += cfss.get(CFS.EFOR);
-        if (cfss.containsKey(CFS.IIF))
+        }
+        if (cfss.containsKey(CFS.IIF)) {
             aux += cfss.get(CFS.IIF);
+        }
         return aux;
     }
 

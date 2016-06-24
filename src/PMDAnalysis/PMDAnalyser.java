@@ -1,7 +1,6 @@
 import com.opencsv.CSVReader;
 import net.sourceforge.pmd.PMD;
 
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashMap;
@@ -9,7 +8,7 @@ import java.util.HashSet;
 
 public class PMDAnalyser {
 
-    private String dirPath;
+    private final String dirPath;
     private String output_file;
     private HashMap<String, Integer> violations;
     private HashSet<String> violationsDetected;

@@ -8,7 +8,7 @@ import java.util.LinkedList;
 
 public class PPAnalyser {
 
-    private String dirPath;
+    private final String dirPath;
     private LinkedList<File> files;
     private LinkedList<ParseTree> pTrees;
     private ProjectMetrics pMetrics;

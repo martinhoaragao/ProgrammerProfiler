@@ -1,7 +1,7 @@
 
 public class Metric {
 
-    String methodname, _this, implies;
+    final String methodname, _this, implies;
     int priority;
 
     public Metric(String methodname, String _this, String implies, int priority) {

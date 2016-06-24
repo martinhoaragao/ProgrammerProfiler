@@ -2,12 +2,13 @@ import org.antlr.v4.runtime.tree.ParseTree;
 
 public class CounterExtractor extends JavaBaseVisitor {
 
-    private ParseTree tree;
+    private final ParseTree tree;
     private int numberOfClasses;
     private int numberOfMethods;
     private int numberOfStatements;
 
     public CounterExtractor(ParseTree tree) {
+        super();
         this.tree = tree;
         numberOfClasses = 0;
         numberOfMethods = 0;

@@ -3,10 +3,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class NSCOExtractor extends JavaBaseVisitor {
-    private ParseTree tree;
-    private Map<NSCO,Integer> nscos;
+    private final ParseTree tree;
+    private final Map<NSCO,Integer> nscos;
 
     public NSCOExtractor(ParseTree tree) {
+        super();
         this.tree = tree;
         nscos = new HashMap<>();
     }

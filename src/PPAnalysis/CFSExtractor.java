@@ -4,10 +4,11 @@ import java.util.Map;
 
 public class CFSExtractor extends JavaBaseVisitor {
 
-    private ParseTree tree;
-    private Map<CFS,Integer> cfss;
+    private final ParseTree tree;
+    private final Map<CFS,Integer> cfss;
 
     public CFSExtractor(ParseTree tree) {
+        super();
         this.tree = tree;
         cfss = new HashMap<>();
     }

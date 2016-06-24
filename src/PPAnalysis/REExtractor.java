@@ -3,10 +3,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class REExtractor extends JavaBaseVisitor {
-    private ParseTree tree;
-    private Map<RE,Integer> res;
+    private final ParseTree tree;
+    private final Map<RE,Integer> res;
 
     public REExtractor(ParseTree tree) {
+        super();
         this.tree = tree;
         res = new HashMap<>();
     }

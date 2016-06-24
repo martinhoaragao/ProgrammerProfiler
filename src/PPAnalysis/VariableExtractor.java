@@ -6,11 +6,12 @@ import java.util.Map;
 
 public class VariableExtractor extends JavaBaseVisitor {
 
-    private ParseTree tree;
-    private Map<String,Integer> lVariables; //local variables
-    private Map<String,Integer> fVariables; //field variables
+    private final ParseTree tree;
+    private final Map<String,Integer> lVariables; //local variables
+    private final Map<String,Integer> fVariables; //field variables
 
     public VariableExtractor(ParseTree tree) {
+        super();
         this.tree = tree;
         lVariables = new HashMap<>();
         fVariables = new HashMap<>();
