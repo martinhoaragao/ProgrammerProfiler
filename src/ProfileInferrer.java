@@ -3,7 +3,7 @@ import java.util.*;
 public class ProfileInferrer {
     private final Map<String, Float> skill, readability;
     private List<Boundaries> bound;
-    private TreeMap<Float, TreeMap<Float, String>> values;
+    private TreeMap<Float, TreeMap<Float, ArrayList<String>>> values;
 
     public ProfileInferrer(Map<String, Float> readability, Map<String, Float> skill) {
         this.readability = readability;
@@ -41,13 +41,32 @@ public class ProfileInferrer {
     }
 
     public void inferProfile() {
-        values = new TreeMap<>();
+        values = new TreeMap<>(); //TreeMap<Skill, TreeMap<Readability, ArrayList<ProjectName>>>
 
         //put S and R scores in treemap for easy inferring
         for (String n : skill.keySet()) {
-            TreeMap<Float, String> tm = new TreeMap<>();
-            tm.put(readability.get(n), n);
-            values.put(skill.get(n), tm);
+            float s = skill.get(n);
+            float r = readability.get(n);
+            ArrayList<String> al;
+            TreeMap<Float, ArrayList<String>> tm;
+            if (values.containsKey(s)) { // Already exists an equal skill value
+                tm = values.get(s);
+                if (tm.containsKey(r)) { // Already exists an equal skill AND readability value
+                    al = tm.get(r);
+                    al.add(n);
+                    tm.put(r, al);
+                } else {                // Only exists an equal skill value
+                    al = new ArrayList<>();
+                    al.add(n);
+                    tm.put(r, al);
+                }
+            } else {                    // Skill value is new
+                tm = new TreeMap<>();
+                al = new ArrayList<>();
+                al.add(n);
+                tm.put(r, al);
+            }
+            values.put(s, tm);
         }
 
         for (Boundaries b : bound) {
@@ -60,9 +79,9 @@ public class ProfileInferrer {
     private ArrayList<String> getProfile (float minS, float maxS, float minR, float maxR) {
         ArrayList<String> vals = new ArrayList<>();
         for (float x : values.subMap(minS, maxS).keySet()) {
-            for (String y : values.get(x).subMap(minR, maxR).values()) {
+            for (ArrayList<String> y : values.get(x).subMap(minR, maxR).values()) {
                 // y here, represents the values of points in range...
-                vals.add(y);
+                vals.addAll(y);
             }
         }
         return vals;

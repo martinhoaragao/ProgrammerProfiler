@@ -8,12 +8,20 @@ public class PP  {
 
         ArrayList<ProjectMetrics> pm = new ArrayList<>();
         HashSet<String> violationsDetected = new HashSet<>();
-        String main = "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\S1_Cadeia\\Prof";
+        String base = "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\P1_Numeros\\Prof";
         String[] projects = {
-                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\S1_Cadeia\\Ana",
-                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\S1_Cadeia\\Daniel",
-                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\S1_Cadeia\\Marcos",
-                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\S1_Cadeia\\Vitor"
+                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\P1_Numeros\\Ana",
+                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\P1_Numeros\\Daniel",
+                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\P1_Numeros\\Gabriel",
+                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\P1_Numeros\\Marcos",
+                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\P1_Numeros\\Vitor",
+                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\P1_Numeros\\Ze",
+                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\Creissac\\Ex1_P1_Numeros\\Aluno2",
+                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\Creissac\\Ex1_P1_Numeros\\Aluno3",
+                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\Creissac\\Ex1_P1_Numeros\\Aluno4",
+                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\Creissac\\Ex1_P1_Numeros\\Aluno5",
+                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\Creissac\\Ex1_P1_Numeros\\Aluno6",
+                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\Creissac\\Ex1_P1_Numeros\\Aluno7"
         };
         String directory = "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\P1_Numeros";
         String problemDescpt = "P1) Escreva um programa Java que leia uma quantidade não determinada de números inteiros positivos (O número que encerrará a leitura será o zero). Calcule e imprima a quantidade de números pares e ímpares assim como a média (numero real) dos valores pares.\n" +
@@ -30,12 +38,12 @@ public class PP  {
                 "3\n" +
                 "7.0";
 
-        PPAnalyser ppaBS = new PPAnalyser(main);
+        PPAnalyser ppaBS = new PPAnalyser(base);
         ppaBS.preProcess();
         ppaBS.generateParseTrees();
         ppaBS.extractMetrics();
 
-        PMDAnalyser pmdaBS = new PMDAnalyser(main);
+        PMDAnalyser pmdaBS = new PMDAnalyser(base);
         pmdaBS.analyse();
         pmdaBS.read();
 
@@ -63,7 +71,7 @@ public class PP  {
 
         ProjectsComparison pc = new ProjectsComparison(bS, pm, violationsDetected, problemDescpt);
         pc.loadRules();
-        pc.generateHTML(directory);
+        //pc.generateHTML(directory);
 
         ScoreCalculator sc = new ScoreCalculator(pc.getBaseSolution(), pc.getExampleSolutions(), pc.getPMDrules());
         sc.loadMetrics();
