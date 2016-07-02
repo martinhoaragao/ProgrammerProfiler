@@ -1,3 +1,7 @@
+import org.apache.commons.lang3.ArrayUtils;
+
+import java.io.File;
+import java.io.FilenameFilter;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
@@ -8,35 +12,14 @@ public class PP  {
 
         ArrayList<ProjectMetrics> pm = new ArrayList<>();
         HashSet<String> violationsDetected = new HashSet<>();
-        String base = "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\P1_Numeros\\Prof";
-        String[] projects = {
-                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\P1_Numeros\\Ana",
-                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\P1_Numeros\\Daniel",
-                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\P1_Numeros\\Gabriel",
-                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\P1_Numeros\\Marcos",
-                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\P1_Numeros\\Vitor",
-                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\P1_Numeros\\Ze",
-                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\Creissac\\Ex1_P1_Numeros\\Aluno2",
-                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\Creissac\\Ex1_P1_Numeros\\Aluno3",
-                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\Creissac\\Ex1_P1_Numeros\\Aluno4",
-                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\Creissac\\Ex1_P1_Numeros\\Aluno5",
-                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\Creissac\\Ex1_P1_Numeros\\Aluno6",
-                "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\Creissac\\Ex1_P1_Numeros\\Aluno7"
-        };
-        String directory = "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\P1_Numeros";
-        String problemDescpt = "P1) Escreva um programa Java que leia uma quantidade não determinada de números inteiros positivos (O número que encerrará a leitura será o zero). Calcule e imprima a quantidade de números pares e ímpares assim como a média (numero real) dos valores pares.\n" +
-                "Exemplo:\n" +
-                "Dados:\n" +
-                "1 \n" +
-                "2 \n" +
-                "12 \n" +
-                "7 \n" +
-                "15 \n" +
-                "0   \n" +
-                "Resultado:  \n" +
-                "2\n" +
-                "3\n" +
-                "7.0";
+        //String directory = "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\Ex1_P1_Numeros";
+        //String directory = "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\Ex2_P2_Idades";
+        //String directory = "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\Ex3_A1_Arrays";
+        String directory = "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\Ex4_S1_Cadeia";
+        String base = directory + "\\" + "Prof";
+        String[] projects = getSubFolders(directory);
+        projects = ArrayUtils.removeElement(projects, base);
+        String problemDescpt = "Problem Descpt";
 
         PPAnalyser ppaBS = new PPAnalyser(base);
         ppaBS.preProcess();
@@ -81,6 +64,24 @@ public class PP  {
         pi.calcBoundaries();
         pi.inferProfile();
 
+        /*LogGenerator lg = new LogGenerator(directory, sc.getLog(), pi.getLog());
+        lg.generateLog();
+        lg.writeLogToFile();*/
+
+    }
+
+    private static String[] getSubFolders (String dir) {
+        File file = new File(dir);
+        String[] directories = file.list(new FilenameFilter() {
+            @Override
+            public boolean accept(File current, String name) {
+                return new File(current, name).isDirectory();
+            }
+        });
+        for (int i = 0; i<directories.length; i++) {
+            directories[i] = dir + "\\" + directories[i];
+        }
+        return directories;
     }
 
 }

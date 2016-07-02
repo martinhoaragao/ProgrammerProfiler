@@ -21,6 +21,7 @@ public class ScoreCalculator {
     private Map<String, Float> skill, readability;
     private final ProjectMetrics baseSolution;
     private final ArrayList<ProjectMetrics> exampleSolutions;
+    private StringBuilder log;
 
     public ScoreCalculator(ProjectMetrics baseSolution, ArrayList<ProjectMetrics> exampleSolutions, HashMap<String, PMDRule> pmdrules) {
         this.baseSolution = baseSolution;
@@ -38,23 +39,24 @@ public class ScoreCalculator {
     void calculateScore() throws InvocationTargetException, ClassNotFoundException, NoSuchMethodException, IllegalAccessException {
         skill = new HashMap<>();
         readability = new HashMap<>();
+        log = new StringBuilder();
         Class<?> c = Class.forName("ProjectMetrics");
         for (ProjectMetrics pm : exampleSolutions) {
             skill.put(pm.getProjectName(), (float) 0);
             readability.put(pm.getProjectName(), (float) 0);
         }
         for (Metric m : metrics) {
-            System.out.println("\n" + m.getMethodName() + ": " + m.getThis() + " -> " + m.getImplies() + "\nPriority: " + m.getPriority());
+            log.append("\n" + m.getMethodName() + ": " + m.getThis() + " -> " + m.getImplies() + "\nPriority: " + m.getPriority() + "\n");
             calcForMetric(c, m);
         }
-        System.out.println("\nPre-PMD Results:\nSkill  : " + skill.toString());
-        System.out.println("Readability: " + readability.toString());
-        System.out.println("\nPMD Results (higher is worst): ");
+        log.append("\nPre-PMD Results:\n\nSkill  : " + skill.toString() + "\n");
+        log.append("\nReadability: " + readability.toString() + "\n");
+        log.append("\nPMD Results (higher is worst): \n");
         for (ProjectMetrics pm : exampleSolutions) {
             String pName = pm.getProjectName();
             int s = calculateScore(pm, 'R'); //Skill (Not R)
             int r = calculateScore(pm, 'S'); //Readability (Not S)
-            System.out.println(pm.getProjectName() + ": Skill=" + s + "   Readability: " + r);
+            log.append(pm.getProjectName() + ": Skill=" + s + "   Readability: " + r + "\n");
             skill.put(pName, skill.get(pName) - s);
             readability.put(pName, readability.get(pName) - r);
         }int avgs, avgr = avgs = 0;
@@ -66,6 +68,10 @@ public class ScoreCalculator {
             readability.put(key, round(readability.get(key)));
             avgr += readability.get(key);
         }
+        log.append("\nFinal Results:\nSkill  : " + skill.toString() + "\n");
+        log.append("Readability: " + readability.toString() + "\n\n");
+        log.append("Avg Skill : " + (float)avgs / skill.size() + "\n");
+        log.append("Avg Readability : " + (float)avgr / readability.size() + "\n\n");
         System.out.println("\nFinal Results:\nSkill  : " + skill.toString());
         System.out.println("Readability: " + readability.toString());
         System.out.println("Avg Skill : " + (float)avgs / skill.size());
@@ -153,7 +159,7 @@ public class ScoreCalculator {
                 group = "readability";
                 break;
         }
-        System.out.println(pName + " (" + round(value) + ") : " + round(ratio) + " * " + priority + " = " + sig + round(priXrat) + " in " + group);
+        log.append(pName + " (" + round(value) + ") : " + round(ratio) + " * " + priority + " = " + sig + round(priXrat) + " in " + group + "\n");
     }
 
     private float round (float value) { //Round float to 1 decimal place
@@ -168,6 +174,10 @@ public class ScoreCalculator {
 
     public Map<String, Float> getSkill() {
         return skill;
+    }
+
+    public StringBuilder getLog() {
+        return log;
     }
 
 }

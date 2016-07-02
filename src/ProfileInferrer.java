@@ -4,6 +4,7 @@ public class ProfileInferrer {
     private final Map<String, Float> skill, readability;
     private List<Boundaries> bound;
     private TreeMap<Float, TreeMap<Float, ArrayList<String>>> values;
+    private StringBuilder log;
 
     public ProfileInferrer(Map<String, Float> readability, Map<String, Float> skill) {
         this.readability = readability;
@@ -69,9 +70,13 @@ public class ProfileInferrer {
             values.put(s, tm);
         }
 
+        log = new StringBuilder();
         for (Boundaries b : bound) {
+            String profile = getProfile(b.getMinS(), b.getMaxS(), b.getMinR(), b.getMaxR()).toString();
+            log.append(b.getProfileName() + ":\n");
+            log.append(profile + "\n\n");
             System.out.println(b.getProfileName() + ":");
-            System.out.println(getProfile(b.getMinS(), b.getMaxS(), b.getMinR(), b.getMaxR()).toString());
+            System.out.println(profile);
         }
     }
 
@@ -107,6 +112,10 @@ public class ProfileInferrer {
             avg += v;
         }
         return avg / list.size();
+    }
+
+    public StringBuilder getLog() {
+        return log;
     }
 
     private class Boundaries {
