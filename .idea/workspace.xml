@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="611a91e3-5913-483c-a016-88b1183d9edc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LogGenerator.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AuxFiles/metrics.json" afterPath="$PROJECT_DIR$/AuxFiles/metrics.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/LogGenerator.java" afterPath="$PROJECT_DIR$/src/LogGenerator.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PP.java" afterPath="$PROJECT_DIR$/src/PP.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PPAnalysis/ProjectMetrics.java" afterPath="$PROJECT_DIR$/src/PPAnalysis/ProjectMetrics.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProfileInferrer.java" afterPath="$PROJECT_DIR$/src/ProfileInferrer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ScoreCalculator.java" afterPath="$PROJECT_DIR$/src/ScoreCalculator.java" />
     </list>
     <ignored path="ProgrammerProfiler.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,27 +35,21 @@
       <file leaf-file-name="PP.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/PP.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
+            <state relative-caret-position="68">
+              <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3013#3014#0" expanded="true" />
-                <element signature="e#3089#3090#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ScoreCalculator.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ScoreCalculator.java">
+      <file leaf-file-name="PPAnalyser.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/PPAnalysis/PPAnalyser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="60" column="24" selection-start-line="60" selection-start-column="24" selection-end-line="60" selection-end-column="24" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#7125#7126#0" expanded="true" />
-                <element signature="e#7151#7152#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="179">
+              <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -62,32 +57,9 @@
       <file leaf-file-name="ProfileInferrer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ProfileInferrer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="75" column="48" selection-start-line="75" selection-start-column="48" selection-end-line="75" selection-end-column="48" />
-              <folding>
-                <element signature="e#4513#4514#0" expanded="true" />
-                <element signature="e#4539#4540#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProjectsComparison.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ProjectsComparison.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="449">
-              <caret line="63" column="91" selection-start-line="63" selection-start-column="8" selection-end-line="63" selection-end-column="91" />
-              <folding>
-                <element signature="method#genHeader#0;class#ProjectsComparison#0" expanded="false" />
-                <element signature="method#genCounterT#0;class#ProjectsComparison#0" expanded="false" />
-                <element signature="method#genLinesT#0;class#ProjectsComparison#0" expanded="false" />
-                <element signature="method#genCFSsT#0;class#ProjectsComparison#0" expanded="false" />
-                <element signature="method#genNSCOsT#0;class#ProjectsComparison#0" expanded="false" />
-                <element signature="method#genVariablesT#0;class#ProjectsComparison#0" expanded="false" />
-                <element signature="method#genREsT#0;class#ProjectsComparison#0" expanded="false" />
-                <element signature="method#compareFloatLesser#0;class#ProjectsComparison#0" expanded="false" />
-                <element signature="method#compareFloatGreater#0;class#ProjectsComparison#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="145">
+              <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -130,7 +102,6 @@
         <option value="$PROJECT_DIR$/AuxFiles/Java.g4" />
         <option value="$PROJECT_DIR$/src/PPAnalysis/NSCO.java" />
         <option value="$PROJECT_DIR$/AuxFiles/metrics_debug.json" />
-        <option value="$PROJECT_DIR$/AuxFiles/metrics.json" />
         <option value="$PROJECT_DIR$/src/SortedMapTest.java" />
         <option value="$PROJECT_DIR$/src/Boundaries.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
@@ -140,7 +111,6 @@
         <option value="$PROJECT_DIR$/src/PMDAnalysis/PMDRule.java" />
         <option value="$PROJECT_DIR$/src/PPAnalysis/PPAnalyser.java" />
         <option value="$PROJECT_DIR$/src/PMDAnalysis/PMDAnalyser.java" />
-        <option value="$PROJECT_DIR$/src/PPAnalysis/ProjectMetrics.java" />
         <option value="$PROJECT_DIR$/src/ProjectsComparison.java" />
         <option value="$PROJECT_DIR$/src/PPAnalysis/CFSExtractor.java" />
         <option value="$PROJECT_DIR$/src/PPAnalysis/CounterExtractor.java" />
@@ -150,9 +120,11 @@
         <option value="$PROJECT_DIR$/src/FxExample.java" />
         <option value="$PROJECT_DIR$/src/MainForm.form" />
         <option value="$PROJECT_DIR$/AuxFiles/pmd_rules.csv" />
-        <option value="$PROJECT_DIR$/src/ProfileInferrer.java" />
         <option value="$PROJECT_DIR$/src/ScoreCalculator.java" />
         <option value="$PROJECT_DIR$/src/LogGenerator.java" />
+        <option value="$PROJECT_DIR$/src/ProfileInferrer.java" />
+        <option value="$PROJECT_DIR$/src/PPAnalysis/ProjectMetrics.java" />
+        <option value="$PROJECT_DIR$/AuxFiles/metrics.json" />
         <option value="$PROJECT_DIR$/src/PP.java" />
       </list>
     </option>
@@ -197,7 +169,6 @@
     <panes>
       <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -286,6 +257,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -606,21 +578,20 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4379085" sideWeight="0.5121029" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44444445" sideWeight="0.5151286" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.44444445" sideWeight="0.48789713" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7222222" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.44444445" sideWeight="0.48487142" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.72104406" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24886535" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30555555" sideWeight="0.4969743" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="ANTLR Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24183007" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4493464" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.57679737" sideWeight="0.49092284" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -629,6 +600,7 @@
       <window_info id="PMD" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39869282" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30555555" sideWeight="0.4969743" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -647,12 +619,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/ProfileInferrer.java</url>
-          <line>55</line>
+          <line>61</line>
           <properties />
-          <option name="timeStamp" value="44" />
+          <option name="timeStamp" value="49" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="45" />
+      <option name="time" value="51" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -780,21 +752,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AuxFiles/Java.g4">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3824">
-          <caret line="563" column="15" selection-start-line="563" selection-start-column="15" selection-end-line="563" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/AuxFiles/metrics_debug.json" />
-    <entry file="file://$PROJECT_DIR$/AuxFiles/metrics.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="107" column="17" selection-start-line="107" selection-start-column="17" selection-end-line="107" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/SortedMapTest.java" />
     <entry file="file://$PROJECT_DIR$/src/Boundaries.java" />
     <entry file="file://$PROJECT_DIR$/.gitignore">
@@ -851,13 +809,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/PPAnalysis/REExtractor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/PPAnalysis/NSCOExtractor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -880,25 +831,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/FxExample.java" />
-    <entry file="file://$PROJECT_DIR$/src/PPAnalysis/ProjectMetrics.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/MainForm.java" />
     <entry file="file://$PROJECT_DIR$/src/MainForm.form" />
     <entry file="file://$PROJECT_DIR$/src/JaxaFXSample.java" />
-    <entry file="file://$PROJECT_DIR$/AuxFiles/pmd_rules.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="140" column="217" selection-start-line="140" selection-start-column="217" selection-end-line="140" selection-end-column="217" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/PMDAnalysis/PMDRule.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -921,44 +856,38 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="103">
           <caret line="1921" column="0" selection-start-line="1921" selection-start-column="0" selection-end-line="1921" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/PPAnalysis/PPAnalyser.java">
+    <entry file="file://$PROJECT_DIR$/AuxFiles/Java.g4">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LogGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="2211">
+          <caret line="574" column="31" selection-start-line="574" selection-start-column="31" selection-end-line="574" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ScoreCalculator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="60" column="24" selection-start-line="60" selection-start-column="24" selection-end-line="60" selection-end-column="24" />
+        <state relative-caret-position="-1285">
+          <caret line="69" column="9" selection-start-line="69" selection-start-column="9" selection-end-line="69" selection-end-column="9" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#7125#7126#0" expanded="true" />
-            <element signature="e#7151#7152#0" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AuxFiles/pmd_rules.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="140" column="217" selection-start-line="140" selection-start-column="217" selection-end-line="140" selection-end-column="217" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ProjectsComparison.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="63" column="91" selection-start-line="63" selection-start-column="8" selection-end-line="63" selection-end-column="91" />
+        <state relative-caret-position="-1581">
+          <caret line="62" column="52" selection-start-line="61" selection-start-column="8" selection-end-line="62" selection-end-column="52" />
           <folding>
             <element signature="method#genHeader#0;class#ProjectsComparison#0" expanded="false" />
             <element signature="method#genCounterT#0;class#ProjectsComparison#0" expanded="false" />
@@ -973,25 +902,62 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/PPAnalysis/REExtractor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AuxFiles/metrics.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="113" column="17" selection-start-line="113" selection-start-column="17" selection-end-line="113" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PPAnalysis/ProjectMetrics.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="110" column="29" selection-start-line="110" selection-start-column="15" selection-end-line="110" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LogGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="32" column="64" selection-start-line="32" selection-start-column="64" selection-end-line="32" selection-end-column="64" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ProfileInferrer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="75" column="48" selection-start-line="75" selection-start-column="48" selection-end-line="75" selection-end-column="48" />
-          <folding>
-            <element signature="e#4513#4514#0" expanded="true" />
-            <element signature="e#4539#4540#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="145">
+          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PPAnalysis/PPAnalyser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/PP.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
+        <state relative-caret-position="68">
+          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3013#3014#0" expanded="true" />
-            <element signature="e#3089#3090#0" expanded="true" />
           </folding>
         </state>
       </provider>

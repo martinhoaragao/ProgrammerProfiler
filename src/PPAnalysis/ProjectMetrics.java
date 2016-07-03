@@ -108,6 +108,14 @@ public class ProjectMetrics implements Serializable{
         return numberOfStatements - aux;
     }
 
+    public int getNumberOfRES () {
+        int aux = 0;
+        for (RE r: res.keySet()) {
+            aux = aux + res.get(r);
+        }
+        return aux;
+    }
+
     public Map<CFS,Integer> getCFS() {
         return cfss;
     }

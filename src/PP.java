@@ -1,7 +1,6 @@
 import org.apache.commons.lang3.ArrayUtils;
 
 import java.io.File;
-import java.io.FilenameFilter;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
@@ -12,10 +11,10 @@ public class PP  {
 
         ArrayList<ProjectMetrics> pm = new ArrayList<>();
         HashSet<String> violationsDetected = new HashSet<>();
-        //String directory = "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\Ex1_P1_Numeros";
+        String directory = "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\Ex1_P1_Numeros";
         //String directory = "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\Ex2_P2_Idades";
         //String directory = "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\Ex3_A1_Arrays";
-        String directory = "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\Ex4_S1_Cadeia";
+        //String directory = "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\Ex4_S1_Cadeia";
         String base = directory + "\\" + "Prof";
         String[] projects = getSubFolders(directory);
         projects = ArrayUtils.removeElement(projects, base);
@@ -64,20 +63,15 @@ public class PP  {
         pi.calcBoundaries();
         pi.inferProfile();
 
-        /*LogGenerator lg = new LogGenerator(directory, sc.getLog(), pi.getLog());
+        LogGenerator lg = new LogGenerator(directory, sc.getLog(), pi.getLog());
         lg.generateLog();
-        lg.writeLogToFile();*/
+        lg.writeLogToFile();
 
     }
 
     private static String[] getSubFolders (String dir) {
         File file = new File(dir);
-        String[] directories = file.list(new FilenameFilter() {
-            @Override
-            public boolean accept(File current, String name) {
-                return new File(current, name).isDirectory();
-            }
-        });
+        String[] directories = file.list((current, name) -> new File(current, name).isDirectory());
         for (int i = 0; i<directories.length; i++) {
             directories[i] = dir + "\\" + directories[i];
         }

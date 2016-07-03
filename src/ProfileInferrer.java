@@ -25,6 +25,10 @@ public class ProfileInferrer {
         float thirdR = distR / 3;
         float halfThirdS = thirdS / 2;
         float halfThirdR = thirdR / 2;
+
+        log = new StringBuilder();
+        boundariesLog(minS, maxS, minR, maxR); //Add boundaries info to log
+
         minS -= 0.01;
         maxS += 0.01;
         minR -= 0.01;
@@ -70,7 +74,9 @@ public class ProfileInferrer {
             values.put(s, tm);
         }
 
-        log = new StringBuilder();
+        log.append("\n*Final scores*");
+        System.out.println();
+
         for (Boundaries b : bound) {
             String profile = getProfile(b.getMinS(), b.getMaxS(), b.getMinR(), b.getMaxR()).toString();
             log.append(b.getProfileName() + ":\n");
@@ -112,6 +118,29 @@ public class ProfileInferrer {
             avg += v;
         }
         return avg / list.size();
+    }
+
+    private void boundariesLog(float minS, float maxS, float minR, float maxR) {
+        for (String p : skill.keySet()) {
+            if (skill.get(p) == minS) {
+                log.append("Lowest skill is " + minS + " for " + p + "\n");
+                System.out.println("Lowest skill is " + minS + " for " + p);
+            }
+            if (skill.get(p) == maxS) {
+                log.append("Highest skill is " + maxS + " for " + p + "\n");
+                System.out.println("Highest skill is " + maxS + " for " + p);
+            }
+        }
+        for (String p : readability.keySet()) {
+            if (readability.get(p) == minR) {
+                log.append("Lowest readability is " + minR + " for " + p + "\n");
+                System.out.println("Lowest readability is " + minR + " for " + p);
+            }
+            if (readability.get(p) == maxR) {
+                log.append("Highest readability is " + maxR + " for " + p + "\n");
+                System.out.println("Highest readability is " + maxR + " for " + p);
+            }
+        }
     }
 
     public StringBuilder getLog() {

@@ -106,5 +106,11 @@
     "_this"    : "+" ,
     "implies" : "+S",
     "priority": 4
+  },
+  {
+    "methodname": "getNumberOfRES",
+    "_this"    : "+" ,
+    "implies" : "+R",
+    "priority": 3
   }
 ]
