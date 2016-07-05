@@ -1,3 +1,5 @@
+import sun.java2d.cmm.Profile;
+
 import java.util.*;
 
 public class ProfileInferrer {
@@ -5,6 +7,8 @@ public class ProfileInferrer {
     private List<Boundaries> bound;
     private TreeMap<Float, TreeMap<Float, ArrayList<String>>> values;
     private StringBuilder log;
+    private LinkedHashMap<String, ArrayList<Project>> profileToProjects;
+    private int minSi, maxSi, minRi, maxRi;
 
     public ProfileInferrer(Map<String, Float> readability, Map<String, Float> skill) {
         this.readability = readability;
@@ -33,6 +37,11 @@ public class ProfileInferrer {
         maxS += 0.01;
         minR -= 0.01;
         maxR += 0.01;
+
+        minSi = Math.round(minS) - 1;
+        maxSi = Math.round(maxS) + 1;
+        minRi = Math.round(minR) - 1;
+        maxRi = Math.round(maxR) + 1;
 
         bound = new LinkedList<>();
 
@@ -77,12 +86,21 @@ public class ProfileInferrer {
         log.append("\n*Final scores*");
         System.out.println();
 
+        profileToProjects = new LinkedHashMap<>();
+
         for (Boundaries b : bound) {
-            String profile = getProfile(b.getMinS(), b.getMaxS(), b.getMinR(), b.getMaxR()).toString();
+            ArrayList<String> profiles = new ArrayList<>(getProfile(b.getMinS(), b.getMaxS(), b.getMinR(), b.getMaxR()));
+            ArrayList<Project> projects = new ArrayList<>();
+            for (String p : profiles) {
+                projects.add(new Project(p, skill.get(p), readability.get(p)));
+            }
+            profileToProjects.put(b.getProfileName(), projects);
+
+            String profileStr = profiles.toString();
             log.append(b.getProfileName() + ":\n");
-            log.append(profile + "\n\n");
+            log.append(profileStr + "\n\n");
             System.out.println(b.getProfileName() + ":");
-            System.out.println(profile);
+            System.out.println(profileStr);
         }
     }
 
@@ -145,6 +163,26 @@ public class ProfileInferrer {
 
     public StringBuilder getLog() {
         return log;
+    }
+
+    public LinkedHashMap<String, ArrayList<Project>> getProfileToProjects() {
+        return profileToProjects;
+    }
+
+    public int getMaxR() {
+        return maxRi;
+    }
+
+    public int getMaxS() {
+        return maxSi;
+    }
+
+    public int getMinR() {
+        return minRi;
+    }
+
+    public int getMinS() {
+        return minSi;
     }
 
     private class Boundaries {
