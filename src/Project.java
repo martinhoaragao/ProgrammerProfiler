@@ -1,8 +1,7 @@
-
 public class Project {
 
-    Float skill, readability;
-    String projectName;
+    private Float skill, readability;
+    private String projectName;
 
     public Project(String projectName, Float skill, Float readability) {
         this.projectName = projectName;

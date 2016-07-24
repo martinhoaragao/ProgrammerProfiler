@@ -1,5 +1,3 @@
-import sun.java2d.cmm.Profile;
-
 import java.util.*;
 
 public class ProfileInferrer {
@@ -83,7 +81,7 @@ public class ProfileInferrer {
             values.put(s, tm);
         }
 
-        log.append("\n*Final scores*");
+        log.append("\n*Final scores*\n");
         System.out.println();
 
         profileToProjects = new LinkedHashMap<>();
@@ -97,8 +95,8 @@ public class ProfileInferrer {
             profileToProjects.put(b.getProfileName(), projects);
 
             String profileStr = profiles.toString();
-            log.append(b.getProfileName() + ":\n");
-            log.append(profileStr + "\n\n");
+            log.append(b.getProfileName()).append(":\n");
+            log.append(profileStr).append("\n\n");
             System.out.println(b.getProfileName() + ":");
             System.out.println(profileStr);
         }

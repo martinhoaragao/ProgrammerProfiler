@@ -32,7 +32,7 @@ public class ScoreCalculator {
     void loadMetrics() throws FileNotFoundException { //Load PP Metrics
         final Type METRIC_TYPE = new TypeToken<List<Metric>>(){}.getType();
         Gson gson = new Gson();
-        JsonReader reader = new JsonReader(new FileReader("AuxFiles/metrics.json"));
+        JsonReader reader = new JsonReader(new FileReader("auxiliar/metrics.json"));
         metrics = new ArrayList<>(gson.fromJson(reader, METRIC_TYPE));
     }
 

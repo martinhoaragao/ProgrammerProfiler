@@ -1,4 +1,3 @@
-import javafx.stage.Stage;
 import org.apache.commons.lang3.ArrayUtils;
 
 import java.io.File;
@@ -12,10 +11,10 @@ public class PP  {
 
         ArrayList<ProjectMetrics> pm = new ArrayList<>();
         HashSet<String> violationsDetected = new HashSet<>();
-        //String directory = "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\Ex1_P1_Numeros";
+        String directory = "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\Ex1_P1_Numeros";
         //String directory = "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\Ex2_P2_Idades";
         //String directory = "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\Ex3_A1_Arrays";
-        String directory = "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\Ex4_S1_Cadeia";
+        //String directory = "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\Ex4_S1_Cadeia";
         String base = directory + "\\" + "Prof";
         String[] projects = getSubFolders(directory);
         projects = ArrayUtils.removeElement(projects, base);
@@ -64,23 +63,33 @@ public class PP  {
         pi.calcBoundaries();
         pi.inferProfile();
 
+        ResultsPlotter.main(pi.getProfileToProjects(),
+                pi.getMinS(), pi.getMaxS(), pi.getMinR(), pi.getMaxR(),
+                directory);
+
         LogGenerator lg = new LogGenerator(directory, sc.getLog(), pi.getLog());
         lg.generateLog();
         lg.writeLogToFile();
 
-        ResultsPlotter.main(pi.getProfileToProjects(),
-                pi.getMinS(), pi.getMaxS(), pi.getMinR(), pi.getMaxR(),
-                directory);
+        ResultsExporter re = new ResultsExporter(sc.getReadability(), sc.getSkill());
+        re.createJSONFile(getFolderName(directory));
 
     }
 
     private static String[] getSubFolders (String dir) {
         File file = new File(dir);
         String[] directories = file.list((current, name) -> new File(current, name).isDirectory());
-        for (int i = 0; i<directories.length; i++) {
-            directories[i] = dir + "\\" + directories[i];
+        if (directories != null) {
+            for (int i = 0; i<directories.length; i++) {
+                directories[i] = dir + "\\" + directories[i];
+            }
         }
         return directories;
+    }
+
+    private static String getFolderName(String dir) {
+        String[] nodes = dir.split("\\\\");
+        return nodes[nodes.length - 1];
     }
 
 }

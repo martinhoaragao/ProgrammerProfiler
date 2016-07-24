@@ -38,7 +38,7 @@ public class ProjectsComparison {
 
     void loadRules() throws IOException { //Load PMD Rules
         pmdrules = new HashMap<>();
-        CSVReader reader = new CSVReader(new FileReader("AuxFiles/pmd_rules.csv"));
+        CSVReader reader = new CSVReader(new FileReader("auxiliar/pmd_rules.csv"));
         String[] nextLine;
         reader.readNext();
         while ((nextLine = reader.readNext()) != null) {
