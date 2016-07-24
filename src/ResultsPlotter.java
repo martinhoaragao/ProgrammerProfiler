@@ -62,10 +62,12 @@ public class ResultsPlotter extends Application{
                 d.getNode().setOnMouseExited(event -> d.getNode().getStyleClass().remove("onHover"));
 
                 d.getNode().setOnMouseClicked(event -> {
-                    try {
-                        Desktop.getDesktop().open(new File(directory + "\\" + d.getExtraValue()));
-                    } catch (IOException e) {
-                        e.printStackTrace();
+                    if (directory != null) {
+                        try {
+                            Desktop.getDesktop().open(new File(directory + "\\" + d.getExtraValue()));
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
                     }
                 });
 

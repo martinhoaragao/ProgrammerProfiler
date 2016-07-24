@@ -1,95 +1,103 @@
-import org.apache.commons.lang3.ArrayUtils;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.stream.JsonReader;
 
 import java.io.File;
-import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
-import java.util.ArrayList;
-import java.util.HashSet;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.lang.reflect.Type;
+import java.util.*;
 
-public class PP  {
-    public static void main(String args[]) throws IOException, ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException {
+public class PP {
 
-        ArrayList<ProjectMetrics> pm = new ArrayList<>();
-        HashSet<String> violationsDetected = new HashSet<>();
-        String directory = "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\Ex1_P1_Numeros";
-        //String directory = "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\Ex2_P2_Idades";
-        //String directory = "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\Ex3_A1_Arrays";
-        //String directory = "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\Ex4_S1_Cadeia";
-        String base = directory + "\\" + "Prof";
-        String[] projects = getSubFolders(directory);
-        projects = ArrayUtils.removeElement(projects, base);
-        String problemDescpt = "Problem Descpt";
+    private static Map<String, List<Result>> results;
 
-        PPAnalyser ppaBS = new PPAnalyser(base);
-        ppaBS.preProcess();
-        ppaBS.generateParseTrees();
-        ppaBS.extractMetrics();
+    public static void main (String[] args) throws FileNotFoundException {
 
-        PMDAnalyser pmdaBS = new PMDAnalyser(base);
-        pmdaBS.analyse();
-        pmdaBS.read();
+        File folder = new File("results");
+        File[] listOfFiles = folder.listFiles();
+        results = new HashMap<>();
+        Map<String, Float> skill, readability;
 
-        ProjectMetrics bS = ppaBS.getProjectMetrics();
-        bS.setPMDViolations(pmdaBS.getViolations());
-
-        violationsDetected.addAll(pmdaBS.getViolationsDetected());
-
-        for (String p : projects) {
-            PPAnalyser ppaES = new PPAnalyser(p);
-            ppaES.preProcess();
-            ppaES.generateParseTrees();
-            ppaES.extractMetrics();
-
-            PMDAnalyser pmdaES = new PMDAnalyser(p);
-            pmdaES.analyse();
-            pmdaES.read();
-
-            ProjectMetrics eS = ppaES.getProjectMetrics();
-            eS.setPMDViolations(pmdaES.getViolations());
-            pm.add(eS);
-
-            violationsDetected.addAll(pmdaES.getViolationsDetected());
+        Gson gson = new Gson();
+        for (File f: listOfFiles) {
+            if (f.isFile()) {
+                JsonReader reader = new JsonReader(new FileReader(f.getAbsolutePath()));
+                Type collectionType = new TypeToken<List<Result>>(){}.getType();
+                List<Result> res = gson.fromJson(reader, collectionType);
+                for (Result r : res) {
+                    String name = r.getName();
+                    List<Result> aux;
+                    if (results.containsKey(name)) {
+                        aux = results.get(name);
+                    } else {
+                        aux = new ArrayList<>();
+                    }
+                    aux.add(r);
+                    results.put(name, aux);
+                }
+            }
         }
 
-        ProjectsComparison pc = new ProjectsComparison(bS, pm, violationsDetected, problemDescpt);
-        pc.loadRules();
-        //pc.generateHTML(directory);
+        skill = new HashMap<>();
+        readability = new HashMap<>();
 
-        ScoreCalculator sc = new ScoreCalculator(pc.getBaseSolution(), pc.getExampleSolutions(), pc.getPMDrules());
-        sc.loadMetrics();
-        sc.calculateScore();
+        for (String n : results.keySet()) {
+            float s = getSkill(n);
+            float r = getReadability(n);
+            skill.put(n, s);
+            readability.put(n, r);
+        }
 
-        ProfileInferrer pi = new ProfileInferrer(sc.getReadability(), sc.getSkill());
+        ProfileInferrer pi = new ProfileInferrer(readability, skill);
         pi.calcBoundaries();
         pi.inferProfile();
 
         ResultsPlotter.main(pi.getProfileToProjects(),
                 pi.getMinS(), pi.getMaxS(), pi.getMinR(), pi.getMaxR(),
-                directory);
-
-        LogGenerator lg = new LogGenerator(directory, sc.getLog(), pi.getLog());
-        lg.generateLog();
-        lg.writeLogToFile();
-
-        ResultsExporter re = new ResultsExporter(sc.getReadability(), sc.getSkill());
-        re.createJSONFile(getFolderName(directory));
+                null);
 
     }
 
-    private static String[] getSubFolders (String dir) {
-        File file = new File(dir);
-        String[] directories = file.list((current, name) -> new File(current, name).isDirectory());
-        if (directories != null) {
-            for (int i = 0; i<directories.length; i++) {
-                directories[i] = dir + "\\" + directories[i];
-            }
+    private static float getSkill(String n) {
+        List<Result> rs = new ArrayList<>(results.get(n));
+        float aux = 0.0f;
+        for (Result r : rs) {
+            aux += r.getSkill();
         }
-        return directories;
+        return aux / (float)rs.size();
     }
 
-    private static String getFolderName(String dir) {
-        String[] nodes = dir.split("\\\\");
-        return nodes[nodes.length - 1];
+    private static float getReadability(String n) {
+        List<Result> rs = new ArrayList<>(results.get(n));
+        float aux = 0.0f;
+        for (Result r : rs) {
+            aux += r.getReadability();
+        }
+        return aux / (float) rs.size();
+    }
+
+    private class Result {
+        private float skill, readability;
+        private String name;
+
+        Result(String name, float skill, float readability) {
+            this.name = name;
+            this.skill = skill;
+            this.readability = readability;
+        }
+
+        float getSkill() {
+            return skill;
+        }
+
+        float getReadability() {
+            return readability;
+        }
+
+        String getName() {
+            return name;
+        }
     }
 
 }
