@@ -12,63 +12,69 @@ public class PP {
 
     private static Map<String, List<Result>> results;
     private static int numberOfFiles;
-    private static float sAvg, rAvg;
+    private static float sAvg, rAvg; //total average values of Skill and Readability
 
     public static void main (String[] args) throws FileNotFoundException {
 
         File folder = new File("results");
         File[] listOfFiles = folder.listFiles();
-        results = new HashMap<>();
-        Map<String, Float> skill, readability;
-        numberOfFiles = 0;
-        sAvg = rAvg = 0.0f;
-        int totRes = 0;
 
-        Gson gson = new Gson();
-        for (File f: listOfFiles) {
-            if (f.isFile()) {
-                JsonReader reader = new JsonReader(new FileReader(f.getAbsolutePath()));
-                Type collectionType = new TypeToken<List<Result>>(){}.getType();
-                List<Result> res = gson.fromJson(reader, collectionType);
-                for (Result r : res) {
-                    String name = r.getName();
-                    List<Result> aux;
-                    if (results.containsKey(name)) {
-                        aux = results.get(name);
-                    } else {
-                        aux = new ArrayList<>();
+        if (listOfFiles != null) {
+
+            results = new HashMap<>();
+            Map<String, Float> skill, readability;
+            numberOfFiles = 0;
+            sAvg = rAvg = 0.0f;
+            int totRes = 0; //total of results (or solutions)
+
+            Gson gson = new Gson();
+
+            for (File f: listOfFiles) {
+                if (f.isFile()) {
+                    JsonReader reader = new JsonReader(new FileReader(f.getAbsolutePath()));
+                    Type collectionType = new TypeToken<List<Result>>(){}.getType();
+                    List<Result> res = gson.fromJson(reader, collectionType);
+                    for (Result r : res) {
+                        String name = r.getName();
+                        List<Result> aux;
+                        if (results.containsKey(name)) {
+                            aux = results.get(name);
+                        } else {
+                            aux = new ArrayList<>();
+                        }
+                        aux.add(r);
+                        results.put(name, aux);
+                        sAvg += r.getSkill();
+                        rAvg += r.getReadability();
                     }
-                    aux.add(r);
-                    results.put(name, aux);
-                    sAvg += r.getSkill();
-                    rAvg += r.getReadability();
+                    numberOfFiles++;
+                    totRes +=  res.size();
                 }
-                numberOfFiles++;
-                totRes +=  res.size();
             }
+
+            sAvg = sAvg / (float)totRes;
+            rAvg = rAvg / (float)totRes;
+
+            skill = new HashMap<>();
+            readability = new HashMap<>();
+
+            for (String n : results.keySet()) {
+                float s = getSkillAvg(n);
+                float r = getReadabilityAvg(n);
+                skill.put(n, s);
+                readability.put(n, r);
+            }
+
+            ProfileInferrer pi = new ProfileInferrer(readability, skill);
+            pi.calcBoundaries();
+            pi.inferProfile();
+
+            ResultsPlotter.main(pi.getProfileToProjects(),
+                    pi.getMinS(), pi.getMaxS(), pi.getMinR(), pi.getMaxR(),
+                    null);
+        } else {
+            System.err.println("No Result files found.");
         }
-
-        sAvg = sAvg / (float)totRes;
-        rAvg = rAvg / (float)totRes;
-
-        skill = new HashMap<>();
-        readability = new HashMap<>();
-
-        for (String n : results.keySet()) {
-            float s = getSkillAvg(n);
-            float r = getReadabilityAvg(n);
-            skill.put(n, s);
-            readability.put(n, r);
-        }
-
-        ProfileInferrer pi = new ProfileInferrer(readability, skill);
-        pi.calcBoundaries();
-        pi.inferProfile();
-
-        ResultsPlotter.main(pi.getProfileToProjects(),
-                pi.getMinS(), pi.getMaxS(), pi.getMinR(), pi.getMaxR(),
-                null);
-
     }
 
     private static float getSkillAvg(String n) {
