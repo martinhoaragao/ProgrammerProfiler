@@ -21,7 +21,7 @@ public class LogGenerator {
         log.append("Programmer Profiler Tool\n\n");
         log.append("*** Log Report ***\n");
         log.append("Generated on ");
-        log.append(timeStamp + "\n\n");
+        log.append(timeStamp).append("\n\n");
         log.append("PP Analysis: \n");
         log.append(sc);
         log.append(pi);

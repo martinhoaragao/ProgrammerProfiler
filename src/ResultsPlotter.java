@@ -1,6 +1,4 @@
 import javafx.application.Application;
-import javafx.collections.ObservableList;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.ScatterChart;
@@ -36,7 +34,7 @@ public class ResultsPlotter extends Application{
             XYChart.Series series = new XYChart.Series();
             series.setName(profileName);
             for (Project p : entry.getValue()) {
-                XYChart.Data<Number, Number> xyc = new XYChart.Data<Number, Number>(p.getSkill(), p.getReadability());
+                XYChart.Data<Number, Number> xyc = new XYChart.Data<>(p.getSkill(), p.getReadability());
                 xyc.setExtraValue(p.getProjectName());
                 series.getData().add(xyc);
             }

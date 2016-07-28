@@ -139,21 +139,21 @@ public class ProfileInferrer {
     private void boundariesLog(float minS, float maxS, float minR, float maxR) {
         for (String p : skill.keySet()) {
             if (skill.get(p) == minS) {
-                log.append("Lowest skill is " + minS + " for " + p + "\n");
+                log.append("Lowest skill is ").append(minS).append(" for ").append(p).append("\n");
                 System.out.println("Lowest skill is " + minS + " for " + p);
             }
             if (skill.get(p) == maxS) {
-                log.append("Highest skill is " + maxS + " for " + p + "\n");
+                log.append("Highest skill is ").append(maxS).append(" for ").append(p).append("\n");
                 System.out.println("Highest skill is " + maxS + " for " + p);
             }
         }
         for (String p : readability.keySet()) {
             if (readability.get(p) == minR) {
-                log.append("Lowest readability is " + minR + " for " + p + "\n");
+                log.append("Lowest readability is ").append(minR).append(" for ").append(p).append("\n");
                 System.out.println("Lowest readability is " + minR + " for " + p);
             }
             if (readability.get(p) == maxR) {
-                log.append("Highest readability is " + maxR + " for " + p + "\n");
+                log.append("Highest readability is ").append(maxR).append(" for ").append(p).append("\n");
                 System.out.println("Highest readability is " + maxR + " for " + p);
             }
         }
