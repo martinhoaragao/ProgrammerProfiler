@@ -11,6 +11,8 @@ import java.util.*;
 public class PP {
 
     private static Map<String, List<Result>> results;
+    private static int numberOfFiles;
+    private static float sAvg, rAvg;
 
     public static void main (String[] args) throws FileNotFoundException {
 
@@ -18,6 +20,9 @@ public class PP {
         File[] listOfFiles = folder.listFiles();
         results = new HashMap<>();
         Map<String, Float> skill, readability;
+        numberOfFiles = 0;
+        sAvg = rAvg = 0.0f;
+        int totRes = 0;
 
         Gson gson = new Gson();
         for (File f: listOfFiles) {
@@ -35,16 +40,23 @@ public class PP {
                     }
                     aux.add(r);
                     results.put(name, aux);
+                    sAvg += r.getSkill();
+                    rAvg += r.getReadability();
                 }
+                numberOfFiles++;
+                totRes +=  res.size();
             }
         }
+
+        sAvg = sAvg / (float)totRes;
+        rAvg = rAvg / (float)totRes;
 
         skill = new HashMap<>();
         readability = new HashMap<>();
 
         for (String n : results.keySet()) {
-            float s = getSkill(n);
-            float r = getReadability(n);
+            float s = getSkillAvg(n);
+            float r = getReadabilityAvg(n);
             skill.put(n, s);
             readability.put(n, r);
         }
@@ -59,22 +71,26 @@ public class PP {
 
     }
 
-    private static float getSkill(String n) {
+    private static float getSkillAvg(String n) {
         List<Result> rs = new ArrayList<>(results.get(n));
-        float aux = 0.0f;
+        float sAux = 0.0f;
         for (Result r : rs) {
-            aux += r.getSkill();
+            sAux += r.getSkill();
         }
-        return aux / (float)rs.size();
+        int diff = numberOfFiles - rs.size();
+        sAux += (sAvg * diff);
+        return sAux / numberOfFiles;
     }
 
-    private static float getReadability(String n) {
+    private static float getReadabilityAvg(String n) {
         List<Result> rs = new ArrayList<>(results.get(n));
-        float aux = 0.0f;
+        float rAux = 0.0f;
         for (Result r : rs) {
-            aux += r.getReadability();
+            rAux += r.getReadability();
         }
-        return aux / (float) rs.size();
+        int diff = numberOfFiles - rs.size();
+        rAux += (rAvg * diff);
+        return rAux / numberOfFiles;
     }
 
     private class Result {
