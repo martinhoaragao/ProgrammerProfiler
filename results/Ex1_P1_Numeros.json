@@ -1,18 +1,18 @@
 [
     {
         "name": "Aluno34",
-        "skill": 19.8,
+        "skill": 22.8,
         "readability": 12.8
     },
     {
         "name": "Aluno36",
-        "skill": 17.3,
-        "readability": 17.3
+        "skill": 22.9,
+        "readability": 19.2
     },
     {
         "name": "Aluno37",
-        "skill": 17.2,
-        "readability": 7.1
+        "skill": 24.3,
+        "readability": 7.9
     },
     {
         "name": "Aluno30",
@@ -26,7 +26,7 @@
     },
     {
         "name": "Aluno32",
-        "skill": 24.3,
+        "skill": 27.3,
         "readability": 10.1
     },
     {
@@ -41,12 +41,12 @@
     },
     {
         "name": "Aluno39",
-        "skill": 20.7,
+        "skill": 23.7,
         "readability": 10.6
     },
     {
         "name": "FranciscoLira",
-        "skill": 24.7,
+        "skill": 27.7,
         "readability": 3.5
     },
     {
@@ -81,7 +81,7 @@
     },
     {
         "name": "Aluno68",
-        "skill": 17.8,
+        "skill": 20.8,
         "readability": 7.4
     },
     {
@@ -101,7 +101,7 @@
     },
     {
         "name": "Daniel",
-        "skill": 23.0,
+        "skill": 26.0,
         "readability": 8.5
     },
     {
@@ -121,7 +121,7 @@
     },
     {
         "name": "Aluno21",
-        "skill": 20.1,
+        "skill": 23.1,
         "readability": 8.3
     },
     {
@@ -201,7 +201,7 @@
     },
     {
         "name": "Aluno14",
-        "skill": 19.8,
+        "skill": 22.8,
         "readability": 9.6
     },
     {
@@ -211,12 +211,12 @@
     },
     {
         "name": "Aluno59",
-        "skill": 13.6,
+        "skill": 16.6,
         "readability": 3.2
     },
     {
         "name": "Ze",
-        "skill": 25.7,
+        "skill": 28.7,
         "readability": 4.4
     },
     {
@@ -241,13 +241,13 @@
     },
     {
         "name": "Aluno11",
-        "skill": 23.4,
+        "skill": 26.4,
         "readability": 4.4
     },
     {
         "name": "Aluno55",
-        "skill": 19.6,
-        "readability": 10.0
+        "skill": 24.2,
+        "readability": 11.2
     },
     {
         "name": "Aluno16",
@@ -271,7 +271,7 @@
     },
     {
         "name": "Aluno19",
-        "skill": 20.4,
+        "skill": 23.4,
         "readability": 7.2
     },
     {
@@ -306,17 +306,17 @@
     },
     {
         "name": "Prof",
-        "skill": 17.0,
+        "skill": 23.0,
         "readability": 10.0
     },
     {
         "name": "Aluno40",
-        "skill": 19.9,
+        "skill": 22.9,
         "readability": 8.8
     },
     {
         "name": "Aluno45",
-        "skill": 19.6,
+        "skill": 22.6,
         "readability": 9.5
     },
     {
@@ -341,7 +341,7 @@
     },
     {
         "name": "Aluno42",
-        "skill": 19.5,
+        "skill": 22.5,
         "readability": 13.7
     },
     {
@@ -351,7 +351,7 @@
     },
     {
         "name": "Aluno44",
-        "skill": 22.2,
+        "skill": 25.2,
         "readability": 6.3
     },
     {
@@ -361,7 +361,7 @@
     },
     {
         "name": "Marcos",
-        "skill": 17.5,
-        "readability": 6.0
+        "skill": 18.6,
+        "readability": 6.7
     }
 ]

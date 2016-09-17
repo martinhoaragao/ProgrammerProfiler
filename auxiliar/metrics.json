@@ -84,6 +84,12 @@
     "priority": 4
   },
   {
+    "methodname": "getNumberOfNSCCFS",
+    "_this"    : "+" ,
+    "implies" : "+S",
+    "priority": 6
+  },
+  {
     "methodname": "getDifferentTypesOfNSCO",
     "_this"    : "+" ,
     "implies" : "+S",

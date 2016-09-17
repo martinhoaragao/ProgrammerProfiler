@@ -53,7 +53,7 @@ public class ProjectProfiler {
 
         ProjectsComparison pc = new ProjectsComparison(bS, pm, violationsDetected, problemDescpt);
         pc.loadRules();
-        //pc.generateHTML(directory);
+        pc.generateHTML(directory);
 
         ScoreCalculator sc = new ScoreCalculator(pc.getBaseSolution(), pc.getExampleSolutions(), pc.getPMDrules());
         sc.loadMetrics();

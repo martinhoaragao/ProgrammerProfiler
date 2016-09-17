@@ -59,7 +59,8 @@ public class ScoreCalculator {
             log.append(pm.getProjectName() + ": Skill=" + s + "   Readability: " + r + "\n");
             skill.put(pName, skill.get(pName) - s);
             readability.put(pName, readability.get(pName) - r);
-        }int avgs, avgr = avgs = 0;
+        }
+        int avgs, avgr = avgs = 0;
         for (String key : skill.keySet()) {
             skill.put(key, round(skill.get(key)));
             avgs += skill.get(key);

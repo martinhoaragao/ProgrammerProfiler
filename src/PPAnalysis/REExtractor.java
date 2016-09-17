@@ -25,6 +25,9 @@ public class REExtractor extends JavaBaseVisitor {
         if (ctx.getText().equals("System.out")) {
             incr(RE.SYSOUT);
         }
+        if (ctx.getText().equals("out.println")) {
+            incr(RE.SYSOUT);
+        }
         if (ctx.getText().equals("System.err")) {
             incr(RE.SYSERR);
         }

@@ -34,6 +34,7 @@ public class PP {
                     JsonReader reader = new JsonReader(new FileReader(f.getAbsolutePath()));
                     Type collectionType = new TypeToken<List<Result>>(){}.getType();
                     List<Result> res = gson.fromJson(reader, collectionType);
+                    res = new ArrayList<>(normalize(res));
                     for (Result r : res) {
                         String name = r.getName();
                         List<Result> aux;
@@ -75,6 +76,54 @@ public class PP {
         } else {
             System.err.println("No Result files found.");
         }
+    }
+
+    private static List<Result> normalize(List<Result> res) {
+        //Normalize all results (0-100)
+        float s, r, lowestS, lowestR, highestS, highestR;
+        lowestS = highestS = res.get(0).getSkill();
+        lowestR = highestR = res.get(0).getReadability();
+        for (Result rs : res) {
+            s = rs.getSkill();
+            r = rs.getReadability();
+            if (s < lowestS) {
+                lowestS = s;
+            } else {
+                if (s > highestS) {
+                    highestS = s;
+                }
+            }
+            if (r < lowestR) {
+                lowestR = r;
+            } else {
+                if (r > highestR) {
+                    highestR = r;
+                }
+            }
+        }
+        res = normalizeSkill(res, lowestS, highestS);
+        res = normalizeReadability(res, lowestR, highestR);
+        return res;
+    }
+
+    private static List<Result> normalizeSkill(List<Result> res, float lowestS, float highestS) {
+        for (Result r : res) {
+            r.setSkill(r.getSkill() - lowestS);
+        }
+        for (Result r : res) {
+            r.setSkill((r.getSkill() * 100.0f) / highestS);
+        }
+        return res;
+    }
+
+    private static List<Result> normalizeReadability(List<Result> res, float lowestR, float highestR) {
+        for (Result r : res) {
+            r.setReadability(r.getReadability() - lowestR);
+        }
+        for (Result r : res) {
+            r.setReadability((r.getReadability() * 100.0f) / highestR);
+        }
+        return res;
     }
 
     private static float getSkillAvg(String n) {
@@ -119,6 +168,14 @@ public class PP {
 
         String getName() {
             return name;
+        }
+
+        public void setSkill(float skill) {
+            this.skill = skill;
+        }
+
+        public void setReadability(float readability) {
+            this.readability = readability;
         }
     }
 
