@@ -12,9 +12,9 @@ public class ProjectProfiler {
         ArrayList<ProjectMetrics> pm = new ArrayList<>();
         HashSet<String> violationsDetected = new HashSet<>();
         //String directory = "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\Ex1_P1_Numeros";
-        String directory = "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\Ex2_P2_Idades";
+        //String directory = "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\Ex2_P2_Idades";
         //String directory = "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\Ex3_A1_Arrays";
-        //String directory = "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\Ex4_S1_Cadeia";
+        String directory = "C:\\Users\\Daniel\\Documents\\Tese\\SourceFiles\\SimpleExercises\\Ex4_S1_Cadeia";
         String base = directory + "\\" + "Prof";
         String[] projects = getSubFolders(directory);
         projects = ArrayUtils.removeElement(projects, base);
@@ -65,7 +65,7 @@ public class ProjectProfiler {
 
         ResultsPlotter.main(pi.getProfileToProjects(),
                 pi.getMinS(), pi.getMaxS(), pi.getMinR(), pi.getMaxR(),
-                directory);
+                directory, getFolderName(directory));
 
         LogGenerator lg = new LogGenerator(directory, sc.getLog(), pi.getLog());
         lg.generateLog();

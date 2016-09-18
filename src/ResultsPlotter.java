@@ -1,11 +1,15 @@
 import javafx.application.Application;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.scene.Scene;
+import javafx.scene.SnapshotParameters;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.ScatterChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Tooltip;
+import javafx.scene.image.WritableImage;
 import javafx.stage.Stage;
 
+import javax.imageio.ImageIO;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
@@ -17,7 +21,7 @@ public class ResultsPlotter extends Application{
 
     private static Map<String, ArrayList<Project>> profileToProjects;
     private static int minX, maxX, minY, maxY;
-    private static String directory;
+    private static String directory, folderName;
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -40,7 +44,7 @@ public class ResultsPlotter extends Application{
             }
             sc.getData().add(series);
         }
-
+        sc.setAnimated(false);
         Scene scene = new Scene(sc, 800, 600);
         stage.setScene(scene);
         stage.show();
@@ -71,17 +75,28 @@ public class ResultsPlotter extends Application{
 
             }
         }
+
+        if (directory != null) {
+            saveToPNG(sc);
+        }
+    }
+
+    private void saveToPNG(ScatterChart<Number, Number> scene) throws IOException {;
+        WritableImage image = scene.snapshot(new SnapshotParameters(), null);
+        File file = new File(directory + "\\" + folderName + ".png");
+        ImageIO.write(SwingFXUtils.fromFXImage(image, null), "png", file);
     }
 
     public static void main(LinkedHashMap<String, ArrayList<Project>> projects,
                             int minS, int maxS, int minR, int maxR,
-                            String dir) {
+                            String dir, String fName) {
         profileToProjects = projects;
         minX = minS;
         maxX = maxS;
         minY = minR;
         maxY = maxR;
         directory = dir;
+        folderName = fName;
         launch((String[]) null);
     }
 }

@@ -72,7 +72,7 @@ public class PP {
 
             ResultsPlotter.main(pi.getProfileToProjects(),
                     pi.getMinS(), pi.getMaxS(), pi.getMinR(), pi.getMaxR(),
-                    null);
+                    null, null);
         } else {
             System.err.println("No Result files found.");
         }
