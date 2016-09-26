@@ -76,14 +76,15 @@ public class ResultsPlotter extends Application{
             }
         }
 
-        if (directory != null) {
-            saveToPNG(sc);
+        if (folderName != null) {
+            saveToPNG(sc, directory);
         }
     }
 
-    private void saveToPNG(ScatterChart<Number, Number> scene) throws IOException {;
+    private void saveToPNG(ScatterChart<Number, Number> scene, String dir) throws IOException {
+        if (dir == null) dir = "results";
         WritableImage image = scene.snapshot(new SnapshotParameters(), null);
-        File file = new File(directory + "\\" + folderName + ".png");
+        File file = new File(dir + "\\" + folderName + ".png");
         ImageIO.write(SwingFXUtils.fromFXImage(image, null), "png", file);
     }
 

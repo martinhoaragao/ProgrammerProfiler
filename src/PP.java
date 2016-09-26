@@ -30,7 +30,7 @@ public class PP {
             Gson gson = new Gson();
 
             for (File f: listOfFiles) {
-                if (f.isFile()) {
+                if (f.isFile() && f.getName().contains("json")) {
                     JsonReader reader = new JsonReader(new FileReader(f.getAbsolutePath()));
                     Type collectionType = new TypeToken<List<Result>>(){}.getType();
                     List<Result> res = gson.fromJson(reader, collectionType);
@@ -60,19 +60,21 @@ public class PP {
             readability = new HashMap<>();
 
             for (String n : results.keySet()) {
-                float s = getSkillAvg(n);
-                float r = getReadabilityAvg(n);
-                skill.put(n, s);
-                readability.put(n, r);
+                if (results.get(n).size() > 2) { //More than one exercise solved
+                    float s = getSkillAvg(n);
+                    float r = getReadabilityAvg(n);
+                    skill.put(n, s);
+                    readability.put(n, r);
+                }
             }
 
-            ProfileInferrer pi = new ProfileInferrer(readability, skill);
+            ImprovedProfileInferrer pi = new ImprovedProfileInferrer(readability, skill);
             pi.calcBoundaries();
             pi.inferProfile();
 
             ResultsPlotter.main(pi.getProfileToProjects(),
-                    pi.getMinS(), pi.getMaxS(), pi.getMinR(), pi.getMaxR(),
-                    null, null);
+                    0, pi.getMaxS(), 0, pi.getMaxR(),
+                    null, "final");
         } else {
             System.err.println("No Result files found.");
         }
@@ -133,8 +135,8 @@ public class PP {
             sAux += r.getSkill();
         }
         int diff = numberOfFiles - rs.size();
-        sAux += (sAvg * diff);
-        return sAux / numberOfFiles;
+        //sAux += (sAvg * diff);
+        return sAux / (numberOfFiles - diff);
     }
 
     private static float getReadabilityAvg(String n) {
@@ -144,8 +146,8 @@ public class PP {
             rAux += r.getReadability();
         }
         int diff = numberOfFiles - rs.size();
-        rAux += (rAvg * diff);
-        return rAux / numberOfFiles;
+        //rAux += (rAvg * diff);
+        return rAux / (numberOfFiles - diff);
     }
 
     private class Result {
