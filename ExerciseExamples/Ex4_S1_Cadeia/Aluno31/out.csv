@@ -1,0 +1,8 @@
+"Problem","Package","File","Priority","Line","Description","Rule set","Rule"
+"1","","C:\Users\Daniel\Documents\Tese\SourceFiles\SimpleExercises\Ex4_S1_Cadeia\Aluno31\Exercicios.java","3","7","headerCommentRequirement Required","Comments","CommentRequired"
+"2","","C:\Users\Daniel\Documents\Tese\SourceFiles\SimpleExercises\Ex4_S1_Cadeia\Aluno31\Exercicios.java","3","8","All methods are static.  Consider using a utility class instead. Alternatively, you could add a private constructor or make the class abstract to silence this warning.","Design","UseUtilityClass"
+"3","","C:\Users\Daniel\Documents\Tese\SourceFiles\SimpleExercises\Ex4_S1_Cadeia\Aluno31\Exercicios.java","3","9","Parameter 'str' is not assigned and could be declared final","Optimization","MethodArgumentCouldBeFinal"
+"4","","C:\Users\Daniel\Documents\Tese\SourceFiles\SimpleExercises\Ex4_S1_Cadeia\Aluno31\Exercicios.java","3","9","Parameter 'substr' is not assigned and could be declared final","Optimization","MethodArgumentCouldBeFinal"
+"5","","C:\Users\Daniel\Documents\Tese\SourceFiles\SimpleExercises\Ex4_S1_Cadeia\Aluno31\Exercicios.java","3","9","publicMethodCommentRequirement Required","Comments","CommentRequired"
+"6","","C:\Users\Daniel\Documents\Tese\SourceFiles\SimpleExercises\Ex4_S1_Cadeia\Aluno31\Exercicios.java","5","11","Found 'DD'-anomaly for variable 'countStr' (lines '11'-'15').","Controversial","DataflowAnomalyAnalysis"
+"7","","C:\Users\Daniel\Documents\Tese\SourceFiles\SimpleExercises\Ex4_S1_Cadeia\Aluno31\Exercicios.java","5","15","Found 'DD'-anomaly for variable 'countStr' (lines '15'-'15').","Controversial","DataflowAnomalyAnalysis"

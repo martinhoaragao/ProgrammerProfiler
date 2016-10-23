@@ -1,0 +1,8 @@
+"Problem","Package","File","Priority","Line","Description","Rule set","Rule"
+"1","FICHA8","C:\Users\Daniel\Documents\Tese\SourceFiles\SimpleExercises\Ex4_S1_Cadeia\Aluno54\Ex4.java","3","5","All methods are static.  Consider using a utility class instead. Alternatively, you could add a private constructor or make the class abstract to silence this warning.","Design","UseUtilityClass"
+"2","FICHA8","C:\Users\Daniel\Documents\Tese\SourceFiles\SimpleExercises\Ex4_S1_Cadeia\Aluno54\Ex4.java","3","5","headerCommentRequirement Required","Comments","CommentRequired"
+"3","FICHA8","C:\Users\Daniel\Documents\Tese\SourceFiles\SimpleExercises\Ex4_S1_Cadeia\Aluno54\Ex4.java","2","7","Avoid reassigning parameters such as 'grande'","Design","AvoidReassigningParameters"
+"4","FICHA8","C:\Users\Daniel\Documents\Tese\SourceFiles\SimpleExercises\Ex4_S1_Cadeia\Aluno54\Ex4.java","3","7","Parameter 'pequena' is not assigned and could be declared final","Optimization","MethodArgumentCouldBeFinal"
+"5","FICHA8","C:\Users\Daniel\Documents\Tese\SourceFiles\SimpleExercises\Ex4_S1_Cadeia\Aluno54\Ex4.java","3","7","publicMethodCommentRequirement Required","Comments","CommentRequired"
+"6","FICHA8","C:\Users\Daniel\Documents\Tese\SourceFiles\SimpleExercises\Ex4_S1_Cadeia\Aluno54\Ex4.java","5","10","Found 'DD'-anomaly for variable 'conta' (lines '10'-'14').","Controversial","DataflowAnomalyAnalysis"
+"7","FICHA8","C:\Users\Daniel\Documents\Tese\SourceFiles\SimpleExercises\Ex4_S1_Cadeia\Aluno54\Ex4.java","5","14","Found 'DD'-anomaly for variable 'conta' (lines '14'-'14').","Controversial","DataflowAnomalyAnalysis"

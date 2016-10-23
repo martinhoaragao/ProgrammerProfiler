@@ -1,0 +1,8 @@
+"Problem","Package","File","Priority","Line","Description","Rule set","Rule"
+"1","","C:\Users\Daniel\Documents\Tese\SourceFiles\SimpleExercises\Ex4_S1_Cadeia\Aluno63\Cadeias.java","3","1","headerCommentRequirement Required","Comments","CommentRequired"
+"2","","C:\Users\Daniel\Documents\Tese\SourceFiles\SimpleExercises\Ex4_S1_Cadeia\Aluno63\Cadeias.java","3","2","All methods are static.  Consider using a utility class instead. Alternatively, you could add a private constructor or make the class abstract to silence this warning.","Design","UseUtilityClass"
+"3","","C:\Users\Daniel\Documents\Tese\SourceFiles\SimpleExercises\Ex4_S1_Cadeia\Aluno63\Cadeias.java","2","3","Avoid reassigning parameters such as 'cadeia'","Design","AvoidReassigningParameters"
+"4","","C:\Users\Daniel\Documents\Tese\SourceFiles\SimpleExercises\Ex4_S1_Cadeia\Aluno63\Cadeias.java","3","3","Parameter 'subcadeia' is not assigned and could be declared final","Optimization","MethodArgumentCouldBeFinal"
+"5","","C:\Users\Daniel\Documents\Tese\SourceFiles\SimpleExercises\Ex4_S1_Cadeia\Aluno63\Cadeias.java","3","3","publicMethodCommentRequirement Required","Comments","CommentRequired"
+"6","","C:\Users\Daniel\Documents\Tese\SourceFiles\SimpleExercises\Ex4_S1_Cadeia\Aluno63\Cadeias.java","5","4","Found 'DD'-anomaly for variable 'count' (lines '4'-'7').","Controversial","DataflowAnomalyAnalysis"
+"7","","C:\Users\Daniel\Documents\Tese\SourceFiles\SimpleExercises\Ex4_S1_Cadeia\Aluno63\Cadeias.java","5","7","Found 'DD'-anomaly for variable 'count' (lines '7'-'7').","Controversial","DataflowAnomalyAnalysis"

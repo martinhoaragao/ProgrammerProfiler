@@ -68,7 +68,7 @@ public class PP {
                 }
             }
 
-            ImprovedProfileInferrer pi = new ImprovedProfileInferrer(readability, skill);
+            ProfileInferrer pi = new ProfileInferrer(readability, skill);
             pi.calcBoundaries();
             pi.inferProfile();
 
