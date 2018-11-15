@@ -59,7 +59,7 @@ public class ProjectsComparison {
         genPMDST(sb);
         genPMDRsT(sb);
         genFooter(sb);
-        String[] nodes = dir.split("\\\\");
+        String[] nodes = dir.split("/");
         String folderName = nodes[nodes.length - 1];
         Files.write(Paths.get(dir + "/" + folderName + ".html"), sb.toString().getBytes());
     }

@@ -1,0 +1,487 @@
+Programmer Profiler Tool
+
+*** Log Report ***
+Generated on 25/10/2018 10:17:45
+
+PP Analysis: 
+
+getNumberOfClasses: + -> +R
+Priority: 2
+Guy17 (1.0) : 0.5 * 2 = +1.0 in readability
+Guy10 (2.0) : 1.0 * 2 = +2.0 in readability
+Guy5 (1.0) : 0.5 * 2 = +1.0 in readability
+Guy2 (1.0) : 0.5 * 2 = +1.0 in readability
+Guy3 (1.0) : 0.5 * 2 = +1.0 in readability
+Guy4 (1.0) : 0.5 * 2 = +1.0 in readability
+Guy18 (1.0) : 0.5 * 2 = +1.0 in readability
+Guy11 (2.0) : 1.0 * 2 = +2.0 in readability
+Guy16 (1.0) : 0.5 * 2 = +1.0 in readability
+Guy13 (1.0) : 0.5 * 2 = +1.0 in readability
+Guy14 (1.0) : 0.5 * 2 = +1.0 in readability
+Guy1 (1.0) : 0.5 * 2 = +1.0 in readability
+Guy6 (1.0) : 0.5 * 2 = +1.0 in readability
+Guy7 (1.0) : 0.5 * 2 = +1.0 in readability
+Guy15 (1.0) : 0.5 * 2 = +1.0 in readability
+Guy9 (1.0) : 0.5 * 2 = +1.0 in readability
+Guy12 (1.0) : 0.5 * 2 = +1.0 in readability
+Guy8 (1.0) : 0.5 * 2 = +1.0 in readability
+
+getNumberOfClasses: + -> +S
+Priority: 2
+Guy17 (1.0) : 0.5 * 2 = +1.0 in skill
+Guy10 (2.0) : 1.0 * 2 = +2.0 in skill
+Guy5 (1.0) : 0.5 * 2 = +1.0 in skill
+Guy2 (1.0) : 0.5 * 2 = +1.0 in skill
+Guy3 (1.0) : 0.5 * 2 = +1.0 in skill
+Guy4 (1.0) : 0.5 * 2 = +1.0 in skill
+Guy18 (1.0) : 0.5 * 2 = +1.0 in skill
+Guy11 (2.0) : 1.0 * 2 = +2.0 in skill
+Guy16 (1.0) : 0.5 * 2 = +1.0 in skill
+Guy13 (1.0) : 0.5 * 2 = +1.0 in skill
+Guy14 (1.0) : 0.5 * 2 = +1.0 in skill
+Guy1 (1.0) : 0.5 * 2 = +1.0 in skill
+Guy6 (1.0) : 0.5 * 2 = +1.0 in skill
+Guy7 (1.0) : 0.5 * 2 = +1.0 in skill
+Guy15 (1.0) : 0.5 * 2 = +1.0 in skill
+Guy9 (1.0) : 0.5 * 2 = +1.0 in skill
+Guy12 (1.0) : 0.5 * 2 = +1.0 in skill
+Guy8 (1.0) : 0.5 * 2 = +1.0 in skill
+
+getNumberOfMethods: + -> +R
+Priority: 2
+Guy17 (2.0) : 0.1 * 2 = +0.2 in readability
+Guy10 (18.0) : 1.0 * 2 = +2.0 in readability
+Guy5 (2.0) : 0.1 * 2 = +0.2 in readability
+Guy2 (2.0) : 0.1 * 2 = +0.2 in readability
+Guy3 (2.0) : 0.1 * 2 = +0.2 in readability
+Guy4 (2.0) : 0.1 * 2 = +0.2 in readability
+Guy18 (2.0) : 0.1 * 2 = +0.2 in readability
+Guy11 (7.0) : 0.4 * 2 = +0.8 in readability
+Guy16 (2.0) : 0.1 * 2 = +0.2 in readability
+Guy13 (2.0) : 0.1 * 2 = +0.2 in readability
+Guy14 (2.0) : 0.1 * 2 = +0.2 in readability
+Guy1 (2.0) : 0.1 * 2 = +0.2 in readability
+Guy6 (2.0) : 0.1 * 2 = +0.2 in readability
+Guy7 (2.0) : 0.1 * 2 = +0.2 in readability
+Guy15 (3.0) : 0.2 * 2 = +0.3 in readability
+Guy9 (2.0) : 0.1 * 2 = +0.2 in readability
+Guy12 (2.0) : 0.1 * 2 = +0.2 in readability
+Guy8 (2.0) : 0.1 * 2 = +0.2 in readability
+
+getNumberOfMethods: + -> +S
+Priority: 2
+Guy17 (2.0) : 0.1 * 2 = +0.2 in skill
+Guy10 (18.0) : 1.0 * 2 = +2.0 in skill
+Guy5 (2.0) : 0.1 * 2 = +0.2 in skill
+Guy2 (2.0) : 0.1 * 2 = +0.2 in skill
+Guy3 (2.0) : 0.1 * 2 = +0.2 in skill
+Guy4 (2.0) : 0.1 * 2 = +0.2 in skill
+Guy18 (2.0) : 0.1 * 2 = +0.2 in skill
+Guy11 (7.0) : 0.4 * 2 = +0.8 in skill
+Guy16 (2.0) : 0.1 * 2 = +0.2 in skill
+Guy13 (2.0) : 0.1 * 2 = +0.2 in skill
+Guy14 (2.0) : 0.1 * 2 = +0.2 in skill
+Guy1 (2.0) : 0.1 * 2 = +0.2 in skill
+Guy6 (2.0) : 0.1 * 2 = +0.2 in skill
+Guy7 (2.0) : 0.1 * 2 = +0.2 in skill
+Guy15 (3.0) : 0.2 * 2 = +0.3 in skill
+Guy9 (2.0) : 0.1 * 2 = +0.2 in skill
+Guy12 (2.0) : 0.1 * 2 = +0.2 in skill
+Guy8 (2.0) : 0.1 * 2 = +0.2 in skill
+
+getNumberOfStatementsWithoutRES: - -> +S
+Priority: 8
+Guy17 (4.0) : 1.0 * 8 = +8.0 in skill
+Guy10 (60.0) : -3.7 * 8 = +-29.3 in skill
+Guy5 (5.0) : 0.9 * 8 = +7.3 in skill
+Guy2 (4.0) : 1.0 * 8 = +8.0 in skill
+Guy3 (4.0) : 1.0 * 8 = +8.0 in skill
+Guy4 (9.0) : 0.6 * 8 = +4.7 in skill
+Guy18 (4.0) : 1.0 * 8 = +8.0 in skill
+Guy11 (20.0) : -0.3 * 8 = +-2.7 in skill
+Guy16 (8.0) : 0.7 * 8 = +5.3 in skill
+Guy13 (4.0) : 1.0 * 8 = +8.0 in skill
+Guy14 (7.0) : 0.8 * 8 = +6.0 in skill
+Guy1 (4.0) : 1.0 * 8 = +8.0 in skill
+Guy6 (9.0) : 0.6 * 8 = +4.7 in skill
+Guy7 (4.0) : 1.0 * 8 = +8.0 in skill
+Guy15 (8.0) : 0.7 * 8 = +5.3 in skill
+Guy9 (4.0) : 1.0 * 8 = +8.0 in skill
+Guy12 (4.0) : 1.0 * 8 = +8.0 in skill
+Guy8 (8.0) : 0.7 * 8 = +5.3 in skill
+
+getLinesOfCode: + -> +R
+Priority: 5
+Guy17 (13.0) : 0.1 * 5 = +0.7 in readability
+Guy10 (99.0) : 1.0 * 5 = +5.0 in readability
+Guy5 (13.0) : 0.1 * 5 = +0.7 in readability
+Guy2 (13.0) : 0.1 * 5 = +0.7 in readability
+Guy3 (17.0) : 0.2 * 5 = +0.9 in readability
+Guy4 (28.0) : 0.3 * 5 = +1.4 in readability
+Guy18 (13.0) : 0.1 * 5 = +0.7 in readability
+Guy11 (48.0) : 0.5 * 5 = +2.4 in readability
+Guy16 (26.0) : 0.3 * 5 = +1.3 in readability
+Guy13 (17.0) : 0.2 * 5 = +0.9 in readability
+Guy14 (22.0) : 0.2 * 5 = +1.1 in readability
+Guy1 (13.0) : 0.1 * 5 = +0.7 in readability
+Guy6 (23.0) : 0.2 * 5 = +1.2 in readability
+Guy7 (20.0) : 0.2 * 5 = +1.0 in readability
+Guy15 (21.0) : 0.2 * 5 = +1.1 in readability
+Guy9 (16.0) : 0.2 * 5 = +0.8 in readability
+Guy12 (14.0) : 0.1 * 5 = +0.7 in readability
+Guy8 (24.0) : 0.2 * 5 = +1.2 in readability
+
+getLinesOfComments: + -> +R
+Priority: 3
+Guy17 (0.0) : 0.0 * 3 = +0.0 in readability
+Guy10 (5.0) : 1.0 * 3 = +3.0 in readability
+Guy5 (0.0) : 0.0 * 3 = +0.0 in readability
+Guy2 (0.0) : 0.0 * 3 = +0.0 in readability
+Guy3 (4.0) : 0.8 * 3 = +2.4 in readability
+Guy4 (1.0) : 0.2 * 3 = +0.6 in readability
+Guy18 (0.0) : 0.0 * 3 = +0.0 in readability
+Guy11 (4.0) : 0.8 * 3 = +2.4 in readability
+Guy16 (5.0) : 1.0 * 3 = +3.0 in readability
+Guy13 (2.0) : 0.4 * 3 = +1.2 in readability
+Guy14 (1.0) : 0.2 * 3 = +0.6 in readability
+Guy1 (0.0) : 0.0 * 3 = +0.0 in readability
+Guy6 (0.0) : 0.0 * 3 = +0.0 in readability
+Guy7 (2.0) : 0.4 * 3 = +1.2 in readability
+Guy15 (1.0) : 0.2 * 3 = +0.6 in readability
+Guy9 (1.0) : 0.2 * 3 = +0.6 in readability
+Guy12 (0.0) : 0.0 * 3 = +0.0 in readability
+Guy8 (0.0) : 0.0 * 3 = +0.0 in readability
+
+getEmptyLines: + -> +R
+Priority: 3
+Guy17 (3.0) : 0.1 * 3 = +0.2 in readability
+Guy10 (42.0) : 1.0 * 3 = +3.0 in readability
+Guy5 (12.0) : 0.3 * 3 = +0.9 in readability
+Guy2 (1.0) : 0.0 * 3 = +0.1 in readability
+Guy3 (16.0) : 0.4 * 3 = +1.1 in readability
+Guy4 (5.0) : 0.1 * 3 = +0.4 in readability
+Guy18 (5.0) : 0.1 * 3 = +0.4 in readability
+Guy11 (10.0) : 0.2 * 3 = +0.7 in readability
+Guy16 (8.0) : 0.2 * 3 = +0.6 in readability
+Guy13 (2.0) : 0.0 * 3 = +0.1 in readability
+Guy14 (6.0) : 0.1 * 3 = +0.4 in readability
+Guy1 (1.0) : 0.0 * 3 = +0.1 in readability
+Guy6 (4.0) : 0.1 * 3 = +0.3 in readability
+Guy7 (9.0) : 0.2 * 3 = +0.6 in readability
+Guy15 (6.0) : 0.1 * 3 = +0.4 in readability
+Guy9 (4.0) : 0.1 * 3 = +0.3 in readability
+Guy12 (6.0) : 0.1 * 3 = +0.4 in readability
+Guy8 (5.0) : 0.1 * 3 = +0.4 in readability
+
+getPerCode: - -> +R
+Priority: 5
+Guy17 (61.9) : 0.8 * 5 = +4.0 in readability
+Guy10 (46.3) : 1.0 * 5 = +4.8 in readability
+Guy5 (41.9) : 1.0 * 5 = +5.0 in readability
+Guy2 (50.0) : 0.9 * 5 = +4.6 in readability
+Guy3 (43.6) : 1.0 * 5 = +4.9 in readability
+Guy4 (70.0) : 0.7 * 5 = +3.5 in readability
+Guy18 (46.4) : 1.0 * 5 = +4.8 in readability
+Guy11 (55.2) : 0.9 * 5 = +4.3 in readability
+Guy16 (60.5) : 0.8 * 5 = +4.0 in readability
+Guy13 (65.4) : 0.8 * 5 = +3.8 in readability
+Guy14 (61.1) : 0.8 * 5 = +4.0 in readability
+Guy1 (59.1) : 0.8 * 5 = +4.1 in readability
+Guy6 (74.2) : 0.7 * 5 = +3.3 in readability
+Guy7 (54.1) : 0.9 * 5 = +4.4 in readability
+Guy15 (61.8) : 0.8 * 5 = +4.0 in readability
+Guy9 (57.1) : 0.8 * 5 = +4.2 in readability
+Guy12 (50.0) : 0.9 * 5 = +4.6 in readability
+Guy8 (68.6) : 0.7 * 5 = +3.6 in readability
+
+getPerComment: + -> +R
+Priority: 3
+Guy17 (0.0) : 0.0 * 3 = +0.0 in readability
+Guy10 (2.3) : 0.2 * 3 = +0.6 in readability
+Guy5 (0.0) : 0.0 * 3 = +0.0 in readability
+Guy2 (0.0) : 0.0 * 3 = +0.0 in readability
+Guy3 (10.3) : 0.9 * 3 = +2.6 in readability
+Guy4 (2.5) : 0.2 * 3 = +0.6 in readability
+Guy18 (0.0) : 0.0 * 3 = +0.0 in readability
+Guy11 (4.6) : 0.4 * 3 = +1.2 in readability
+Guy16 (11.6) : 1.0 * 3 = +3.0 in readability
+Guy13 (7.7) : 0.7 * 3 = +2.0 in readability
+Guy14 (2.8) : 0.2 * 3 = +0.7 in readability
+Guy1 (0.0) : 0.0 * 3 = +0.0 in readability
+Guy6 (0.0) : 0.0 * 3 = +0.0 in readability
+Guy7 (5.4) : 0.5 * 3 = +1.4 in readability
+Guy15 (2.9) : 0.3 * 3 = +0.8 in readability
+Guy9 (3.6) : 0.3 * 3 = +0.9 in readability
+Guy12 (0.0) : 0.0 * 3 = +0.0 in readability
+Guy8 (0.0) : 0.0 * 3 = +0.0 in readability
+
+getPerEmpty: + -> +R
+Priority: 3
+Guy17 (14.3) : 0.3 * 3 = +1.0 in readability
+Guy10 (19.6) : 0.5 * 3 = +1.4 in readability
+Guy5 (38.7) : 0.9 * 3 = +2.8 in readability
+Guy2 (3.8) : 0.1 * 3 = +0.3 in readability
+Guy3 (41.0) : 1.0 * 3 = +3.0 in readability
+Guy4 (12.5) : 0.3 * 3 = +0.9 in readability
+Guy18 (17.9) : 0.4 * 3 = +1.3 in readability
+Guy11 (11.5) : 0.3 * 3 = +0.8 in readability
+Guy16 (18.6) : 0.5 * 3 = +1.4 in readability
+Guy13 (7.7) : 0.2 * 3 = +0.6 in readability
+Guy14 (16.7) : 0.4 * 3 = +1.2 in readability
+Guy1 (4.5) : 0.1 * 3 = +0.3 in readability
+Guy6 (12.9) : 0.3 * 3 = +0.9 in readability
+Guy7 (24.3) : 0.6 * 3 = +1.8 in readability
+Guy15 (17.6) : 0.4 * 3 = +1.3 in readability
+Guy9 (14.3) : 0.3 * 3 = +1.0 in readability
+Guy12 (21.4) : 0.5 * 3 = +1.6 in readability
+Guy8 (14.3) : 0.3 * 3 = +1.0 in readability
+
+getTotalNumberOfCFS: - -> +S
+Priority: 5
+Guy17 (2.0) : 1.0 * 5 = +5.0 in skill
+Guy10 (19.0) : -3.3 * 5 = +-16.3 in skill
+Guy5 (2.0) : 1.0 * 5 = +5.0 in skill
+Guy2 (2.0) : 1.0 * 5 = +5.0 in skill
+Guy3 (2.0) : 1.0 * 5 = +5.0 in skill
+Guy4 (3.0) : 0.8 * 5 = +3.8 in skill
+Guy18 (2.0) : 1.0 * 5 = +5.0 in skill
+Guy11 (3.0) : 0.8 * 5 = +3.8 in skill
+Guy16 (3.0) : 0.8 * 5 = +3.8 in skill
+Guy13 (2.0) : 1.0 * 5 = +5.0 in skill
+Guy14 (2.0) : 1.0 * 5 = +5.0 in skill
+Guy1 (2.0) : 1.0 * 5 = +5.0 in skill
+Guy6 (3.0) : 0.8 * 5 = +3.8 in skill
+Guy7 (2.0) : 1.0 * 5 = +5.0 in skill
+Guy15 (3.0) : 0.8 * 5 = +3.8 in skill
+Guy9 (2.0) : 1.0 * 5 = +5.0 in skill
+Guy12 (2.0) : 1.0 * 5 = +5.0 in skill
+Guy8 (3.0) : 0.8 * 5 = +3.8 in skill
+
+getTotalNumberOfCFS: + -> +R
+Priority: 5
+Guy17 (2.0) : 0.1 * 5 = +0.5 in readability
+Guy10 (19.0) : 1.0 * 5 = +5.0 in readability
+Guy5 (2.0) : 0.1 * 5 = +0.5 in readability
+Guy2 (2.0) : 0.1 * 5 = +0.5 in readability
+Guy3 (2.0) : 0.1 * 5 = +0.5 in readability
+Guy4 (3.0) : 0.2 * 5 = +0.8 in readability
+Guy18 (2.0) : 0.1 * 5 = +0.5 in readability
+Guy11 (3.0) : 0.2 * 5 = +0.8 in readability
+Guy16 (3.0) : 0.2 * 5 = +0.8 in readability
+Guy13 (2.0) : 0.1 * 5 = +0.5 in readability
+Guy14 (2.0) : 0.1 * 5 = +0.5 in readability
+Guy1 (2.0) : 0.1 * 5 = +0.5 in readability
+Guy6 (3.0) : 0.2 * 5 = +0.8 in readability
+Guy7 (2.0) : 0.1 * 5 = +0.5 in readability
+Guy15 (3.0) : 0.2 * 5 = +0.8 in readability
+Guy9 (2.0) : 0.1 * 5 = +0.5 in readability
+Guy12 (2.0) : 0.1 * 5 = +0.5 in readability
+Guy8 (3.0) : 0.2 * 5 = +0.8 in readability
+
+getCFSVariety: + -> +S
+Priority: 4
+Guy17 (2.0) : 0.7 * 4 = +2.7 in skill
+Guy10 (3.0) : 1.0 * 4 = +4.0 in skill
+Guy5 (2.0) : 0.7 * 4 = +2.7 in skill
+Guy2 (2.0) : 0.7 * 4 = +2.7 in skill
+Guy3 (2.0) : 0.7 * 4 = +2.7 in skill
+Guy4 (2.0) : 0.7 * 4 = +2.7 in skill
+Guy18 (2.0) : 0.7 * 4 = +2.7 in skill
+Guy11 (2.0) : 0.7 * 4 = +2.7 in skill
+Guy16 (2.0) : 0.7 * 4 = +2.7 in skill
+Guy13 (2.0) : 0.7 * 4 = +2.7 in skill
+Guy14 (2.0) : 0.7 * 4 = +2.7 in skill
+Guy1 (2.0) : 0.7 * 4 = +2.7 in skill
+Guy6 (2.0) : 0.7 * 4 = +2.7 in skill
+Guy7 (2.0) : 0.7 * 4 = +2.7 in skill
+Guy15 (2.0) : 0.7 * 4 = +2.7 in skill
+Guy9 (2.0) : 0.7 * 4 = +2.7 in skill
+Guy12 (2.0) : 0.7 * 4 = +2.7 in skill
+Guy8 (2.0) : 0.7 * 4 = +2.7 in skill
+
+getNumberOfNSCCFS: + -> +S
+Priority: 6
+Guy17 (0.0) : 0.0 * 6 = +0.0 in skill
+Guy10 (0.0) : 0.0 * 6 = +0.0 in skill
+Guy5 (0.0) : 0.0 * 6 = +0.0 in skill
+Guy2 (0.0) : 0.0 * 6 = +0.0 in skill
+Guy3 (0.0) : 0.0 * 6 = +0.0 in skill
+Guy4 (0.0) : 0.0 * 6 = +0.0 in skill
+Guy18 (0.0) : 0.0 * 6 = +0.0 in skill
+Guy11 (0.0) : 0.0 * 6 = +0.0 in skill
+Guy16 (0.0) : 0.0 * 6 = +0.0 in skill
+Guy13 (0.0) : 0.0 * 6 = +0.0 in skill
+Guy14 (0.0) : 0.0 * 6 = +0.0 in skill
+Guy1 (1.0) : 1.0 * 6 = +6.0 in skill
+Guy6 (0.0) : 0.0 * 6 = +0.0 in skill
+Guy7 (0.0) : 0.0 * 6 = +0.0 in skill
+Guy15 (0.0) : 0.0 * 6 = +0.0 in skill
+Guy9 (0.0) : 0.0 * 6 = +0.0 in skill
+Guy12 (0.0) : 0.0 * 6 = +0.0 in skill
+Guy8 (0.0) : 0.0 * 6 = +0.0 in skill
+
+getDifferentTypesOfNSCO: + -> +S
+Priority: 5
+Guy17 (1.0) : 0.1 * 5 = +0.7 in skill
+Guy10 (7.0) : 1.0 * 5 = +5.0 in skill
+Guy5 (0.0) : 0.0 * 5 = +0.0 in skill
+Guy2 (1.0) : 0.1 * 5 = +0.7 in skill
+Guy3 (0.0) : 0.0 * 5 = +0.0 in skill
+Guy4 (1.0) : 0.1 * 5 = +0.7 in skill
+Guy18 (1.0) : 0.1 * 5 = +0.7 in skill
+Guy11 (0.0) : 0.0 * 5 = +0.0 in skill
+Guy16 (1.0) : 0.1 * 5 = +0.7 in skill
+Guy13 (1.0) : 0.1 * 5 = +0.7 in skill
+Guy14 (1.0) : 0.1 * 5 = +0.7 in skill
+Guy1 (0.0) : 0.0 * 5 = +0.0 in skill
+Guy6 (0.0) : 0.0 * 5 = +0.0 in skill
+Guy7 (0.0) : 0.0 * 5 = +0.0 in skill
+Guy15 (0.0) : 0.0 * 5 = +0.0 in skill
+Guy9 (0.0) : 0.0 * 5 = +0.0 in skill
+Guy12 (0.0) : 0.0 * 5 = +0.0 in skill
+Guy8 (0.0) : 0.0 * 5 = +0.0 in skill
+
+getTotalNumberOfDeclarations: - -> +S
+Priority: 5
+Guy17 (4.0) : 0.9 * 5 = +4.3 in skill
+Guy10 (16.0) : 0.0 * 5 = +0.0 in skill
+Guy5 (2.0) : 1.0 * 5 = +5.0 in skill
+Guy2 (4.0) : 0.9 * 5 = +4.3 in skill
+Guy3 (3.0) : 0.9 * 5 = +4.6 in skill
+Guy4 (9.0) : 0.5 * 5 = +2.5 in skill
+Guy18 (4.0) : 0.9 * 5 = +4.3 in skill
+Guy11 (6.0) : 0.7 * 5 = +3.6 in skill
+Guy16 (5.0) : 0.8 * 5 = +3.9 in skill
+Guy13 (3.0) : 0.9 * 5 = +4.6 in skill
+Guy14 (5.0) : 0.8 * 5 = +3.9 in skill
+Guy1 (2.0) : 1.0 * 5 = +5.0 in skill
+Guy6 (8.0) : 0.6 * 5 = +2.9 in skill
+Guy7 (6.0) : 0.7 * 5 = +3.6 in skill
+Guy15 (5.0) : 0.8 * 5 = +3.9 in skill
+Guy9 (4.0) : 0.9 * 5 = +4.3 in skill
+Guy12 (3.0) : 0.9 * 5 = +4.6 in skill
+Guy8 (8.0) : 0.6 * 5 = +2.9 in skill
+
+getTotalNumberOfDeclarations: - -> -R
+Priority: 3
+Guy17 (4.0) : 0.9 * 3 = -2.6 in readability
+Guy10 (16.0) : 0.0 * 3 = -0.0 in readability
+Guy5 (2.0) : 1.0 * 3 = -3.0 in readability
+Guy2 (4.0) : 0.9 * 3 = -2.6 in readability
+Guy3 (3.0) : 0.9 * 3 = -2.8 in readability
+Guy4 (9.0) : 0.5 * 3 = -1.5 in readability
+Guy18 (4.0) : 0.9 * 3 = -2.6 in readability
+Guy11 (6.0) : 0.7 * 3 = -2.1 in readability
+Guy16 (5.0) : 0.8 * 3 = -2.4 in readability
+Guy13 (3.0) : 0.9 * 3 = -2.8 in readability
+Guy14 (5.0) : 0.8 * 3 = -2.4 in readability
+Guy1 (2.0) : 1.0 * 3 = -3.0 in readability
+Guy6 (8.0) : 0.6 * 3 = -1.7 in readability
+Guy7 (6.0) : 0.7 * 3 = -2.1 in readability
+Guy15 (5.0) : 0.8 * 3 = -2.4 in readability
+Guy9 (4.0) : 0.9 * 3 = -2.6 in readability
+Guy12 (3.0) : 0.9 * 3 = -2.8 in readability
+Guy8 (8.0) : 0.6 * 3 = -1.7 in readability
+
+getTotalNumberOfTypes: + -> +S
+Priority: 4
+Guy17 (3.0) : 0.5 * 4 = +2.0 in skill
+Guy10 (6.0) : 1.0 * 4 = +4.0 in skill
+Guy5 (2.0) : 0.3 * 4 = +1.3 in skill
+Guy2 (3.0) : 0.5 * 4 = +2.0 in skill
+Guy3 (3.0) : 0.5 * 4 = +2.0 in skill
+Guy4 (4.0) : 0.7 * 4 = +2.7 in skill
+Guy18 (3.0) : 0.5 * 4 = +2.0 in skill
+Guy11 (5.0) : 0.8 * 4 = +3.3 in skill
+Guy16 (4.0) : 0.7 * 4 = +2.7 in skill
+Guy13 (3.0) : 0.5 * 4 = +2.0 in skill
+Guy14 (4.0) : 0.7 * 4 = +2.7 in skill
+Guy1 (2.0) : 0.3 * 4 = +1.3 in skill
+Guy6 (4.0) : 0.7 * 4 = +2.7 in skill
+Guy7 (2.0) : 0.3 * 4 = +1.3 in skill
+Guy15 (4.0) : 0.7 * 4 = +2.7 in skill
+Guy9 (4.0) : 0.7 * 4 = +2.7 in skill
+Guy12 (3.0) : 0.5 * 4 = +2.0 in skill
+Guy8 (3.0) : 0.5 * 4 = +2.0 in skill
+
+getNumberOfRES: + -> +R
+Priority: 3
+Guy17 (1.0) : 1.0 * 3 = +3.0 in readability
+Guy10 (1.0) : 1.0 * 3 = +3.0 in readability
+Guy5 (1.0) : 1.0 * 3 = +3.0 in readability
+Guy2 (1.0) : 1.0 * 3 = +3.0 in readability
+Guy3 (1.0) : 1.0 * 3 = +3.0 in readability
+Guy4 (1.0) : 1.0 * 3 = +3.0 in readability
+Guy18 (1.0) : 1.0 * 3 = +3.0 in readability
+Guy11 (1.0) : 1.0 * 3 = +3.0 in readability
+Guy16 (1.0) : 1.0 * 3 = +3.0 in readability
+Guy13 (1.0) : 1.0 * 3 = +3.0 in readability
+Guy14 (1.0) : 1.0 * 3 = +3.0 in readability
+Guy1 (1.0) : 1.0 * 3 = +3.0 in readability
+Guy6 (1.0) : 1.0 * 3 = +3.0 in readability
+Guy7 (1.0) : 1.0 * 3 = +3.0 in readability
+Guy15 (1.0) : 1.0 * 3 = +3.0 in readability
+Guy9 (1.0) : 1.0 * 3 = +3.0 in readability
+Guy12 (1.0) : 1.0 * 3 = +3.0 in readability
+Guy8 (1.0) : 1.0 * 3 = +3.0 in readability
+
+Pre-PMD Results:
+
+Skill  : {Guy1=29.222223, Guy2=23.88889, Guy5=22.555555, Guy6=17.829365, Guy3=23.531746, Guy4=18.186508, Guy9=23.841269, Guy18=23.88889, Guy17=23.88889, Guy7=21.793652, Guy16=20.281746, Guy8=17.829365, Guy15=19.678572, Guy14=22.198412, Guy13=24.24603, Guy12=23.531746, Guy11=13.43254, Guy10=-28.583336}
+
+Readability: {Guy1=6.907968, Guy2=7.76283, Guy5=11.092892, Guy6=8.994194, Guy3=16.923542, Guy4=10.968181, Guy9=10.038332, Guy18=9.260658, Guy17=8.043879, Guy7=12.99552, Guy16=15.926458, Guy8=9.512479, Guy15=10.862736, Guy14=10.459448, Guy13=10.479906, Guy12=9.241906, Guy11=16.294483, Guy10=29.810768}
+
+PMD Results (higher is worst): 
+Guy17: Skill=5   Readability: 4
+Guy10: Skill=9   Readability: 8
+Guy5: Skill=5   Readability: 3
+Guy2: Skill=4   Readability: 3
+Guy3: Skill=6   Readability: 3
+Guy4: Skill=5   Readability: 4
+Guy18: Skill=5   Readability: 4
+Guy11: Skill=7   Readability: 4
+Guy16: Skill=4   Readability: 3
+Guy13: Skill=4   Readability: 3
+Guy14: Skill=5   Readability: 3
+Guy1: Skill=5   Readability: 4
+Guy6: Skill=4   Readability: 4
+Guy7: Skill=6   Readability: 3
+Guy15: Skill=5   Readability: 3
+Guy9: Skill=6   Readability: 4
+Guy12: Skill=5   Readability: 4
+Guy8: Skill=7   Readability: 3
+
+Final Results:
+Skill  : {Guy1=24.2, Guy2=19.9, Guy5=17.6, Guy6=13.8, Guy3=17.5, Guy4=13.2, Guy9=17.8, Guy18=18.9, Guy17=18.9, Guy7=15.8, Guy16=16.3, Guy8=10.8, Guy15=14.7, Guy14=17.2, Guy13=20.2, Guy12=18.5, Guy11=6.4, Guy10=-37.6}
+Readability: {Guy1=2.9, Guy2=4.8, Guy5=8.1, Guy6=5.0, Guy3=13.9, Guy4=7.0, Guy9=6.0, Guy18=5.3, Guy17=4.0, Guy7=10.0, Guy16=12.9, Guy8=6.5, Guy15=7.9, Guy14=7.5, Guy13=7.5, Guy12=5.2, Guy11=12.3, Guy10=21.8}
+
+Avg Skill : 13.0
+Avg Readability : 7.8333335
+
+Highest skill is 24.2 for Guy1
+Lowest skill is -37.6 for Guy10
+Lowest readability is 2.9 for Guy1
+Highest readability is 21.8 for Guy10
+
+*Final scores*
+Novice:
+[]
+
+Advanced Beginner S:
+[Guy6, Guy17, Guy2]
+
+Advanced Beginner R:
+[]
+
+Advanced Beginner +:
+[Guy8, Guy4, Guy15, Guy7, Guy14, Guy5, Guy9, Guy12, Guy18, Guy13]
+
+Expert:
+[Guy1]
+
+Proficient:
+[Guy10, Guy11, Guy16, Guy3]
+
+Master:
+[]
+

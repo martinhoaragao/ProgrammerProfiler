@@ -13,10 +13,11 @@ public class ProjectProfiler {
         HashSet<String> violationsDetected = new HashSet<>();
         //Ex1_P1_Numeros, Ex2_P2_Idades, Ex3_A1_Arrays, Ex4_S1_Cadeia
         String directory = args[0];
-        String base = directory + "\\" + args[1];
+        String base = directory + "/" + args[1];
         String[] projects = getSubFolders(directory);
         projects = ArrayUtils.removeElement(projects, base);
         String problemDescpt = "Problem Descpt";
+        System.out.println(directory);
 
         PPAnalyser ppaBS = new PPAnalyser(base);
         ppaBS.preProcess();
@@ -79,14 +80,14 @@ public class ProjectProfiler {
         String[] directories = file.list((current, name) -> new File(current, name).isDirectory());
         if (directories != null) {
             for (int i = 0; i<directories.length; i++) {
-                directories[i] = dir + "\\" + directories[i];
+                directories[i] = dir + "/" + directories[i];
             }
         }
         return directories;
     }
 
     private static String getFolderName(String dir) {
-        String[] nodes = dir.split("\\\\");
+        String[] nodes = dir.split("/");
         return nodes[nodes.length - 1];
     }
 

@@ -19,8 +19,9 @@ public class PPAnalyser {
 
     //Reads all .java files from path to a LinkedList
     public void preProcess () {
-        String pName = dirPath.substring(dirPath.lastIndexOf("\\") + 1);
+        String pName = dirPath.substring(dirPath.lastIndexOf("/") + 1);
         File dir = new File(dirPath);
+        System.out.println(dir);
         String[] fileType = {"java"};
         files = new LinkedList<>(FileUtils.listFiles(dir, fileType, true));
         pMetrics = new ProjectMetrics(pName, files.size());

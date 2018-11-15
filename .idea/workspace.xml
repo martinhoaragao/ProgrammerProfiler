@@ -7,20 +7,102 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="611a91e3-5913-483c-a016-88b1183d9edc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/results/Ex2_P2_Idades.json" afterPath="$PROJECT_DIR$/results/Ex2_P2_Idades.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PP.java" afterPath="$PROJECT_DIR$/src/PP.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProjectProfiler.java" afterPath="$PROJECT_DIR$/src/ProjectProfiler.java" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/A/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/A/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno10/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno10/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno11/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno11/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno12/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno12/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno13/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno13/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno14/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno14/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno15/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno15/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno16/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno16/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno17/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno17/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno18/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno18/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno19/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno19/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno2/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno2/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno20/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno20/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno21/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno21/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno22/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno22/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno23/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno23/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno24/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno24/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno25/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno25/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno26/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno26/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno27/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno27/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno28/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno28/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno29/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno29/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno3/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno3/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno30/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno30/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno31/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno31/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno32/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno32/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno33/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno33/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno34/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno34/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno36/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno36/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno37/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno37/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno38/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno38/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno39/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno39/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno4/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno4/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno40/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno40/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno41/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno41/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno42/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno42/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno43/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno43/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno44/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno44/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno45/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno45/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno46/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno46/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno47/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno47/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno48/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno48/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno49/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno49/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno5/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno5/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno50/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno50/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno51/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno51/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno52/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno52/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno53/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno53/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno54/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno54/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno55/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno55/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno56/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno56/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno57/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno57/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno59/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno59/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno6/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno6/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno60/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno60/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno61/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno61/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno62/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno62/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno63/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno63/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno64/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno64/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno65/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno65/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno66/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno66/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno67/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno67/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno68/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno68/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno69/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno69/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno8/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno8/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno9/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno9/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/D/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/D/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Ex1_P1_Numeros.html" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Ex1_P1_Numeros.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/F/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/F/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/G/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/G/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/M/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/M/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/P/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/P/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/V/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/V/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Z/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Z/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgrammerProfiler.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ProgrammerProfiler.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProgrammerProfiler/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LogGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PMDAnalysis/PMDAnalyser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PMDAnalysis/PMDAnalyser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PPAnalysis/PPAnalyser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PPAnalysis/PPAnalyser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ProjectProfiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProjectProfiler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ProjectsComparison.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProjectsComparison.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ResultsPlotter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ResultsPlotter.java" afterDir="false" />
     </list>
     <ignored path="ProgrammerProfiler.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/ProgrammerProfiler$PP.coverage" NAME="PP Coverage Results" MODIFIED="1474929826786" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
@@ -28,20 +110,55 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="ExportToHTMLSettings">
     <option name="OUTPUT_DIRECTORY" value="C:\Users\Daniel\IdeaProjects\ProgrammerProfiler\exportToHTML" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-661456031">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.opened" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="csv" value="2" />
+          <entry key="java" value="11" />
+          <entry key="png" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Image" value="3" />
+          <entry key="JAVA" value="11" />
+          <entry key="PLAIN_TEXT" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="87" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="87" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FavoritesManager">
     <favorites_list name="ProgrammerProfiler" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ProjectProfiler.java" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ProjectProfiler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
+            <state relative-caret-position="792">
+              <caret line="54" selection-start-line="54" selection-end-line="54" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -49,34 +166,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PMDAnalyser.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/PMDAnalysis/PMDAnalyser.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/lib/commons-io-2.4-sources.jar!/org/apache/commons/io/FileUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="26" column="27" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
-              <folding />
+            <state relative-caret-position="7245">
+              <caret line="544" selection-start-line="544" selection-end-line="544" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PPAnalyser.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/PPAnalysis/PPAnalyser.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ProfileInferrer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="1605">
+              <caret line="107" selection-start-line="107" selection-end-line="107" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PP.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/PP.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Ex1_P1_Numeros.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ProjectsComparison.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1071">
-              <caret line="71" column="32" selection-start-line="71" selection-start-column="32" selection-end-line="71" selection-end-column="32" />
-              <folding />
+            <state relative-caret-position="162">
+              <caret line="262" selection-start-line="262" selection-end-line="262" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ExerciseExamples/CodeChef-Medium-Coins/CodeChef-Medium-Coins.png">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
     </leaf>
@@ -90,13 +214,17 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>/</find>
+      <find>\</find>
+    </findStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$/src</dir>
+    </dirStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GradleLocalSettings">
-    <option name="externalProjectsViewState">
-      <projects_view />
-    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -122,7 +250,6 @@
         <option value="$PROJECT_DIR$/src/PPAnalysis/LinesExtractor.java" />
         <option value="$PROJECT_DIR$/src/PPAnalysis/Metric.java" />
         <option value="$PROJECT_DIR$/src/PMDAnalysis/PMDRule.java" />
-        <option value="$PROJECT_DIR$/src/PMDAnalysis/PMDAnalyser.java" />
         <option value="$PROJECT_DIR$/src/PPAnalysis/CFSExtractor.java" />
         <option value="$PROJECT_DIR$/src/PPAnalysis/CounterExtractor.java" />
         <option value="$PROJECT_DIR$/src/PPAnalysis/NSCOExtractor.java" />
@@ -133,12 +260,9 @@
         <option value="$PROJECT_DIR$/src/PPAnalysis/ProjectMetrics.java" />
         <option value="$PROJECT_DIR$/AuxFiles/metrics.json" />
         <option value="$PROJECT_DIR$/src/Project.java" />
-        <option value="$PROJECT_DIR$/src/PPAnalysis/PPAnalyser.java" />
-        <option value="$PROJECT_DIR$/src/ProjectsComparison.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/ResultsExporter.java" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/src/LogGenerator.java" />
         <option value="$PROJECT_DIR$/src/ProfileInferrer.java" />
         <option value="$PROJECT_DIR$/src/Example.java" />
         <option value="$PROJECT_DIR$/src/PPAnalysis/REExtractor.java" />
@@ -151,6 +275,10 @@
         <option value="$PROJECT_DIR$/src/ImprovedProfileInferrer.java" />
         <option value="$PROJECT_DIR$/src/ScoreCalculator.java" />
         <option value="$PROJECT_DIR$/src/PP.java" />
+        <option value="$PROJECT_DIR$/src/PPAnalysis/PPAnalyser.java" />
+        <option value="$PROJECT_DIR$/src/PMDAnalysis/PMDAnalyser.java" />
+        <option value="$PROJECT_DIR$/src/ProjectsComparison.java" />
+        <option value="$PROJECT_DIR$/src/LogGenerator.java" />
         <option value="$PROJECT_DIR$/src/ProjectProfiler.java" />
       </list>
     </option>
@@ -166,115 +294,73 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
-  </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
-    <OptionsSetting value="true" id="Add" />
-    <OptionsSetting value="true" id="Remove" />
-    <OptionsSetting value="true" id="Checkout" />
-    <OptionsSetting value="true" id="Update" />
-    <OptionsSetting value="true" id="Status" />
-    <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
-    <ConfirmationsSetting value="0" id="Remove" />
+    <option name="y" value="23" />
+    <option name="width" value="1680" />
+    <option name="height" value="1027" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
-      <flattenPackages />
-      <showMembers />
-      <showModules />
-      <showLibraryContents />
-      <hideEmptyPackages />
-      <abbreviatePackageNames />
-      <autoscrollToSource />
-      <autoscrollFromSource />
-      <sortByType />
-      <manualOrder />
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ProgrammerProfiler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ProgrammerProfiler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ProgrammerProfiler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ProgrammerProfiler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ProgrammerProfiler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ProgrammerProfiler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ProgrammerProfiler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PMDAnalysis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
+          <expand>
+            <path>
+              <item name="ProgrammerProfiler" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProgrammerProfiler" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProgrammerProfiler" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProgrammerProfiler" type="462c0819:PsiDirectoryNode" />
+              <item name="ExerciseExamples" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProgrammerProfiler" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProgrammerProfiler" type="462c0819:PsiDirectoryNode" />
+              <item name="ExerciseExamples" type="462c0819:PsiDirectoryNode" />
+              <item name="CodeChef-Medium-Coins" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProgrammerProfiler" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProgrammerProfiler" type="462c0819:PsiDirectoryNode" />
+              <item name="results" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProgrammerProfiler" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProgrammerProfiler" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="$PROJECT_DIR$/JavaGrammar/Java.g4::/auto-gen" value="false" />
-    <property name="$PROJECT_DIR$/JavaGrammar/Java.g4::/language" value="Java" />
-    <property name="$PROJECT_DIR$/JavaGrammar/Java.g4::/gen-listener" value="false" />
-    <property name="$PROJECT_DIR$/JavaGrammar/Java.g4::/gen-visitor" value="true" />
-    <property name="project.structure.last.edited" value="Artifacts" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="Downloaded.Files.Path.Enabled" value="true" />
-    <property name="Repository.Attach.JavaDocs" value="false" />
-    <property name="Repository.Attach.Sources" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-    <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/ProjectProfiler.java" />
     <property name="$PROJECT_DIR$/AuxFiles/Java.g4::/auto-gen" value="false" />
-    <property name="$PROJECT_DIR$/AuxFiles/Java.g4::/language" value="Java" />
     <property name="$PROJECT_DIR$/AuxFiles/Java.g4::/gen-listener" value="false" />
     <property name="$PROJECT_DIR$/AuxFiles/Java.g4::/gen-visitor" value="true" />
+    <property name="$PROJECT_DIR$/AuxFiles/Java.g4::/language" value="Java" />
+    <property name="$PROJECT_DIR$/JavaGrammar/Java.g4::/auto-gen" value="false" />
+    <property name="$PROJECT_DIR$/JavaGrammar/Java.g4::/gen-listener" value="false" />
+    <property name="$PROJECT_DIR$/JavaGrammar/Java.g4::/gen-visitor" value="true" />
+    <property name="$PROJECT_DIR$/JavaGrammar/Java.g4::/language" value="Java" />
+    <property name="Downloaded.Files.Path.Enabled" value="true" />
+    <property name="GenerateAntBuildDialog.backupFiles" value="true" />
     <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
     <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
-    <property name="GenerateAntBuildDialog.backupFiles" value="true" />
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="programmerprofiler" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542276234152" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -289,13 +375,19 @@
       <recent name="C:\Users\Daniel\IdeaProjects\ProgrammerProfiler\JavaGrammar" />
     </key>
   </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
   <component name="RunManager" selected="Application.ProjectProfiler">
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
-      <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
-      <option name="PROGRAM_PARAMETERS" />
-      <method />
-    </configuration>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="" />
       <option name="DEPLOY" value="true" />
@@ -349,66 +441,6 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <module />
-      <method />
-    </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list />
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <method />
-    </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
     <configuration default="true" type="JUnitTestDiscovery" factoryName="JUnit Test Discovery" changeList="All">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -428,88 +460,6 @@
       </option>
       <envs />
       <patterns />
-      <method />
-    </configuration>
-    <configuration default="true" type="JarApplication" factoryName="JAR Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="Java Scratch" factoryName="Java Scratch">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="SCRATCH_FILE_ID" value="0" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="ProgrammerProfiler" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
-      <method />
-    </configuration>
-    <configuration default="true" type="TestNG" factoryName="TestNG">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
       <method />
     </configuration>
     <configuration default="true" type="TestNGTestDiscovery" factoryName="TestNG Test Discovery" changeList="All">
@@ -540,43 +490,95 @@
       <listeners />
       <method />
     </configuration>
-    <configuration default="false" name="ProjectProfiler" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="ProjectProfiler" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="&quot;ExerciseExamples\\Ex2_P2_Idades&quot; &quot;P&quot;" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="ProgrammerProfiler" />
-      <envs />
-      <method />
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration default="false" name="PP" type="Application" factoryName="Application" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+    <configuration name="PP" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="PP" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
+      <module name="ProgrammerProfiler" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProjectProfiler" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="ProjectProfiler" />
+      <module name="ProgrammerProfiler" />
+      <option name="PROGRAM_PARAMETERS" value="&quot;$PROJECT_DIR$/ExerciseExamples/CodeChef-Hard-Orders&quot; &quot;Guy4&quot;" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="ProgrammerProfiler" />
-      <envs />
-      <method />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <module name="" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <list size="2">
-      <item index="0" class="java.lang.String" itemvalue="Application.ProjectProfiler" />
-      <item index="1" class="java.lang.String" itemvalue="Application.PP" />
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.ProjectProfiler" />
+      <item itemvalue="Application.PP" />
     </list>
-  </component>
-  <component name="ShelveChangesManager" show_recycled="false">
-    <option name="remove_strategy" value="false" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -601,71 +603,72 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1680" height="1027" extended-state="6" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Tool Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.4969743" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44444445" sideWeight="0.5151286" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.62908494" sideWeight="0.48487142" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.71732026" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2246596" sideWeight="0.488746" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="ANTLR Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.8643791" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4493464" sideWeight="0.49092284" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2246596" sideWeight="0.511254" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Analyze Dataflow from" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="PMD" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39869282" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30555555" sideWeight="0.4969743" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" order="0" sideWeight="0.488746" visible="true" weight="0.22954823" />
+      <window_info id="Structure" order="1" weight="0.24962178" />
+      <window_info id="UI Designer" order="2" />
+      <window_info id="Favorites" order="3" sideWeight="0.511254" side_tool="true" weight="0.2246596" />
+      <window_info id="Palette&#9;" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Image Layers" order="6" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4969743" weight="0.30555555" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.48487142" visible="true" weight="0.628877" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49092284" weight="0.4493464" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.39869282" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32843137" />
+      <window_info anchor="bottom" id="Tool Output" order="7" sideWeight="0.4969743" weight="0.32843137" />
+      <window_info anchor="bottom" id="PMD" order="8" weight="0.32843137" />
+      <window_info anchor="bottom" id="Analyze Dataflow from" order="9" weight="0.32843137" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5151286" side_tool="true" weight="0.44444445" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.71732026" />
+      <window_info anchor="bottom" id="ANTLR Preview" order="12" weight="0.8643791" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.32834226" />
+      <window_info anchor="bottom" id="Version Control" order="14" weight="0.32843137" />
+      <window_info anchor="bottom" id="Inspection Results" order="15" weight="0.32843137" />
+      <window_info anchor="right" id="Capture Analysis" order="0" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.24962178" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Designer" order="5" />
+      <window_info anchor="right" id="Coverage" order="6" side_tool="true" weight="0.32980332" />
+      <window_info anchor="right" id="Maven Projects" order="7" weight="0.32980332" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
     </layout>
     <layout-to-restore>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Tool Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.4969743" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44444445" sideWeight="0.5151286" order="11" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="ANTLR Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5294118" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4493464" sideWeight="0.49092284" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Analyze Dataflow from" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="PMD" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39869282" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44444445" sideWeight="0.48487142" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.71732026" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2246596" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30555555" sideWeight="0.4969743" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" order="0" visible="true" weight="0.2246596" />
+      <window_info id="Structure" order="1" weight="0.24962178" />
+      <window_info id="UI Designer" order="2" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info id="Palette&#9;" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info anchor="bottom" id="Inspection Results" order="0" visible="true" weight="0.32843137" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" sideWeight="0.4969743" weight="0.30555555" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.48487142" weight="0.44444445" />
+      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.49092284" weight="0.4493464" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.39869282" />
+      <window_info anchor="bottom" id="TODO" order="7" weight="0.32843137" />
+      <window_info anchor="bottom" id="Tool Output" order="8" sideWeight="0.4969743" weight="0.32843137" />
+      <window_info anchor="bottom" id="Analyze Dataflow from" order="9" weight="0.32843137" />
+      <window_info anchor="bottom" id="PMD" order="10" weight="0.32843137" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5151286" side_tool="true" weight="0.44444445" />
+      <window_info anchor="bottom" id="Terminal" order="12" weight="0.71732026" />
+      <window_info anchor="bottom" id="ANTLR Preview" order="13" weight="0.5294118" />
+      <window_info anchor="bottom" id="Messages" order="14" weight="0.32843137" />
+      <window_info anchor="bottom" id="Version Control" order="15" />
+      <window_info anchor="right" id="Capture Analysis" order="0" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Designer" order="5" />
+      <window_info anchor="right" id="Coverage" order="6" side_tool="true" weight="0.32980332" />
+      <window_info anchor="right" id="Maven Projects" order="7" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -680,9 +683,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <option name="time" value="72" />
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="ratio" language="JAVA" />
@@ -706,56 +706,11 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/gen/JavaVisitor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PPAnalysis/Metric.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gen/JavaLexer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PPAnalysis/LinesExtractor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="986">
-          <caret line="64" column="21" selection-start-line="64" selection-start-column="21" selection-end-line="64" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/FxExample.java" />
-    <entry file="file://$PROJECT_DIR$/src/MainForm.java" />
-    <entry file="file://$PROJECT_DIR$/src/MainForm.form" />
-    <entry file="file://$PROJECT_DIR$/src/JaxaFXSample.java" />
-    <entry file="jar://$PROJECT_DIR$/lib/commons-lang3-3.4.jar!/org/apache/commons/lang3/ArrayUtils.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="1921" column="0" selection-start-line="1921" selection-start-column="0" selection-end-line="1921" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/javafx-src.zip!/javafx/event/EventHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="44" column="9" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/javafx-src.zip!/javafx/event/EventHandler.java" />
     <entry file="file://$PROJECT_DIR$/src/PPAnalysis/CFSExtractor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-238">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
         </state>
       </provider>
     </entry>
@@ -799,7 +754,7 @@
     <entry file="file://$PROJECT_DIR$/gen/JavaParser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
@@ -807,21 +762,14 @@
     <entry file="file://$PROJECT_DIR$/src/PMDAnalysis/PMDRule.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="6" selection-end-column="31" />
+          <caret line="2" selection-start-line="2" selection-end-line="6" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/auxiliar/pmd_rules.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="185">
-          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LogGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="29" column="16" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
+          <caret line="36" selection-start-line="36" selection-end-line="36" selection-end-column="70" />
         </state>
       </provider>
     </entry>
@@ -843,7 +791,7 @@
     <entry file="file://$PROJECT_DIR$/src/PPAnalysis/NSCO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="10" column="18" selection-start-line="10" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <caret line="10" column="18" selection-start-line="10" selection-end-line="11" />
         </state>
       </provider>
     </entry>
@@ -863,8 +811,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/PPAnalysis/CFS.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="12" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
+        <state>
+          <caret column="12" selection-start-column="12" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -878,9 +826,7 @@
     <entry file="file://$PROJECT_DIR$/chart.png" />
     <entry file="file://$PROJECT_DIR$/src/Idades.java" />
     <entry file="file://$PROJECT_DIR$/results/final.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
+      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ResultsPlotter.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -892,7 +838,7 @@
     <entry file="file://$PROJECT_DIR$/auxiliar/Java.g4">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
         </state>
       </provider>
     </entry>
@@ -928,23 +874,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ProfileInferrer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="75" selection-start-line="30" selection-start-column="7" selection-end-line="31" selection-end-column="75" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ScoreCalculator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1921">
-          <caret line="127" column="40" selection-start-line="127" selection-start-column="40" selection-end-line="127" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -958,31 +887,7 @@
     <entry file="file://$PROJECT_DIR$/src/Project.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ProjectsComparison.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="38" column="9" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PP.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1071">
-          <caret line="71" column="32" selection-start-line="71" selection-start-column="32" selection-end-line="71" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PPAnalysis/PPAnalyser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
@@ -990,27 +895,104 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ProjectProfiler.java">
+    <entry file="file://$PROJECT_DIR$/src/PP.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="945">
+          <caret line="71" column="32" selection-start-line="71" selection-start-column="32" selection-end-line="71" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ScoreCalculator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="3" selection-start-column="3" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/P/Numeros_P.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Aluno6/out.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/P/out.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LogGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="89">
+          <caret line="20" column="45" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gen/JavaBaseVisitor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="19" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gen/JavaVisitor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="32" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/PMDAnalysis/PMDAnalyser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="26" column="27" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
-          <folding />
+        <state relative-caret-position="89">
+          <caret line="23" column="34" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PPAnalysis/PPAnalyser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="89">
+          <caret line="93" column="72" selection-start-line="93" selection-start-column="71" selection-end-line="93" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/commons-io-2.4-sources.jar!/org/apache/commons/io/FileUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7245">
+          <caret line="544" selection-start-line="544" selection-end-line="544" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ProfileInferrer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1605">
+          <caret line="107" selection-start-line="107" selection-end-line="107" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ExerciseExamples/CodeChef-Medium-Coins/CodeChef-Medium-Coins.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros\Ex1_P1_Numeros.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ExerciseExamples/Ex1_P1_Numeros/Ex1_P1_Numeros.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ProjectsComparison.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="262" selection-start-line="262" selection-end-line="262" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ProjectProfiler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="792">
+          <caret line="54" selection-start-line="54" selection-end-line="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1024,7 +1006,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.11526795" />
+                <option value="0.2" />
                 <option value="0.5" />
               </list>
             </option>
@@ -1073,7 +1055,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
@@ -1093,7 +1074,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>lib</last-edited>
+          <last-edited>net.sourceforge.pmd:pmd-java:6.8.0</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

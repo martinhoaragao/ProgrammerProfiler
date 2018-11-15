@@ -66,7 +66,7 @@ public class ResultsPlotter extends Application{
                 d.getNode().setOnMouseClicked(event -> {
                     if (directory != null) {
                         try {
-                            Desktop.getDesktop().open(new File(directory + "\\" + d.getExtraValue()));
+                            Desktop.getDesktop().open(new File(directory + "/" + d.getExtraValue()));
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
@@ -84,7 +84,7 @@ public class ResultsPlotter extends Application{
     private void saveToPNG(ScatterChart<Number, Number> scene, String dir) throws IOException {
         if (dir == null) dir = "results";
         WritableImage image = scene.snapshot(new SnapshotParameters(), null);
-        File file = new File(dir + "\\" + folderName + ".png");
+        File file = new File(dir + "/" + folderName + ".png");
         ImageIO.write(SwingFXUtils.fromFXImage(image, null), "png", file);
     }
 

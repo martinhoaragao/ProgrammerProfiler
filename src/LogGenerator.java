@@ -28,9 +28,9 @@ public class LogGenerator {
     }
 
     public void writeLogToFile() throws IOException {
-        String[] nodes = directory.split("\\\\");
+        String[] nodes = directory.split("/");
         String folderName = nodes[nodes.length - 1];
-        Files.write(Paths.get(directory + "\\" + folderName + "_log.txt"), log.toString().getBytes());
+        Files.write(Paths.get(directory + "/" + folderName + "_log.txt"), log.toString().getBytes());
     }
 
     private String getCurrentTime() {

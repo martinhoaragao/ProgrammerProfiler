@@ -1,0 +1,92 @@
+[
+    {
+        "name": "Guy1",
+        "skill": 24.2,
+        "readability": 2.9
+    },
+    {
+        "name": "Guy2",
+        "skill": 19.9,
+        "readability": 4.8
+    },
+    {
+        "name": "Guy5",
+        "skill": 17.6,
+        "readability": 8.1
+    },
+    {
+        "name": "Guy6",
+        "skill": 13.8,
+        "readability": 5.0
+    },
+    {
+        "name": "Guy3",
+        "skill": 17.5,
+        "readability": 13.9
+    },
+    {
+        "name": "Guy4",
+        "skill": 13.2,
+        "readability": 7.0
+    },
+    {
+        "name": "Guy9",
+        "skill": 17.8,
+        "readability": 6.0
+    },
+    {
+        "name": "Guy18",
+        "skill": 18.9,
+        "readability": 5.3
+    },
+    {
+        "name": "Guy17",
+        "skill": 18.9,
+        "readability": 4.0
+    },
+    {
+        "name": "Guy7",
+        "skill": 15.8,
+        "readability": 10.0
+    },
+    {
+        "name": "Guy16",
+        "skill": 16.3,
+        "readability": 12.9
+    },
+    {
+        "name": "Guy8",
+        "skill": 10.8,
+        "readability": 6.5
+    },
+    {
+        "name": "Guy15",
+        "skill": 14.7,
+        "readability": 7.9
+    },
+    {
+        "name": "Guy14",
+        "skill": 17.2,
+        "readability": 7.5
+    },
+    {
+        "name": "Guy13",
+        "skill": 20.2,
+        "readability": 7.5
+    },
+    {
+        "name": "Guy12",
+        "skill": 18.5,
+        "readability": 5.2
+    },
+    {
+        "name": "Guy11",
+        "skill": 6.4,
+        "readability": 12.3
+    },
+    {
+        "name": "Guy10",
+        "skill": -37.6,
+        "readability": 21.8
+    }
+]
