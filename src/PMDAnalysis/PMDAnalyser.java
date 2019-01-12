@@ -10,6 +10,7 @@ public class PMDAnalyser {
 
     private final String dirPath;
     private String output_file;
+    private String cache_file;
     private HashMap<String, Integer> violations;
     private HashSet<String> violationsDetected;
 
@@ -22,7 +23,8 @@ public class PMDAnalyser {
         String rulesets = "java-unusedcode,java-optimizations,java-basic,java-design,java-codesize,java-controversial," +
                 "java-braces,java-comments,java-empty,java-unnecessary";
         output_file = dirPath + "/out." + output_format;
-        String[] arguments = { "-d", dirPath, "-f", output_format, "-R", rulesets, "-r", output_file };
+        cache_file = dirPath + "/cache";
+        String[] arguments = { "-d", dirPath, "-f", output_format, "-cache", cache_file , "-R", rulesets, "-r", output_file };
 
         PMD.run(arguments);
     }
