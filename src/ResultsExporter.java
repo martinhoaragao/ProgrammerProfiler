@@ -16,7 +16,7 @@ public class ResultsExporter {
     public void createJSONFile(String folderName) {
         JsonWriter writer;
         try {
-            writer = new JsonWriter(new FileWriter("results\\" + folderName + ".json"));
+            writer = new JsonWriter(new FileWriter("results/" + folderName + ".json"));
             writer.setIndent("    ");
             writer.beginArray();
             for (String n : skill.keySet()) {

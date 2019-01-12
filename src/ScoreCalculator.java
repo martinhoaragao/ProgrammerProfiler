@@ -45,6 +45,12 @@ public class ScoreCalculator {
             skill.put(pm.getProjectName(), (float) 0);
             readability.put(pm.getProjectName(), (float) 0);
         }
+
+        System.out.println("IM TIRED MAN");
+        for(Map.Entry<String, Float> entry : skill.entrySet()) {
+            System.out.println(entry.getValue());
+        }
+
         for (Metric m : metrics) {
             log.append("\n" + m.getMethodName() + ": " + m.getThis() + " -> " + m.getImplies() + "\nPriority: " + m.getPriority() + "\n");
             calcForMetric(c, m);
@@ -133,13 +139,24 @@ public class ScoreCalculator {
     }
 
     private void calcForProject(String pName, String implies, int priority, float ratio, float value) {
+        System.out.println("CALC FOR PROJECT");
+        System.out.println(skill.get(pName));
         float s = skill.get(pName);
         float r = readability.get(pName);
         float priXrat = priority * ratio;
         char sig = '+';
         String group = null;
+        System.out.println("Ok......");
+        System.out.println(implies);
+        System.out.println(priXrat);
+        System.out.println(s);
         switch (implies) {
             case "+S":
+                if (s + priXrat > 0) {
+                    skill.put(pName, s + priXrat);
+                } else {
+                    skill.put(pName, (float) 0);
+                }
                 skill.put(pName, s + priXrat);
                 sig = '+';
                 group = "skill";
@@ -150,7 +167,11 @@ public class ScoreCalculator {
                 group = "readability";
                 break;
             case "-S":
-                skill.put(pName, s - priXrat);
+                if (s - priXrat > 0) {
+                    skill.put(pName, s - priXrat);
+                } else {
+                    skill.put(pName, (float) 0);
+                }
                 sig = '-';
                 group = "skill";
                 break;

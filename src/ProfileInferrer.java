@@ -21,6 +21,13 @@ public class ProfileInferrer {
         float minR = getMin(readability);
         float maxR = getMax(readability);
         float avgR = getAvg(readability);
+        System.out.println("CALC BOUNDARIES");
+
+        System.out.println(minS);
+        System.out.println(maxS);
+        System.out.println(minR);
+        System.out.println(maxR);
+
         float distS = maxS - minS;
         float distR = maxR - minR;
         float thirdS = distS / 3;
@@ -87,6 +94,11 @@ public class ProfileInferrer {
         profileToProjects = new LinkedHashMap<>();
 
         for (Boundaries b : bound) {
+            System.out.println("-------------");
+            System.out.println(b.getMinS());
+            System.out.println(b.getMaxS());
+            System.out.println(b.getMinR());
+            System.out.println(b.getMaxR());
             ArrayList<String> profiles = new ArrayList<>(getProfile(b.getMinS(), b.getMaxS(), b.getMinR(), b.getMaxR()));
             ArrayList<Project> projects = new ArrayList<>();
             for (String p : profiles) {

@@ -18,7 +18,7 @@ public class ex2{
         
         ArrayList<Integer> array_idades = new ArrayList<Integer>();
         
-        for(int i=0;i<numero;i++){
+        for(int i = 0; i < numero; i++){
             input = Math.abs(s.nextInt());
             if(input >= idade){
                 array_idades.add(input);
