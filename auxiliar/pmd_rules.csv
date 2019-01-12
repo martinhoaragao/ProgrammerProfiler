@@ -154,6 +154,7 @@
 "Unnecessary","UnnecessaryConversionTemporary","Avoid the use temporary objects when converting primitives to Strings. Use the static conversion methodson the wrapper classes instead.","3","S"
 "Unnecessary","UnnecessaryReturn","Avoid the use of unnecessary return statements.","3","B"
 "Unnecessary","UnnecessaryFinalModifier"," When a class has the final modifier, all the methods are automatically final and do not need to betagged as such.","3","S"
+"Unnecessary","UnnecessaryModifier", "Avoid the use temporary objects when converting primitives to Strings. Use the static conversion methods on the wrapper classes instead.", "3", "S"
 "Unnecessary","UselessOverridingMethod","The overriding method merely calls the same method defined in a superclass.","3","B"
 "Unnecessary","UselessOperationOnImmutable","An operation on an Immutable object (String, BigDecimal or BigInteger) won’t change the object itselfsince the result of the operation is a new object. Therefore, ignoring the operation result is an error.","3","S"
 "Unnecessary","UnusedNullCheckInEquals","After checking an object reference for null, you should invoke equals() on that object rather than passing it to another object’s equals() method.","3","S"
