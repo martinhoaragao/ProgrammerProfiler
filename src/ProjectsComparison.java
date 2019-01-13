@@ -15,35 +15,16 @@ public class ProjectsComparison {
 
     private final ProjectMetrics baseSolution;
     private final ArrayList<ProjectMetrics> exampleSolutions;
-    private final HashSet<String> violationsDetected;
+    private final HashMap<String, PMDRule> violationsDetected;
     private final String problemDescpt;
-    private HashMap<String, PMDRule> pmdrules;
 
     public ProjectsComparison(ProjectMetrics baseSolution, ArrayList<ProjectMetrics> exampleSolutions,
-                              HashSet<String> violationsDetected, String problemDescpt) {
+                              HashMap<String, PMDRule> violationsDetected, String problemDescpt) {
         this.baseSolution = baseSolution;
         this.exampleSolutions = exampleSolutions;
         this.violationsDetected = violationsDetected;
         this.exampleSolutions.add(baseSolution);
         this.problemDescpt = problemDescpt;
-    }
-
-    public ProjectsComparison(ProjectMetrics baseSolution, ArrayList<ProjectMetrics> exampleSolutions,
-                              HashSet<String> violationsDetected) {
-        this.baseSolution = baseSolution;
-        this.exampleSolutions = exampleSolutions;
-        this.violationsDetected = violationsDetected;
-        problemDescpt = "";
-    }
-
-    void loadRules() throws IOException { //Load PMD Rules
-        pmdrules = new HashMap<>();
-        CSVReader reader = new CSVReader(new FileReader("auxiliar/pmd_rules.csv"));
-        String[] nextLine;
-        reader.readNext();
-        while ((nextLine = reader.readNext()) != null) {
-            pmdrules.put(nextLine[1], new PMDRule(nextLine[0], nextLine[1], nextLine[2], Integer.parseInt(nextLine[3]), nextLine[4].charAt(0)));
-        }
     }
 
     void generateHTML(String dir) throws IOException {
@@ -259,16 +240,16 @@ public class ProjectsComparison {
         sb.append("<caption>PMD Violations</caption>");
         sb.append("<tr>");
         appendTH(sb, "Project");
-        for (String v : violationsDetected) {
-            appendTH(sb, v + " (" + pmdrules.get(v).getGroup() + ")");
+        for (Map.Entry<String, PMDRule> entry : violationsDetected.entrySet()) {
+            appendTH(sb, entry.getKey() + " (" + entry.getValue().getGroup() + ")");
         }
         sb.append("</tr>");
 
         sb.append("<tr class='active'>");
         appendTD(sb, baseSolution.getProjectName());
-        for (String v : violationsDetected) {
-            if (baseSolution.getPMDViolations().containsKey(v)) {
-                appendTD(sb, baseSolution.getPMDViolations().get(v).toString());
+        for (Map.Entry<String, PMDRule> entry : violationsDetected.entrySet()) {
+            if (baseSolution.getPMDViolations().containsKey(entry.getKey())) {
+                appendTD(sb, baseSolution.getPMDViolations().get(entry.getKey()).toString());
             }
             else {
                 appendTD(sb, "0");
@@ -278,9 +259,9 @@ public class ProjectsComparison {
         for (ProjectMetrics es : exampleSolutions) {
             sb.append("<tr>");
             appendTD(sb, es.getProjectName());
-            for (String v : violationsDetected) {
-                if (es.getPMDViolations().containsKey(v)) {
-                    appendTD(sb, es.getPMDViolations().get(v).toString());
+            for (Map.Entry<String, PMDRule> entry : violationsDetected.entrySet()) {
+                if (es.getPMDViolations().containsKey(entry.getKey())) {
+                    appendTD(sb, es.getPMDViolations().get(entry.getKey()).toString());
                 }
                 else {
                     appendTD(sb, "0");
@@ -322,7 +303,7 @@ public class ProjectsComparison {
     private Integer calculateScore(ProjectMetrics solution, char not) {
         Integer group = 0; //Skill or Readability
         for (Map.Entry<String, Integer> vio : solution.getPMDViolations().entrySet()) {
-            PMDRule rule = pmdrules.get(vio.getKey());
+            PMDRule rule = violationsDetected.get(vio.getKey());
             if (rule.getGroup() != not) {
                 int priority = rule.getPriority();
                 int occurrences = vio.getValue();
@@ -345,10 +326,10 @@ public class ProjectsComparison {
         sb.append("</tr>");
 
         sb.append("<tr class='active'>");
-        for (String v : violationsDetected) {
-            PMDRule pmdr = pmdrules.get(v);
+        for (Map.Entry<String, PMDRule> entry : violationsDetected.entrySet()) {
+            PMDRule pmdr = entry.getValue();
             sb.append("<tr>");
-            appendTD(sb, pmdr.getRule() + " (" + pmdr.getGroup() + ")");
+            appendTD(sb, entry.getKey() + " (" + pmdr.getGroup() + ")");
             appendTD(sb, pmdr.getRuleset());
             appendTD(sb, pmdr.getDescription());
             appendTD(sb, String.valueOf(pmdr.getPriority()));
@@ -425,7 +406,7 @@ public class ProjectsComparison {
     }
 
     public HashMap<String, PMDRule> getPMDrules() {
-        return pmdrules;
+        return violationsDetected;
     }
 
     public ProjectMetrics getBaseSolution() {

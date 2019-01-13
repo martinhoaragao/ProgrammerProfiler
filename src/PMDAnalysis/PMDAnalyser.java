@@ -12,7 +12,7 @@ public class PMDAnalyser {
     private String output_file;
     private String cache_file;
     private HashMap<String, Integer> violations;
-    private HashSet<String> violationsDetected;
+    private HashMap<String, PMDRule> violationsDetected;
 
     public PMDAnalyser(String dirPath) {
         this.dirPath = dirPath;
@@ -20,8 +20,7 @@ public class PMDAnalyser {
 
     public void analyse () {
         String output_format = "csv";
-        String rulesets = "java-unusedcode,java-optimizations,java-basic,java-design,java-codesize,java-controversial," +
-                "java-braces,java-comments,java-empty,java-unnecessary";
+        String rulesets = "rulesets/java/quickstart.xml";
         output_file = dirPath + "/out." + output_format;
         cache_file = dirPath + "/cache";
         String[] arguments = { "-d", dirPath, "-f", output_format, "-cache", cache_file , "-R", rulesets, "-r", output_file };
@@ -31,19 +30,21 @@ public class PMDAnalyser {
 
     public void read () throws IOException {
         violations = new HashMap<>();
-        violationsDetected = new HashSet<>();
+        violationsDetected = new HashMap<>();
         CSVReader reader = new CSVReader(new FileReader(output_file));
         String[] nextLine;
         reader.readNext();
         while ((nextLine = reader.readNext()) != null) {
             if (!nextLine[7].equals("DataflowAnomalyAnalysis")) {
                 incr(nextLine[7]);
-                violationsDetected.add(nextLine[7]);
+                violationsDetected.put(nextLine[7], new PMDRule(nextLine));
             }
         }
     }
 
     private void incr(String k) {
+        System.out.println(k);
+
         if (!violations.containsKey(k)) {
             violations.put(k, 1);
         } else {
@@ -55,7 +56,7 @@ public class PMDAnalyser {
         return violations;
     }
 
-    public HashSet<String> getViolationsDetected() {
+    public HashMap<String, PMDRule> getViolationsDetected() {
         return violationsDetected;
     }
 }

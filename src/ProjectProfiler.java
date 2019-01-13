@@ -4,13 +4,13 @@ import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
-import java.util.HashSet;
+import java.util.HashMap;
 
 public class ProjectProfiler {
     public static void main(String args[]) throws IOException, ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException {
 
         ArrayList<ProjectMetrics> pm = new ArrayList<>();
-        HashSet<String> violationsDetected = new HashSet<>();
+        HashMap<String, PMDRule> violationsDetected = new HashMap<>();
         //Ex1_P1_Numeros, Ex2_P2_Idades, Ex3_A1_Arrays, Ex4_S1_Cadeia
         String directory = args[0];
         String base = directory + "/" + args[1];
@@ -31,7 +31,7 @@ public class ProjectProfiler {
         ProjectMetrics bS = ppaBS.getProjectMetrics();
         bS.setPMDViolations(pmdaBS.getViolations());
 
-        violationsDetected.addAll(pmdaBS.getViolationsDetected());
+        violationsDetected.putAll(pmdaBS.getViolationsDetected());
 
         for (String p : projects) {
             PPAnalyser ppaES = new PPAnalyser(p);
@@ -47,11 +47,10 @@ public class ProjectProfiler {
             eS.setPMDViolations(pmdaES.getViolations());
             pm.add(eS);
 
-            violationsDetected.addAll(pmdaES.getViolationsDetected());
+            violationsDetected.putAll(pmdaES.getViolationsDetected());
         }
 
         ProjectsComparison pc = new ProjectsComparison(bS, pm, violationsDetected, problemDescpt);
-        pc.loadRules();
         pc.generateHTML(directory);
 
         ScoreCalculator sc = new ScoreCalculator(pc.getBaseSolution(), pc.getExampleSolutions(), pc.getPMDrules());
