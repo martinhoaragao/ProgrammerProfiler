@@ -1,0 +1,20 @@
+/* package whatever; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Ideone
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		BufferedReader k=new BufferedReader(new InputStreamReader(System.in));
+		String s=k.readLine();
+		int x=Integer.parseInt(s.substring(0,s.indexOf(32)));
+		float y=Float.parseFloat(s.substring(s.indexOf(32)+1));
+		if(x%5==0 && (x+0.50)<=y)
+		y=y-x-(float)0.50;
+		System.out.printf("%.2f", y);
+	}
+}
