@@ -119,7 +119,7 @@ public class ScoreCalculator {
                 int occurrences = vio.getValue();
                 //skill += priority * occurrences;
                 //skill += occurrences;
-                group++;
+                group = group * occurrences;
             }
         }
         return group;
