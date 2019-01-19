@@ -43,8 +43,6 @@ public class PMDAnalyser {
     }
 
     private void incr(String k) {
-        System.out.println(k);
-
         if (!violations.containsKey(k)) {
             violations.put(k, 1);
         } else {

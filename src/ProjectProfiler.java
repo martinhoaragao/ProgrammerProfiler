@@ -17,7 +17,6 @@ public class ProjectProfiler {
         String[] projects = getSubFolders(directory);
         projects = ArrayUtils.removeElement(projects, base);
         String problemDescpt = "Problem Descpt";
-        System.out.println(directory);
 
         PPAnalyser ppaBS = new PPAnalyser(base);
         ppaBS.preProcess();

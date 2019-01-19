@@ -19,6 +19,7 @@ public class ScoreCalculator {
     private final HashMap<String, PMDRule> pmdrules;
     private ArrayList<Metric> metrics;
     private Map<String, Float> skill, readability;
+    private float skillShift, readabilityShift = 0;
     private final ProjectMetrics baseSolution;
     private final ArrayList<ProjectMetrics> exampleSolutions;
     private StringBuilder log;
@@ -36,36 +37,22 @@ public class ScoreCalculator {
         metrics = new ArrayList<>(gson.fromJson(reader, METRIC_TYPE));
     }
 
-    void calculateScore() throws InvocationTargetException, ClassNotFoundException, NoSuchMethodException, IllegalAccessException {
+    void calculateScore() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         skill = new HashMap<>();
         readability = new HashMap<>();
         log = new StringBuilder();
-        Class<?> c = Class.forName("ProjectMetrics");
+
         for (ProjectMetrics pm : exampleSolutions) {
             skill.put(pm.getProjectName(), (float) 0);
             readability.put(pm.getProjectName(), (float) 0);
         }
 
-        System.out.println("IM TIRED MAN");
-        for(Map.Entry<String, Float> entry : skill.entrySet()) {
-            System.out.println(entry.getValue());
-        }
+        calculateScorePPAnalysis();
 
-        for (Metric m : metrics) {
-            log.append("\n" + m.getMethodName() + ": " + m.getThis() + " -> " + m.getImplies() + "\nPriority: " + m.getPriority() + "\n");
-            calcForMetric(c, m);
-        }
-        log.append("\nPre-PMD Results:\n\nSkill  : " + skill.toString() + "\n");
-        log.append("\nReadability: " + readability.toString() + "\n");
-        log.append("\nPMD Results (higher is worst): \n");
-        for (ProjectMetrics pm : exampleSolutions) {
-            String pName = pm.getProjectName();
-            int s = calculateScore(pm, 'R'); //Skill (Not R)
-            int r = calculateScore(pm, 'S'); //Readability (Not S)
-            log.append(pm.getProjectName() + ": Skill=" + s + "   Readability: " + r + "\n");
-            skill.put(pName, skill.get(pName) - s);
-            readability.put(pName, readability.get(pName) - r);
-        }
+        decreaseScoreFromPMDViolations();
+
+        shiftToFirstQuadrant();
+
         int avgs, avgr = avgs = 0;
         for (String key : skill.keySet()) {
             skill.put(key, round(skill.get(key)));
@@ -86,7 +73,44 @@ public class ScoreCalculator {
 
     }
 
-    private Integer calculateScore(ProjectMetrics solution, char not) {
+    private void calculateScorePPAnalysis() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+        Class<?> c = Class.forName("ProjectMetrics");
+
+        for (Metric m : metrics) {
+            log.append("\n" + m.getMethodName() + ": " + m.getThis() + " -> " + m.getImplies() + "\nPriority: " + m.getPriority() + "\n");
+            calcForMetric(c, m);
+        }
+
+        log.append("\nPre-PMD Results:\n\nSkill  : " + skill.toString() + "\n");
+        log.append("\nReadability: " + readability.toString() + "\n");
+        log.append("\nPMD Results (higher is worst): \n");
+
+    }
+
+    private void decreaseScoreFromPMDViolations() {
+        for (ProjectMetrics pm : exampleSolutions) {
+            String pName = pm.getProjectName();
+
+            int sPenalty = calculateViolations(pm, 'R'); //Skill (Not R)
+            int rPenalty = calculateViolations(pm, 'S'); //Readability (Not S)
+
+            log.append(pm.getProjectName() + ": Skill=" + sPenalty + "   Readability: " + rPenalty + "\n");
+
+            float finalSkillScore = skill.get(pName) - sPenalty;
+            if (finalSkillScore < skillShift) {
+                skillShift = finalSkillScore;
+            }
+            skill.put(pName, finalSkillScore);
+
+            float finalReadabilityScore = readability.get(pName) - rPenalty;
+            if (finalReadabilityScore < readabilityShift) {
+                readabilityShift = finalReadabilityScore;
+            }
+            readability.put(pName, finalReadabilityScore);
+        }
+    }
+
+    private Integer calculateViolations(ProjectMetrics solution, char not) {
         Integer group = 0; //Skill or Readability
         for (Map.Entry<String, Integer> vio : solution.getPMDViolations().entrySet()) {
             PMDRule rule = pmdrules.get(vio.getKey());
@@ -99,6 +123,14 @@ public class ScoreCalculator {
             }
         }
         return group;
+    }
+
+    private void shiftToFirstQuadrant() {
+        for (ProjectMetrics pm : exampleSolutions) {
+            String pName = pm.getProjectName();
+            skill.put(pName, skill.get(pName) - skillShift);
+            readability.put(pName, readability.get(pName) - readabilityShift);
+        }
     }
 
     private void calcForMetric(Class<?> c, Metric m) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
@@ -139,24 +171,14 @@ public class ScoreCalculator {
     }
 
     private void calcForProject(String pName, String implies, int priority, float ratio, float value) {
-        System.out.println("CALC FOR PROJECT");
-        System.out.println(skill.get(pName));
         float s = skill.get(pName);
         float r = readability.get(pName);
         float priXrat = priority * ratio;
         char sig = '+';
         String group = null;
-        System.out.println("Ok......");
-        System.out.println(implies);
-        System.out.println(priXrat);
-        System.out.println(s);
+
         switch (implies) {
             case "+S":
-                if (s + priXrat > 0) {
-                    skill.put(pName, s + priXrat);
-                } else {
-                    skill.put(pName, (float) 0);
-                }
                 skill.put(pName, s + priXrat);
                 sig = '+';
                 group = "skill";
@@ -167,11 +189,7 @@ public class ScoreCalculator {
                 group = "readability";
                 break;
             case "-S":
-                if (s - priXrat > 0) {
-                    skill.put(pName, s - priXrat);
-                } else {
-                    skill.put(pName, (float) 0);
-                }
+                skill.put(pName, s - priXrat);
                 sig = '-';
                 group = "skill";
                 break;
