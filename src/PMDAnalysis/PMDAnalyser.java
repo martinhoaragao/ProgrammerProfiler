@@ -23,7 +23,7 @@ public class PMDAnalyser {
         String rulesets = "rulesets/java/quickstart.xml";
         output_file = dirPath + "/out." + output_format;
         cache_file = dirPath + "/cache";
-        String[] arguments = { "-d", dirPath, "-f", output_format, "-cache", cache_file , "-R", rulesets, "-r", output_file };
+        String[] arguments = { "-d", dirPath, "-f", output_format, "-cache", cache_file , "-t", "6", "-R", rulesets, "-r", output_file };
 
         PMD.run(arguments);
     }
