@@ -91,8 +91,8 @@ public class ScoreCalculator {
         for (ProjectMetrics pm : exampleSolutions) {
             String pName = pm.getProjectName();
 
-            int sPenalty = calculateViolations(pm, 'R'); //Skill (Not R)
-            int rPenalty = calculateViolations(pm, 'S'); //Readability (Not S)
+            float sPenalty = calculateViolations(pm, 'R'); //Skill (Not R)
+            float rPenalty = calculateViolations(pm, 'S'); //Readability (Not S)
 
             log.append(pm.getProjectName() + ": Skill=" + sPenalty + "   Readability: " + rPenalty + "\n");
 
@@ -110,16 +110,15 @@ public class ScoreCalculator {
         }
     }
 
-    private Integer calculateViolations(ProjectMetrics solution, char not) {
-        Integer group = 0; //Skill or Readability
+    private float calculateViolations(ProjectMetrics solution, char not) {
+        float group = 0; //Skill or Readability
         for (Map.Entry<String, Integer> vio : solution.getPMDViolations().entrySet()) {
             PMDRule rule = pmdrules.get(vio.getKey());
             if (rule.getGroup() != not) {
                 int priority = rule.getPriority();
                 int occurrences = vio.getValue();
-                //skill += priority * occurrences;
-                //skill += occurrences;
-                group++;
+                group = 3 * (occurrences / priority) ;
+                // group++;
             }
         }
         return group;
