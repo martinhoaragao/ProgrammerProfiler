@@ -17,16 +17,8 @@ public class ProfileInferrer {
 
         float minS = getMin(skill);
         float maxS = getMax(skill);
-        float avgS = getAvg(skill);
         float minR = getMin(readability);
         float maxR = getMax(readability);
-        float avgR = getAvg(readability);
-        System.out.println("CALC BOUNDARIES");
-
-        System.out.println(minS);
-        System.out.println(maxS);
-        System.out.println(minR);
-        System.out.println(maxR);
 
         float distS = maxS - minS;
         float distR = maxR - minR;
@@ -50,13 +42,13 @@ public class ProfileInferrer {
 
         bound = new LinkedList<>();
 
-        bound.add(new Boundaries("Novice", minS, avgS - halfThirdS, minR, avgR - halfThirdR));
-        bound.add(new Boundaries("Advanced Beginner S", avgS - halfThirdS, avgS + halfThirdS, minR, avgR - halfThirdR));
-        bound.add(new Boundaries("Advanced Beginner R", minS, avgS - halfThirdS, avgR - halfThirdR, avgR + halfThirdR));
-        bound.add(new Boundaries("Advanced Beginner +", avgS - halfThirdS, avgS + halfThirdS, avgR - halfThirdR, avgR + halfThirdR));
-        bound.add(new Boundaries("Expert", avgS + halfThirdS, maxS, minR, avgR + halfThirdR));
-        bound.add(new Boundaries("Proficient", minS, avgS + halfThirdS, avgR + halfThirdR, maxR));
-        bound.add(new Boundaries("Master", avgS + halfThirdS, maxS, avgR + halfThirdR, maxR));
+        bound.add(new Boundaries("Novice", minS, minS + thirdS, minR, minR + thirdR));
+        bound.add(new Boundaries("Advanced Beginner S", minS + thirdS, minS + 2*thirdS , minR, minR + thirdR));
+        bound.add(new Boundaries("Advanced Beginner R", minS, minS + thirdS, minR + thirdR, minR + 2*thirdR));
+        bound.add(new Boundaries("Advanced Beginner +", minS + thirdS, minS + 2*thirdS, minR + thirdR, minR + 2*thirdR));
+        bound.add(new Boundaries("Expert", maxS - thirdS, maxS, minR, minR + 2*thirdR));
+        bound.add(new Boundaries("Proficient", minS, minS + 2*thirdS, maxR - thirdR, maxR));
+        bound.add(new Boundaries("Master", maxS - thirdS, maxS, maxR - thirdR, maxR));
     }
 
     public void inferProfile() {
