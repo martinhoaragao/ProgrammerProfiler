@@ -15,6 +15,6 @@
     <orderEntry type="library" name="Lang3" level="project" />
     <orderEntry type="library" name="org.antlr:antlr4:4.7.1" level="project" />
     <orderEntry type="library" name="com.opencsv:opencsv:4.3.2" level="project" />
-    <orderEntry type="library" name="net.sourceforge.pmd:pmd-java:6.8.0" level="project" />
+    <orderEntry type="library" name="net.sourceforge.pmd:pmd-java:6.10.0" level="project" />
   </component>
 </module>
