@@ -19,17 +19,22 @@ public class ProjectProfiler extends Thread {
         System.out.println("2 - Specific Folder in ExerciseExamples");
 
         int choice = scanner.nextInt();
+        scanner.nextLine();
 
         switch (choice) {
             case 2:
                 System.out.println("What's the Exercise?");
                 directories = new String[1];
-                directories[0] = scanner.nextLine();
+                String exercise = scanner.nextLine();
+                directories[0] = "ExerciseExamples/" + exercise + "/";
 
                 System.out.println("What's the base exercise?");
-                base = directories[0] + "/" + scanner.nextLine();
+                base = scanner.nextLine();
+                base = directories[0] + "/" + base;
+                break;
             default:
                 directories = FolderManagement.getSubFolders("ExerciseExamples");
+                break;
         }
 
         for (String directory : directories) {
@@ -74,11 +79,9 @@ class ProjectProfilerThread implements Runnable {
         ArrayList<ProjectMetrics> pm = new ArrayList<>();
         String problemDescpt = directory;
         String[] projects = FolderManagement.getSubFolders(directory);
-
         if (base == null) {
             base = projects[0];
         }
-
         projects = ArrayUtils.removeElement(projects, base);
 
         PPAnalyser ppaBS = new PPAnalyser(base);
