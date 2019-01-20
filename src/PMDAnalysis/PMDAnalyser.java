@@ -4,7 +4,6 @@ import net.sourceforge.pmd.PMD;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.HashSet;
 
 public class PMDAnalyser {
 
@@ -23,7 +22,7 @@ public class PMDAnalyser {
         String rulesets = "rulesets/java/quickstart.xml";
         output_file = dirPath + "/out." + output_format;
         cache_file = dirPath + "/cache";
-        String[] arguments = { "-d", dirPath, "-f", output_format, "-cache", cache_file , "-t", "6", "-R", rulesets, "-r", output_file };
+        String[] arguments = { "-d", dirPath, "-f", output_format, "-cache", cache_file , "-t", "2", "-R", rulesets, "-r", output_file };
 
         PMD.run(arguments);
     }

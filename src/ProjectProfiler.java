@@ -1,14 +1,13 @@
 import org.apache.commons.lang3.ArrayUtils;
 
-import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class ProjectProfiler {
-    public static void main(String args[]) throws IOException, ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException {
+public class ProjectProfiler extends Thread {
+    public static void main(String args[]) {
         String base = null;
         String[] directories;
 
@@ -30,22 +29,51 @@ public class ProjectProfiler {
                 System.out.println("What's the base exercise?");
                 base = directories[0] + "/" + scanner.nextLine();
             default:
-                directories = getSubFolders("ExerciseExamples");
+                directories = FolderManagement.getSubFolders("ExerciseExamples");
         }
 
         for (String directory : directories) {
-            profileForExercise(base, directory);
+            ProjectProfilerThread rPP = new ProjectProfilerThread(directory, base);
+            rPP.start();
         }
+    }
+}
 
+class ProjectProfilerThread implements Runnable {
+    private Thread t;
+    private String directory;
+    private String base;
 
-
+    ProjectProfilerThread(String directory, String base) {
+        this.directory = directory;
+        this.base = base;
     }
 
-    private static void profileForExercise(String base, String directory) throws IOException, ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException {
+    @Override
+    public void run() {
+        System.out.println("Running " + directory);
+
+        try {
+            profileForExercise();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+        System.out.println("Thread " + directory + " exiting.");
+    }
+
+    public void start() {
+        if (t == null) {
+            t = new Thread(this, directory);
+            t.start();
+        }
+    }
+
+    private void profileForExercise() throws IOException, ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException {
         HashMap<String, PMDRule> violationsDetected = new HashMap<>();
         ArrayList<ProjectMetrics> pm = new ArrayList<>();
         String problemDescpt = directory;
-        String[] projects = getSubFolders(directory);
+        String[] projects = FolderManagement.getSubFolders(directory);
 
         if (base == null) {
             base = projects[0];
@@ -97,30 +125,13 @@ public class ProjectProfiler {
 
         ResultsPlotter.main(pi.getProfileToProjects(),
                 pi.getMinS(), pi.getMaxS(), pi.getMinR(), pi.getMaxR(),
-                directory, getFolderName(directory));
+                directory, FolderManagement.getFolderName(directory));
 
         LogGenerator lg = new LogGenerator(directory, sc.getLog(), pi.getLog());
         lg.generateLog();
         lg.writeLogToFile();
 
         ResultsExporter re = new ResultsExporter(sc.getReadability(), sc.getSkill());
-        re.createJSONFile(getFolderName(directory));
+        re.createJSONFile(FolderManagement.getFolderName(directory));
     }
-
-    private static String[] getSubFolders (String dir) {
-        File file = new File(dir);
-        String[] directories = file.list((current, name) -> new File(current, name).isDirectory());
-        if (directories != null) {
-            for (int i = 0; i<directories.length; i++) {
-                directories[i] = dir + "/" + directories[i];
-            }
-        }
-        return directories;
-    }
-
-    private static String getFolderName(String dir) {
-        String[] nodes = dir.split("/");
-        return nodes[nodes.length - 1];
-    }
-
 }
