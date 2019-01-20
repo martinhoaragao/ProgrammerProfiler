@@ -5,18 +5,53 @@ import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Scanner;
 
 public class ProjectProfiler {
     public static void main(String args[]) throws IOException, ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException {
+        String base = null;
+        String[] directories;
 
-        ArrayList<ProjectMetrics> pm = new ArrayList<>();
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Choose from these choices");
+        System.out.println("-------------------------\n");
+        System.out.println("1 - All Folders in ExerciseExamples");
+        System.out.println("2 - Specific Folder in ExerciseExamples");
+
+        int choice = scanner.nextInt();
+
+        switch (choice) {
+            case 2:
+                System.out.println("What's the Exercise?");
+                directories = new String[1];
+                directories[0] = scanner.nextLine();
+
+                System.out.println("What's the base exercise?");
+                base = directories[0] + "/" + scanner.nextLine();
+            default:
+                directories = getSubFolders("ExerciseExamples");
+        }
+
+        for (String directory : directories) {
+            profileForExercise(base, directory);
+        }
+
+
+
+    }
+
+    private static void profileForExercise(String base, String directory) throws IOException, ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException {
         HashMap<String, PMDRule> violationsDetected = new HashMap<>();
-        //Ex1_P1_Numeros, Ex2_P2_Idades, Ex3_A1_Arrays, Ex4_S1_Cadeia
-        String directory = args[0];
-        String base = directory + "/" + args[1];
+        ArrayList<ProjectMetrics> pm = new ArrayList<>();
+        String problemDescpt = directory;
         String[] projects = getSubFolders(directory);
+
+        if (base == null) {
+            base = projects[0];
+        }
+
         projects = ArrayUtils.removeElement(projects, base);
-        String problemDescpt = "Problem Descpt";
 
         PPAnalyser ppaBS = new PPAnalyser(base);
         ppaBS.preProcess();
@@ -70,7 +105,6 @@ public class ProjectProfiler {
 
         ResultsExporter re = new ResultsExporter(sc.getReadability(), sc.getSkill());
         re.createJSONFile(getFolderName(directory));
-
     }
 
     private static String[] getSubFolders (String dir) {
