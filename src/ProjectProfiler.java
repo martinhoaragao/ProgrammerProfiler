@@ -123,15 +123,15 @@ class ProjectProfilerThread implements Runnable {
         pi.calcBoundaries();
         pi.inferProfile();
 
-        ResultsPlotter.main(pi.getProfileToProjects(),
-                pi.getMinS(), pi.getMaxS(), pi.getMinR(), pi.getMaxR(),
-                directory, FolderManagement.getFolderName(directory));
-
         LogGenerator lg = new LogGenerator(directory, sc.getLog(), pi.getLog());
         lg.generateLog();
         lg.writeLogToFile();
 
         ResultsExporter re = new ResultsExporter(sc.getReadability(), sc.getSkill());
         re.createJSONFile(FolderManagement.getFolderName(directory));
+
+        ResultsPlotter.main(pi.getProfileToProjects(),
+                pi.getMinS(), pi.getMaxS(), pi.getMinR(), pi.getMaxR(),
+                directory, FolderManagement.getFolderName(directory));
     }
 }

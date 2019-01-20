@@ -49,6 +49,11 @@ public class ResultsPlotter extends Application{
         stage.setScene(scene);
         stage.show();
 
+
+        if (folderName != null) {
+            saveToPNG(sc, directory);
+        }
+
         for (XYChart.Series<Number, Number> s : sc.getData()) {
             for (XYChart.Data<Number, Number> d : s.getData()) {
                 Tooltip.install(
@@ -75,10 +80,6 @@ public class ResultsPlotter extends Application{
 
             }
         }
-
-        if (folderName != null) {
-            saveToPNG(sc, directory);
-        }
     }
 
     private void saveToPNG(ScatterChart<Number, Number> scene, String dir) throws IOException {
@@ -98,6 +99,7 @@ public class ResultsPlotter extends Application{
         maxY = maxR;
         directory = dir;
         folderName = fName;
+
         launch((String[]) null);
     }
 }

@@ -1,5 +1,4 @@
 import com.opencsv.CSVReader;
-import net.sourceforge.pmd.PMD;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -22,9 +21,11 @@ public class PMDAnalyser {
         String rulesets = "rulesets/java/quickstart.xml";
         output_file = dirPath + "/out." + output_format;
         cache_file = dirPath + "/cache";
-        String[] arguments = { "-d", dirPath, "-f", output_format, "-cache", cache_file , "-t", "2", "-R", rulesets, "-r", output_file };
+        String[] arguments = {"lib/pmd-bin-6.10.0/bin/run.sh pmd", "-d", dirPath, "-f", output_format, "-cache", cache_file, "-t", "0", "-R", rulesets, "-r", output_file };
 
-        PMD.run(arguments);
+        ProcessBuilder builder = new ProcessBuilder();
+        builder.command(arguments);
+
     }
 
     public void read () throws IOException {
