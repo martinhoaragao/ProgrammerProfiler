@@ -31,20 +31,28 @@ public class PMDRule implements Serializable {
         switch(ruleset) {
             case "Best Practices":
                 this.group = 'B';
+                break;
             case "Code Style":
                 this.group = 'R';
+                break;
             case "Design":
                 this.group = 'R';
+                break;
             case "Documentation":
                 this.group = 'R';
+                break;
             case "Error Prone":
                 this.group = 'S';
+                break;
             case "Multithreading":
                 this.group = 'S';
+                break;
             case "Performance":
                 this.group = 'S';
+                break;
             default:
                 this.group = 'N';
+                break;
         }
     }
 }

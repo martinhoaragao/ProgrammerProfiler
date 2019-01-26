@@ -91,8 +91,8 @@ public class ScoreCalculator {
         for (ProjectMetrics pm : exampleSolutions) {
             String pName = pm.getProjectName();
 
-            int sPenalty = calculateViolations(pm, 'R'); //Skill (Not R)
-            int rPenalty = calculateViolations(pm, 'S'); //Readability (Not S)
+            float sPenalty = calculateViolations(pm, 'R'); //Skill (Not R)
+            float rPenalty = calculateViolations(pm, 'S'); //Readability (Not S)
 
             log.append(pm.getProjectName() + ": Skill=" + sPenalty + "   Readability: " + rPenalty + "\n");
 
@@ -110,8 +110,8 @@ public class ScoreCalculator {
         }
     }
 
-    private Integer calculateViolations(ProjectMetrics solution, char not) {
-        Integer group = 0; //Skill or Readability
+    private float calculateViolations(ProjectMetrics solution, char not) {
+        float violationsCount = 0;
         for (Map.Entry<String, Integer> vio : solution.getPMDViolations().entrySet()) {
             PMDRule rule = pmdrules.get(vio.getKey());
             if (rule.getGroup() != not) {
@@ -119,10 +119,12 @@ public class ScoreCalculator {
                 int occurrences = vio.getValue();
                 //skill += priority * occurrences;
                 //skill += occurrences;
-                group = group * occurrences;
+                //violationsCount = violationsCount + occurrences;
+                violationsCount = violationsCount + (1 / priority);
+
             }
         }
-        return group;
+        return violationsCount;
     }
 
     private void shiftToFirstQuadrant() {
@@ -138,24 +140,33 @@ public class ScoreCalculator {
         Object bS = method.invoke(baseSolution);
         float base = toFloat(bS);
         String signal = m.getThis();
-        float highest = 1;
+        float bestResult = base;
         for (ProjectMetrics pm : exampleSolutions) {
             Object oS = method.invoke(pm);
             float example = toFloat(oS);
-            if (signal.equals("-")) {
-                example = base + (base - example);
-            }
-            if (example > highest) {
-                highest = example;
+            if (signal.equals("-") && example < bestResult) {
+                bestResult = example;
+            } else if (signal.equals("+") && example > bestResult) {
+                bestResult = example;
             }
         }
         for (ProjectMetrics pm : exampleSolutions) {
             Object oS = method.invoke(pm);
+            System.out.println("Okay let me understand pls");
             float example, value = example = toFloat(oS);
+            System.out.println(example + " .....  " + value + "  ... " + toFloat(oS));
+
+            float ratio;
             if (signal.equals("-")) {
-                example = base + (base - example);
+                ratio = bestResult / example;
+            } else {
+                ratio = example / bestResult;
             }
-            float ratio = example / highest;
+
+            if (ratio > 5 || ratio < -5) {
+                System.out.println("ALERT ALERT");
+                System.out.println(example + " okay " + bestResult + "    here it is, the base " + base + " what about the ");
+            }
             calcForProject(pm.getProjectName(), m.getImplies(), m.getPriority(), ratio, value);
         }
     }
