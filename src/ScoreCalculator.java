@@ -94,7 +94,7 @@ public class ScoreCalculator {
             float sPenalty = calculateViolations(pm, 'R'); //Skill (Not R)
             float rPenalty = calculateViolations(pm, 'S'); //Readability (Not S)
 
-            log.append(pm.getProjectName() + ": Skill=" + sPenalty + "   Readability: " + rPenalty + "\n");
+            log.append(pm.getProjectName() + ": Skill: " + sPenalty + "   Readability: " + rPenalty + "\n");
 
             float finalSkillScore = skill.get(pName) - sPenalty;
             if (finalSkillScore < skillShift) {
@@ -115,12 +115,14 @@ public class ScoreCalculator {
         for (Map.Entry<String, Integer> vio : solution.getPMDViolations().entrySet()) {
             PMDRule rule = pmdrules.get(vio.getKey());
             if (rule.getGroup() != not) {
+                System.out.println(rule.getGroup());
+
                 int priority = rule.getPriority();
                 int occurrences = vio.getValue();
                 //skill += priority * occurrences;
                 //skill += occurrences;
                 //violationsCount = violationsCount + occurrences;
-                violationsCount = violationsCount + (1 / priority);
+                violationsCount = violationsCount + (float) 1 / priority * 5;
 
             }
         }
@@ -152,21 +154,15 @@ public class ScoreCalculator {
         }
         for (ProjectMetrics pm : exampleSolutions) {
             Object oS = method.invoke(pm);
-            System.out.println("Okay let me understand pls");
             float example, value = example = toFloat(oS);
-            System.out.println(example + " .....  " + value + "  ... " + toFloat(oS));
-
             float ratio;
+
             if (signal.equals("-")) {
                 ratio = bestResult / example;
             } else {
                 ratio = example / bestResult;
             }
 
-            if (ratio > 5 || ratio < -5) {
-                System.out.println("ALERT ALERT");
-                System.out.println(example + " okay " + bestResult + "    here it is, the base " + base + " what about the ");
-            }
             calcForProject(pm.getProjectName(), m.getImplies(), m.getPriority(), ratio, value);
         }
     }
