@@ -51,7 +51,7 @@ public class ScoreCalculator {
 
         decreaseScoreFromPMDViolations();
 
-        shiftToFirstQuadrant();
+        //shiftToFirstQuadrant();
 
         int avgs, avgr = avgs = 0;
         for (String key : skill.keySet()) {
@@ -97,14 +97,14 @@ public class ScoreCalculator {
             log.append(pm.getProjectName() + ": Skill: " + sPenalty + "   Readability: " + rPenalty + "\n");
 
             float finalSkillScore = skill.get(pName) - sPenalty;
-            if (finalSkillScore < skillShift) {
-                skillShift = finalSkillScore;
+            if (finalSkillScore < 0) {
+                finalSkillScore = 0;
             }
             skill.put(pName, finalSkillScore);
 
             float finalReadabilityScore = readability.get(pName) - rPenalty;
-            if (finalReadabilityScore < readabilityShift) {
-                readabilityShift = finalReadabilityScore;
+            if (finalReadabilityScore < 0) {
+                finalReadabilityScore = 0;
             }
             readability.put(pName, finalReadabilityScore);
         }
@@ -114,15 +114,11 @@ public class ScoreCalculator {
         float violationsCount = 0;
         for (Map.Entry<String, Integer> vio : solution.getPMDViolations().entrySet()) {
             PMDRule rule = pmdrules.get(vio.getKey());
-            if (rule.getGroup() != not) {
-                System.out.println(rule.getGroup());
-
+            char ruleGroup = rule.getGroup();
+            if (ruleGroup != not && ruleGroup != 'N') {
                 int priority = rule.getPriority();
                 int occurrences = vio.getValue();
-                //skill += priority * occurrences;
-                //skill += occurrences;
-                //violationsCount = violationsCount + occurrences;
-                violationsCount = violationsCount + (float) 1 / priority * 5;
+                violationsCount += occurrences * (float) 1 / priority;
 
             }
         }
@@ -180,7 +176,7 @@ public class ScoreCalculator {
     private void calcForProject(String pName, String implies, int priority, float ratio, float value) {
         float s = skill.get(pName);
         float r = readability.get(pName);
-        float priXrat = priority * ratio;
+        float priXrat = priority * ratio * 3;
         char sig = '+';
         String group = null;
 
