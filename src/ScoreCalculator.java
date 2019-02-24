@@ -77,7 +77,7 @@ public class ScoreCalculator {
         Class<?> c = Class.forName("ProjectMetrics");
 
         for (Metric m : metrics) {
-            log.append("\n" + m.getMethodName() + ": " + m.getThis() + " -> " + m.getImplies() + "\nPriority: " + m.getPriority() + "\n");
+            log.append("\n" + m.getMethodName() + ": " + m.getThis() + " -> " + m.getImplies() + "\nWeight: " + m.getWeight() + "\n");
             calcForMetric(c, m);
         }
 
@@ -159,7 +159,7 @@ public class ScoreCalculator {
                 ratio = example / bestResult;
             }
 
-            calcForProject(pm.getProjectName(), m.getImplies(), m.getPriority(), ratio, value);
+            calcForProject(pm.getProjectName(), m.getImplies(), m.getWeight(), ratio, value);
         }
     }
 
@@ -173,36 +173,36 @@ public class ScoreCalculator {
         return bs;
     }
 
-    private void calcForProject(String pName, String implies, int priority, float ratio, float value) {
+    private void calcForProject(String pName, String implies, int weight, float ratio, float value) {
         float s = skill.get(pName);
         float r = readability.get(pName);
-        float priXrat = priority * ratio * 3;
+        float impact = weight * ratio * 3;
         char sig = '+';
         String group = null;
 
         switch (implies) {
             case "+S":
-                skill.put(pName, s + priXrat);
+                skill.put(pName, s + impact);
                 sig = '+';
                 group = "skill";
                 break;
             case "+R":
-                readability.put(pName, r + priXrat);
+                readability.put(pName, r + impact);
                 sig = '+';
                 group = "readability";
                 break;
             case "-S":
-                skill.put(pName, s - priXrat);
+                skill.put(pName, s - impact);
                 sig = '-';
                 group = "skill";
                 break;
             case "-R":
-                readability.put(pName, r - priXrat);
+                readability.put(pName, r - impact);
                 sig = '-';
                 group = "readability";
                 break;
         }
-        log.append(pName + " (" + round(value) + ") : " + round(ratio) + " * " + priority + " = " + sig + round(priXrat) + " in " + group + "\n");
+        log.append(pName + " (" + round(value) + ") : " + round(ratio) + " * " + weight + " * 3 = " + sig + round(impact) + " in " + group + "\n");
     }
 
     private float round (float value) { //Round float to 1 decimal place

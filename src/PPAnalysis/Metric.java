@@ -2,13 +2,13 @@
 public class Metric {
 
     final String methodname, _this, implies;
-    int priority;
+    int weight;
 
-    public Metric(String methodname, String _this, String implies, int priority) {
+    public Metric(String methodname, String _this, String implies, int weight) {
         this.methodname = methodname;
         this._this = _this;
         this.implies = implies;
-        this.priority = priority;
+        this.weight = weight;
     }
 
     public String getThis() {
@@ -23,7 +23,7 @@ public class Metric {
         return methodname;
     }
 
-    public int getPriority() {
-        return priority;
+    public int getWeight() {
+        return weight;
     }
 }
