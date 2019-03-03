@@ -9,17 +9,14 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Type;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class ScoreCalculator {
 
     private final HashMap<String, PMDRule> pmdrules;
     private ArrayList<Metric> metrics;
     private Map<String, Float> skill, readability;
-    private float skillShift, readabilityShift = 0;
+    private float maxSkillPenalty = 0, maxReadabilityPenalty = 0;
     private final ProjectMetrics baseSolution;
     private final ArrayList<ProjectMetrics> exampleSolutions;
     private StringBuilder log;
@@ -51,7 +48,7 @@ public class ScoreCalculator {
 
         decreaseScoreFromPMDViolations();
 
-        //shiftToFirstQuadrant();
+        // shiftToFirstQuadrant();
 
         int avgs, avgr = avgs = 0;
         for (String key : skill.keySet()) {
@@ -87,25 +84,42 @@ public class ScoreCalculator {
 
     }
 
+    //Lowest map value
+    private float getMin(Map<String, Float> m) {
+        ArrayList<Float> list = new ArrayList<>(m.values());
+        return Collections.min(list);
+    }
+
+    //Highest map value
+    private float getMax(Map<String, Float> m) {
+        ArrayList<Float> list = new ArrayList<>(m.values());
+        return Collections.max(list);
+    }
+
     private void decreaseScoreFromPMDViolations() {
         for (ProjectMetrics pm : exampleSolutions) {
-            String pName = pm.getProjectName();
-
             float sPenalty = calculateViolations(pm, 'R'); //Skill (Not R)
             float rPenalty = calculateViolations(pm, 'S'); //Readability (Not S)
 
-            log.append(pm.getProjectName() + ": Skill: " + sPenalty + "   Readability: " + rPenalty + "\n");
-
-            float finalSkillScore = skill.get(pName) - sPenalty;
-            if (finalSkillScore < 0) {
-                finalSkillScore = 0;
+            if (sPenalty > maxSkillPenalty) {
+                maxSkillPenalty = sPenalty;
             }
+            if (rPenalty > maxReadabilityPenalty) {
+                maxReadabilityPenalty = rPenalty;
+            }
+        }
+
+        for (ProjectMetrics pm : exampleSolutions) {
+            String pName = pm.getProjectName();
+
+            float sPenaltyRatio = calculateViolations(pm, 'R') * (float) 0.5 / maxSkillPenalty;
+            float rPenaltyRatio = calculateViolations(pm, 'S') * (float) 0.5 / maxReadabilityPenalty;
+
+            log.append(pm.getProjectName() + ": Skill: " + sPenaltyRatio + "   Readability: " + rPenaltyRatio + "\n");
+
+            float finalSkillScore = skill.get(pName) * (1 - sPenaltyRatio);
             skill.put(pName, finalSkillScore);
-
-            float finalReadabilityScore = readability.get(pName) - rPenalty;
-            if (finalReadabilityScore < 0) {
-                finalReadabilityScore = 0;
-            }
+            float finalReadabilityScore = readability.get(pName) * (1 - rPenaltyRatio);
             readability.put(pName, finalReadabilityScore);
         }
     }
@@ -128,8 +142,8 @@ public class ScoreCalculator {
     private void shiftToFirstQuadrant() {
         for (ProjectMetrics pm : exampleSolutions) {
             String pName = pm.getProjectName();
-            skill.put(pName, skill.get(pName) - skillShift);
-            readability.put(pName, readability.get(pName) - readabilityShift);
+            skill.put(pName, skill.get(pName) - maxSkillPenalty);
+            readability.put(pName, readability.get(pName) - maxReadabilityPenalty);
         }
     }
 
@@ -176,7 +190,7 @@ public class ScoreCalculator {
     private void calcForProject(String pName, String implies, int weight, float ratio, float value) {
         float s = skill.get(pName);
         float r = readability.get(pName);
-        float impact = weight * ratio * 3;
+        float impact = weight * ratio;
         char sig = '+';
         String group = null;
 
@@ -202,7 +216,7 @@ public class ScoreCalculator {
                 group = "readability";
                 break;
         }
-        log.append(pName + " (" + round(value) + ") : " + round(ratio) + " * " + weight + " * 3 = " + sig + round(impact) + " in " + group + "\n");
+        log.append(pName + " (" + round(value) + ") : " + round(ratio) + " * " + weight + " = " + sig + round(impact) + " in " + group + "\n");
     }
 
     private float round (float value) { //Round float to 1 decimal place

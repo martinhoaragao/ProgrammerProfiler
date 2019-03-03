@@ -30,7 +30,7 @@ public class PMDRule implements Serializable {
     private void pickSkillGroup(String ruleset) {
         switch(ruleset) {
             case "Best Practices":
-                this.group = 'R';
+                this.group = 'B';
                 break;
             case "Code Style":
                 this.group = 'R';
