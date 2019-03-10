@@ -1,4 +1,0 @@
-"Problem","Package","File","Priority","Line","Description","Rule set","Rule"
-"1","","/Users/martinhoaragao/Dev/ProgrammerProfiler/ExerciseExamples/CodeChef-Hard-Orders/Guy12/21292194.java","4","6","Avoid unused imports such as 'java.util.LinkedList'","Best Practices","UnusedImports"
-"2","","/Users/martinhoaragao/Dev/ProgrammerProfiler/ExerciseExamples/CodeChef-Hard-Orders/Guy12/21292194.java","3","10","All classes and interfaces must belong to a named package","Code Style","NoPackage"
-"3","","/Users/martinhoaragao/Dev/ProgrammerProfiler/ExerciseExamples/CodeChef-Hard-Orders/Guy12/21292194.java","3","10","All methods are static.  Consider using a utility class instead. Alternatively, you could add a private constructor or make the class abstract to silence this warning.","Design","UseUtilityClass"

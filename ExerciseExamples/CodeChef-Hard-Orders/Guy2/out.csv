@@ -1,7 +1,0 @@
-"Problem","Package","File","Priority","Line","Description","Rule set","Rule"
-"1","","/Users/martinhoaragao/Dev/ProgrammerProfiler/ExerciseExamples/CodeChef-Hard-Orders/Guy2/15593929.java","3","7","All classes and interfaces must belong to a named package","Code Style","NoPackage"
-"2","","/Users/martinhoaragao/Dev/ProgrammerProfiler/ExerciseExamples/CodeChef-Hard-Orders/Guy2/15593929.java","3","8","Avoid unused private methods such as 'getStream()'.","Best Practices","UnusedPrivateMethod"
-"3","","/Users/martinhoaragao/Dev/ProgrammerProfiler/ExerciseExamples/CodeChef-Hard-Orders/Guy2/15593929.java","4","37","Useless parentheses.","Code Style","UselessParentheses"
-"4","","/Users/martinhoaragao/Dev/ProgrammerProfiler/ExerciseExamples/CodeChef-Hard-Orders/Guy2/15593929.java","3","46","This statement should have braces","Code Style","ControlStatementBraces"
-"5","","/Users/martinhoaragao/Dev/ProgrammerProfiler/ExerciseExamples/CodeChef-Hard-Orders/Guy2/15593929.java","3","78","This statement should have braces","Code Style","ControlStatementBraces"
-"6","","/Users/martinhoaragao/Dev/ProgrammerProfiler/ExerciseExamples/CodeChef-Hard-Orders/Guy2/15593929.java","3","80","This statement should have braces","Code Style","ControlStatementBraces"

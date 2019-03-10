@@ -1,5 +1,0 @@
-"Problem","Package","File","Priority","Line","Description","Rule set","Rule"
-"1","","/Users/martinhoaragao/Dev/ProgrammerProfiler/ExerciseExamples/CodeChef-Hard-Orders/Guy10/19812806.java","4","3","Avoid importing anything from the package java.lang","Code Style","DontImportJavaLang"
-"2","","/Users/martinhoaragao/Dev/ProgrammerProfiler/ExerciseExamples/CodeChef-Hard-Orders/Guy10/19812806.java","4","3","Avoid unused imports such as 'java.lang.Math'","Best Practices","UnusedImports"
-"3","","/Users/martinhoaragao/Dev/ProgrammerProfiler/ExerciseExamples/CodeChef-Hard-Orders/Guy10/19812806.java","3","5","All classes and interfaces must belong to a named package","Code Style","NoPackage"
-"4","","/Users/martinhoaragao/Dev/ProgrammerProfiler/ExerciseExamples/CodeChef-Hard-Orders/Guy10/19812806.java","3","5","All methods are static.  Consider using a utility class instead. Alternatively, you could add a private constructor or make the class abstract to silence this warning.","Design","UseUtilityClass"
