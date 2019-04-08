@@ -167,7 +167,13 @@ public class ScoreCalculator {
             float example, value = example = toFloat(oS);
             float ratio;
 
-            if (signal.equals("-")) {
+            if (signal.equals("-") && bestResult == 0) {
+                if (example == 0) {
+                    ratio = 1;
+                } else {
+                    ratio = (float) 0.5 / example;
+                }
+            } else if (signal.equals("-")) {
                 ratio = bestResult / example;
             } else {
                 ratio = example / bestResult;
