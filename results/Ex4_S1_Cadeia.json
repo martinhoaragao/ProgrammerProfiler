@@ -1,372 +1,377 @@
 [
     {
         "name": "Aluno34",
-        "skill": 15.8,
-        "readability": 10.8
+        "skill": 4.6,
+        "readability": 7.6
     },
     {
         "name": "Aluno35",
-        "skill": 18.1,
-        "readability": 10.0
-    },
-    {
-        "name": "Aluno36",
-        "skill": 11.2,
-        "readability": 20.0
-    },
-    {
-        "name": "Aluno37",
-        "skill": 8.8,
+        "skill": 6.3,
         "readability": 8.4
     },
     {
+        "name": "Aluno36",
+        "skill": 6.0,
+        "readability": 12.2
+    },
+    {
+        "name": "Aluno37",
+        "skill": 2.3,
+        "readability": 6.2
+    },
+    {
         "name": "Aluno30",
-        "skill": 8.2,
-        "readability": 14.6
+        "skill": 5.7,
+        "readability": 8.1
     },
     {
         "name": "Aluno31",
-        "skill": 21.5,
-        "readability": 7.3
+        "skill": 4.1,
+        "readability": 5.2
     },
     {
         "name": "Aluno32",
-        "skill": 18.8,
-        "readability": 9.5
+        "skill": 3.3,
+        "readability": 6.7
     },
     {
         "name": "Aluno33",
-        "skill": 20.6,
-        "readability": 15.1
+        "skill": 6.4,
+        "readability": 10.9
     },
     {
         "name": "Aluno38",
-        "skill": 16.5,
-        "readability": 11.4
+        "skill": 5.5,
+        "readability": 7.9
     },
     {
         "name": "Aluno39",
-        "skill": 16.5,
-        "readability": 9.7
+        "skill": 4.2,
+        "readability": 7.9
     },
     {
         "name": "Aluno60",
-        "skill": 20.3,
-        "readability": 7.7
+        "skill": 6.4,
+        "readability": 7.0
     },
     {
         "name": "Aluno61",
-        "skill": 21.0,
-        "readability": 8.3
+        "skill": 6.1,
+        "readability": 5.7
     },
     {
         "name": "Aluno62",
-        "skill": 18.2,
+        "skill": 6.2,
         "readability": 6.6
     },
     {
         "name": "Aluno23",
-        "skill": 21.6,
-        "readability": 6.5
+        "skill": 6.6,
+        "readability": 5.3
     },
     {
         "name": "Aluno67",
-        "skill": 16.1,
-        "readability": 14.1
+        "skill": 4.4,
+        "readability": 10.0
     },
     {
         "name": "Aluno24",
-        "skill": 5.9,
-        "readability": 16.9
+        "skill": 5.6,
+        "readability": 7.9
     },
     {
         "name": "Aluno68",
-        "skill": 4.3,
-        "readability": 12.2
-    },
-    {
-        "name": "Aluno25",
-        "skill": 15.3,
-        "readability": 12.9
-    },
-    {
-        "name": "Aluno69",
-        "skill": 16.5,
+        "skill": 4.1,
         "readability": 9.0
     },
     {
+        "name": "Aluno25",
+        "skill": 4.7,
+        "readability": 8.6
+    },
+    {
+        "name": "Aluno69",
+        "skill": 3.1,
+        "readability": 5.9
+    },
+    {
         "name": "Aluno26",
-        "skill": 17.3,
-        "readability": 14.3
+        "skill": 4.2,
+        "readability": 6.8
     },
     {
         "name": "Aluno63",
-        "skill": 19.5,
-        "readability": 4.2
-    },
-    {
-        "name": "Aluno20",
-        "skill": 21.3,
-        "readability": 9.5
+        "skill": 6.1,
+        "readability": 4.4
     },
     {
         "name": "Aluno64",
-        "skill": 19.1,
-        "readability": 9.4
+        "skill": 6.5,
+        "readability": 8.2
+    },
+    {
+        "name": "Aluno20",
+        "skill": 7.1,
+        "readability": 7.3
     },
     {
         "name": "Aluno65",
-        "skill": 7.8,
-        "readability": 18.4
+        "skill": 5.2,
+        "readability": 10.6
     },
     {
         "name": "Aluno21",
-        "skill": 19.1,
-        "readability": 10.5
+        "skill": 5.8,
+        "readability": 7.9
     },
     {
         "name": "Aluno22",
-        "skill": 18.5,
+        "skill": 6.0,
         "readability": 4.1
     },
     {
         "name": "Aluno66",
-        "skill": 13.8,
-        "readability": 10.2
+        "skill": 4.7,
+        "readability": 7.7
     },
     {
         "name": "Aluno27",
-        "skill": 14.5,
-        "readability": 10.1
+        "skill": 4.1,
+        "readability": 7.5
     },
     {
         "name": "Aluno28",
-        "skill": 21.6,
-        "readability": 5.9
+        "skill": 6.6,
+        "readability": 5.2
     },
     {
         "name": "Aluno29",
-        "skill": 18.2,
-        "readability": 8.1
+        "skill": 5.5,
+        "readability": 6.4
     },
     {
         "name": "A",
-        "skill": 15.7,
-        "readability": 9.1
+        "skill": 3.1,
+        "readability": 4.4
     },
     {
         "name": "Aluno50",
-        "skill": 18.2,
-        "readability": 8.6
-    },
-    {
-        "name": "Aluno51",
-        "skill": 20.6,
-        "readability": 6.1
-    },
-    {
-        "name": "D",
-        "skill": 21.1,
-        "readability": 11.0
-    },
-    {
-        "name": "F",
-        "skill": 11.4,
-        "readability": 12.9
-    },
-    {
-        "name": "Aluno12",
-        "skill": 19.2,
+        "skill": 5.8,
         "readability": 6.6
     },
     {
+        "name": "Aluno51",
+        "skill": 5.0,
+        "readability": 4.7
+    },
+    {
+        "name": "D",
+        "skill": 11.0,
+        "readability": 8.8
+    },
+    {
+        "name": "F",
+        "skill": 5.1,
+        "readability": 8.9
+    },
+    {
+        "name": "Aluno12",
+        "skill": 5.6,
+        "readability": 5.5
+    },
+    {
         "name": "Aluno56",
-        "skill": 20.8,
-        "readability": 11.3
+        "skill": 6.1,
+        "readability": 9.0
     },
     {
         "name": "Aluno13",
-        "skill": 14.3,
-        "readability": 10.3
+        "skill": 5.1,
+        "readability": 7.5
     },
     {
         "name": "Aluno57",
-        "skill": 8.8,
-        "readability": 12.9
+        "skill": 5.2,
+        "readability": 9.2
     },
     {
         "name": "Aluno14",
-        "skill": 19.3,
-        "readability": 10.9
+        "skill": 6.0,
+        "readability": 7.3
     },
     {
         "name": "Aluno58",
-        "skill": 12.2,
-        "readability": 16.3
+        "skill": 4.1,
+        "readability": 10.4
     },
     {
         "name": "Aluno15",
-        "skill": 19.9,
-        "readability": 10.8
+        "skill": 4.8,
+        "readability": 6.5
     },
     {
         "name": "Aluno59",
-        "skill": 16.8,
-        "readability": 10.3
-    },
-    {
-        "name": "Aluno52",
-        "skill": 17.8,
-        "readability": 11.9
-    },
-    {
-        "name": "Aluno53",
-        "skill": 8.8,
-        "readability": 11.9
-    },
-    {
-        "name": "M",
-        "skill": 21.3,
-        "readability": 9.6
-    },
-    {
-        "name": "Aluno54",
-        "skill": 18.5,
-        "readability": 7.4
-    },
-    {
-        "name": "Aluno10",
-        "skill": 21.5,
-        "readability": 7.6
-    },
-    {
-        "name": "Aluno55",
-        "skill": 11.2,
-        "readability": 15.0
-    },
-    {
-        "name": "Aluno11",
-        "skill": 14.7,
+        "skill": 7.4,
         "readability": 8.6
     },
     {
-        "name": "P",
-        "skill": 11.6,
-        "readability": 13.9
+        "name": "Aluno52",
+        "skill": 4.3,
+        "readability": 8.6
     },
     {
-        "name": "Aluno2",
-        "skill": 8.8,
-        "readability": 9.8
+        "name": "Aluno53",
+        "skill": 5.8,
+        "readability": 8.8
     },
     {
-        "name": "Aluno16",
-        "skill": 21.0,
-        "readability": 11.9
-    },
-    {
-        "name": "Aluno1",
-        "skill": 11.3,
-        "readability": 15.4
-    },
-    {
-        "name": "Aluno17",
-        "skill": 18.7,
+        "name": "M",
+        "skill": 6.5,
         "readability": 7.5
     },
     {
-        "name": "V",
-        "skill": 15.8,
-        "readability": 11.5
+        "name": "Aluno54",
+        "skill": 6.0,
+        "readability": 5.1
     },
     {
-        "name": "Aluno18",
-        "skill": 15.5,
-        "readability": 8.0
+        "name": "Aluno10",
+        "skill": 7.3,
+        "readability": 5.6
     },
     {
-        "name": "Aluno19",
-        "skill": 8.8,
-        "readability": 14.5
+        "name": "Aluno55",
+        "skill": 6.0,
+        "readability": 10.4
     },
     {
-        "name": "Aluno6",
-        "skill": 16.5,
-        "readability": 10.2
-    },
-    {
-        "name": "Aluno5",
-        "skill": 13.7,
-        "readability": 8.3
-    },
-    {
-        "name": "Aluno4",
-        "skill": 19.4,
-        "readability": 16.1
-    },
-    {
-        "name": "Aluno3",
-        "skill": 13.9,
-        "readability": 15.3
-    },
-    {
-        "name": "Aluno9",
-        "skill": 22.8,
-        "readability": 11.1
-    },
-    {
-        "name": "Aluno8",
-        "skill": 11.4,
-        "readability": 12.3
-    },
-    {
-        "name": "Aluno40",
-        "skill": 21.3,
-        "readability": 7.5
-    },
-    {
-        "name": "Aluno45",
-        "skill": 19.3,
-        "readability": 9.1
-    },
-    {
-        "name": "Aluno46",
-        "skill": 8.8,
-        "readability": 15.6
-    },
-    {
-        "name": "Aluno47",
-        "skill": 19.1,
+        "name": "Aluno11",
+        "skill": 5.0,
         "readability": 6.8
     },
     {
+        "name": "P",
+        "skill": 5.5,
+        "readability": 9.4
+    },
+    {
+        "name": "Aluno2",
+        "skill": 4.7,
+        "readability": 6.7
+    },
+    {
+        "name": "Aluno16",
+        "skill": 6.1,
+        "readability": 8.4
+    },
+    {
+        "name": "Aluno1",
+        "skill": 4.6,
+        "readability": 9.7
+    },
+    {
+        "name": "Aluno17",
+        "skill": 4.4,
+        "readability": 6.2
+    },
+    {
+        "name": "V",
+        "skill": 6.4,
+        "readability": 8.8
+    },
+    {
+        "name": "Aluno18",
+        "skill": 4.5,
+        "readability": 6.8
+    },
+    {
+        "name": "Aluno19",
+        "skill": 5.8,
+        "readability": 8.0
+    },
+    {
+        "name": "Aluno6",
+        "skill": 5.0,
+        "readability": 8.4
+    },
+    {
+        "name": "Aluno5",
+        "skill": 4.7,
+        "readability": 6.4
+    },
+    {
+        "name": "Aluno4",
+        "skill": 4.2,
+        "readability": 7.4
+    },
+    {
+        "name": "Aluno3",
+        "skill": 5.0,
+        "readability": 7.8
+    },
+    {
+        "name": "Aluno9",
+        "skill": 7.2,
+        "readability": 8.3
+    },
+    {
+        "name": "Aluno8",
+        "skill": 4.5,
+        "readability": 9.1
+    },
+    {
+        "name": "Aluno40",
+        "skill": 7.3,
+        "readability": 7.0
+    },
+    {
+        "name": "Aluno45",
+        "skill": 6.3,
+        "readability": 7.4
+    },
+    {
+        "name": "Aluno46",
+        "skill": 3.7,
+        "readability": 9.4
+    },
+    {
+        "name": "Aluno47",
+        "skill": 6.5,
+        "readability": 5.5
+    },
+    {
         "name": "Aluno48",
-        "skill": 17.6,
-        "readability": 5.3
+        "skill": 4.3,
+        "readability": 4.7
     },
     {
         "name": "Aluno41",
-        "skill": 18.1,
-        "readability": 8.7
+        "skill": 3.4,
+        "readability": 7.0
     },
     {
         "name": "Aluno42",
-        "skill": 11.2,
-        "readability": 18.8
+        "skill": 4.6,
+        "readability": 10.0
     },
     {
         "name": "Aluno43",
-        "skill": 18.5,
-        "readability": 12.9
+        "skill": 8.6,
+        "readability": 8.3
     },
     {
         "name": "Aluno44",
-        "skill": 17.5,
-        "readability": 10.6
+        "skill": 6.3,
+        "readability": 8.3
+    },
+    {
+        "name": "p",
+        "skill": 5.5,
+        "readability": 9.4
     },
     {
         "name": "Aluno49",
-        "skill": 14.3,
-        "readability": 14.0
+        "skill": 5.1,
+        "readability": 9.3
     }
 ]
