@@ -38,7 +38,7 @@ public class ProjectProfiler extends Thread {
         }
 
         for (String directory : directories) {
-            ProjectProfilerThread rPP = new ProjectProfilerThread(directory, base);
+            ProjectProfilerThread rPP = new ProjectProfilerThread(directory, base, choice);
             rPP.start();
         }
     }
@@ -48,10 +48,12 @@ class ProjectProfilerThread implements Runnable {
     private Thread t;
     private String directory;
     private String base;
+    private int choice;
 
-    ProjectProfilerThread(String directory, String base) {
+    ProjectProfilerThread(String directory, String base, int choice) {
         this.directory = directory;
         this.base = base;
+        this.choice = choice;
     }
 
     @Override
@@ -126,9 +128,18 @@ class ProjectProfilerThread implements Runnable {
         pi.calcBoundaries();
         pi.inferProfile();
 
-        ResultsPlotter.main(pi.getProfileToProjects(),
-                pi.getMinS(), pi.getMaxS(), pi.getMinR(), pi.getMaxR(),
-                directory, FolderManagement.getFolderName(directory));
+        if (choice != 1) {
+            ResultsPlotter.main(
+                    pi.getProfileToProjects(),
+                    pi.getMinS(),
+                    pi.getMaxS(),
+                    pi.getMinR(),
+                    pi.getMaxR(),
+                    directory,
+                    FolderManagement.getFolderName(directory)
+            );
+        }
+
 
         LogGenerator lg = new LogGenerator(directory, sc.getLog(), pi.getLog());
         lg.generateLog();
