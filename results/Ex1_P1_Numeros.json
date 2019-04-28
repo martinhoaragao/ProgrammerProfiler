@@ -100,14 +100,14 @@
         "readability": 6.5
     },
     {
-        "name": "Aluno64",
-        "skill": 10.0,
-        "readability": 7.1
-    },
-    {
         "name": "Aluno20",
         "skill": 10.3,
         "readability": 7.6
+    },
+    {
+        "name": "Aluno64",
+        "skill": 10.0,
+        "readability": 7.1
     },
     {
         "name": "Aluno65",

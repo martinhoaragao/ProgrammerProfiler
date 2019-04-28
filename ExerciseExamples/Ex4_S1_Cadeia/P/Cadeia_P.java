@@ -1,4 +1,3 @@
-
 package strings_cadeia2;
 
 import java.util.Scanner;

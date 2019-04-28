@@ -1,13 +1,12 @@
 Programmer Profiler Tool
 
 *** Log Report ***
-Generated on 24/02/2019 21:00:01
+Generated on 28/04/2019 15:43:15
 
 PP Analysis: 
 
 getNumberOfClasses: + -> +R
 Weight: 4
-Aluno64 (1.0) : 1.0 * 4 = +4.0 in readability
 Aluno55 (1.0) : 1.0 * 4 = +4.0 in readability
 Aluno52 (1.0) : 1.0 * 4 = +4.0 in readability
 Aluno8 (1.0) : 1.0 * 4 = +4.0 in readability
@@ -76,11 +75,10 @@ Aluno18 (1.0) : 1.0 * 4 = +4.0 in readability
 P (1.0) : 1.0 * 4 = +4.0 in readability
 Aluno27 (1.0) : 1.0 * 4 = +4.0 in readability
 Aluno20 (1.0) : 1.0 * 4 = +4.0 in readability
-p (1.0) : 1.0 * 4 = +4.0 in readability
+Aluno64 (1.0) : 1.0 * 4 = +4.0 in readability
 
 getNumberOfMethods: + -> +R
 Weight: 3
-Aluno64 (1.0) : 0.3 * 3 = +1.0 in readability
 Aluno55 (1.0) : 0.3 * 3 = +1.0 in readability
 Aluno52 (1.0) : 0.3 * 3 = +1.0 in readability
 Aluno8 (0.0) : 0.0 * 3 = +0.0 in readability
@@ -149,11 +147,10 @@ Aluno18 (1.0) : 0.3 * 3 = +1.0 in readability
 P (1.0) : 0.3 * 3 = +1.0 in readability
 Aluno27 (1.0) : 0.3 * 3 = +1.0 in readability
 Aluno20 (1.0) : 0.3 * 3 = +1.0 in readability
-p (1.0) : 0.3 * 3 = +1.0 in readability
+Aluno64 (1.0) : 0.3 * 3 = +1.0 in readability
 
 getLinesOfCode: + -> +R
 Weight: 3
-Aluno64 (15.0) : 0.5 * 3 = +1.4 in readability
 Aluno55 (20.0) : 0.6 * 3 = +1.8 in readability
 Aluno52 (17.0) : 0.5 * 3 = +1.5 in readability
 Aluno8 (18.0) : 0.5 * 3 = +1.6 in readability
@@ -222,11 +219,10 @@ Aluno18 (16.0) : 0.5 * 3 = +1.5 in readability
 P (24.0) : 0.7 * 3 = +2.2 in readability
 Aluno27 (15.0) : 0.5 * 3 = +1.4 in readability
 Aluno20 (15.0) : 0.5 * 3 = +1.4 in readability
-p (24.0) : 0.7 * 3 = +2.2 in readability
+Aluno64 (15.0) : 0.5 * 3 = +1.4 in readability
 
 getPerComment: + -> +R
 Weight: 4
-Aluno64 (0.0) : 0.0 * 4 = +0.0 in readability
 Aluno55 (0.0) : 0.0 * 4 = +0.0 in readability
 Aluno52 (16.7) : 1.0 * 4 = +4.0 in readability
 Aluno8 (0.0) : 0.0 * 4 = +0.0 in readability
@@ -295,11 +291,10 @@ Aluno18 (0.0) : 0.0 * 4 = +0.0 in readability
 P (5.6) : 0.3 * 4 = +1.3 in readability
 Aluno27 (0.0) : 0.0 * 4 = +0.0 in readability
 Aluno20 (0.0) : 0.0 * 4 = +0.0 in readability
-p (5.6) : 0.3 * 4 = +1.3 in readability
+Aluno64 (0.0) : 0.0 * 4 = +0.0 in readability
 
 getPerEmpty: + -> +R
 Weight: 2
-Aluno64 (5.0) : 0.1 * 2 = +0.2 in readability
 Aluno55 (25.7) : 0.5 * 2 = +0.9 in readability
 Aluno52 (8.3) : 0.1 * 2 = +0.3 in readability
 Aluno8 (8.0) : 0.1 * 2 = +0.3 in readability
@@ -368,11 +363,10 @@ Aluno18 (8.7) : 0.2 * 2 = +0.3 in readability
 P (22.2) : 0.4 * 2 = +0.8 in readability
 Aluno27 (9.1) : 0.2 * 2 = +0.3 in readability
 Aluno20 (20.8) : 0.4 * 2 = +0.7 in readability
-p (22.2) : 0.4 * 2 = +0.8 in readability
+Aluno64 (5.0) : 0.1 * 2 = +0.2 in readability
 
 getTotalNumberOfCFS: - -> +S
 Weight: 5
-Aluno64 (2.0) : 1.0 * 5 = +5.0 in skill
 Aluno55 (3.0) : 0.7 * 5 = +3.3 in skill
 Aluno52 (2.0) : 1.0 * 5 = +5.0 in skill
 Aluno8 (4.0) : 0.5 * 5 = +2.5 in skill
@@ -441,11 +435,10 @@ Aluno18 (2.0) : 1.0 * 5 = +5.0 in skill
 P (4.0) : 0.5 * 5 = +2.5 in skill
 Aluno27 (2.0) : 1.0 * 5 = +5.0 in skill
 Aluno20 (2.0) : 1.0 * 5 = +5.0 in skill
-p (4.0) : 0.5 * 5 = +2.5 in skill
+Aluno64 (2.0) : 1.0 * 5 = +5.0 in skill
 
 getTotalNumberOfCFS: + -> +R
 Weight: 3
-Aluno64 (2.0) : 0.4 * 3 = +1.2 in readability
 Aluno55 (3.0) : 0.6 * 3 = +1.8 in readability
 Aluno52 (2.0) : 0.4 * 3 = +1.2 in readability
 Aluno8 (4.0) : 0.8 * 3 = +2.4 in readability
@@ -514,11 +507,10 @@ Aluno18 (2.0) : 0.4 * 3 = +1.2 in readability
 P (4.0) : 0.8 * 3 = +2.4 in readability
 Aluno27 (2.0) : 0.4 * 3 = +1.2 in readability
 Aluno20 (2.0) : 0.4 * 3 = +1.2 in readability
-p (4.0) : 0.8 * 3 = +2.4 in readability
+Aluno64 (2.0) : 0.4 * 3 = +1.2 in readability
 
 getCFSVariety: + -> +S
 Weight: 3
-Aluno64 (2.0) : 0.7 * 3 = +2.0 in skill
 Aluno55 (2.0) : 0.7 * 3 = +2.0 in skill
 Aluno52 (2.0) : 0.7 * 3 = +2.0 in skill
 Aluno8 (2.0) : 0.7 * 3 = +2.0 in skill
@@ -587,11 +579,10 @@ Aluno18 (2.0) : 0.7 * 3 = +2.0 in skill
 P (3.0) : 1.0 * 3 = +3.0 in skill
 Aluno27 (2.0) : 0.7 * 3 = +2.0 in skill
 Aluno20 (2.0) : 0.7 * 3 = +2.0 in skill
-p (3.0) : 1.0 * 3 = +3.0 in skill
+Aluno64 (2.0) : 0.7 * 3 = +2.0 in skill
 
 getNumberOfNSCCFS: + -> +S
 Weight: 5
-Aluno64 (0.0) : 0.0 * 5 = +0.0 in skill
 Aluno55 (0.0) : 0.0 * 5 = +0.0 in skill
 Aluno52 (0.0) : 0.0 * 5 = +0.0 in skill
 Aluno8 (0.0) : 0.0 * 5 = +0.0 in skill
@@ -660,11 +651,10 @@ Aluno18 (0.0) : 0.0 * 5 = +0.0 in skill
 P (2.0) : 1.0 * 5 = +5.0 in skill
 Aluno27 (0.0) : 0.0 * 5 = +0.0 in skill
 Aluno20 (0.0) : 0.0 * 5 = +0.0 in skill
-p (2.0) : 1.0 * 5 = +5.0 in skill
+Aluno64 (0.0) : 0.0 * 5 = +0.0 in skill
 
 getDifferentTypesOfNSCO: + -> +S
 Weight: 3
-Aluno64 (2.0) : 0.7 * 3 = +2.0 in skill
 Aluno55 (2.0) : 0.7 * 3 = +2.0 in skill
 Aluno52 (2.0) : 0.7 * 3 = +2.0 in skill
 Aluno8 (3.0) : 1.0 * 3 = +3.0 in skill
@@ -733,11 +723,10 @@ Aluno18 (2.0) : 0.7 * 3 = +2.0 in skill
 P (1.0) : 0.3 * 3 = +1.0 in skill
 Aluno27 (2.0) : 0.7 * 3 = +2.0 in skill
 Aluno20 (2.0) : 0.7 * 3 = +2.0 in skill
-p (1.0) : 0.3 * 3 = +1.0 in skill
+Aluno64 (2.0) : 0.7 * 3 = +2.0 in skill
 
 getNumberOfStatementsWithoutRES: - -> +S
 Weight: 5
-Aluno64 (5.0) : 0.8 * 5 = +4.0 in skill
 Aluno55 (8.0) : 0.5 * 5 = +2.5 in skill
 Aluno52 (5.0) : 0.8 * 5 = +4.0 in skill
 Aluno8 (9.0) : 0.4 * 5 = +2.2 in skill
@@ -806,11 +795,10 @@ Aluno18 (6.0) : 0.7 * 5 = +3.3 in skill
 P (9.0) : 0.4 * 5 = +2.2 in skill
 Aluno27 (6.0) : 0.7 * 5 = +3.3 in skill
 Aluno20 (4.0) : 1.0 * 5 = +5.0 in skill
-p (9.0) : 0.4 * 5 = +2.2 in skill
+Aluno64 (5.0) : 0.8 * 5 = +4.0 in skill
 
 getTotalNumberOfDeclarations: + -> +R
 Weight: 3
-Aluno64 (6.0) : 0.5 * 3 = +1.6 in readability
 Aluno55 (5.0) : 0.5 * 3 = +1.4 in readability
 Aluno52 (5.0) : 0.5 * 3 = +1.4 in readability
 Aluno8 (5.0) : 0.5 * 3 = +1.4 in readability
@@ -879,11 +867,10 @@ Aluno18 (5.0) : 0.5 * 3 = +1.4 in readability
 P (7.0) : 0.6 * 3 = +1.9 in readability
 Aluno27 (6.0) : 0.5 * 3 = +1.6 in readability
 Aluno20 (5.0) : 0.5 * 3 = +1.4 in readability
-p (7.0) : 0.6 * 3 = +1.9 in readability
+Aluno64 (6.0) : 0.5 * 3 = +1.6 in readability
 
 getTotalNumberOfTypes: + -> +S
 Weight: 2
-Aluno64 (2.0) : 0.4 * 2 = +0.8 in skill
 Aluno55 (3.0) : 0.6 * 2 = +1.2 in skill
 Aluno52 (3.0) : 0.6 * 2 = +1.2 in skill
 Aluno8 (3.0) : 0.6 * 2 = +1.2 in skill
@@ -952,11 +939,10 @@ Aluno18 (2.0) : 0.4 * 2 = +0.8 in skill
 P (3.0) : 0.6 * 2 = +1.2 in skill
 Aluno27 (3.0) : 0.6 * 2 = +1.2 in skill
 Aluno20 (3.0) : 0.6 * 2 = +1.2 in skill
-p (3.0) : 0.6 * 2 = +1.2 in skill
+Aluno64 (2.0) : 0.4 * 2 = +0.8 in skill
 
 getNumberOfRES: + -> +R
 Weight: 2
-Aluno64 (5.0) : 0.6 * 2 = +1.3 in readability
 Aluno55 (3.0) : 0.4 * 2 = +0.8 in readability
 Aluno52 (2.0) : 0.3 * 2 = +0.5 in readability
 Aluno8 (4.0) : 0.5 * 2 = +1.0 in readability
@@ -1025,118 +1011,117 @@ Aluno18 (4.0) : 0.5 * 2 = +1.0 in readability
 P (4.0) : 0.5 * 2 = +1.0 in readability
 Aluno27 (3.0) : 0.4 * 2 = +0.8 in readability
 Aluno20 (3.0) : 0.4 * 2 = +0.8 in readability
-p (4.0) : 0.5 * 2 = +1.0 in readability
+Aluno64 (5.0) : 0.6 * 2 = +1.3 in readability
 
 Pre-PMD Results:
 
-Skill  : {Aluno34=14.251516, Aluno36=11.033334, Aluno30=12.422222, Aluno31=14.433334, Aluno32=13.533334, Aluno33=12.190476, Aluno38=8.018182, Aluno60=12.422222, Aluno61=14.2, Aluno62=13.457144, Aluno23=12.266667, Aluno67=10.755555, Aluno24=12.666667, Aluno68=9.922222, Aluno25=12.266667, Aluno69=13.533334, Aluno26=11.790477, Aluno64=13.8, Aluno20=15.2, Aluno65=14.890477, Aluno21=12.422222, Aluno22=14.2, Aluno66=9.35, Aluno27=13.533334, Aluno28=12.266667, Aluno29=10.2, A=10.5, Aluno50=11.866667, Aluno51=12.533334, D=12.390477, F=12.390477, Aluno12=13.457144, Aluno56=15.418182, Aluno13=9.711111, Aluno57=11.266667, Aluno14=13.533334, Aluno58=9.318182, J=15.690477, Aluno15=13.057143, Aluno59=10.6, Aluno52=14.2, Aluno53=13.533334, Aluno54=11.390476, Aluno10=12.7, Aluno55=11.033334, Aluno11=14.8, P=14.922222, Aluno2=12.8, Aluno16=13.533334, Aluno17=10.755555, Aluno18=13.133334, Aluno19=13.533334, Aluno6=12.652632, Aluno5=13.8, Z=16.633333, Aluno3=12.555556, Aluno9=9.85, Aluno8=10.922222, Aluno7=14.918182, Aluno40=16.433334, Aluno45=13.533334, Aluno46=11.866667, Aluno47=13.422222, Aluno48=15.2, Aluno41=12.422222, Aluno42=13.533334, Aluno43=12.7, Aluno44=11.033334, p=14.922222, Aluno49=10.2}
+Skill  : {Aluno34=14.251516, Aluno36=11.033334, Aluno30=12.422222, Aluno31=14.433334, Aluno32=13.533334, Aluno33=12.190476, Aluno38=8.018182, Aluno60=12.422222, Aluno61=14.2, Aluno62=13.457144, Aluno23=12.266667, Aluno67=10.755555, Aluno24=12.666667, Aluno68=9.922222, Aluno25=12.266667, Aluno69=13.533334, Aluno26=11.790477, Aluno20=15.2, Aluno64=13.8, Aluno65=14.890477, Aluno21=12.422222, Aluno22=14.2, Aluno66=9.35, Aluno27=13.533334, Aluno28=12.266667, Aluno29=10.2, A=10.5, Aluno50=11.866667, Aluno51=12.533334, D=12.390477, F=12.390477, Aluno12=13.457144, Aluno56=15.418182, Aluno13=9.711111, Aluno57=11.266667, Aluno14=13.533334, Aluno58=9.318182, J=15.690477, Aluno15=13.057143, Aluno59=10.6, Aluno52=14.2, Aluno53=13.533334, Aluno54=11.390476, Aluno10=12.7, Aluno55=11.033334, Aluno11=14.8, P=14.922222, Aluno2=12.8, Aluno16=13.533334, Aluno17=10.755555, Aluno18=13.133334, Aluno19=13.533334, Aluno6=12.652632, Aluno5=13.8, Z=16.633333, Aluno3=12.555556, Aluno9=9.85, Aluno8=10.922222, Aluno7=14.918182, Aluno40=16.433334, Aluno45=13.533334, Aluno46=11.866667, Aluno47=13.422222, Aluno48=15.2, Aluno41=12.422222, Aluno42=13.533334, Aluno43=12.7, Aluno44=11.033334, Aluno49=10.2}
 
-Readability: {Aluno34=14.538054, Aluno36=14.911243, Aluno30=13.835461, Aluno31=12.69036, Aluno32=11.821428, Aluno33=15.0191555, Aluno38=15.140693, Aluno60=10.735173, Aluno61=11.066883, Aluno62=10.381045, Aluno23=11.411832, Aluno67=13.26557, Aluno24=13.268106, Aluno68=13.044385, Aluno25=12.82369, Aluno69=10.6787405, Aluno26=12.069017, Aluno64=10.6285715, Aluno20=10.42132, Aluno65=16.861162, Aluno21=11.738961, Aluno22=9.313636, Aluno66=14.666235, Aluno27=10.274675, Aluno28=10.9287405, Aluno29=12.634822, A=13.382684, Aluno50=13.167457, Aluno51=10.238312, D=12.8671, F=12.750851, Aluno12=10.653772, Aluno56=15.402979, Aluno13=15.901128, Aluno57=12.383816, Aluno14=13.489395, Aluno58=13.977922, J=11.598452, Aluno15=11.479012, Aluno59=10.49091, Aluno52=13.906709, Aluno53=10.650735, Aluno54=11.677775, Aluno10=11.55552, Aluno55=11.650186, Aluno11=9.705538, P=14.617892, Aluno2=9.641559, Aluno16=13.490925, Aluno17=11.930252, Aluno18=10.32874, Aluno19=11.461596, Aluno6=14.510389, Aluno5=9.352958, Z=11.882792, Aluno3=14.661112, Aluno9=16.314333, Aluno8=10.685715, Aluno7=13.614037, Aluno40=12.388127, Aluno45=10.614935, Aluno46=12.786756, Aluno47=11.342737, Aluno48=9.764935, Aluno41=11.45, Aluno42=12.10909, Aluno43=11.504267, Aluno44=12.594882, p=14.617892, Aluno49=13.710569}
+Readability: {Aluno34=14.538054, Aluno36=14.911243, Aluno30=13.835461, Aluno31=12.69036, Aluno32=11.821428, Aluno33=15.0191555, Aluno38=15.140693, Aluno60=10.735173, Aluno61=11.066883, Aluno62=10.381045, Aluno23=11.411832, Aluno67=13.26557, Aluno24=13.268106, Aluno68=13.044385, Aluno25=12.82369, Aluno69=10.6787405, Aluno26=12.069017, Aluno20=10.42132, Aluno64=10.6285715, Aluno65=16.861162, Aluno21=11.738961, Aluno22=9.313636, Aluno66=14.666235, Aluno27=10.274675, Aluno28=10.9287405, Aluno29=12.634822, A=13.382684, Aluno50=13.167457, Aluno51=10.238312, D=12.8671, F=12.750851, Aluno12=10.653772, Aluno56=15.402979, Aluno13=15.901128, Aluno57=12.383816, Aluno14=13.489395, Aluno58=13.977922, J=11.598452, Aluno15=11.479012, Aluno59=10.49091, Aluno52=13.906709, Aluno53=10.650735, Aluno54=11.677775, Aluno10=11.55552, Aluno55=11.650186, Aluno11=9.705538, P=14.617892, Aluno2=9.641559, Aluno16=13.490925, Aluno17=11.930252, Aluno18=10.32874, Aluno19=11.461596, Aluno6=14.510389, Aluno5=9.352958, Z=11.882792, Aluno3=14.661112, Aluno9=16.314333, Aluno8=10.685715, Aluno7=13.614037, Aluno40=12.388127, Aluno45=10.614935, Aluno46=12.786756, Aluno47=11.342737, Aluno48=9.764935, Aluno41=11.45, Aluno42=12.10909, Aluno43=11.504267, Aluno44=12.594882, Aluno49=13.710569}
 
 PMD Results (higher is worst): 
-Aluno64: Skill: 0.91666675   Readability: 1.25
-Aluno55: Skill: 1.6666667   Readability: 1.6666667
-Aluno52: Skill: 3.6666667   Readability: 4.0
-Aluno8: Skill: 3.5833333   Readability: 4.25
-Aluno30: Skill: 3.5833333   Readability: 3.9166667
-Aluno6: Skill: 1.0833334   Readability: 1.4166667
-Aluno53: Skill: 1.6666667   Readability: 2.0
-Aluno54: Skill: 4.0   Readability: 4.3333335
-Aluno62: Skill: 3.9166667   Readability: 4.25
-Aluno65: Skill: 3.3333333   Readability: 3.6666665
-Aluno31: Skill: 1.8333334   Readability: 2.1666667
-Aluno7: Skill: 0.5833334   Readability: 0.5833334
+Aluno55: Skill: 0.1   Readability: 0.16949153
+Aluno52: Skill: 0.0   Readability: 0.40677965
+Aluno8: Skill: 0.175   Readability: 0.43220335
+Aluno30: Skill: 0.074999996   Readability: 0.39830506
+Aluno6: Skill: 0.14999999   Readability: 0.1440678
+Aluno53: Skill: 0.0   Readability: 0.20338982
+Aluno54: Skill: 0.0   Readability: 0.44067794
+Aluno62: Skill: 0.074999996   Readability: 0.43220335
+Aluno65: Skill: 0.5   Readability: 0.37288132
+Aluno31: Skill: 0.074999996   Readability: 0.22033897
+Aluno7: Skill: 0.0   Readability: 0.059322033
 Aluno36: Skill: 0.0   Readability: 0.0
-Aluno9: Skill: 1.0833334   Readability: 1.4166667
-Aluno38: Skill: 2.0   Readability: 2.3333335
-Aluno25: Skill: 4.25   Readability: 4.5833335
-Aluno22: Skill: 3.6666667   Readability: 4.0
-Aluno14: Skill: 2.5833333   Readability: 2.9166667
-Aluno13: Skill: 4.25   Readability: 4.5833335
-Aluno47: Skill: 3.9166665   Readability: 4.25
-Aluno40: Skill: 3.6666667   Readability: 4.0
-Aluno49: Skill: 2.3333333   Readability: 2.6666667
-Z: Skill: 0.91666675   Readability: 1.25
-Aluno12: Skill: 3.5833333   Readability: 3.9166667
-Aluno15: Skill: 3.6666665   Readability: 4.0
-Aluno23: Skill: 3.6666667   Readability: 4.0
-Aluno24: Skill: 1.9166667   Readability: 2.25
-A: Skill: 2.4166667   Readability: 2.75
-F: Skill: 4.5833335   Readability: 4.916667
-Aluno48: Skill: 3.9166665   Readability: 4.25
-Aluno41: Skill: 4.1666665   Readability: 4.5000005
-Aluno46: Skill: 2.1666667   Readability: 2.5
-Aluno33: Skill: 0.6666667   Readability: 0.6666667
-Aluno5: Skill: 1.5833334   Readability: 1.9166667
-Aluno34: Skill: 0.8333334   Readability: 1.1666667
-Aluno2: Skill: 3.1666665   Readability: 3.1666665
-Aluno60: Skill: 3.1666665   Readability: 3.4999998
-Aluno58: Skill: 3.6666665   Readability: 3.9999998
-Aluno67: Skill: 2.3333333   Readability: 2.6666665
-Aluno51: Skill: 1.5833334   Readability: 1.9166667
-Aluno69: Skill: 3.5833333   Readability: 3.9166667
-Aluno56: Skill: 1.0833334   Readability: 1.4166667
-Aluno3: Skill: 3.9166667   Readability: 4.25
-Aluno32: Skill: 2.9166665   Readability: 3.2499998
-Aluno68: Skill: 1.5833334   Readability: 1.9166667
-Aluno57: Skill: 1.5833334   Readability: 2.5833333
-Aluno50: Skill: 1.0   Readability: 1.3333334
-Aluno59: Skill: 4.0   Readability: 4.0
-Aluno66: Skill: 0.8333334   Readability: 1.1666667
-Aluno61: Skill: 1.3333334   Readability: 1.6666667
-Aluno43: Skill: 2.3333333   Readability: 2.3333333
-Aluno44: Skill: 1.3333334   Readability: 1.6666667
-J: Skill: 1.25   Readability: 1.5833334
-D: Skill: 1.8333334   Readability: 2.1666667
-Aluno21: Skill: 1.8333334   Readability: 2.1666667
-Aluno19: Skill: 1.9166667   Readability: 2.25
-Aluno26: Skill: 3.3333333   Readability: 3.6666667
-Aluno10: Skill: 3.6666665   Readability: 3.9999998
-Aluno28: Skill: 3.3333333   Readability: 3.6666667
-Aluno17: Skill: 0.8333334   Readability: 1.1666667
-Aluno45: Skill: 3.3333333   Readability: 3.6666667
-Aluno42: Skill: 4.416667   Readability: 4.7500005
-Aluno29: Skill: 3.5833333   Readability: 3.9166667
-Aluno16: Skill: 1.3333334   Readability: 1.6666667
-Aluno11: Skill: 0.91666675   Readability: 1.25
-Aluno18: Skill: 2.5833333   Readability: 2.5833333
-P: Skill: 1.5833334   Readability: 1.9166667
-Aluno27: Skill: 1.9166667   Readability: 2.25
-Aluno20: Skill: 1.8333334   Readability: 2.1666667
-p: Skill: 1.5833334   Readability: 1.9166667
+Aluno9: Skill: 0.14999999   Readability: 0.1440678
+Aluno38: Skill: 0.0   Readability: 0.23728813
+Aluno25: Skill: 0.074999996   Readability: 0.46610168
+Aluno22: Skill: 0.0   Readability: 0.40677965
+Aluno14: Skill: 0.074999996   Readability: 0.29661015
+Aluno13: Skill: 0.074999996   Readability: 0.46610168
+Aluno47: Skill: 0.074999996   Readability: 0.43220335
+Aluno40: Skill: 0.0   Readability: 0.40677965
+Aluno49: Skill: 0.0   Readability: 0.27118644
+Z: Skill: 0.074999996   Readability: 0.12711863
+Aluno12: Skill: 0.074999996   Readability: 0.39830506
+Aluno15: Skill: 0.1   Readability: 0.40677965
+Aluno23: Skill: 0.0   Readability: 0.40677965
+Aluno24: Skill: 0.175   Readability: 0.22881354
+A: Skill: 0.225   Readability: 0.279661
+F: Skill: 0.275   Readability: 0.5
+Aluno48: Skill: 0.175   Readability: 0.43220335
+Aluno41: Skill: 0.14999999   Readability: 0.45762715
+Aluno46: Skill: 0.14999999   Readability: 0.25423726
+Aluno33: Skill: 0.1   Readability: 0.06779661
+Aluno5: Skill: 0.074999996   Readability: 0.19491525
+Aluno34: Skill: 0.14999999   Readability: 0.118644066
+Aluno2: Skill: 0.074999996   Readability: 0.32203385
+Aluno60: Skill: 0.14999999   Readability: 0.35593215
+Aluno58: Skill: 0.29999998   Readability: 0.40677962
+Aluno67: Skill: 0.0   Readability: 0.2711864
+Aluno51: Skill: 0.074999996   Readability: 0.19491525
+Aluno69: Skill: 0.074999996   Readability: 0.39830506
+Aluno56: Skill: 0.074999996   Readability: 0.1440678
+Aluno3: Skill: 0.074999996   Readability: 0.43220335
+Aluno32: Skill: 0.074999996   Readability: 0.33050844
+Aluno68: Skill: 0.175   Readability: 0.19491525
+Aluno57: Skill: 0.0   Readability: 0.26271185
+Aluno50: Skill: 0.0   Readability: 0.13559322
+Aluno59: Skill: 0.225   Readability: 0.40677965
+Aluno66: Skill: 0.074999996   Readability: 0.118644066
+Aluno61: Skill: 0.0   Readability: 0.16949153
+Aluno43: Skill: 0.1   Readability: 0.23728812
+Aluno44: Skill: 0.1   Readability: 0.16949153
+J: Skill: 0.074999996   Readability: 0.16101694
+D: Skill: 0.14999999   Readability: 0.22033897
+Aluno21: Skill: 0.14999999   Readability: 0.22033897
+Aluno19: Skill: 0.074999996   Readability: 0.22881354
+Aluno26: Skill: 0.0   Readability: 0.37288135
+Aluno10: Skill: 0.1   Readability: 0.40677962
+Aluno28: Skill: 0.0   Readability: 0.37288135
+Aluno17: Skill: 0.0   Readability: 0.118644066
+Aluno45: Skill: 0.0   Readability: 0.37288135
+Aluno42: Skill: 0.14999999   Readability: 0.48305085
+Aluno29: Skill: 0.074999996   Readability: 0.39830506
+Aluno16: Skill: 0.0   Readability: 0.16949153
+Aluno11: Skill: 0.074999996   Readability: 0.12711863
+Aluno18: Skill: 0.074999996   Readability: 0.26271185
+P: Skill: 0.074999996   Readability: 0.19491525
+Aluno27: Skill: 0.175   Readability: 0.22881354
+Aluno20: Skill: 0.074999996   Readability: 0.22033897
+Aluno64: Skill: 0.074999996   Readability: 0.12711863
 
 Final Results:
-Skill  : {Aluno34=13.4, Aluno36=11.0, Aluno30=8.8, Aluno31=12.6, Aluno32=10.6, Aluno33=11.5, Aluno38=6.0, Aluno60=9.3, Aluno61=12.9, Aluno62=9.5, Aluno23=8.6, Aluno67=8.4, Aluno24=10.8, Aluno68=8.3, Aluno25=8.0, Aluno69=10.0, Aluno26=8.5, Aluno64=12.9, Aluno20=13.4, Aluno65=11.6, Aluno21=10.6, Aluno22=10.5, Aluno66=8.5, Aluno27=11.6, Aluno28=8.9, Aluno29=6.6, A=8.1, Aluno50=10.9, Aluno51=11.0, D=10.6, F=7.8, Aluno12=9.9, Aluno56=14.3, Aluno13=5.5, Aluno57=9.7, Aluno14=11.0, Aluno58=5.7, J=14.4, Aluno15=9.4, Aluno59=6.6, Aluno52=10.5, Aluno53=11.9, Aluno54=7.4, Aluno10=9.0, Aluno55=9.4, Aluno11=13.9, P=13.3, Aluno2=9.6, Aluno16=12.2, Aluno17=9.9, Aluno18=10.6, Aluno19=11.6, Aluno6=11.6, Aluno5=12.2, Z=15.7, Aluno3=8.6, Aluno9=8.8, Aluno8=7.3, Aluno7=14.3, Aluno40=12.8, Aluno45=10.2, Aluno46=9.7, Aluno47=9.5, Aluno48=11.3, Aluno41=8.3, Aluno42=9.1, Aluno43=10.4, Aluno44=9.7, p=13.3, Aluno49=7.9}
-Readability: {Aluno34=13.4, Aluno36=14.9, Aluno30=9.9, Aluno31=10.5, Aluno32=8.6, Aluno33=14.4, Aluno38=12.8, Aluno60=7.2, Aluno61=9.4, Aluno62=6.1, Aluno23=7.4, Aluno67=10.6, Aluno24=11.0, Aluno68=11.1, Aluno25=8.2, Aluno69=6.8, Aluno26=8.4, Aluno64=9.4, Aluno20=8.3, Aluno65=13.2, Aluno21=9.6, Aluno22=5.3, Aluno66=13.5, Aluno27=8.0, Aluno28=7.3, Aluno29=8.7, A=10.6, Aluno50=11.8, Aluno51=8.3, D=10.7, F=7.8, Aluno12=6.7, Aluno56=14.0, Aluno13=11.3, Aluno57=9.8, Aluno14=10.6, Aluno58=10.0, J=10.0, Aluno15=7.5, Aluno59=6.5, Aluno52=9.9, Aluno53=8.7, Aluno54=7.3, Aluno10=7.6, Aluno55=10.0, Aluno11=8.5, P=12.7, Aluno2=6.5, Aluno16=11.8, Aluno17=10.8, Aluno18=7.7, Aluno19=9.2, Aluno6=13.1, Aluno5=7.4, Z=10.6, Aluno3=10.4, Aluno9=14.9, Aluno8=6.4, Aluno7=13.0, Aluno40=8.4, Aluno45=6.9, Aluno46=10.3, Aluno47=7.1, Aluno48=5.5, Aluno41=6.9, Aluno42=7.4, Aluno43=9.2, Aluno44=10.9, p=12.7, Aluno49=11.0}
+Skill  : {Aluno34=12.1, Aluno36=11.0, Aluno30=11.5, Aluno31=13.4, Aluno32=12.5, Aluno33=11.0, Aluno38=8.0, Aluno60=10.6, Aluno61=14.2, Aluno62=12.4, Aluno23=12.3, Aluno67=10.8, Aluno24=10.4, Aluno68=8.2, Aluno25=11.3, Aluno69=12.5, Aluno26=11.8, Aluno20=14.1, Aluno64=12.8, Aluno65=7.4, Aluno21=10.6, Aluno22=14.2, Aluno66=8.6, Aluno27=11.2, Aluno28=12.3, Aluno29=9.4, A=8.1, Aluno50=11.9, Aluno51=11.6, D=10.5, F=9.0, Aluno12=12.4, Aluno56=14.3, Aluno13=9.0, Aluno57=11.3, Aluno14=12.5, Aluno58=6.5, J=14.5, Aluno15=11.8, Aluno59=8.2, Aluno52=14.2, Aluno53=13.5, Aluno54=11.4, Aluno10=11.4, Aluno55=9.9, Aluno11=13.7, P=13.8, Aluno2=11.8, Aluno16=13.5, Aluno17=10.8, Aluno18=12.1, Aluno19=12.5, Aluno6=10.8, Aluno5=12.8, Z=15.4, Aluno3=11.6, Aluno9=8.4, Aluno8=9.0, Aluno7=14.9, Aluno40=16.4, Aluno45=13.5, Aluno46=10.1, Aluno47=12.4, Aluno48=12.5, Aluno41=10.6, Aluno42=11.5, Aluno43=11.4, Aluno44=9.9, Aluno49=10.2}
+Readability: {Aluno34=12.8, Aluno36=14.9, Aluno30=8.3, Aluno31=9.9, Aluno32=7.9, Aluno33=14.0, Aluno38=11.5, Aluno60=6.9, Aluno61=9.2, Aluno62=5.9, Aluno23=6.8, Aluno67=9.7, Aluno24=10.2, Aluno68=10.5, Aluno25=6.8, Aluno69=6.4, Aluno26=7.6, Aluno20=8.1, Aluno64=9.3, Aluno65=10.6, Aluno21=9.2, Aluno22=5.5, Aluno66=12.9, Aluno27=7.9, Aluno28=6.9, Aluno29=7.6, A=9.6, Aluno50=11.4, Aluno51=8.2, D=10.0, F=6.4, Aluno12=6.4, Aluno56=13.2, Aluno13=8.5, Aluno57=9.1, Aluno14=9.5, Aluno58=8.3, J=9.7, Aluno15=6.8, Aluno59=6.2, Aluno52=8.2, Aluno53=8.5, Aluno54=6.5, Aluno10=6.9, Aluno55=9.7, Aluno11=8.5, P=11.8, Aluno2=6.5, Aluno16=11.2, Aluno17=10.5, Aluno18=7.6, Aluno19=8.8, Aluno6=12.4, Aluno5=7.5, Z=10.4, Aluno3=8.3, Aluno9=14.0, Aluno8=6.1, Aluno7=12.8, Aluno40=7.3, Aluno45=6.7, Aluno46=9.5, Aluno47=6.4, Aluno48=5.5, Aluno41=6.2, Aluno42=6.3, Aluno43=8.8, Aluno44=10.5, Aluno49=10.0}
 
-Avg Skill : 9.757143
-Avg Readability : 9.142858
+Avg Skill : 11.101449
+Avg Readability : 8.405797
 
-Lowest skill is 5.5 for Aluno13
-Highest skill is 15.7 for Z
+Lowest skill is 6.5 for Aluno58
+Highest skill is 16.4 for Aluno40
 Highest readability is 14.9 for Aluno36
-Lowest readability is 5.3 for Aluno22
-Highest readability is 14.9 for Aluno9
+Lowest readability is 5.5 for Aluno22
+Lowest readability is 5.5 for Aluno48
 
 *Final scores*
 Novice:
-[Aluno59, Aluno8, Aluno54, F, Aluno25, Aluno41, Aluno26, Aluno23]
+[Aluno58, Aluno59, Aluno8, F, Aluno13, Aluno29]
 
 Advanced Beginner S:
-[Aluno28, Aluno10, Aluno42, Aluno60, Aluno15, Aluno62, Aluno47, Aluno2, Aluno12, Aluno69, Aluno45, Aluno22, Aluno18, Aluno51, Aluno48, Aluno27, Aluno5]
+[Aluno41, Aluno60, Aluno27, Aluno25, Aluno54, Aluno10, Aluno42, Aluno30, Aluno51, Aluno3, Aluno2, Aluno15, Aluno26, Aluno18, Aluno23, Aluno28, Aluno62, Aluno12, Aluno47, Aluno48, Aluno69, Aluno32, Aluno5]
 
 Advanced Beginner R:
-[Aluno13, Aluno58, Aluno29, Aluno49, A, Aluno68, Aluno67, Aluno3, Aluno30]
+[Aluno65, Aluno38, A, Aluno68]
 
 Advanced Beginner +:
-[Aluno55, Aluno57, Aluno46, Aluno44, Aluno17, Aluno43, Aluno52, Aluno32, Aluno21, D, Aluno24, Aluno14, Aluno19, Aluno53]
+[Aluno55, Aluno44, Aluno46, Aluno49, Aluno24, D, Aluno21, Aluno67, Aluno17, Aluno57, Aluno43, Aluno50, Aluno19, Aluno14, Aluno64]
 
 Expert:
-[Aluno31, Aluno40, Aluno61, Aluno64, Aluno20, Aluno11, J, Z]
+[Aluno31, Aluno45, Aluno53, Aluno16, Aluno11, Aluno20, Aluno22, Aluno52, Aluno61, J, Z, Aluno40]
 
 Proficient:
-[Aluno38, Aluno66, Aluno9, Aluno50, Aluno36, Aluno33, Aluno6, Aluno65, Aluno16]
+[Aluno9, Aluno66, Aluno6, Aluno33, Aluno36, Aluno34]
 
 Master:
-[P, p, Aluno34, Aluno7, Aluno56]
+[P, Aluno56, Aluno7]
 
