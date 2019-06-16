@@ -42,11 +42,13 @@ public class ScoreCalculator {
         metrics = new ArrayList<>(gson.fromJson(reader, METRIC_TYPE));
     }
 
-    void calculateScore() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    public void calculateScore() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         skill = new HashMap<>();
         readability = new HashMap<>();
 
         for (ProjectMetrics pm : exampleSolutions) {
+            projects.put(pm.getProjectName(), new Project(pm.getProjectName()));
+
             skill.put(pm.getProjectName(), (float) 0);
             readability.put(pm.getProjectName(), (float) 0);
         }
@@ -72,7 +74,6 @@ public class ScoreCalculator {
         System.out.println("Readability: " + readability.toString());
         System.out.println("Avg Skill : " + (float)avgs / skill.size());
         System.out.println("Avg Readability : " + (float)avgr / readability.size() + "\n");
-
     }
 
     private void calculateScorePPAnalysis() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, IllegalAccessException {
@@ -231,9 +232,6 @@ public class ScoreCalculator {
         }
 
         Project currentProject = projects.get(pName);
-        if (currentProject == null) {
-            currentProject = new Project();
-        }
         MetricImpact thisMetric = new MetricImpact(m, value, ratio);
         thisMetric.register(s, skill.get(pName), r, readability.get(pName));
         currentProject.addMetricImpact(m.getMethodName(), thisMetric);

@@ -17,9 +17,11 @@ public class Feedback {
     public void provideFeedback() {
         for (Project project : projects.values()) {
 
-            System.out.println("Feedback starting!");
+
+
             System.out.println();
             System.out.println();
+
             System.out.println("Skill: " + project.getSkill() + " Readability: " + project.getReadability());
 
             if (project.getSkillViolationImpact() > project.getReadabilityViolationImpact()) {
@@ -27,6 +29,8 @@ public class Feedback {
             } else {
                 System.out.println("You should improve your readability: " + project.getReadabilityViolationImpact() + "% was the penalty you suffered from violations");
             }
+
+
         }
     }
 

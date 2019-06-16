@@ -8,7 +8,9 @@ public class Project {
     private HashMap<String, Violation> violations;
     private float skillViolationImpact, readabilityViolationImpact;
 
-    public Project() {
+    public Project(String projectName) {
+        this.projectName = projectName;
+
         metricsImpact = new HashMap<>();
         violations = new HashMap<>();
     }

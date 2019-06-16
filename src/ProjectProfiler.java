@@ -101,8 +101,6 @@ class ProjectProfilerThread implements Runnable {
         violationsDetected.putAll(pmdaBS.getViolationsDetected());
 
         for (String p : projectNames) {
-            projects.put(p, new Project());
-
             PPAnalyser ppaES = new PPAnalyser(p);
             ppaES.preProcess();
             ppaES.generateParseTrees();

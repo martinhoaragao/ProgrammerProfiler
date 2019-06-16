@@ -107,6 +107,7 @@ public class ProfileInferrer {
             log.append(profileStr).append("\n\n");
             System.out.println(b.getProfileName() + ":");
             System.out.println(profileStr);
+
         }
     }
 
