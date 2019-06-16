@@ -13,6 +13,7 @@ import java.util.*;
 
 public class ScoreCalculator {
 
+    private HashMap<String, Project> projects;
     private final HashMap<String, PMDRule> pmdrules;
     private ArrayList<Metric> metrics;
     private Map<String, Float> skill, readability;
@@ -21,13 +22,20 @@ public class ScoreCalculator {
     private final ArrayList<ProjectMetrics> exampleSolutions;
     private StringBuilder log;
 
-    public ScoreCalculator(ProjectMetrics baseSolution, ArrayList<ProjectMetrics> exampleSolutions, HashMap<String, PMDRule> pmdrules) {
+    public ScoreCalculator(ProjectMetrics baseSolution, ArrayList<ProjectMetrics> exampleSolutions, HashMap<String, PMDRule> pmdrules, HashMap<String, Project> projects) {
+        this.projects = projects;
         this.baseSolution = baseSolution;
         this.exampleSolutions = exampleSolutions;
         this.pmdrules = pmdrules;
+        try {
+            this.loadMetrics();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        log = new StringBuilder();
     }
 
-    void loadMetrics() throws FileNotFoundException { //Load PP Metrics
+    private void loadMetrics() throws FileNotFoundException { //Load PP Metrics
         final Type METRIC_TYPE = new TypeToken<List<Metric>>(){}.getType();
         Gson gson = new Gson();
         JsonReader reader = new JsonReader(new FileReader("auxiliar/metrics.json"));
@@ -37,7 +45,6 @@ public class ScoreCalculator {
     void calculateScore() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         skill = new HashMap<>();
         readability = new HashMap<>();
-        log = new StringBuilder();
 
         for (ProjectMetrics pm : exampleSolutions) {
             skill.put(pm.getProjectName(), (float) 0);
@@ -47,8 +54,6 @@ public class ScoreCalculator {
         calculateScorePPAnalysis();
 
         decreaseScoreFromPMDViolations();
-
-        // shiftToFirstQuadrant();
 
         int avgs, avgr = avgs = 0;
         for (String key : skill.keySet()) {
@@ -115,6 +120,10 @@ public class ScoreCalculator {
             float sPenaltyRatio = calculateViolations(pm, 'R') * (float) 0.5 / maxSkillPenalty;
             float rPenaltyRatio = calculateViolations(pm, 'S') * (float) 0.5 / maxReadabilityPenalty;
 
+            Project project = projects.get(pName);
+            project.setViolationImpact(sPenaltyRatio, rPenaltyRatio);
+            projects.put(pName, project);
+
             log.append(pm.getProjectName() + ": Skill: " + sPenaltyRatio + "   Readability: " + rPenaltyRatio + "\n");
 
             float finalSkillScore = skill.get(pName) * (1 - sPenaltyRatio);
@@ -132,19 +141,15 @@ public class ScoreCalculator {
             if (ruleGroup != not && ruleGroup != 'N') {
                 int priority = rule.getPriority();
                 int occurrences = vio.getValue();
-                violationsCount += occurrences * (float) 1 / priority;
+                float impact = occurrences * (float) 1 / priority;
+                violationsCount += impact;
+
+                Project project = projects.get(solution.getProjectName());
+                project.putViolation(vio.getKey(), rule, occurrences, impact);
 
             }
         }
         return violationsCount;
-    }
-
-    private void shiftToFirstQuadrant() {
-        for (ProjectMetrics pm : exampleSolutions) {
-            String pName = pm.getProjectName();
-            skill.put(pName, skill.get(pName) - maxSkillPenalty);
-            readability.put(pName, readability.get(pName) - maxReadabilityPenalty);
-        }
     }
 
     private void calcForMetric(Class<?> c, Metric m) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
@@ -179,7 +184,7 @@ public class ScoreCalculator {
                 ratio = example / bestResult;
             }
 
-            calcForProject(pm.getProjectName(), m.getImplies(), m.getWeight(), ratio, value);
+            calcForProject(pm.getProjectName(), m, ratio, value);
         }
     }
 
@@ -193,7 +198,9 @@ public class ScoreCalculator {
         return bs;
     }
 
-    private void calcForProject(String pName, String implies, int weight, float ratio, float value) {
+    private void calcForProject(String pName, Metric m, float ratio, float value) {
+        String implies = m.getImplies();
+        int weight = m.getWeight();
         float s = skill.get(pName);
         float r = readability.get(pName);
         float impact = weight * ratio;
@@ -222,6 +229,16 @@ public class ScoreCalculator {
                 group = "readability";
                 break;
         }
+
+        Project currentProject = projects.get(pName);
+        if (currentProject == null) {
+            currentProject = new Project();
+        }
+        MetricImpact thisMetric = new MetricImpact(m, value, ratio);
+        thisMetric.register(s, skill.get(pName), r, readability.get(pName));
+        currentProject.addMetricImpact(m.getMethodName(), thisMetric);
+        projects.put(pName, currentProject);
+
         log.append(pName + " (" + round(value) + ") : " + round(ratio) + " * " + weight + " = " + sig + round(impact) + " in " + group + "\n");
     }
 

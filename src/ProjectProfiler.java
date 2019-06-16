@@ -77,14 +77,15 @@ class ProjectProfilerThread implements Runnable {
     }
 
     private void profileForExercise() throws IOException, ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException {
+        HashMap<String, Project> projects = new HashMap<>();
         HashMap<String, PMDRule> violationsDetected = new HashMap<>();
         ArrayList<ProjectMetrics> pm = new ArrayList<>();
         String problemDescpt = directory;
-        String[] projects = FolderManagement.getSubFolders(directory);
+        String[] projectNames = FolderManagement.getSubFolders(directory);
         if (base == null) {
-            base = projects[0];
+            base = projectNames[0];
         }
-        projects = ArrayUtils.removeElement(projects, base);
+        projectNames = ArrayUtils.removeElement(projectNames, base);
 
         PPAnalyser ppaBS = new PPAnalyser(base);
         ppaBS.preProcess();
@@ -97,15 +98,15 @@ class ProjectProfilerThread implements Runnable {
 
         ProjectMetrics bS = ppaBS.getProjectMetrics();
         bS.setPMDViolations(pmdaBS.getViolations());
-
         violationsDetected.putAll(pmdaBS.getViolationsDetected());
 
-        for (String p : projects) {
+        for (String p : projectNames) {
+            projects.put(p, new Project());
+
             PPAnalyser ppaES = new PPAnalyser(p);
             ppaES.preProcess();
             ppaES.generateParseTrees();
             ppaES.extractMetrics();
-
             PMDAnalyser pmdaES = new PMDAnalyser(p);
             pmdaES.analyse();
             pmdaES.read();
@@ -116,17 +117,15 @@ class ProjectProfilerThread implements Runnable {
 
             violationsDetected.putAll(pmdaES.getViolationsDetected());
         }
-
         ProjectsComparison pc = new ProjectsComparison(bS, pm, violationsDetected, problemDescpt);
         pc.generateHTML(directory);
-
-        ScoreCalculator sc = new ScoreCalculator(pc.getBaseSolution(), pc.getExampleSolutions(), pc.getPMDrules());
-        sc.loadMetrics();
+        ScoreCalculator sc = new ScoreCalculator(pc.getBaseSolution(), pc.getExampleSolutions(), pc.getPMDrules(), projects);
         sc.calculateScore();
-
-        ProfileInferrer pi = new ProfileInferrer(sc.getReadability(), sc.getSkill());
+        ProfileInferrer pi = new ProfileInferrer(sc.getReadability(), sc.getSkill(), projects);
         pi.calcBoundaries();
         pi.inferProfile();
+        Feedback fb = new Feedback(projects);
+        fb.provideFeedback();
 
         if (choice != 1) {
             ResultsPlotter.main(
@@ -139,7 +138,6 @@ class ProjectProfilerThread implements Runnable {
                     FolderManagement.getFolderName(directory)
             );
         }
-
 
         LogGenerator lg = new LogGenerator(directory, sc.getLog(), pi.getLog());
         lg.generateLog();

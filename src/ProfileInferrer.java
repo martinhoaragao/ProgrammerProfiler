@@ -1,12 +1,19 @@
 import java.util.*;
 
 public class ProfileInferrer {
+    private HashMap<String, Project> projects;
     private final Map<String, Float> skill, readability;
     private List<Boundaries> bound;
     private TreeMap<Float, TreeMap<Float, ArrayList<String>>> values;
     private StringBuilder log;
     private LinkedHashMap<String, ArrayList<Project>> profileToProjects;
     private int minSi, maxSi, minRi, maxRi;
+
+    public ProfileInferrer(Map<String, Float> readability, Map<String, Float> skill, HashMap<String, Project> projects) {
+        this.readability = readability;
+        this.skill = skill;
+        this.projects = projects;
+    }
 
     public ProfileInferrer(Map<String, Float> readability, Map<String, Float> skill) {
         this.readability = readability;
@@ -24,8 +31,6 @@ public class ProfileInferrer {
         float distR = maxR - minR;
         float thirdS = distS / 3;
         float thirdR = distR / 3;
-        float halfThirdS = thirdS / 2;
-        float halfThirdR = thirdR / 2;
 
         log = new StringBuilder();
         boundariesLog(minS, maxS, minR, maxR); //Add boundaries info to log
@@ -86,17 +91,16 @@ public class ProfileInferrer {
         profileToProjects = new LinkedHashMap<>();
 
         for (Boundaries b : bound) {
-            System.out.println("-------------");
-            System.out.println(b.getMinS());
-            System.out.println(b.getMaxS());
-            System.out.println(b.getMinR());
-            System.out.println(b.getMaxR());
             ArrayList<String> profiles = new ArrayList<>(getProfile(b.getMinS(), b.getMaxS(), b.getMinR(), b.getMaxR()));
-            ArrayList<Project> projects = new ArrayList<>();
+            ArrayList<Project> projectsPart = new ArrayList<>();
             for (String p : profiles) {
-                projects.add(new Project(p, skill.get(p), readability.get(p)));
+                Project project = projects.get(p);
+                project.setProfile(b.getProfileName(), skill.get(p), readability.get(p));
+                projects.put(p, project);
+
+                projectsPart.add(new Project(p, skill.get(p), readability.get(p)));
             }
-            profileToProjects.put(b.getProfileName(), projects);
+            profileToProjects.put(b.getProfileName(), projectsPart);
 
             String profileStr = profiles.toString();
             log.append(b.getProfileName()).append(":\n");
