@@ -17,6 +17,16 @@ public class Violation {
         this.readabilityImpact = readabilityImpact;
     }
 
+    public float getImpact(boolean isReadability) {
+        if (isReadability) {
+            return readabilityImpact;
+        } else {
+            return skillImpact;
+        }
+
+    }
+
+
     public float getReadabilityImpact() {
         return readabilityImpact;
     }

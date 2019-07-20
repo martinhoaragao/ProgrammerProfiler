@@ -2,7 +2,7 @@ import java.util.HashMap;
 
 public class Project {
 
-    private Float skill, readability;
+    private float skill, readability;
     private String projectName, profile;
     private HashMap<String, MetricImpact> metricsImpact;
     private HashMap<String, Violation> violations;
@@ -15,7 +15,7 @@ public class Project {
         violations = new HashMap<>();
     }
 
-    public Project(String projectName, Float skill, Float readability) {
+    public Project(String projectName, float skill, float readability) {
         this.projectName = projectName;
         this.skill = skill;
         this.readability = readability;
@@ -25,12 +25,20 @@ public class Project {
         return projectName;
     }
 
-    public Float getReadability() {
+    public float getReadability() {
         return readability;
     }
 
-    public Float getSkill() {
+    public float getSkill() {
         return skill;
+    }
+
+    public String getProfile() {
+        return profile;
+    }
+
+    public HashMap<String, Violation> getViolations() {
+        return violations;
     }
 
     public float getReadabilityViolationImpact() {
