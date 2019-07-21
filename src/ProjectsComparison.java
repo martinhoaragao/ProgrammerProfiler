@@ -298,13 +298,9 @@ public class ProjectsComparison {
 
     private Integer calculateScore(ProjectMetrics solution, char not) {
         Integer group = 0; //Skill or Readability
-        for (Map.Entry<String, Integer> vio : solution.getPMDViolations().entrySet()) {
+        for (Map.Entry<String, ArrayList<Integer>> vio : solution.getPMDViolations().entrySet()) {
             PMDRule rule = violationsDetected.get(vio.getKey());
             if (rule.getGroup() != not) {
-                int priority = rule.getPriority();
-                int occurrences = vio.getValue();
-                //skill += priority * occurrences;
-                //skill += occurrences;
                 group++;
             }
         }

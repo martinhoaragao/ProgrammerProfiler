@@ -136,17 +136,17 @@ public class ScoreCalculator {
 
     private float calculateViolations(ProjectMetrics solution, char not) {
         float violationsCount = 0;
-        for (Map.Entry<String, Integer> vio : solution.getPMDViolations().entrySet()) {
+        for (Map.Entry<String, ArrayList<Integer>> vio : solution.getPMDViolations().entrySet()) {
             PMDRule rule = pmdrules.get(vio.getKey());
             char ruleGroup = rule.getGroup();
             if (ruleGroup != not && ruleGroup != 'N') {
                 int priority = rule.getPriority();
-                int occurrences = vio.getValue();
-                float impact = occurrences * (float) 1 / priority;
+                ArrayList<Integer> linesViolated = vio.getValue();
+                float impact = linesViolated.size() * (float) 1 / priority;
                 violationsCount += impact;
 
                 Project project = projects.get(solution.getProjectName());
-                project.putViolation(vio.getKey(), rule, occurrences, impact);
+                project.putViolation(vio.getKey(), rule, linesViolated, impact);
 
             }
         }

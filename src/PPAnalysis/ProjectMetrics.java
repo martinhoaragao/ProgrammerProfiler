@@ -1,4 +1,5 @@
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -31,7 +32,7 @@ public class ProjectMetrics implements Serializable{
 
     private final Map<RE,Integer> res;
 
-    private Map<String, Integer> PMDViolations;
+    private Map<String, ArrayList<Integer>> PMDViolations;
 
     public ProjectMetrics (String projectName, int numberOfFiles) {
         this.projectName = projectName;
@@ -259,11 +260,11 @@ public class ProjectMetrics implements Serializable{
         return res;
     }
 
-    public void setPMDViolations(Map<String, Integer> PMDViolations) {
+    public void setPMDViolations(Map<String, ArrayList<Integer>> PMDViolations) {
         this.PMDViolations = PMDViolations;
     }
 
-    public Map<String, Integer> getPMDViolations() {
+    public Map<String, ArrayList<Integer>> getPMDViolations() {
         return PMDViolations;
     }
 }

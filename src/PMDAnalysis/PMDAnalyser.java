@@ -2,6 +2,8 @@ import com.opencsv.CSVReader;
 
 import java.io.FileReader;
 import java.io.IOException;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class PMDAnalyser {
@@ -9,7 +11,7 @@ public class PMDAnalyser {
     private final String dirPath;
     private String output_file;
     private String cache_file;
-    private HashMap<String, Integer> violations;
+    private HashMap<String, ArrayList<Integer>> violations;
     private HashMap<String, PMDRule> violationsDetected;
 
     public PMDAnalyser(String dirPath) {
@@ -35,20 +37,27 @@ public class PMDAnalyser {
         String[] nextLine;
         reader.readNext();
         while ((nextLine = reader.readNext()) != null) {
-            incr(nextLine[7]);
+            incr(nextLine);
             violationsDetected.put(nextLine[7], new PMDRule(nextLine));
         }
     }
 
-    private void incr(String k) {
-        if (!violations.containsKey(k)) {
-            violations.put(k, 1);
+    private void incr(String[] k) {
+        ArrayList<Integer> linesViolated;
+        Integer newLine = Integer.parseInt(k[4]);
+
+        if (violations.containsKey(k)) {
+            linesViolated = violations.get(k[7]);
         } else {
-            violations.put(k, violations.get(k) + 1);
+            linesViolated = new ArrayList<>();
         }
+
+        linesViolated.add(newLine);
+        violations.put(k[7], linesViolated);
+
     }
 
-    public HashMap<String, Integer> getViolations() {
+    public HashMap<String, ArrayList<Integer>> getViolations() {
         return violations;
     }
 

@@ -79,6 +79,7 @@ public class Feedback {
         header.add("## Personalised Feedback");
         header.add("> The system will now provide personalised feedback to help you improve your score. " +
                 "This is done by prioritising the easiness and impact in your current score.");
+        header.add("");
 
         appendFeedback(project, header);
     }
@@ -115,6 +116,7 @@ public class Feedback {
 
         float boostPercentage = 0;
         Violation projectViolation = project.getViolations().get(violationName);
+        PMDRule rule = projectViolation.getPmdRule();
 
         violationFeedback.add("We have identified you could improve your ");
         if (isReadability) {
@@ -126,13 +128,30 @@ public class Feedback {
             boostPercentage = 100 - 100 * project.getSkill() / (project.getSkill() + projectViolation.getSkillImpact());
         }
 
+        violationFeedback = violationFeedbackCorrection(violationFeedback, violationName, projectViolation, rule, boostPercentage);
+
+
+        appendFeedback(project, violationFeedback);
+    }
+
+    private ArrayList<String> violationFeedbackCorrection(ArrayList<String> violationFeedback, String violationName, Violation projectViolation, PMDRule rule, float boostPercentage) {
         violationFeedback.add("You violated rule [" +
                 violationName + "](https://pmd.github.io/pmd-6.16.0/pmd_rules_java_codestyle.html#" + violationName +
                 ") **" + projectViolation.getOccurences() + "** times.");
         violationFeedback.add("");
         violationFeedback.add("By fixing this your score will improve by " + boostPercentage + "%.");
+        violationFeedback.add("");
+        violationFeedback.add("---");
+        violationFeedback.add("This rule is part of the set " + rule.getRuleset());
+        violationFeedback.add("");
+        violationFeedback.add("**Description**: " + rule.getDescription());
+        violationFeedback.add("You have violated it in the following lines of the project: ");
+        violationFeedback.add("");
 
+        for (Integer line : projectViolation.getLinesViolated()) {
+            violationFeedback.add("+ " + line);
+        }
 
-        appendFeedback(project, violationFeedback);
+        return violationFeedback;
     }
 }

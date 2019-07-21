@@ -1,12 +1,16 @@
+import java.util.ArrayList;
+
 public class Violation {
 
     private float skillImpact, readabilityImpact;
+    private ArrayList<Integer> linesViolated;
     private int occurences;
     private PMDRule pmdRule;
 
-    public Violation(PMDRule pmdRule, int occurences) {
+    public Violation(PMDRule pmdRule, ArrayList<Integer> linesViolated) {
         this.pmdRule = pmdRule;
-        this.occurences = occurences;
+        this.linesViolated = linesViolated;
+        this.occurences = linesViolated.size();
     }
 
     public void setSkillImpact (float skillImpact) {
@@ -26,6 +30,13 @@ public class Violation {
 
     }
 
+    public ArrayList<Integer> getLinesViolated() {
+        return linesViolated;
+    }
+
+    public PMDRule getPmdRule() {
+        return pmdRule;
+    }
 
     public float getReadabilityImpact() {
         return readabilityImpact;

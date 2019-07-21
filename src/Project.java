@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Project {
@@ -64,12 +65,12 @@ public class Project {
         this.readabilityViolationImpact = readabilityViolationImpact;
     }
 
-    public void putViolation(String rule, PMDRule pmdRule, int occurences, float impact) {
+    public void putViolation(String rule, PMDRule pmdRule, ArrayList<Integer> linesViolated, float impact) {
         Violation violation;
         if (violations.containsKey(rule)) {
             violation = violations.get(rule);
         } else {
-            violation = new Violation (pmdRule, occurences);
+            violation = new Violation (pmdRule, linesViolated);
         }
 
         if (pmdRule.getGroup() != 'R') {
