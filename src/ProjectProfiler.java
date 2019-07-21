@@ -124,7 +124,8 @@ class ProjectProfilerThread implements Runnable {
         pi.inferProfile();
 
         Feedback fb = new Feedback(projects, directory);
-        fb.provideFeedback();
+        fb.generateFeedback();
+        fb.output();
 
         if (choice != 1) {
             ResultsPlotter.main(

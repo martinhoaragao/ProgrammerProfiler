@@ -1,10 +1,13 @@
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.PrintWriter;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Feedback {
     private HashMap<String, Project> projects;
+    private HashMap<String, ArrayList<String>> feedbackGenerated;
     private StringBuilder log;
     private String directory;
 
@@ -12,6 +15,7 @@ public class Feedback {
         this.projects = projects;
         this.directory = directory;
 
+        this.feedbackGenerated = new HashMap<>();
         this.log = new StringBuilder();
     }
 
@@ -19,9 +23,23 @@ public class Feedback {
         return log;
     }
 
-    public void provideFeedback() {
+    public void output() {
+        for (String projectName : feedbackGenerated.keySet()) {
+            Path file = Paths.get(directory + projectName + "/feedback.md");
+            try {
+                Files.write(file, feedbackGenerated.get(projectName), StandardCharsets.UTF_8);
+            } catch (Exception e) {
+                System.out.println("An issue occured with the file generation on " +  e);
+            }
+        }
+    }
+
+    public void generateFeedback() {
         for (Project project : projects.values()) {
+            feedbackGenerated.put(project.getProjectName(), new ArrayList<>());
             String profile = project.getProfile();
+
+            addHeader(project);
 
             // Skill Leaning Profiles
             if (profile.equals("Advanced Beginner S") || profile.equals("Expert")) {
@@ -37,7 +55,30 @@ public class Feedback {
             }
 
         }
+    }
 
+    private void appendFeedback(Project project, ArrayList<String> feedback) {
+        String projectName = project.getProjectName();
+
+        ArrayList<String> currentFeedback = feedbackGenerated.get(projectName);
+        currentFeedback.addAll(feedback);
+        feedbackGenerated.put(projectName, currentFeedback);
+    }
+
+    private void addHeader(Project project) {
+        ArrayList<String> header = new ArrayList<>();
+
+        header.add("# PP Tool Feedback System");
+        header.add("");
+        header.add("Through *" + project.getProjectName() + "* you have achieved a profile of **" + project.getProfile() + "**! ");
+        header.add("This has earned you **" + project.getSkill() + "** skill and **" + project.getReadability() + "** readability score.");
+        header.add("");
+
+        header.add("> The system will now provide personalised feedback to help you improve your score. " +
+                "This is done by prioritising the easiness and impact in your current score.");
+        header.add("");
+
+        appendFeedback(project, header);
     }
 
     private void provideViolationTip(Project project) {
@@ -55,7 +96,6 @@ public class Feedback {
 
 
         for (String violationName : projectViolations.keySet()) {
-            System.out.println(violationName);
             violationImpact = projectViolations.get(violationName).getImpact(isReadability);
             if (violationImpact > mostViolatedRuleImpact) {
                 mostViolatedRuleImpact = violationImpact;
@@ -67,38 +107,24 @@ public class Feedback {
     }
 
     private void generateViolationFeedbackFile(Project project, String violationName, boolean isReadability) {
+        ArrayList<String> violationFeedback = new ArrayList<>();
+
         float boostPercentage;
         Violation projectViolation = project.getViolations().get(violationName);
 
-        PrintWriter writer = null;
-        String filePath = directory + project.getProjectName() + "/feedback.md";
-        try {
-            writer = new PrintWriter(new FileOutputStream(new File(filePath),false));
+        violationFeedback.add("We have identified you could improve your ");
+        if(violationName == null) {
+            // TODO THIS LATER MATE. WHAT IF NO VIOLATION?!
+        } else if (isReadability) {
+            boostPercentage = 100 * project.getReadability() / (project.getReadability() + projectViolation.getReadabilityImpact());
+            violationFeedback.add("**readability**. And, by fixing just this tip its value would boost by " + boostPercentage + ".");
+            violationFeedback.add("");
+            violationFeedback.add("You just have to fix: " + violationName);
 
-            writer.println("You have achieved a profile of " + project.getProfile() +
-                    " through " + project.getProjectName() +
-                    ". This has earned you " + project.getSkill() + " skill and " +
-                    project.getReadability() + " readability score.<br/>");
-
-            writer.print("We have identified you could improve your ");
-            if(violationName == null) {
-                // TODO THIS LATER MATE. WHAT IF NO VIOLATION?!
-            } else if (isReadability) {
-                writer.print("readability. And, by fixing just this tip its value would boost by ");
-                System.out.println(project.getReadability() +" yay");
-                System.out.println(projectViolation.getReadabilityImpact());
-                boostPercentage = 100 * project.getReadability() / (project.getReadability() + projectViolation.getReadabilityImpact());
-                writer.println(boostPercentage + "%.<br/>");
-                writer.println("You just have to fix: " + violationName);
-
-            } else {
-                writer.println("skill which would boost your score by ");
-            }
-
-        } catch (Exception e) {
-            System.out.println("Mate, just errors here: " + e);
-        } finally {
-            writer.close();
+        } else {
+            violationFeedback.add("skill which would boost your score by ");
         }
+
+        appendFeedback(project, violationFeedback);
     }
 }
