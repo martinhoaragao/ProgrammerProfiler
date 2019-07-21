@@ -6,9 +6,11 @@ import java.util.HashMap;
 public class Feedback {
     private HashMap<String, Project> projects;
     private StringBuilder log;
+    private String directory;
 
-    public Feedback(HashMap<String, Project> projects) {
+    public Feedback(HashMap<String, Project> projects, String directory) {
         this.projects = projects;
+        this.directory = directory;
 
         this.log = new StringBuilder();
     }
@@ -53,6 +55,7 @@ public class Feedback {
 
 
         for (String violationName : projectViolations.keySet()) {
+            System.out.println(violationName);
             violationImpact = projectViolations.get(violationName).getImpact(isReadability);
             if (violationImpact > mostViolatedRuleImpact) {
                 mostViolatedRuleImpact = violationImpact;
@@ -68,8 +71,9 @@ public class Feedback {
         Violation projectViolation = project.getViolations().get(violationName);
 
         PrintWriter writer = null;
+        String filePath = directory + project.getProjectName() + "/feedback.md";
         try {
-            writer = new PrintWriter(new FileOutputStream(new File(project.getProjectName()),false));
+            writer = new PrintWriter(new FileOutputStream(new File(filePath),false));
 
             writer.println("You have achieved a profile of " + project.getProfile() +
                     " through " + project.getProjectName() +

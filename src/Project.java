@@ -78,6 +78,8 @@ public class Project {
             violation.setReadabilityImpact(impact);
         }
 
+        violations.put(rule, violation);
+
     }
 
 }

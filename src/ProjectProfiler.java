@@ -122,7 +122,8 @@ class ProjectProfilerThread implements Runnable {
         ProfileInferrer pi = new ProfileInferrer(sc.getReadability(), sc.getSkill(), projects);
         pi.calcBoundaries();
         pi.inferProfile();
-        Feedback fb = new Feedback(projects);
+
+        Feedback fb = new Feedback(projects, directory);
         fb.provideFeedback();
 
         if (choice != 1) {
