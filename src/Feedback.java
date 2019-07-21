@@ -39,7 +39,7 @@ public class Feedback {
             feedbackGenerated.put(project.getProjectName(), new ArrayList<>());
             String profile = project.getProfile();
 
-            addHeader(project);
+            addHeader(project, projects.size());
 
             // Skill Leaning Profiles
             if (profile.equals("Advanced Beginner S") || profile.equals("Expert")) {
@@ -65,18 +65,20 @@ public class Feedback {
         feedbackGenerated.put(projectName, currentFeedback);
     }
 
-    private void addHeader(Project project) {
+    private void addHeader(Project project, int numberOfProjects) {
         ArrayList<String> header = new ArrayList<>();
 
         header.add("# PP Tool Feedback System");
+        header.add("Welcome to the PP Tool Feedback System! You have been compared to " + numberOfProjects +
+                " other projects which solved the exact same exercise. By analysing metrics and mistakes a profile has been extracted." +
+                "This is done with 2 key distinctions in mind Skill and Readability");
+        header.add("## Profile Analysis");
+        header.add("Your project which is named *" + project.getProjectName() + "* has achieved a profile of **" + project.getProfile() + "**! ");
+        header.add("The score obtained is **" + project.getSkill() + "** skill and **" + project.getReadability() + "** readability.");
         header.add("");
-        header.add("Through *" + project.getProjectName() + "* you have achieved a profile of **" + project.getProfile() + "**! ");
-        header.add("This has earned you **" + project.getSkill() + "** skill and **" + project.getReadability() + "** readability score.");
-        header.add("");
-
+        header.add("## Personalised Feedback");
         header.add("> The system will now provide personalised feedback to help you improve your score. " +
                 "This is done by prioritising the easiness and impact in your current score.");
-        header.add("");
 
         appendFeedback(project, header);
     }
@@ -103,27 +105,33 @@ public class Feedback {
             }
         }
 
-        generateViolationFeedbackFile(project, mostViolatedRule, isReadability);
+        if (mostViolatedRule != null) {
+            generateViolationFeedback(project, mostViolatedRule, isReadability);
+        }
     }
 
-    private void generateViolationFeedbackFile(Project project, String violationName, boolean isReadability) {
+    private void generateViolationFeedback(Project project, String violationName, boolean isReadability) {
         ArrayList<String> violationFeedback = new ArrayList<>();
 
-        float boostPercentage;
+        float boostPercentage = 0;
         Violation projectViolation = project.getViolations().get(violationName);
 
         violationFeedback.add("We have identified you could improve your ");
-        if(violationName == null) {
-            // TODO THIS LATER MATE. WHAT IF NO VIOLATION?!
-        } else if (isReadability) {
-            boostPercentage = 100 * project.getReadability() / (project.getReadability() + projectViolation.getReadabilityImpact());
-            violationFeedback.add("**readability**. And, by fixing just this tip its value would boost by " + boostPercentage + ".");
-            violationFeedback.add("");
-            violationFeedback.add("You just have to fix: " + violationName);
+        if (isReadability) {
+            violationFeedback.add("**readability**. ");
+            boostPercentage = 100 - 100 * project.getReadability() / (project.getReadability() + projectViolation.getReadabilityImpact());
 
         } else {
-            violationFeedback.add("skill which would boost your score by ");
+            violationFeedback.add("**skill**. ");
+            boostPercentage = 100 - 100 * project.getSkill() / (project.getSkill() + projectViolation.getSkillImpact());
         }
+
+        violationFeedback.add("You violated rule [" +
+                violationName + "](https://pmd.github.io/pmd-6.16.0/pmd_rules_java_codestyle.html#" + violationName +
+                ") **" + projectViolation.getOccurences() + "** times.");
+        violationFeedback.add("");
+        violationFeedback.add("By fixing this your score will improve by " + boostPercentage + "%.");
+
 
         appendFeedback(project, violationFeedback);
     }
