@@ -59,11 +59,11 @@ public class ScoreCalculator {
 
         int avgs, avgr = avgs = 0;
         for (String key : skill.keySet()) {
-            skill.put(key, round(skill.get(key)));
+            skill.put(key, skill.get(key));
             avgs += skill.get(key);
         }
         for (String key : readability.keySet()) {
-            readability.put(key, round(readability.get(key)));
+            readability.put(key, readability.get(key));
             avgr += readability.get(key);
         }
         log.append("\nFinal Results:\nSkill  : " + skill.toString() + "\n");

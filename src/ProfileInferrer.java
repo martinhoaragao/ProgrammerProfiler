@@ -35,11 +35,6 @@ public class ProfileInferrer {
         log = new StringBuilder();
         boundariesLog(minS, maxS, minR, maxR); //Add boundaries info to log
 
-        minS -= 0.01;
-        maxS += 0.01;
-        minR -= 0.01;
-        maxR += 0.01;
-
         minSi = Math.round(minS) - 1;
         maxSi = Math.round(maxS) + 1;
         minRi = Math.round(minR) - 1;
@@ -47,13 +42,13 @@ public class ProfileInferrer {
 
         bound = new LinkedList<>();
 
-        bound.add(new Boundaries("Novice", minS, minS + thirdS, minR, minR + thirdR));
-        bound.add(new Boundaries("Advanced Beginner S", minS + thirdS, minS + 2*thirdS , minR, minR + thirdR));
-        bound.add(new Boundaries("Advanced Beginner R", minS, minS + thirdS, minR + thirdR, minR + 2*thirdR));
+        bound.add(new Boundaries("Novice", minS - (float) 0.01, minS + thirdS, minR - (float) 0.01, minR + thirdR));
+        bound.add(new Boundaries("Advanced Beginner S", minS + thirdS, minS + 2*thirdS , minR - (float) 0.01, minR + thirdR));
+        bound.add(new Boundaries("Advanced Beginner R", minS - (float) 0.01, minS + thirdS, minR + thirdR, minR + 2*thirdR));
         bound.add(new Boundaries("Advanced Beginner +", minS + thirdS, minS + 2*thirdS, minR + thirdR, minR + 2*thirdR));
-        bound.add(new Boundaries("Expert", maxS - thirdS, maxS, minR, minR + 2*thirdR));
-        bound.add(new Boundaries("Proficient", minS, minS + 2*thirdS, maxR - thirdR, maxR));
-        bound.add(new Boundaries("Master", maxS - thirdS, maxS, maxR - thirdR, maxR));
+        bound.add(new Boundaries("Expert", maxS - thirdS, maxS + (float) 0.01, minR - (float) 0.01, minR + 2*thirdR));
+        bound.add(new Boundaries("Proficient", minS - (float) 0.01, minS + 2*thirdS, maxR - thirdR, maxR + (float) 0.01));
+        bound.add(new Boundaries("Master", maxS - thirdS, maxS + (float) 0.01, maxR - thirdR, maxR + (float) 0.01));
     }
 
     public void inferProfile() {

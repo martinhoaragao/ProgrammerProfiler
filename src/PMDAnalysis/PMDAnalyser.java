@@ -2,7 +2,6 @@ import com.opencsv.CSVReader;
 
 import java.io.FileReader;
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -46,7 +45,7 @@ public class PMDAnalyser {
         ArrayList<Integer> linesViolated;
         Integer newLine = Integer.parseInt(k[4]);
 
-        if (violations.containsKey(k)) {
+        if (violations.containsKey(k[7])) {
             linesViolated = violations.get(k[7]);
         } else {
             linesViolated = new ArrayList<>();

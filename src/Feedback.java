@@ -38,7 +38,6 @@ public class Feedback {
         for (Project project : projects.values()) {
             feedbackGenerated.put(project.getProjectName(), new ArrayList<>());
             String profile = project.getProfile();
-
             addHeader(project, projects.size());
 
             // Skill Leaning Profiles
