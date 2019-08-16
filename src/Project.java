@@ -27,11 +27,11 @@ public class Project {
     }
 
     public float getReadability() {
-        return readability;
+        return (Math.round(100 * readability) / (float) 100);
     }
 
     public float getSkill() {
-        return skill;
+        return (Math.round(100 * skill) / (float)  100);
     }
 
     public String getProfile() {

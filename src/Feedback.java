@@ -43,27 +43,31 @@ public class Feedback {
             String profile = project.getProfile();
             addHeader(project, projects.size());
             boolean isReadability = true;
-            float improvement = 0;
+            Violation violationFixed = null;
+            float readabilityImpact, skillImpact;
 
             // Skill Leaning Profiles
             if (profile.equals("Advanced Beginner S") || profile.equals("Expert")) {
-                isReadability = true;
-                improvement = provideViolationTip(project, isReadability);
+                violationFixed = provideViolationTip(project, true);
 
             // Readability Leaning Profiles
             } else if (profile.equals("Advanced Beginner R") || profile.equals("Proficient")) {
-                isReadability = false;
-                improvement = provideViolationTip(project, isReadability);
+                violationFixed = provideViolationTip(project, false);
 
                 // Balanced Profiles
             } else if (profile.equals("Novice") || profile.equals("Advanced Beginner +") || profile.equals("Master")) {
                 isReadability = project.getReadabilityViolationImpact() >= project.getSkillViolationImpact();
-                improvement = provideViolationTip(project, isReadability);
+                violationFixed = provideViolationTip(project, isReadability);
             }
 
-            generateProgressMotivation(project, improvement, isReadability);
+            if (violationFixed != null) {
+                readabilityImpact = Math.round(100 * violationFixed.getReadabilityImpact()) / (float) 100;
+                skillImpact = Math.round(100 * violationFixed.getSkillImpact()) / (float) 100;
 
-
+                generateProgressMotivation(project, readabilityImpact, skillImpact, isReadability);
+            } else {
+                addHeader(project, projects.size());
+            }
         }
     }
 
@@ -94,9 +98,8 @@ public class Feedback {
         appendFeedback(project, header);
     }
 
-    private float provideViolationTip(Project project, boolean isReadability) {
-        float improvement = 0;
-        String mostViolatedRule = null;
+    private Violation provideViolationTip(Project project, boolean isReadability) {
+        Violation mostViolatedRule = null;
         float violationImpact, mostViolatedRuleImpact = 0;
         HashMap<String, Violation> projectViolations = project.getViolations();
 
@@ -105,51 +108,36 @@ public class Feedback {
             violationImpact = projectViolations.get(violationName).getImpact(isReadability);
             if (violationImpact > mostViolatedRuleImpact) {
                 mostViolatedRuleImpact = violationImpact;
-                mostViolatedRule = violationName;
+                mostViolatedRule = projectViolations.get(violationName);
             }
         }
 
         if (mostViolatedRule != null) {
-            improvement = generateViolationFeedback(project, mostViolatedRule, isReadability);
+            generateViolationFeedback(project, mostViolatedRule);
         }
 
-        return improvement;
+        return mostViolatedRule;
     }
 
-    private float generateViolationFeedback(Project project, String violationName, boolean isReadability) {
+    private void generateViolationFeedback(Project project, Violation violation) {
         ArrayList<String> violationFeedback = new ArrayList<>();
-        float improvement;
-
-        Violation projectViolation = project.getViolations().get(violationName);
-        PMDRule rule = projectViolation.getPmdRule();
-
-        violationFeedback.add("We have identified you could improve your ");
-        if (isReadability) {
-            violationFeedback.add("**readability**. ");
-            improvement = projectViolation.getReadabilityImpact();
-        } else {
-            violationFeedback.add("**skill**. ");
-            improvement = projectViolation.getSkillImpact();
-        }
-
-        violationFeedback = violationFeedbackCorrection(violationFeedback, violationName, projectViolation, rule);
+        violationFeedback = violationFeedbackCorrection(violationFeedback, violation);
 
         appendFeedback(project, violationFeedback);
-        return improvement;
     }
 
-    private ArrayList<String> violationFeedbackCorrection(ArrayList<String> violationFeedback, String violationName, Violation projectViolation, PMDRule rule) {
+    private ArrayList<String> violationFeedbackCorrection(ArrayList<String> violationFeedback, Violation violation) {
         violationFeedback.add("You violated rule [" +
-                violationName + "](https://pmd.github.io/pmd-6.16.0/pmd_rules_java_codestyle.html#" + violationName +
-                ") **" + projectViolation.getOccurences() + "** times.");
+                violation.getName() + "](https://pmd.github.io/pmd-6.16.0/pmd_rules_java_codestyle.html#" + violation.getName() +
+                ") **" + violation.getOccurences() + "** times.");
 
-        violationFeedback.add("This rule is part of the set " + rule.getRuleset());
+        violationFeedback.add("This rule is part of the set " + violation.getPmdRule().getRuleset());
         violationFeedback.add("");
-        violationFeedback.add("**Description**: " + rule.getDescription());
+        violationFeedback.add("**Description**: " + violation.getPmdRule().getDescription());
         violationFeedback.add("You have violated it in the following lines of the project: ");
         violationFeedback.add("");
 
-        for (Integer line : projectViolation.getLinesViolated()) {
+        for (Integer line : violation.getLinesViolated()) {
             violationFeedback.add("+ " + line);
         }
         violationFeedback.add("");
@@ -157,24 +145,22 @@ public class Feedback {
         return violationFeedback;
     }
 
-    private void generateProgressMotivation(Project project, float improvement, boolean isReadability) {
+    private void generateProgressMotivation(Project project, float readabilityImpact, float skillImpact, boolean isReadability) {
         ArrayList<String> progressMotivation = new ArrayList<>();
-        float boostPercentage = 0;
+        float newReadability, newSkill, boostReadability, boostSkill;
         String profile = project.getProfile(), newProfile = null;
         float readability = project.getReadability();
         float skill = project.getSkill();
 
-        if (isReadability) {
-            readability += improvement;
-            boostPercentage = 100 - 100 * project.getReadability() / (project.getReadability() + improvement);
-        } else {
-            skill += improvement;
-            boostPercentage = 100 - 100 * project.getSkill() / (project.getSkill() + improvement);
-        }
+        newReadability = readability + readabilityImpact;
+        boostReadability = 100 - 100 * (readability / newReadability);
+
+        newSkill = skill + skillImpact;
+        boostSkill = 100 - 100 * (skill / newSkill);
 
         for (Boundaries b : bounds) {
-            if (readability >= b.getMinR() && skill >= b.getMinS() &&
-                readability <= b.getMaxS() && skill <= b.getMaxS()) {
+            if (newReadability >= b.getMinR() && newSkill >= b.getMinS() &&
+                newReadability <= b.getMaxS() && newSkill <= b.getMaxS()) {
                 newProfile = b.getProfileName();
             }
         }
@@ -182,16 +168,28 @@ public class Feedback {
 
         progressMotivation.add("## Improvement Progress");
         progressMotivation.add("");
-        progressMotivation.add("By following the recommendation above your score will improve by " + boostPercentage + "%.");
+        progressMotivation.add("By following the recommendation above your score will fundamentally improve on ");
+
+        if (isReadability) {
+            progressMotivation.add("**readability**. ");
+        } else {
+            progressMotivation.add("**skill**. ");
+        }
+        progressMotivation.add("");
+
+        progressMotivation.add("- **Change in Readability**: " + readability + " -> " + newReadability);
+        progressMotivation.add("(**" + boostReadability +  "%**).");
+        progressMotivation.add("");
+        progressMotivation.add("- **Change in Skill**: " + skill + " -> " + newSkill);
+        progressMotivation.add("(**" + boostSkill +  "%**).");
+
         if(newProfile != null && !profile.equals(newProfile)) {
             progressMotivation.add("And so you'll reach an even better profile: **" + newProfile + "**.");
         }
 
         progressMotivation.add("");
 
-
-
-        switch (profile) {
+        switch (newProfile) {
             case "Novice":
                 break;
             case "Advanced Beginner S":
@@ -206,8 +204,6 @@ public class Feedback {
                 break;
             case "Master":
                 progressMotivation.add("Congratulations! You have already reached maximum profile!");
-                progressMotivation.add("");
-                progressMotivation.add("Even so, your score would improve by **" + boostPercentage + "%**.");
                 progressMotivation.add("");
                 break;
         }

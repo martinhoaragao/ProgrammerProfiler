@@ -2,11 +2,12 @@ import java.io.Serializable;
 
 public class PMDRule implements Serializable {
 
-    private final String ruleset, description;
+    private final String rule, ruleset, description;
     private char group;
     private final int priority;
 
     public PMDRule(String[] line) {
+        this.rule = line[7];
         this.ruleset = line[6];
         this.description = line[5];
         this.priority = Integer.parseInt(line[3]);
@@ -23,6 +24,10 @@ public class PMDRule implements Serializable {
 
     public String getRuleset() {
         return ruleset;
+    }
+
+    public String getRule() {
+        return rule;
     }
 
     public char getGroup() {return group;}

@@ -38,6 +38,10 @@ public class Violation {
         return pmdRule;
     }
 
+    public String getName() {
+        return pmdRule.getRule();
+    }
+
     public float getReadabilityImpact() {
         return readabilityImpact;
     }
