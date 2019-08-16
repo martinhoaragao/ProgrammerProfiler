@@ -127,6 +127,7 @@ public class Feedback {
     }
 
     private ArrayList<String> violationFeedbackCorrection(ArrayList<String> violationFeedback, Violation violation) {
+        violationFeedback.add("### Improvement Suggestion: **Follow PMD Rule**");
         violationFeedback.add("You violated rule [" +
                 violation.getName() + "](https://pmd.github.io/pmd-6.16.0/pmd_rules_java_codestyle.html#" + violation.getName() +
                 ") **" + violation.getOccurences() + "** times.");
@@ -145,28 +146,11 @@ public class Feedback {
         return violationFeedback;
     }
 
-    private void generateProgressMotivation(Project project, float readabilityImpact, float skillImpact, boolean isReadability) {
-        ArrayList<String> progressMotivation = new ArrayList<>();
-        float newReadability, newSkill, boostReadability, boostSkill;
-        String profile = project.getProfile(), newProfile = null;
-        float readability = project.getReadability();
-        float skill = project.getSkill();
+    private ArrayList<String> informOfImpact(ArrayList<String> progressMotivation, boolean isReadability, float readability, float newReadability, float skill, float newSkill) {
+        float boostReadability = 100 - 100 * (readability / newReadability);
+        float boostSkill = 100 - 100 * (skill / newSkill);
 
-        newReadability = readability + readabilityImpact;
-        boostReadability = 100 - 100 * (readability / newReadability);
-
-        newSkill = skill + skillImpact;
-        boostSkill = 100 - 100 * (skill / newSkill);
-
-        for (Boundaries b : bounds) {
-            if (newReadability >= b.getMinR() && newSkill >= b.getMinS() &&
-                newReadability <= b.getMaxS() && newSkill <= b.getMaxS()) {
-                newProfile = b.getProfileName();
-            }
-        }
-
-
-        progressMotivation.add("## Improvement Progress");
+        progressMotivation.add("### Improvement Progress");
         progressMotivation.add("");
         progressMotivation.add("By following the recommendation above your score will fundamentally improve on ");
 
@@ -183,13 +167,36 @@ public class Feedback {
         progressMotivation.add("- **Change in Skill**: " + skill + " -> " + newSkill);
         progressMotivation.add("(**" + boostSkill +  "%**).");
 
+        return progressMotivation;
+    }
+
+    private void generateProgressMotivation(Project project, float readabilityImpact, float skillImpact, boolean isReadability) {
+        ArrayList<String> progressMotivation = new ArrayList<>();
+        float newReadability, newSkill;
+        String profile = project.getProfile(), newProfile = null;
+        float readability = project.getReadability();
+        float skill = project.getSkill();
+
+        newReadability = readability + readabilityImpact;
+
+        newSkill = skill + skillImpact;
+
+        for (Boundaries b : bounds) {
+            if (newReadability >= b.getMinR() && newSkill >= b.getMinS() &&
+                newReadability <= b.getMaxS() && newSkill <= b.getMaxS()) {
+                newProfile = b.getProfileName();
+            }
+        }
+
+        progressMotivation = informOfImpact(progressMotivation, isReadability, readability, newReadability, skill, newSkill);
+
         if(newProfile != null && !profile.equals(newProfile)) {
             progressMotivation.add("And so you'll reach an even better profile: **" + newProfile + "**.");
         }
-
         progressMotivation.add("");
 
-        switch (newProfile) {
+
+        switch (profile) {
             case "Novice":
                 break;
             case "Advanced Beginner S":
