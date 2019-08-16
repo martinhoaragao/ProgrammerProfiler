@@ -258,25 +258,25 @@ public class Feedback {
 
         switch (profile) {
             case "Novice":
-                progressMotivation.add("You seem to be up against some fierce competition! The novice profile is the most junior out of the 7 available ones." +
-                        "On the good side, it means there are clearly several things you can do to quickly improve." +
+                progressMotivation.add("You seem to be up against some fierce competition! The novice profile is the most junior out of the 7 available ones. " +
+                        "On the good side, it means there are clearly several things you can do to quickly improve. " +
                         "After following our recommendation, do take some time to see what else you might be doing wrong before rerunning this tool.");
                 break;
             case "Advanced Beginner S":
-                progressMotivation.add("Keeping improving your readability above anything else in order to notice the biggest changes more quickly.");
+                progressMotivation.add("Keep improving your readability above anything else in order to notice the biggest changes more quickly.");
                 break;
             case "Expert":
-                progressMotivation.add("Keeping improving your readability above anything else in order to notice the biggest changes more quickly.");
+                progressMotivation.add("Keep improving your readability above anything else in order to notice the biggest changes more quickly.");
                 break;
             case "Advanced Beginner R":
-                progressMotivation.add("Keeping improving your skill above anything else in order to notice the biggest changes more quickly");
+                progressMotivation.add("Keep improving your skill above anything else in order to notice the biggest changes more quickly");
                 break;
             case "Proficient":
-                progressMotivation.add("Keeping improving your skill above anything else in order to notice the biggest changes more quickly");
+                progressMotivation.add("Keep improving your skill above anything else in order to notice the biggest changes more quickly");
                 break;
             case "Advanced Beginner +":
                 progressMotivation.add("Your profile is balanced, however you have a lot to improve before reaching a better profile. " +
-                        "Perhaps, it will be easier to focus first on either readability or skill, arriving at Proficient or Expert respectively before aiming for Master."+
+                        "Perhaps, it will be easier to focus first on either readability or skill, arriving at Proficient or Expert respectively before aiming for Master. "+
                         "Good luck!");
                 break;
             case "Master":
