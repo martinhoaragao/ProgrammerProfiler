@@ -127,7 +127,7 @@ public class Feedback {
     }
 
     private ArrayList<String> violationFeedbackCorrection(ArrayList<String> violationFeedback, Violation violation) {
-        violationFeedback.add("### Improvement Suggestion: **Follow PMD Rule**");
+        violationFeedback.add("### Suggestion: **Follow PMD Rule**");
         violationFeedback.add("You violated rule [" +
                 violation.getName() + "](https://pmd.github.io/pmd-6.16.0/pmd_rules_java_codestyle.html#" + violation.getName() +
                 ") **" + violation.getOccurences() + "** times.");
@@ -149,9 +149,6 @@ public class Feedback {
     private ArrayList<String> informOfImpact(ArrayList<String> progressMotivation, boolean isReadability, float readability, float newReadability, float skill, float newSkill) {
         float boostReadability = 100 - 100 * (readability / newReadability);
         float boostSkill = 100 - 100 * (skill / newSkill);
-
-        progressMotivation.add("### Improvement Progress");
-        progressMotivation.add("");
         progressMotivation.add("By following the recommendation above your score will fundamentally improve on ");
 
         if (isReadability) {
@@ -167,8 +164,11 @@ public class Feedback {
         progressMotivation.add("- **Change in Skill**: " + skill + " -> " + newSkill);
         progressMotivation.add("(**" + boostSkill +  "%**).");
 
+        progressMotivation.add("");
         return progressMotivation;
     }
+
+
 
     private void generateProgressMotivation(Project project, float readabilityImpact, float skillImpact, boolean isReadability) {
         ArrayList<String> progressMotivation = new ArrayList<>();
@@ -188,33 +188,109 @@ public class Feedback {
             }
         }
 
-        progressMotivation = informOfImpact(progressMotivation, isReadability, readability, newReadability, skill, newSkill);
-
-        if(newProfile != null && !profile.equals(newProfile)) {
-            progressMotivation.add("And so you'll reach an even better profile: **" + newProfile + "**.");
-        }
+        progressMotivation.add("### Impact of Change");
         progressMotivation.add("");
 
+        progressMotivation = informOfImpact(progressMotivation, isReadability, readability, newReadability, skill, newSkill);
 
-        switch (profile) {
-            case "Novice":
-                break;
-            case "Advanced Beginner S":
-                break;
-            case "Advanced Beginner R":
-                break;
-            case "Advanced Beginner +":
-                break;
-            case "Expert":
-                break;
-            case "Proficient":
-                break;
-            case "Master":
-                progressMotivation.add("Congratulations! You have already reached maximum profile!");
-                progressMotivation.add("");
-                break;
-        }
+        progressMotivation = profileMotivation(progressMotivation, profile, newProfile);
 
         appendFeedback(project, progressMotivation);
     }
+
+    private ArrayList<String> profileMotivation(ArrayList<String> progressMotivation, String profile, String newProfile) {
+        progressMotivation.add("#### Profile after Recommendation");
+        if(newProfile != null && !profile.equals(newProfile)) {
+            changeInProfile(progressMotivation, newProfile);
+        } else {
+            noChangeInProfile(progressMotivation, profile);
+        }
+        progressMotivation.add("");
+
+        return progressMotivation;
+    }
+
+    private ArrayList<String> changeInProfile(ArrayList<String> progressMotivation, String newProfile) {
+        progressMotivation.add("After this change you'll reach an even better profile: **" + newProfile + "**.");
+        progressMotivation.add("");
+
+        switch (newProfile) {
+            case "Advanced Beginner S":
+                progressMotivation.add("Congratulations! You are no longer a Novice. However you certainly have a lot to improve, \"Proficient\", \"Expert\" and \"Master\" " +
+                        "are all better profiles than the one you have currently achieved. However you are clearly on the way forward." +
+                        "Just follow the recommendation, try to notice other areas to improve, and rerun!");
+                progressMotivation.add("");
+                progressMotivation.add("You now lean more towards **skill**.");
+                break;
+            case "Advanced Beginner R":
+                progressMotivation.add("Congratulations! You are no longer a Novice. However you certainly have a lot to improve, \"Proficient\", \"Expert\" and \"Master\" " +
+                        "are all better profiles than the one you have currently achieved. However you are clearly on the way forward." +
+                        "Just follow the recommendation, try to notice other areas to improve, and rerun!");
+                progressMotivation.add("");
+                progressMotivation.add("You now lean more towards **readability**.");
+                break;
+            case "Advanced Beginner +":
+                progressMotivation.add("Congratulations on obtaining a balanced profile! However, you certainly have a lot to improve before reaching a better profile. " +
+                        "Perhaps, it will be easier to focus first on either readability or skill, arriving at Proficient or Expert respectively before aiming for Master." +
+                        "Good luck!");
+                break;
+            case "Expert":
+                progressMotivation.add("Congratulations! You have thrived in **skill**! You should now focus mostly on improving your readability in order to obtain Master.");
+                break;
+            case "Proficient":
+                progressMotivation.add("Congratulations! You have thrived in **readability**! You should now focus mostly on improving your skill in order to obtain Master.");
+                break;
+            case "Master":
+                progressMotivation.add("Congratulations! You have reached the best profile!");
+                progressMotivation.add("");
+                break;
+            default:
+                break;
+        }
+        progressMotivation.add("");
+
+        return progressMotivation;
+    }
+
+    private ArrayList<String> noChangeInProfile(ArrayList<String> progressMotivation, String profile) {
+
+        progressMotivation.add("Your profile won't suffer any change yet, but that is alright!");
+
+        switch (profile) {
+            case "Novice":
+                progressMotivation.add("You seem to be up against some fierce competition! The novice profile is the most junior out of the 7 available ones." +
+                        "On the good side, it means there are clearly several things you can do to quickly improve." +
+                        "After following our recommendation, do take some time to see what else you might be doing wrong before rerunning this tool.");
+                break;
+            case "Advanced Beginner S":
+                progressMotivation.add("Keeping improving your readability above anything else in order to notice the biggest changes more quickly.");
+                break;
+            case "Expert":
+                progressMotivation.add("Keeping improving your readability above anything else in order to notice the biggest changes more quickly.");
+                break;
+            case "Advanced Beginner R":
+                progressMotivation.add("Keeping improving your skill above anything else in order to notice the biggest changes more quickly");
+                break;
+            case "Proficient":
+                progressMotivation.add("Keeping improving your skill above anything else in order to notice the biggest changes more quickly");
+                break;
+            case "Advanced Beginner +":
+                progressMotivation.add("Your profile is balanced, however you have a lot to improve before reaching a better profile. " +
+                        "Perhaps, it will be easier to focus first on either readability or skill, arriving at Proficient or Expert respectively before aiming for Master."+
+                        "Good luck!");
+                break;
+            case "Master":
+                progressMotivation.add("Congratulations! You have reached the best profile! " +
+                        "You can of course improve either skill or readability depending on the context, but usually that will force you to lose the balance.");
+                progressMotivation.add("");
+                break;
+            default:
+                break;
+        }
+        progressMotivation.add("");
+
+        return progressMotivation;
+    }
+
+
 }
