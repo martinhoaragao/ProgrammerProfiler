@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Scanner;
 
 public class ProjectProfiler extends Thread {
@@ -120,10 +121,10 @@ class ProjectProfilerThread implements Runnable {
         ScoreCalculator sc = new ScoreCalculator(pc.getBaseSolution(), pc.getExampleSolutions(), pc.getPMDrules(), projects);
         sc.calculateScore();
         ProfileInferrer pi = new ProfileInferrer(sc.getReadability(), sc.getSkill(), projects);
-        pi.calcBoundaries();
+        List<Boundaries> bounds = pi.calcBoundaries();
         pi.inferProfile();
 
-        Feedback fb = new Feedback(projects, directory);
+        Feedback fb = new Feedback(projects, directory, bounds);
         fb.generateFeedback();
         fb.output();
 

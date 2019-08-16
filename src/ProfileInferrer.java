@@ -20,7 +20,7 @@ public class ProfileInferrer {
         this.skill = skill;
     }
 
-    public void calcBoundaries() {
+    public List<Boundaries> calcBoundaries() {
 
         float minS = getMin(skill);
         float maxS = getMax(skill);
@@ -49,6 +49,8 @@ public class ProfileInferrer {
         bound.add(new Boundaries("Expert", maxS - thirdS, maxS + (float) 0.01, minR - (float) 0.01, minR + 2*thirdR));
         bound.add(new Boundaries("Proficient", minS - (float) 0.01, minS + 2*thirdS, maxR - thirdR, maxR + (float) 0.01));
         bound.add(new Boundaries("Master", maxS - thirdS, maxS + (float) 0.01, maxR - thirdR, maxR + (float) 0.01));
+
+        return bound;
     }
 
     public void inferProfile() {
@@ -186,42 +188,6 @@ public class ProfileInferrer {
     public int getMinS() {
         return minSi;
     }
-
-    private class Boundaries {
-
-        final String profile;
-        //(S)kill and (R)eadability
-        private final float minS, maxS, minR, maxR;
-
-        Boundaries(String profile, float minS, float maxS, float minR, float maxR) {
-            this.profile = profile;
-            this.minS = minS;
-            this.maxS = maxS;
-            this.minR = minR;
-            this.maxR = maxR;
-        }
-
-        String getProfileName() {
-            return profile;
-        }
-
-        float getMaxR() {
-            return maxR;
-        }
-
-        float getMaxS() {
-            return maxS;
-        }
-
-        float getMinR() {
-            return minR;
-        }
-
-        float getMinS() {
-            return minS;
-        }
-    }
-
 }
 
 
