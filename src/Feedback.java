@@ -76,17 +76,11 @@ public class Feedback {
     private void provideMetricTip(Project project, boolean isReadability) {
 
         System.out.println(project.getProjectName());
-        for (MetricImpact metricImpact : project.getMetricsImpact().values()) {
-            System.out.println(metricImpact.getMetricName());
-        }
-
         if (isReadability) {
             provideReadabilityMetricTip(project);
         } else {
             // TODO
-            provideReadabilityMetricTip(project);
-
-            // provideSkillMetricTip(project);
+            provideSkillMetricTip(project);
         }
 
     }
@@ -108,9 +102,104 @@ public class Feedback {
             provideCommentsTip(project, commentsMetric);
         }
 
-        // TODO this is not the impact.
         generateProgressMotivation(project, chosenMetric.getImpact(),0, true);
+    }
 
+    private void provideSkillMetricTip(Project project) {
+        MetricImpact statementsMetric, nsccfsMetric, cfsMetric, chosenMetric;
+        statementsMetric = project.getMetricsImpact().get("getNumberOfStatementsWithoutRES");
+        nsccfsMetric = project.getMetricsImpact().get("getNumberOfNSCCFS");
+        cfsMetric = project.getMetricsImpact().get("getTotalNumberOfCFS");
+
+        if (statementsMetric.getRatio() <= nsccfsMetric.getRatio() && statementsMetric.getRatio() <= cfsMetric.getRatio()) {
+            chosenMetric = statementsMetric;
+            provideStatementsTip(project, statementsMetric);
+        } else if (nsccfsMetric.getRatio() <= statementsMetric.getRatio() && nsccfsMetric.getRatio() <= cfsMetric.getRatio()) {
+            chosenMetric = nsccfsMetric;
+            provideNSCCFSTip(project, nsccfsMetric);
+        } else {
+            chosenMetric = cfsMetric;
+            provideCFSTip(project, cfsMetric);
+        }
+
+        generateProgressMotivation(project, chosenMetric.getImpact(),0, true);
+    }
+
+
+
+    private float provideStatementsTip(Project project, MetricImpact methodsMetric) {
+        ArrayList<String> metricFeedback = new ArrayList<>();
+        float improvementImpact;
+
+
+        metricFeedback.add("### Suggestion: **Decrease number of statements**");
+        metricFeedback.add("You have used **" + methodsMetric.getValue() + "** methods. " +
+                "This places you at **" + Math.round(10000 * methodsMetric.getRatio()) / (float) 100 +  "%** compared to the maximum of your peers.");
+        metricFeedback.add("");
+        metricFeedback.add("Dividing your code into multiple methods can dramatically increase its readability. ");
+        metricFeedback.add("Currently you only obtained **" +  methodsMetric.getImpact() + "** points to your readability score from this metric.");
+        metricFeedback.add("");
+
+        if(methodsMetric.getRatio() * 2 <= 1) {
+            improvementImpact = methodsMetric.getImpact();
+            metricFeedback.add("*Try using " +  methodsMetric.getValue() * 2 + " methods instead.*");
+
+        } else {
+            improvementImpact = methodsMetric.getImpact() * (float) 0.5;
+            metricFeedback.add("*Try using " +  methodsMetric.getValue() * 0.5 + " methods instead.*");
+        }
+
+        appendFeedback(project, metricFeedback);
+        return improvementImpact;
+    }
+
+    private float provideNSCCFSTip(Project project, MetricImpact classesMetric) {
+        ArrayList<String> metricFeedback = new ArrayList<>();
+        float improvementImpact;
+
+        metricFeedback.add("### Suggestion: **Increase number of NSCCFS**");
+        metricFeedback.add("You have used **" + classesMetric.getValue() + "** classes. " +
+                "This places you at **" + Math.round(10000 * classesMetric.getRatio()) / (float) 100 +  "%** compared to the maximum of your peers.");
+        metricFeedback.add("");
+        metricFeedback.add("Dividing your code into multiple classes, if relevant, can dramatically increase its readability. ");
+        metricFeedback.add("Currently you only obtained **" +  classesMetric.getImpact() + "** points to your readability score from this metric.");
+        metricFeedback.add("");
+
+        if(classesMetric.getRatio() * 2 <= 1) {
+            improvementImpact = classesMetric.getImpact();
+            metricFeedback.add("*Try using " +  classesMetric.getValue() * 2 + " classes instead.*");
+        } else {
+            improvementImpact = classesMetric.getImpact() * (float) 0.5;
+            metricFeedback.add("*Try using " +  classesMetric.getValue() * 0.5 + " classes instead.*");
+        }
+
+        appendFeedback(project, metricFeedback);
+        return improvementImpact;
+    }
+
+    private float provideCFSTip(Project project, MetricImpact commentsMetric) {
+        ArrayList<String> metricFeedback = new ArrayList<>();
+        float improvementImpact;
+
+        metricFeedback.add("### Suggestion: **Decrease Control Flows**");
+        metricFeedback.add("You have shown **" + Math.round(100 * commentsMetric.getValue()) / (float) 100 + "%** lines with comments. " +
+                "This places you at " + Math.round(10000 * commentsMetric.getRatio()) / (float) 100 +  "% compared to the maximum of your peers.");
+        metricFeedback.add("");
+        metricFeedback.add("Even for a single programmer, code legibility within a few weeks is intimately connected with its documentation. " +
+                "By increasing the number of comments proportionately to the lines of code you display, its readability can be increased dramatically.");
+        metricFeedback.add("Currently you only obtained **" +  commentsMetric.getImpact() + "** points to your readability score from this metric.");
+        metricFeedback.add("");
+
+        if(commentsMetric.getRatio() * 2 <= 1) {
+            improvementImpact = commentsMetric.getImpact();
+            metricFeedback.add("*Try covering " +  Math.round(100 * commentsMetric.getValue()) / (float) 100 * 2 + "% of our code instead.*");
+        } else {
+            improvementImpact = commentsMetric.getImpact() * (float) 0.5;
+            metricFeedback.add("*Try covering " +  Math.round(100 * commentsMetric.getValue()) / (float) 100 * 0.5 + "% of our code instead.*");
+        }
+
+        appendFeedback(project, metricFeedback);
+        return improvementImpact;
     }
 
     private float provideMethodsTip(Project project, MetricImpact methodsMetric) {
@@ -120,7 +209,7 @@ public class Feedback {
 
         metricFeedback.add("### Suggestion: **Increase number of methods**");
         metricFeedback.add("You have used **" + methodsMetric.getValue() + "** methods. " +
-                        "This places you at **" + methodsMetric.getRatio() +  "%** compared to the maximum of your peers.");
+                        "This places you at **" + Math.round(10000 * methodsMetric.getRatio()) / (float) 100 +  "%** compared to the maximum of your peers.");
         metricFeedback.add("");
         metricFeedback.add("Dividing your code into multiple methods can dramatically increase its readability. ");
         metricFeedback.add("Currently you only obtained **" +  methodsMetric.getImpact() + "** points to your readability score from this metric.");
@@ -145,7 +234,7 @@ public class Feedback {
 
         metricFeedback.add("### Suggestion: **Increase number of classes**");
         metricFeedback.add("You have used **" + classesMetric.getValue() + "** classes. " +
-                "This places you at **" + classesMetric.getRatio() +  "%** compared to the maximum of your peers.");
+                "This places you at **" + Math.round(10000 * classesMetric.getRatio()) / (float) 100 +  "%** compared to the maximum of your peers.");
         metricFeedback.add("");
         metricFeedback.add("Dividing your code into multiple classes, if relevant, can dramatically increase its readability. ");
         metricFeedback.add("Currently you only obtained **" +  classesMetric.getImpact() + "** points to your readability score from this metric.");
@@ -169,7 +258,7 @@ public class Feedback {
 
         metricFeedback.add("### Suggestion: **Increase Documentation**");
         metricFeedback.add("You have shown **" + Math.round(100 * commentsMetric.getValue()) / (float) 100 + "%** lines with comments. " +
-                "This places you at " + commentsMetric.getRatio() +  "% compared to the maximum of your peers.");
+                "This places you at " + Math.round(10000 * commentsMetric.getRatio()) / (float) 100 +  "% compared to the maximum of your peers.");
         metricFeedback.add("");
         metricFeedback.add("Even for a single programmer, code legibility within a few weeks is intimately connected with its documentation. " +
                 "By increasing the number of comments proportionately to the lines of code you display, its readability can be increased dramatically.");
@@ -211,7 +300,7 @@ public class Feedback {
         header.add("The score obtained is **" + project.getSkill() + "** skill and **" + project.getReadability() + "** readability.");
         header.add("");
         header.add("## Personalised Feedback");
-        header.add("> The system will now provide personalised feedback to help you improve your score. " +
+        header.add("> The system will now provide personalised fweedback to help you improve your score. " +
                 "This is done by prioritising the easiness and impact in your current score.");
         header.add("");
 
