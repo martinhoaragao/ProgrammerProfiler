@@ -12,6 +12,26 @@ public class MetricImpact {
         this.ratio = ratio;
     }
 
+    public float getImpact() {
+        return impact;
+    }
+
+    public float getValue() {
+        return value;
+    }
+
+    public float getRatio() {
+        return ratio;
+    }
+
+    public Metric getMetric() {
+        return metric;
+    }
+
+    public String getMetricName() {
+        return metric.getMethodName();
+    }
+
     public void register(float skillBefore, float skillAfter, float readabilityBefore, float readabilityAfter) {
         if (metric.getImplies().contains("S")) {
             isImpactSkill = true;

@@ -30,6 +30,10 @@ public class Project {
         return (Math.round(100 * readability) / (float) 100);
     }
 
+    public HashMap<String, MetricImpact> getMetricsImpact() {
+        return metricsImpact;
+    }
+
     public float getSkill() {
         return (Math.round(100 * skill) / (float)  100);
     }
