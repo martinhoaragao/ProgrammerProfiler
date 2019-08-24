@@ -79,13 +79,13 @@ public class Feedback {
         if (isReadability) {
             provideReadabilityMetricTip(project);
         } else {
-            // TODO
             provideSkillMetricTip(project);
         }
 
     }
 
     private void provideReadabilityMetricTip(Project project) {
+        float impact;
         MetricImpact methodsMetric, classesMetric, commentsMetric, chosenMetric;
         methodsMetric = project.getMetricsImpact().get("getNumberOfMethods");
         classesMetric = project.getMetricsImpact().get("getNumberOfClasses");
@@ -93,109 +93,83 @@ public class Feedback {
 
         if (methodsMetric.getRatio() <= classesMetric.getRatio() && methodsMetric.getRatio() <= commentsMetric.getRatio()) {
             chosenMetric = methodsMetric;
-            provideMethodsTip(project, methodsMetric);
+            impact = provideMethodsTip(project, methodsMetric);
         } else if (classesMetric.getRatio() <= methodsMetric.getRatio() && classesMetric.getRatio() <= commentsMetric.getRatio()) {
             chosenMetric = classesMetric;
-            provideClassesTip(project, classesMetric);
+            impact = provideClassesTip(project, classesMetric);
         } else {
             chosenMetric = commentsMetric;
-            provideCommentsTip(project, commentsMetric);
+            impact = provideCommentsTip(project, commentsMetric);
         }
 
-        generateProgressMotivation(project, chosenMetric.getImpact(),0, true);
+        generateProgressMotivation(project, chosenMetric.getImpact(),impact, true);
     }
 
     private void provideSkillMetricTip(Project project) {
-        MetricImpact statementsMetric, nsccfsMetric, cfsMetric, chosenMetric;
+        float impact;
+        MetricImpact statementsMetric, cfsMetric, chosenMetric;
         statementsMetric = project.getMetricsImpact().get("getNumberOfStatementsWithoutRES");
-        nsccfsMetric = project.getMetricsImpact().get("getNumberOfNSCCFS");
         cfsMetric = project.getMetricsImpact().get("getTotalNumberOfCFS");
 
-        if (statementsMetric.getRatio() <= nsccfsMetric.getRatio() && statementsMetric.getRatio() <= cfsMetric.getRatio()) {
+        if (statementsMetric.getRatio() <= cfsMetric.getRatio()) {
             chosenMetric = statementsMetric;
-            provideStatementsTip(project, statementsMetric);
-        } else if (nsccfsMetric.getRatio() <= statementsMetric.getRatio() && nsccfsMetric.getRatio() <= cfsMetric.getRatio()) {
-            chosenMetric = nsccfsMetric;
-            provideNSCCFSTip(project, nsccfsMetric);
+            impact = provideStatementsTip(project, statementsMetric);
         } else {
             chosenMetric = cfsMetric;
-            provideCFSTip(project, cfsMetric);
+            impact = provideCFSTip(project, cfsMetric);
         }
 
-        generateProgressMotivation(project, chosenMetric.getImpact(),0, true);
+        generateProgressMotivation(project, chosenMetric.getImpact(),impact, true);
     }
 
 
 
-    private float provideStatementsTip(Project project, MetricImpact methodsMetric) {
+    private float provideStatementsTip(Project project, MetricImpact statementsMetric) {
         ArrayList<String> metricFeedback = new ArrayList<>();
         float improvementImpact;
 
 
         metricFeedback.add("### Suggestion: **Decrease number of statements**");
-        metricFeedback.add("You have used **" + methodsMetric.getValue() + "** methods. " +
-                "This places you at **" + Math.round(10000 * methodsMetric.getRatio()) / (float) 100 +  "%** compared to the maximum of your peers.");
+        metricFeedback.add("You have used **" + statementsMetric.getValue() + "** statements. " +
+                "This places you at **" + Math.round(10000 * statementsMetric.getRatio()) / (float) 100 +  "%** compared to the best of your peers.");
         metricFeedback.add("");
-        metricFeedback.add("Dividing your code into multiple methods can dramatically increase its readability. ");
-        metricFeedback.add("Currently you only obtained **" +  methodsMetric.getImpact() + "** points to your readability score from this metric.");
+        metricFeedback.add("A big difference of statements usually means there is a far easier solution to the problem.  ");
+        metricFeedback.add("Currently you only obtained **" +  statementsMetric.getImpact() + "** points to your skill score from this metric.");
         metricFeedback.add("");
 
-        if(methodsMetric.getRatio() * 2 <= 1) {
-            improvementImpact = methodsMetric.getImpact();
-            metricFeedback.add("*Try using " +  methodsMetric.getValue() * 2 + " methods instead.*");
+        if(statementsMetric.getRatio() * 2 <= 1) {
+            improvementImpact = statementsMetric.getImpact();
+            metricFeedback.add("**Try using " +  Math.round(statementsMetric.getValue() / 2) + " statements instead.**");
 
         } else {
-            improvementImpact = methodsMetric.getImpact() * (float) 0.5;
-            metricFeedback.add("*Try using " +  methodsMetric.getValue() * 0.5 + " methods instead.*");
+            improvementImpact = statementsMetric.getImpact() * (float) 0.5;
+            metricFeedback.add("**Try using " +  Math.round(statementsMetric.getValue() / 0.75) + " statements instead.**");
         }
 
         appendFeedback(project, metricFeedback);
         return improvementImpact;
     }
 
-    private float provideNSCCFSTip(Project project, MetricImpact classesMetric) {
+    private float provideCFSTip(Project project, MetricImpact cfsMetric) {
         ArrayList<String> metricFeedback = new ArrayList<>();
         float improvementImpact;
 
-        metricFeedback.add("### Suggestion: **Increase number of NSCCFS**");
-        metricFeedback.add("You have used **" + classesMetric.getValue() + "** classes. " +
-                "This places you at **" + Math.round(10000 * classesMetric.getRatio()) / (float) 100 +  "%** compared to the maximum of your peers.");
+        metricFeedback.add("### Suggestion: **Decrease Control Flow Statements (CFS)**");
+        metricFeedback.add("You have shown the use of **" + cfsMetric.getValue() + "** control flow statements. " +
+                "You seem to have used **" + (100 - (Math.round(10000 * cfsMetric.getRatio()) / (float) 100)) +  "**% more flows than your best peer.");
         metricFeedback.add("");
-        metricFeedback.add("Dividing your code into multiple classes, if relevant, can dramatically increase its readability. ");
-        metricFeedback.add("Currently you only obtained **" +  classesMetric.getImpact() + "** points to your readability score from this metric.");
+        metricFeedback.add("Control Flow Statements can be considered the heart of algorithms. However, overusing them can cause a bad performance " +
+                "as well as might show there is a easier way to solve the problem. " +
+                "By decreasing the number of CFS you might be able to simplify your solution.");
+        metricFeedback.add("Currently you only obtained **" +  cfsMetric.getImpact() + "** points to your readability score from this metric.");
         metricFeedback.add("");
 
-        if(classesMetric.getRatio() * 2 <= 1) {
-            improvementImpact = classesMetric.getImpact();
-            metricFeedback.add("*Try using " +  classesMetric.getValue() * 2 + " classes instead.*");
+        if(cfsMetric.getRatio() * 2 <= 1) {
+            improvementImpact = cfsMetric.getImpact();
+            metricFeedback.add("**Try using " + Math.round(cfsMetric.getValue() / 2) + " CFS instead.**");
         } else {
-            improvementImpact = classesMetric.getImpact() * (float) 0.5;
-            metricFeedback.add("*Try using " +  classesMetric.getValue() * 0.5 + " classes instead.*");
-        }
-
-        appendFeedback(project, metricFeedback);
-        return improvementImpact;
-    }
-
-    private float provideCFSTip(Project project, MetricImpact commentsMetric) {
-        ArrayList<String> metricFeedback = new ArrayList<>();
-        float improvementImpact;
-
-        metricFeedback.add("### Suggestion: **Decrease Control Flows**");
-        metricFeedback.add("You have shown **" + Math.round(100 * commentsMetric.getValue()) / (float) 100 + "%** lines with comments. " +
-                "This places you at " + Math.round(10000 * commentsMetric.getRatio()) / (float) 100 +  "% compared to the maximum of your peers.");
-        metricFeedback.add("");
-        metricFeedback.add("Even for a single programmer, code legibility within a few weeks is intimately connected with its documentation. " +
-                "By increasing the number of comments proportionately to the lines of code you display, its readability can be increased dramatically.");
-        metricFeedback.add("Currently you only obtained **" +  commentsMetric.getImpact() + "** points to your readability score from this metric.");
-        metricFeedback.add("");
-
-        if(commentsMetric.getRatio() * 2 <= 1) {
-            improvementImpact = commentsMetric.getImpact();
-            metricFeedback.add("*Try covering " +  Math.round(100 * commentsMetric.getValue()) / (float) 100 * 2 + "% of our code instead.*");
-        } else {
-            improvementImpact = commentsMetric.getImpact() * (float) 0.5;
-            metricFeedback.add("*Try covering " +  Math.round(100 * commentsMetric.getValue()) / (float) 100 * 0.5 + "% of our code instead.*");
+            improvementImpact = cfsMetric.getImpact() * (float) 0.5;
+            metricFeedback.add("**Try using " +  Math.round(cfsMetric.getValue() / 0.75) + "CFS instead.**");
         }
 
         appendFeedback(project, metricFeedback);
@@ -217,11 +191,11 @@ public class Feedback {
 
         if(methodsMetric.getRatio() * 2 <= 1) {
             improvementImpact = methodsMetric.getImpact();
-            metricFeedback.add("*Try using " +  methodsMetric.getValue() * 2 + " methods instead.*");
+            metricFeedback.add("**Try using " +  Math.round(methodsMetric.getValue() * 2) + " methods instead.**");
 
         } else {
-            improvementImpact = methodsMetric.getImpact() * (float) 0.5;
-            metricFeedback.add("*Try using " +  methodsMetric.getValue() * 0.5 + " methods instead.*");
+            improvementImpact = methodsMetric.getImpact() / 2;
+            metricFeedback.add("**Try using " +  Math.round(methodsMetric.getValue() * 1.5) + " methods instead.**");
         }
 
         appendFeedback(project, metricFeedback);
@@ -242,10 +216,10 @@ public class Feedback {
 
         if(classesMetric.getRatio() * 2 <= 1) {
             improvementImpact = classesMetric.getImpact();
-            metricFeedback.add("*Try using " +  classesMetric.getValue() * 2 + " classes instead.*");
+            metricFeedback.add("**Try using " +  Math.round(classesMetric.getValue() * 2) + " classes instead.**");
         } else {
-            improvementImpact = classesMetric.getImpact() * (float) 0.5;
-            metricFeedback.add("*Try using " +  classesMetric.getValue() * 0.5 + " classes instead.*");
+            improvementImpact = classesMetric.getImpact() / 2;
+            metricFeedback.add("**Try using " +  Math.round(classesMetric.getValue() * 1.5) + " classes instead.**");
         }
 
         appendFeedback(project, metricFeedback);
@@ -267,10 +241,10 @@ public class Feedback {
 
         if(commentsMetric.getRatio() * 2 <= 1) {
             improvementImpact = commentsMetric.getImpact();
-            metricFeedback.add("*Try covering " +  Math.round(100 * commentsMetric.getValue()) / (float) 100 * 2 + "% of our code instead.*");
+            metricFeedback.add("**Try covering " +  Math.round(100 * commentsMetric.getValue()) / (float) 100 * 2 + "% of our code instead.**");
         } else {
-            improvementImpact = commentsMetric.getImpact() * (float) 0.5;
-            metricFeedback.add("*Try covering " +  Math.round(100 * commentsMetric.getValue()) / (float) 100 * 0.5 + "% of our code instead.*");
+            improvementImpact = commentsMetric.getImpact() / 2;
+            metricFeedback.add("**Try covering " +  Math.round(100 * commentsMetric.getValue()) / (float) 100 * 1.5 + "% of our code instead.**");
         }
 
         appendFeedback(project, metricFeedback);
@@ -293,7 +267,7 @@ public class Feedback {
 
         header.add("# PP Tool Feedback System");
         header.add("Welcome to the PP Tool Feedback System! You have been compared to " + numberOfProjects +
-                " other projects which solved the exact same exercise. By analysing metrics and mistakes a profile has been extracted." +
+                " other projects which solved the exact same exercise. By analysing metrics and mistakes a profile has been extracted. " +
                 "This is done with 2 key distinctions in mind Skill and Readability");
         header.add("## Profile Analysis");
         header.add("Your project which is named *" + project.getProjectName() + "* has achieved a profile of **" + project.getProfile() + "**! ");
@@ -426,28 +400,28 @@ public class Feedback {
         switch (newProfile) {
             case "Advanced Beginner S":
                 progressMotivation.add("Congratulations! You are no longer a Novice. However you certainly have a lot to improve, \"Proficient\", \"Expert\" and \"Master\" " +
-                        "are all better profiles than the one you have currently achieved. However you are clearly on the way forward." +
+                        "are all better profiles than the one you have currently achieved. However you are clearly on the way forward. " +
                         "Just follow the recommendation, try to notice other areas to improve, and rerun!");
                 progressMotivation.add("");
                 progressMotivation.add("You now lean more towards **skill**.");
                 break;
             case "Advanced Beginner R":
                 progressMotivation.add("Congratulations! You are no longer a Novice. However you certainly have a lot to improve, \"Proficient\", \"Expert\" and \"Master\" " +
-                        "are all better profiles than the one you have currently achieved. However you are clearly on the way forward." +
+                        "are all better profiles than the one you have currently achieved. However you are clearly on the way forward. " +
                         "Just follow the recommendation, try to notice other areas to improve, and rerun!");
                 progressMotivation.add("");
                 progressMotivation.add("You now lean more towards **readability**.");
                 break;
             case "Advanced Beginner +":
                 progressMotivation.add("Congratulations on obtaining a balanced profile! However, you certainly have a lot to improve before reaching a better profile. " +
-                        "Perhaps, it will be easier to focus first on either readability or skill, arriving at Proficient or Expert respectively before aiming for Master." +
+                        "Perhaps, it will be easier to focus first on either readability or skill, arriving at Proficient or Expert respectively before aiming for Master. " +
                         "Good luck!");
                 break;
             case "Expert":
-                progressMotivation.add("Congratulations! You have thrived in **skill**! You should now focus mostly on improving your readability in order to obtain Master.");
+                progressMotivation.add("Congratulations! You have thrived in **skill**! You should now focus mostly on improving your readability in order to obtain Master. ");
                 break;
             case "Proficient":
-                progressMotivation.add("Congratulations! You have thrived in **readability**! You should now focus mostly on improving your skill in order to obtain Master.");
+                progressMotivation.add("Congratulations! You have thrived in **readability**! You should now focus mostly on improving your skill in order to obtain Master. ");
                 break;
             case "Master":
                 progressMotivation.add("Congratulations! You have reached the best profile!");
