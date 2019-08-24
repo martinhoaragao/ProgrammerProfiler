@@ -61,6 +61,11 @@ public class Project {
     }
 
     public void addMetricImpact (String metric, MetricImpact metricImpact) {
+        if(metricsImpact.containsKey(metric)) {
+            MetricImpact previous = metricsImpact.get(metric);
+            metricImpact.setImpactReadability(previous.getImpactReadability() + metricImpact.getImpactReadability());
+            metricImpact.setImpactSkill(previous.getImpactSkill() + metricImpact.getImpactSkill());
+        }
         this.metricsImpact.put(metric, metricImpact);
     }
 

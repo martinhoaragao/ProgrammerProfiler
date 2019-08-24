@@ -86,40 +86,41 @@ public class Feedback {
 
     private void provideReadabilityMetricTip(Project project) {
         float impact;
-        MetricImpact methodsMetric, classesMetric, commentsMetric, chosenMetric;
+        MetricImpact methodsMetric, classesMetric, commentsMetric;
         methodsMetric = project.getMetricsImpact().get("getNumberOfMethods");
         classesMetric = project.getMetricsImpact().get("getNumberOfClasses");
         commentsMetric = project.getMetricsImpact().get("getPerComment");
 
         if (methodsMetric.getRatio() <= classesMetric.getRatio() && methodsMetric.getRatio() <= commentsMetric.getRatio()) {
-            chosenMetric = methodsMetric;
             impact = provideMethodsTip(project, methodsMetric);
         } else if (classesMetric.getRatio() <= methodsMetric.getRatio() && classesMetric.getRatio() <= commentsMetric.getRatio()) {
-            chosenMetric = classesMetric;
             impact = provideClassesTip(project, classesMetric);
         } else {
-            chosenMetric = commentsMetric;
             impact = provideCommentsTip(project, commentsMetric);
         }
 
-        generateProgressMotivation(project, chosenMetric.getImpact(),impact, true);
+        generateProgressMotivation(project, impact, 0, true);
     }
 
     private void provideSkillMetricTip(Project project) {
-        float impact;
-        MetricImpact statementsMetric, cfsMetric, chosenMetric;
+        float impact, readabilityImpact = 0;
+        MetricImpact statementsMetric, cfsMetric;
         statementsMetric = project.getMetricsImpact().get("getNumberOfStatementsWithoutRES");
         cfsMetric = project.getMetricsImpact().get("getTotalNumberOfCFS");
 
         if (statementsMetric.getRatio() <= cfsMetric.getRatio()) {
-            chosenMetric = statementsMetric;
             impact = provideStatementsTip(project, statementsMetric);
         } else {
-            chosenMetric = cfsMetric;
-            impact = provideCFSTip(project, cfsMetric);
+            if (provideCFSTip(project, cfsMetric) == 2) {
+                impact = cfsMetric.getImpactSkill();
+                readabilityImpact = - (float) 0.5 * cfsMetric.getImpactReadability();
+            } else {
+                impact = cfsMetric.getImpactSkill() * (float) 0.5;
+                readabilityImpact = - (float) 0.25 * cfsMetric.getImpactReadability();
+            }
         }
 
-        generateProgressMotivation(project, chosenMetric.getImpact(),impact, true);
+        generateProgressMotivation(project, readabilityImpact, impact, true);
     }
 
 
@@ -152,7 +153,7 @@ public class Feedback {
 
     private float provideCFSTip(Project project, MetricImpact cfsMetric) {
         ArrayList<String> metricFeedback = new ArrayList<>();
-        float improvementImpact;
+        float improvementRatio;
 
         metricFeedback.add("### Suggestion: **Decrease Control Flow Statements (CFS)**");
         metricFeedback.add("You have shown the use of **" + cfsMetric.getValue() + "** control flow statements. " +
@@ -161,19 +162,19 @@ public class Feedback {
         metricFeedback.add("Control Flow Statements can be considered the heart of algorithms. However, overusing them can cause a bad performance " +
                 "as well as might show there is a easier way to solve the problem. " +
                 "By decreasing the number of CFS you might be able to simplify your solution.");
-        metricFeedback.add("Currently you only obtained **" +  cfsMetric.getImpact() + "** points to your readability score from this metric.");
+        metricFeedback.add("Currently you only obtained **" +  cfsMetric.getImpactSkill() + "** points to your readability score from this metric.");
         metricFeedback.add("");
 
         if(cfsMetric.getRatio() * 2 <= 1) {
-            improvementImpact = cfsMetric.getImpact();
+            improvementRatio = 2;
             metricFeedback.add("**Try using " + Math.round(cfsMetric.getValue() / 2) + " CFS instead.**");
         } else {
-            improvementImpact = cfsMetric.getImpact() * (float) 0.5;
+            improvementRatio = (float) 0.5;
             metricFeedback.add("**Try using " +  Math.round(cfsMetric.getValue() / 0.75) + "CFS instead.**");
         }
 
         appendFeedback(project, metricFeedback);
-        return improvementImpact;
+        return improvementRatio;
     }
 
     private float provideMethodsTip(Project project, MetricImpact methodsMetric) {

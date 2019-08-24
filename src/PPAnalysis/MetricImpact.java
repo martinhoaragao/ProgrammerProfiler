@@ -1,8 +1,8 @@
 public class MetricImpact {
 
     private Metric metric;
-    private boolean isImpactSkill = false;
-    private float impact;
+    private float impactReadability;
+    private float impactSkill;
     private float value;
     private float ratio;
 
@@ -13,6 +13,12 @@ public class MetricImpact {
     }
 
     public float getImpact() {
+        float impact;
+        if (metric.getImplies().contains("S")) {
+            impact = impactSkill;
+        } else {
+            impact = impactReadability;
+        }
         return impact;
     }
 
@@ -33,12 +39,23 @@ public class MetricImpact {
     }
 
     public void register(float skillBefore, float skillAfter, float readabilityBefore, float readabilityAfter) {
-        if (metric.getImplies().contains("S")) {
-            isImpactSkill = true;
+        impactSkill = skillAfter - skillBefore;
+        impactReadability = readabilityAfter - readabilityBefore;
+    }
 
-            impact = skillAfter - skillBefore;
-        } else {
-            impact = readabilityAfter - readabilityBefore;
-        }
+    public float getImpactReadability() {
+        return impactReadability;
+    }
+
+    public float getImpactSkill() {
+        return impactSkill;
+    }
+
+    public void setImpactSkill(float impactSkill) {
+        this.impactSkill = impactSkill;
+    }
+
+    public void setImpactReadability(float impactReadability) {
+        this.impactReadability = impactReadability;
     }
 }
