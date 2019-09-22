@@ -93,8 +93,8 @@ public class Feedback {
             }
         }
 
-        metricFeedback.add("#### Suggestion: **Extra tip**");
-        metricFeedback.add("You might still have some violations to improve on, but actually we advise you to look at: ");
+        metricFeedback.add("#### Goal");
+        metricFeedback.add("You might still have some violations to improve on, but we advise you to more than just that. Check out: ");
 
         switch (highest) {
             case 0:
