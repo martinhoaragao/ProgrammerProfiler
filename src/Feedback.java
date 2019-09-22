@@ -66,11 +66,61 @@ public class Feedback {
                 readabilityImpact = Math.round(100 * violationFixed.getReadabilityImpact()) / (float) 100;
                 skillImpact = Math.round(100 * violationFixed.getSkillImpact()) / (float) 100;
 
+                provideExtraMetricTip(project, isReadability);
+
                 generateProgressMotivation(project, readabilityImpact, skillImpact, isReadability);
             } else {
                 provideMetricTip(project, isReadability);
             }
         }
+    }
+
+    private void provideExtraMetricTip(Project project, boolean isReadability) {
+        ArrayList<String> metricFeedback = new ArrayList<>();
+        ArrayList<MetricImpact> impact = new ArrayList<>();
+        HashMap<String, MetricImpact> metricImpact = project.getMetricsImpact();
+        int highest = 0;
+
+        impact.add(metricImpact.get("getNumberOfMethods"));
+        impact.add(metricImpact.get("getNumberOfClasses"));
+        impact.add(metricImpact.get("getPerComment"));
+        impact.add(metricImpact.get("getNumberOfStatementsWithoutRES"));
+        impact.add(metricImpact.get("getTotalNumberOfCFS"));
+
+        for (int i = 0; i <= 4; i++) {
+            if (impact.get(i).getRatio() > impact.get(highest).getRatio()) {
+                highest = i;
+            }
+        }
+
+        metricFeedback.add("#### Suggestion: **Extra tip**");
+        metricFeedback.add("You might still have some violations to improve on, but actually we advise you to look at: ");
+
+        switch (highest) {
+            case 0:
+                metricFeedback.add("**Divide your code into multiple methods.**");
+                break;
+            case 1:
+                metricFeedback.add("**Divide your code into multiple classes.**");
+
+                break;
+            case 2:
+                metricFeedback.add("**Add more documentation.**");
+
+                break;
+            case 3:
+                metricFeedback.add("**There seems to be a better way to solve this exercise using fewer statements. Perhaps you overcomplicated the algorithm?.**");
+
+                break;
+            case 4:
+                metricFeedback.add("**You could use fewer control flow statements. Try reducing the number of cycles, that usually means there is an easier way to solve this exercise.**");
+                break;
+            default:
+                break;
+        }
+
+        metricFeedback.add("");
+        appendFeedback(project, metricFeedback);
     }
 
     private void provideMetricTip(Project project, boolean isReadability) {
@@ -103,7 +153,7 @@ public class Feedback {
     }
 
     private void provideSkillMetricTip(Project project) {
-        float impact, readabilityImpact = 0;
+        float impact, aux, readabilityImpact = 0;
         MetricImpact statementsMetric, cfsMetric;
         statementsMetric = project.getMetricsImpact().get("getNumberOfStatementsWithoutRES");
         cfsMetric = project.getMetricsImpact().get("getTotalNumberOfCFS");
@@ -111,8 +161,9 @@ public class Feedback {
         if (statementsMetric.getRatio() > cfsMetric.getRatio()) {
             impact = provideStatementsTip(project, statementsMetric);
         } else {
-            impact = (provideCFSTip(project, cfsMetric) * cfsMetric.getImpactSkill()) / 2;
-            readabilityImpact = - ((provideCFSTip(project, cfsMetric) * cfsMetric.getImpactReadability()) / 4);
+            aux = provideCFSTip(project, cfsMetric);
+            impact = (aux * cfsMetric.getImpactSkill()) / 2;
+            readabilityImpact = - ((aux * cfsMetric.getImpactReadability()) / 4);
         }
 
         generateProgressMotivation(project, readabilityImpact, impact, true);
