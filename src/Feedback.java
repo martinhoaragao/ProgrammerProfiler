@@ -109,7 +109,7 @@ public class Feedback {
 
                 break;
             case 3:
-                metricFeedback.add("**There seems to be a better way to solve this exercise using fewer statements. Perhaps you overcomplicated the algorithm?.**");
+                metricFeedback.add("**There seems to be a better way to solve this exercise using fewer statements. Perhaps you over complicated the algorithm?.**");
 
                 break;
             case 4:
@@ -326,7 +326,7 @@ public class Feedback {
         header.add("The score obtained is **" + project.getSkill() + "** skill and **" + project.getReadability() + "** readability.");
         header.add("");
         header.add("## Personalised Feedback");
-        header.add("> The system will now provide personalised fweedback to help you improve your score. " +
+        header.add("> The system will now provide personalised feedback to help you improve your score. " +
                 "This is done by prioritising the easiness and impact in your current score.");
         header.add("");
 
