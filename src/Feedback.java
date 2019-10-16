@@ -109,7 +109,7 @@ public class Feedback {
 
                 break;
             case 3:
-                metricFeedback.add("**There seems to be a better way to solve this exercise using fewer statements. Perhaps you over complicated the algorithm?.**");
+                metricFeedback.add("**There seems to be a better way to solve this exercise using fewer statements. Perhaps you over complicated the algorithm?**");
 
                 break;
             case 4:
@@ -296,8 +296,15 @@ public class Feedback {
             growthFactor = 2;
         }
         improvementRatio = (metric.getRatio() + (1 - metric.getRatio()) / growthFactor) / metric.getRatio();
-        improvementImpact = (improvementRatio * metric.getImpact()) / 2;
-        metricFeedback.add("**Try covering " +  Math.round(100 * metric.getValue()) / (float) 100 * improvementRatio + "% of our code instead.**");
+        if (improvementRatio == 0 ) {
+            metricFeedback.add("**Try covering 20% of your code instead.**");
+            improvementImpact = ((float)0.2 * metric.getImpact()) / 2;
+
+        } else {
+            improvementImpact = (improvementRatio * metric.getImpact()) / 2;
+            metricFeedback.add("**Try covering " +  Math.round(100 * metric.getValue()) / (float) 100 * improvementRatio + "% of our code instead.**");
+
+        }
 
         appendFeedback(project, metricFeedback);
         return improvementImpact;
@@ -364,7 +371,7 @@ public class Feedback {
     private ArrayList<String> violationFeedbackCorrection(ArrayList<String> violationFeedback, Violation violation) {
         violationFeedback.add("### Suggestion: **Follow PMD Rule**");
         violationFeedback.add("You violated rule [" +
-                violation.getName() + "](https://pmd.github.io/pmd-6.16.0/pmd_rules_java_codestyle.html#" + violation.getName() +
+                violation.getName() + "](https://pmd.github.io/pmd-6.16.0/pmd_rules_java_" + violation.getPmdRule().getRuleset().toLowerCase() + ".html#" + violation.getName().toLowerCase() +
                 ") **" + violation.getOccurences() + "** times.");
 
         violationFeedback.add("This rule is part of the set " + violation.getPmdRule().getRuleset());

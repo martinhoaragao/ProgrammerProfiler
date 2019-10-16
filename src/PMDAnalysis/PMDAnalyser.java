@@ -1,9 +1,9 @@
 import com.opencsv.CSVReader;
 
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.io.IOException;
 
 public class PMDAnalyser {
 
@@ -22,11 +22,31 @@ public class PMDAnalyser {
         String rulesets = "rulesets/java/quickstart.xml";
         output_file = dirPath + "/out." + output_format;
         cache_file = dirPath + "/cache";
-        String[] arguments = {"lib/pmd-bin-6.10.0/bin/run.sh pmd", "-d", dirPath, "-f", output_format, "-cache", cache_file, "-t", "0", "-R", rulesets, "-r", output_file };
+        String[] arguments = {"lib/pmd-bin-6.10.0/bin/run.sh", "pmd", "-d", dirPath, "-f", output_format, "-cache", cache_file, "-R", rulesets, "-r", output_file };
 
         ProcessBuilder builder = new ProcessBuilder();
         builder.command(arguments);
+/**
+        try {
+            Process process = builder.start();
 
+            BufferedReader reader =
+                    new BufferedReader(new InputStreamReader(process.getInputStream()));
+
+            String line;
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
+            }
+
+            int exitCode = process.waitFor();
+            System.out.println("\nExited with error code : " + exitCode);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+*/
     }
 
     public void read () throws IOException {
