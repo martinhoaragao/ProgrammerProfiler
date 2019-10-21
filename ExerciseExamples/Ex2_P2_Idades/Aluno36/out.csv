@@ -1,0 +1,4 @@
+"Problem","Package","File","Priority","Line","Description","Rule set","Rule"
+"1","","/Users/martinhoaragao/Dev/ProgrammerProfiler/ExerciseExamples/Ex2_P2_Idades/Aluno36/Exercicio2.java","4","12","All classes and interfaces must belong to a named package","Code Style","GenericsNaming"
+"2","","/Users/martinhoaragao/Dev/ProgrammerProfiler/ExerciseExamples/Ex2_P2_Idades/Aluno36/Exercicio2.java","3","14","Avoid using implementation types like 'ArrayList'; use the interface instead","Best Practices","LooseCoupling"
+"3","","/Users/martinhoaragao/Dev/ProgrammerProfiler/ExerciseExamples/Ex2_P2_Idades/Aluno36/Exercicio2.java","1","18","The instance method name 'Exercicio' doesn't match '[a-z][a-zA-Z0-9]*'","Code Style","MethodNamingConventions"

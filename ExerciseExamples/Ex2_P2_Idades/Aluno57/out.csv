@@ -1,5 +1,5 @@
 "Problem","Package","File","Priority","Line","Description","Rule set","Rule"
-"1","","/Users/martinhoaragao/Dev/ProgrammerProfiler/ExerciseExamples/Ex2_P2_Idades/Aluno57/ex2.java","1","2","A class which only has private constructors should be final","Design","ClassWithOnlyPrivateConstructorsShouldBeFinal"
-"2","","/Users/martinhoaragao/Dev/ProgrammerProfiler/ExerciseExamples/Ex2_P2_Idades/Aluno57/ex2.java","3","2","All classes and interfaces must belong to a named package","Code Style","NoPackage"
+"1","","/Users/martinhoaragao/Dev/ProgrammerProfiler/ExerciseExamples/Ex2_P2_Idades/Aluno57/ex2.java","4","2","A class which only has private constructors should be final","Code Style","GenericsNaming"
+"2","","/Users/martinhoaragao/Dev/ProgrammerProfiler/ExerciseExamples/Ex2_P2_Idades/Aluno57/ex2.java","4","2","All classes and interfaces must belong to a named package","Code Style","GenericsNaming"
 "3","","/Users/martinhoaragao/Dev/ProgrammerProfiler/ExerciseExamples/Ex2_P2_Idades/Aluno57/ex2.java","1","2","The class name 'ex2' doesn't match '[A-Z][a-zA-Z0-9]*'","Code Style","ClassNamingConventions"
-"4","","/Users/martinhoaragao/Dev/ProgrammerProfiler/ExerciseExamples/Ex2_P2_Idades/Aluno57/ex2.java","4","31","Useless parentheses.","Code Style","UselessParentheses"
+"4","","/Users/martinhoaragao/Dev/ProgrammerProfiler/ExerciseExamples/Ex2_P2_Idades/Aluno57/ex2.java","4","31","Useless parentheses.","Code Style","GenericsNaming"

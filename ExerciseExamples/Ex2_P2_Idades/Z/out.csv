@@ -1,5 +1,0 @@
-"Problem","Package","File","Priority","Line","Description","Rule set","Rule"
-"1","","/Users/martinhoaragao/Dev/ProgrammerProfiler/ExerciseExamples/Ex2_P2_Idades/Z/ExIdades_Z.java","3","3","All classes and interfaces must belong to a named package","Code Style","NoPackage"
-"2","","/Users/martinhoaragao/Dev/ProgrammerProfiler/ExerciseExamples/Ex2_P2_Idades/Z/ExIdades_Z.java","3","3","All methods are static.  Consider using a utility class instead. Alternatively, you could add a private constructor or make the class abstract to silence this warning.","Design","UseUtilityClass"
-"3","","/Users/martinhoaragao/Dev/ProgrammerProfiler/ExerciseExamples/Ex2_P2_Idades/Z/ExIdades_Z.java","4","7","Use one line for each declaration, it enhances code readability.","Best Practices","OneDeclarationPerLine"
-"4","","/Users/martinhoaragao/Dev/ProgrammerProfiler/ExerciseExamples/Ex2_P2_Idades/Z/ExIdades_Z.java","3","10","This statement should have braces","Code Style","ControlStatementBraces"

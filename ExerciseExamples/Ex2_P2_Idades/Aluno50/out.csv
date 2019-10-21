@@ -1,5 +1,0 @@
-"Problem","Package","File","Priority","Line","Description","Rule set","Rule"
-"1","","/Users/martinhoaragao/Dev/ProgrammerProfiler/ExerciseExamples/Ex2_P2_Idades/Aluno50/Exercicio2.java","3","3","All classes and interfaces must belong to a named package","Code Style","NoPackage"
-"2","","/Users/martinhoaragao/Dev/ProgrammerProfiler/ExerciseExamples/Ex2_P2_Idades/Aluno50/Exercicio2.java","3","4","All methods are static.  Consider using a utility class instead. Alternatively, you could add a private constructor or make the class abstract to silence this warning.","Design","UseUtilityClass"
-"3","","/Users/martinhoaragao/Dev/ProgrammerProfiler/ExerciseExamples/Ex2_P2_Idades/Aluno50/Exercicio2.java","3","21","This statement should have braces","Code Style","ControlStatementBraces"
-"4","","/Users/martinhoaragao/Dev/ProgrammerProfiler/ExerciseExamples/Ex2_P2_Idades/Aluno50/Exercicio2.java","3","24","This statement should have braces","Code Style","ControlStatementBraces"

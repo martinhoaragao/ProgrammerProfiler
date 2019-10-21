@@ -1,16 +1,16 @@
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
-public class Coin {
-    private Map<Integer,Integer> calculus;
+class Coin {
+    public static Map<Long,Long> calculus;
 
-    private int getmax(int x) {
+    private static long getmax(long x) {
         if(x <= 10) {
             return x;
         } else if(Coin.calculus.containsKey(x)) {
             return Coin.calculus.get(x);
         } else {
-            int est =  getmax(x/2) + getmax(x/3) + getmax(x/4);
+            long est =  getmax(x/2) + getmax(x/3) + getmax(x/4);
             Coin.calculus.put(x, Math.max(x, est));
             return Coin.calculus.get(x);
         }
@@ -20,8 +20,8 @@ public class Coin {
         Scanner in = new Scanner(System.in);
         Coin.calculus = new HashMap<>();
 
-        while(in.hasNextInt()) {
-            int value = in.nextInt();
+        while(in.hasNextLong()) {
+            long value = in.nextLong();
             System.out.println(getmax(value));
         }
     }

@@ -1,5 +1,5 @@
 "Problem","Package","File","Priority","Line","Description","Rule set","Rule"
-"1","","/Users/martinhoaragao/Dev/ProgrammerProfiler/ExerciseExamples/Ex2_P2_Idades/Aluno18/Ex2.java","3","4","All classes and interfaces must belong to a named package","Code Style","NoPackage"
+"1","","/Users/martinhoaragao/Dev/ProgrammerProfiler/ExerciseExamples/Ex2_P2_Idades/Aluno18/Ex2.java","4","4","All classes and interfaces must belong to a named package","Code Style","GenericsNaming"
 "2","","/Users/martinhoaragao/Dev/ProgrammerProfiler/ExerciseExamples/Ex2_P2_Idades/Aluno18/Ex2.java","1","6","The method parameter name 'M' doesn't match '[a-z][a-zA-Z0-9]*'","Code Style","FormalParameterNamingConventions"
 "3","","/Users/martinhoaragao/Dev/ProgrammerProfiler/ExerciseExamples/Ex2_P2_Idades/Aluno18/Ex2.java","1","6","The method parameter name 'N' doesn't match '[a-z][a-zA-Z0-9]*'","Code Style","FormalParameterNamingConventions"
-"4","","/Users/martinhoaragao/Dev/ProgrammerProfiler/ExerciseExamples/Ex2_P2_Idades/Aluno18/Ex2.java","4","9","Use one line for each declaration, it enhances code readability.","Best Practices","OneDeclarationPerLine"
+"4","","/Users/martinhoaragao/Dev/ProgrammerProfiler/ExerciseExamples/Ex2_P2_Idades/Aluno18/Ex2.java","4","9","Use one line for each declaration, it enhances code readability.","Code Style","GenericsNaming"

@@ -1,5 +1,5 @@
 "Problem","Package","File","Priority","Line","Description","Rule set","Rule"
-"1","","/Users/martinhoaragao/Dev/ProgrammerProfiler/ExerciseExamples/Ex2_P2_Idades/Aluno10/Exe2.java","3","4","All classes and interfaces must belong to a named package","Code Style","NoPackage"
+"1","","/Users/martinhoaragao/Dev/ProgrammerProfiler/ExerciseExamples/Ex2_P2_Idades/Aluno10/Exe2.java","4","4","All classes and interfaces must belong to a named package","Code Style","GenericsNaming"
 "2","","/Users/martinhoaragao/Dev/ProgrammerProfiler/ExerciseExamples/Ex2_P2_Idades/Aluno10/Exe2.java","3","5","All methods are static.  Consider using a utility class instead. Alternatively, you could add a private constructor or make the class abstract to silence this warning.","Design","UseUtilityClass"
 "3","","/Users/martinhoaragao/Dev/ProgrammerProfiler/ExerciseExamples/Ex2_P2_Idades/Aluno10/Exe2.java","1","16","The local variable name 'conta_idade' doesn't match '[a-z][a-zA-Z0-9]*'","Code Style","LocalVariableNamingConventions"
 "4","","/Users/martinhoaragao/Dev/ProgrammerProfiler/ExerciseExamples/Ex2_P2_Idades/Aluno10/Exe2.java","1","17","The local variable name 'soma_idade' doesn't match '[a-z][a-zA-Z0-9]*'","Code Style","LocalVariableNamingConventions"

@@ -1,5 +1,5 @@
 "Problem","Package","File","Priority","Line","Description","Rule set","Rule"
 "1","","/Users/martinhoaragao/Dev/ProgrammerProfiler/ExerciseExamples/Ex2_P2_Idades/Aluno66/Exercicio2.java","4","4","Avoid importing anything from the package java.lang","Code Style","DontImportJavaLang"
-"2","","/Users/martinhoaragao/Dev/ProgrammerProfiler/ExerciseExamples/Ex2_P2_Idades/Aluno66/Exercicio2.java","3","6","All classes and interfaces must belong to a named package","Code Style","NoPackage"
+"2","","/Users/martinhoaragao/Dev/ProgrammerProfiler/ExerciseExamples/Ex2_P2_Idades/Aluno66/Exercicio2.java","4","6","All classes and interfaces must belong to a named package","Code Style","GenericsNaming"
 "3","","/Users/martinhoaragao/Dev/ProgrammerProfiler/ExerciseExamples/Ex2_P2_Idades/Aluno66/Exercicio2.java","3","7","All methods are static.  Consider using a utility class instead. Alternatively, you could add a private constructor or make the class abstract to silence this warning.","Design","UseUtilityClass"
-"4","","/Users/martinhoaragao/Dev/ProgrammerProfiler/ExerciseExamples/Ex2_P2_Idades/Aluno66/Exercicio2.java","4","9","Use one line for each declaration, it enhances code readability.","Best Practices","OneDeclarationPerLine"
+"4","","/Users/martinhoaragao/Dev/ProgrammerProfiler/ExerciseExamples/Ex2_P2_Idades/Aluno66/Exercicio2.java","4","9","Use one line for each declaration, it enhances code readability.","Code Style","GenericsNaming"

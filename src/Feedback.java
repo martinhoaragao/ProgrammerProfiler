@@ -82,12 +82,12 @@ public class Feedback {
         int highest = 0;
 
         impact.add(metricImpact.get("getNumberOfMethods"));
-        impact.add(metricImpact.get("getNumberOfClasses"));
+        //impact.add(metricImpact.get("getNumberOfClasses"));
         impact.add(metricImpact.get("getPerComment"));
         impact.add(metricImpact.get("getNumberOfStatementsWithoutRES"));
         impact.add(metricImpact.get("getTotalNumberOfCFS"));
 
-        for (int i = 0; i <= 4; i++) {
+        for (int i = 0; i <= 3; i++) {
             if (impact.get(i).getRatio() > impact.get(highest).getRatio()) {
                 highest = i;
             }
@@ -100,19 +100,19 @@ public class Feedback {
             case 0:
                 metricFeedback.add("**Divide your code into multiple methods.**");
                 break;
-            case 1:
-                metricFeedback.add("**Divide your code into multiple classes.**");
+       //     case 1:
+         //       metricFeedback.add("**Divide your code into multiple classes.**");
 
-                break;
-            case 2:
+         //      break;
+            case 1:
                 metricFeedback.add("**Add more documentation.**");
 
                 break;
-            case 3:
+            case 2:
                 metricFeedback.add("**There seems to be a better way to solve this exercise using fewer statements. Perhaps you over complicated the algorithm?**");
 
                 break;
-            case 4:
+            case 3:
                 metricFeedback.add("**You could use fewer control flow statements. Try reducing the number of cycles, that usually means there is an easier way to solve this exercise.**");
                 break;
             default:
@@ -282,7 +282,7 @@ public class Feedback {
 
         metricFeedback.add("### Suggestion: **Increase Documentation**");
         metricFeedback.add("You have shown **" + Math.round(100 * metric.getValue()) / (float) 100 + "%** lines with comments. " +
-                "This places you at " + Math.round(10000 * metric.getRatio()) / (float) 100 +  "% compared to the maximum of your peers.");
+                "This places you at the top " + Math.round(10000 * metric.getRatio()) / (float) 100 +  "% compared to the maximum of your peers.");
         metricFeedback.add("");
         metricFeedback.add("Even for a single programmer, code legibility within a few weeks is intimately connected with its documentation. " +
                 "By increasing the number of comments proportionately to the lines of code you display, its readability can be increased dramatically.");
@@ -296,9 +296,9 @@ public class Feedback {
             growthFactor = 2;
         }
         improvementRatio = (metric.getRatio() + (1 - metric.getRatio()) / growthFactor) / metric.getRatio();
-        if (improvementRatio == 0 ) {
+        if (metric.getImpact() == 0 ) {
             metricFeedback.add("**Try covering 20% of your code instead.**");
-            improvementImpact = ((float)0.2 * metric.getImpact()) / 2;
+            improvementImpact = (float) 0.5;
 
         } else {
             improvementImpact = (improvementRatio * metric.getImpact()) / 2;
