@@ -179,7 +179,7 @@ public class Feedback {
             readabilityImpact = - ((aux * cfsMetric.getImpactReadability()) / 4);
         }
 
-        generateProgressMotivation(project, readabilityImpact, impact, true);
+        generateProgressMotivation(project, readabilityImpact, impact, false);
     }
 
 
@@ -384,7 +384,7 @@ public class Feedback {
     private ArrayList<String> violationFeedbackCorrection(ArrayList<String> violationFeedback, Violation violation) {
         violationFeedback.add("### Suggestion: **Follow PMD Rule**");
         violationFeedback.add("You violated rule [" +
-                violation.getName() + "](https://pmd.github.io/pmd-6.16.0/pmd_rules_java_" + violation.getPmdRule().getRuleset().toLowerCase() + ".html#" + violation.getName().toLowerCase() +
+                violation.getName() + "](https://pmd.github.io/pmd-6.16.0/pmd_rules_java_" + violation.getPmdRule().getRuleset().toLowerCase().replaceAll("\\s+","") + ".html#" + violation.getName().toLowerCase() +
                 ") **" + violation.getOccurences() + "** times.");
 
         violationFeedback.add("This rule is part of the set " + violation.getPmdRule().getRuleset());
