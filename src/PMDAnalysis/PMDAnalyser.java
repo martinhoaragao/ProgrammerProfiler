@@ -26,7 +26,7 @@ public class PMDAnalyser {
 
         ProcessBuilder builder = new ProcessBuilder();
         builder.command(arguments);
-
+/*
         try {
             Process process = builder.start();
             process.waitFor();
@@ -34,7 +34,7 @@ public class PMDAnalyser {
             e.printStackTrace();
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }
+        }*/
     }
 
     public void read () throws IOException {

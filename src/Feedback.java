@@ -79,40 +79,53 @@ public class Feedback {
         ArrayList<String> metricFeedback = new ArrayList<>();
         ArrayList<MetricImpact> impact = new ArrayList<>();
         HashMap<String, MetricImpact> metricImpact = project.getMetricsImpact();
-        int highest = 0;
+        int lowest;
+
+        if (isReadability) {
+            lowest = 0;
+        } else {
+            lowest = 3;
+        }
 
         impact.add(metricImpact.get("getNumberOfMethods"));
-        //impact.add(metricImpact.get("getNumberOfClasses"));
+        impact.add(metricImpact.get("getNumberOfClasses"));
         impact.add(metricImpact.get("getPerComment"));
         impact.add(metricImpact.get("getNumberOfStatementsWithoutRES"));
         impact.add(metricImpact.get("getTotalNumberOfCFS"));
 
-        for (int i = 0; i <= 3; i++) {
-            if (impact.get(i).getRatio() > impact.get(highest).getRatio()) {
-                highest = i;
+        if (isReadability) {
+            for (int i = 0; i <= 2; i++) {
+                if (impact.get(i).getRatio() < impact.get(lowest).getRatio()) {
+                    lowest = i;
+                }
+            }
+        } else {
+            for (int i = 3; i <= 4; i++) {
+                if (impact.get(i).getRatio() < impact.get(lowest).getRatio()) {
+                    lowest = i;
+                }
             }
         }
 
         metricFeedback.add("#### Goal");
         metricFeedback.add("You might still have some violations to improve on, but we advise you to more than just that. Check out: ");
 
-        switch (highest) {
+        switch (lowest) {
             case 0:
                 metricFeedback.add("**Divide your code into multiple methods.**");
                 break;
-       //     case 1:
-         //       metricFeedback.add("**Divide your code into multiple classes.**");
-
-         //      break;
             case 1:
+                metricFeedback.add("**Divide your code into multiple classes.**");
+               break;
+            case 2:
                 metricFeedback.add("**Add more documentation.**");
 
                 break;
-            case 2:
+            case 3:
                 metricFeedback.add("**There seems to be a better way to solve this exercise using fewer statements. Perhaps you over complicated the algorithm?**");
 
                 break;
-            case 3:
+            case 4:
                 metricFeedback.add("**You could use fewer control flow statements. Try reducing the number of cycles, that usually means there is an easier way to solve this exercise.**");
                 break;
             default:
