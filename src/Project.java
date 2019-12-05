@@ -82,7 +82,10 @@ public class Project {
             violation = new Violation (pmdRule, linesViolated);
         }
 
-        if (pmdRule.getGroup() != 'R') {
+        if(pmdRule.getGroup() == 'B') {
+            violation.setSkillImpact(impact);
+            violation.setReadabilityImpact(impact);
+        } else if (pmdRule.getGroup() == 'S') {
             violation.setSkillImpact(impact);
         } else {
             violation.setReadabilityImpact(impact);
